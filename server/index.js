@@ -7,6 +7,9 @@ const controllers = require('./controllers.js');
 
 let {getReviews, getStyles, getRelated, getDetails} = controllers;
 
+// Overview Router
+overviewRouter = require('./overviewRouter.js');
+
 // Setup Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -18,7 +21,8 @@ axios.defaults.baseURL = process.env.BASE_URL;
 // Adds API key to all requests
 axios.defaults.headers.common['Authorization'] = process.env.API_KEY;
 
-// Setup Routes
+// set up overview router
+app.use('/overview', overviewRouter);
 
 // Get related items
 app.get('/related', (req, res) => {
