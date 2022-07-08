@@ -1,7 +1,5 @@
 node_modules
-<<<<<<< HEAD
 client/distf
-=======
 dist
 .env
->>>>>>> main
+webpack.config.js
