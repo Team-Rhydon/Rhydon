@@ -1,8 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./client/src/index.js",
+  entry: path.join(__dirname, "./client/src/index.jsx"), //change this file path to YOUR index.js file
   mode: "development",
   module: {
     rules: [
@@ -15,21 +16,27 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  //resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, "./client/dist"),
     filename: "bundle.js"
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'client'),
-    },
-    compress: true,
-    port: 3000
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, 'client'),
+  //   },
+  //   compress: true,
+  //   port: 3000
+  // },
+  plugins: [ new HtmlWebpackPlugin({
+    title: "Rhydon Store"
+  })
+]
 };
