@@ -1,0 +1,1 @@
+Use assets folder to store addtional client side source files/images

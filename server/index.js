@@ -4,6 +4,7 @@ const path = require('path');
 const axios = require('axios');
 const app = express();
 const controllers = require('./controllers.js');
+const reviewRouter = require('./routes/reviews.js');
 
 let {getReviews, getStyles, getRelated, getDetails} = controllers;
 
@@ -19,7 +20,7 @@ axios.defaults.baseURL = process.env.BASE_URL;
 axios.defaults.headers.common['Authorization'] = process.env.API_KEY;
 
 // Setup Routes
-
+app.use('/reviews', reviewRouter);
 // Get related items
 app.get('/related', (req, res) => {
   let product_id = req.query.id;

@@ -1,26 +1,23 @@
 import React, { Component} from "react";
-<<<<<<< HEAD
 import "./App.css";
 import RatingsWidget from "./Ratings/Widget.jsx";
-=======
-import Related_Items_Outfit from './Related/Related.jsx';
->>>>>>> main
+import Related from './Related/Related.jsx';
 
 class App extends Component{
   render(){
     return(
       <div className="App">
-<<<<<<< HEAD
-        <h1> App test </h1>
-        <div></div>
-        <div></div>
+        <h1> Rhydon Store </h1>
+        <div style={{border: "1px solid black", height: "33em"}}>
+          {/* Product Overview Component */}
+          <h2>Product Overview Component</h2>
+        </div>
+        <div style={{border: "1px solid black", height: "33em"}}>
+          <Related />
+          </div>
         <div>
           <RatingsWidget />
         </div>
-=======
-        <h1> Rhydon Store </h1>
-        <Related />
->>>>>>> main
       </div>
     );
   }

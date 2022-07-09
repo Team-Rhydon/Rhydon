@@ -5,8 +5,8 @@ class Related extends Component {
   render() {
     return (
       <div className="App">
-        <h1> Rhydon Store </h1>
-        <Related_Items_Outfit />
+        <h1> Related Items Widget </h1>
+        {/* <Related_Items_Outfit /> */}
       </div>
     );
   }

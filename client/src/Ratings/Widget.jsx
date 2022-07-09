@@ -7,7 +7,8 @@ import RatingBreakdown from "./RatingBreakdown.jsx";
 function RatingsWidget(props) {
   return (
     //separate breakdown component?
-    <div>
+    <div style={{border: "1px solid black", height:"40em"}}>
+      <h1>Ratings Widget</h1>
       <RatingBreakdown />
       <ReviewList />
       <NewReviewForm />

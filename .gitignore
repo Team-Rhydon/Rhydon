@@ -1,7 +1,3 @@
 node_modules
-<<<<<<< HEAD
-client/distf
-=======
-dist
+client/dist
 .env
->>>>>>> main
