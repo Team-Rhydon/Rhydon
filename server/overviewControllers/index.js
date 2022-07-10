@@ -33,11 +33,23 @@ module.exports = {
       .catch((err) => handlerError(res, err))
     },
 
-    getStyles: (req, res) => {
+  getStyles: (req, res) => {
       productId = req.query.id;
 
       axios.get(`/products/${productId}/styles`)
         .then(({data}) => handleResponse(res, data.results, 200))
+        .catch((err) => handlerError(res, err))
+  },
+
+  getReviews: (req, res) => {
+      productId = req.query.id;
+
+      axios.get(`/reviews`, {
+        params: {
+          product_id: productId
+        }
+      })
+        .then((response) => handleResponse(res, response.data, 200))
         .catch((err) => handlerError(res, err))
   }
 

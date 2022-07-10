@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import StarRating from '../../Related/StarRating.jsx';
 import axios from 'axios';
 
 let ProductInformation = ({get, price}) => {
@@ -16,7 +17,7 @@ let ProductInformation = ({get, price}) => {
             description: data.description,
             slogan: data.slogan,
             features: data.features,
-            default_price: data.default_price
+            default_price: `$${data.default_price}`
           }
         })
 
@@ -31,58 +32,60 @@ let ProductInformation = ({get, price}) => {
       })
   }
 
-  let getStars = () => {
-    get('/overview/stars')
+  let getStarsNReviews = () => {
+    return get('/overview/stars')
     .then(({data}) => {
       let totalPeople = 0;
       let totalStars = 0;
+
       for (let star in data.ratings) {
         totalPeople += parseInt(data.ratings[star]);
         totalStars += (data.ratings[star] * star);
       }
-      let arr = [];
+
       const avg = totalStars/totalPeople;
-      for (let i = 0; i < 5; i++) {
-        if (i < avg) {
-          arr.push(true);
-        } else {
-          arr.push(false);
-        }
-      }
-      setRating(prevState =>  arr)
+      setRating(prevState =>  avg)
     })
+    .then(get('/overview/reviews')
+    .then(({data}) => {
+      setStills(prevState => {
+        return {
+          ...prevState,
+          count: data.count
+        }
+      })
+    }))
     .catch(err => console.error('star error', err))
   }
 
   useEffect(() => {
     getStills();
-    getStars()
+    getStarsNReviews()
   }, []);
 
   let show;
 
+  if (price && price !== stills.default_price) {
+    price = (
+      <>
+      <span><s>{stills.default_price}</s> &#8594;</span>
+      <span style={{color: "red"}}>  {price}</span>
+      </>
+    )
+  }
   if (rating && stills) {
-    show = (<>
-      <div className="star-rating">
-      {rating.map((star, index) => {
-        if (star) {
-          return <span key={index}  >&#9733;</span>
-        } else {
-          return <span key={index} >&#9734;</span>
-        }
-
-      })}
-    </div>
+    show = (<div>
+      <div className="star-rating">{rating ? <StarRating  rating={rating} /> : null}</div>
+      <div> Read All {stills.count} Reviews</div>
       <h3>{stills.category}</h3>
       <h2>{stills.name}</h2>
-      <div>${price || stills.default_price}</div>
+      <div>{price ? price : stills.default_price}</div>
       <div>{stills.slogan} {stills.description}</div>
-      <>
-        {stills.feature ? stills.features.map(({feature, value}, i ) => {
+      <>{stills.features ? stills.features.map(({feature, value}, i ) => {
           return <div key={i}>{feature} : {value} </div>
-        }) : <></>}
+        }) : null}
       </>
-    </>
+    </div>
     )
   }
   return (

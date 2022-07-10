@@ -1,4 +1,4 @@
-import React, {useState, Component} from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios'
 import ProductInformation from "./components/ProductInformation.jsx";
 import StyleSelector from "./components/StyleSelector.jsx";
@@ -23,7 +23,7 @@ let App = (props) => {
   }
 
   const changePrice = (sale) => {
-    return setPrice(prevState => sale)
+    return setPrice(prevState => `$${sale}`)
   }
 
   const changeProduct = (ID) => {
