@@ -5,13 +5,28 @@ import StyleSelector from './StyleSelector.jsx';
 
 
 let Styles = ({get}) => {
-  const [productStyles, setProductStyles] = useState({})
+  const [productStyles, setProductStyles] = useState()
   const [selectedStyle, setSelectedStyle] = useState();
+
+  useEffect(() => {
+    get('/styles')
+      .then(({data}) => {
+        setSelectedStyle(prevState => data[0])
+        setProductStyles(prevState => data)
+      })
+  }, [])
 
   return(
     <div>
-      <ImageGallery get={get}/>
-      <StyleSelector get={get}/>
+      <ImageGallery
+        get={get}
+        productStyles={productStyles}
+        selected={selectedStyle}
+        setStyle={setSelectedStyle}/>
+      <StyleSelector
+        get={get}
+        selectedStyle={selectedStyle}
+        setStyle={setSelectedStyle}/>
     </div>
   )
 }

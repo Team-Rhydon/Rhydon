@@ -45,8 +45,9 @@ let ProductInfo = (props) => {
 
   }, [])
 
+  if (!count) return <></>
+
   return (<>
-    <>product info</>
       <h4>{name}</h4>
       <>{rating ? <StarRating rating={rating}/> : null}</>
       <div>Read All {count} Reviews</div>
