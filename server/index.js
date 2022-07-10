@@ -4,12 +4,18 @@ const path = require('path');
 const axios = require('axios');
 const app = express();
 const controllers = require('./controllers.js');
+const helpers = require('./helpers.js');
+const Promise = require('bluebird');
 
 let {getReviews, getStyles, getRelated, getDetails} = controllers;
+<<<<<<< HEAD
 
 // Overview Router
 overviewRouter = require('./overviewRouter.js');
 
+=======
+let {averageRating, promiseAllRelated, filterRelated} = helpers;
+>>>>>>> related_items_start
 // Setup Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -28,18 +34,12 @@ app.use('/overview', overviewRouter);
 app.get('/related', (req, res) => {
   let product_id = req.query.id;
   getRelated(product_id).then(({data}) => {
-    // initialize array of promises
-    let reqArr = [];
-    // for each related item, return a promise for reviews and styles
-    data.forEach((id) => {
-      reqArr.push(getReviews(id));
-      reqArr.push(getStyles(id));
-      reqArr.push(getDetails(id));
-    });
-    return Promise.all(reqArr);
+    return promiseAllRelated(data);
   }).then((data) => {
-    debugger;
+    resObj = filterRelated(data);
+    res.status(201).send(resObj);
   }).catch((err) => {
+    console.log(err);
     res.status(404).send(err);
   });
 });
