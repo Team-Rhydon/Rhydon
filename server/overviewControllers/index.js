@@ -6,7 +6,7 @@ const axios = require('axios');
 axios.defaults.baseURL = process.env.BASE_URL;
 
 // Adds API key to all requests
-axios.defaults.headers.common['Authorization'] = process.env.API_KEY;
+axios.defaults.headers.common['Authorization'] = process.env.JAPI_KEY;
 
 const handlerError = (res, err) => res.status(501).send(err);
 const handleResponse = (res, data, code) => res.status(code).send(data);
@@ -14,16 +14,31 @@ const handleResponse = (res, data, code) => res.status(code).send(data);
 module.exports = {
 
   getProduct: (req, res) => {
+    productId = req.query.id;
 
-    const pageNum = undefined || 1;
-    const countNum = undefined || 5;
-
-    axios.get('/products', { params: {
-      page: pageNum,
-      count: countNum
-    }})
-      .then((response) => console.log(response.data))
+    axios.get(`/products/${productId}`)
+      .then(({data}) => handleResponse(res, data, 200))
       .catch((err) => handlerError(res, err))
+    },
+
+  getStars: (req, res) => {
+    productId = req.query.id;
+
+    axios.get(`/reviews/meta`, {
+      params: {
+        product_id: productId
+      }
+    })
+      .then(({data}) => handleResponse(res, data, 200))
+      .catch((err) => handlerError(res, err))
+    },
+
+    getStyles: (req, res) => {
+      productId = req.query.id;
+
+      axios.get(`/products/${productId}/styles`)
+        .then(({data}) => handleResponse(res, data.results, 200))
+        .catch((err) => handlerError(res, err))
   }
 
 }
