@@ -23,32 +23,44 @@ class ReviewListItem extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      body: 'Lorem Ipsum',
-      images: []
+      shortBody: this.props.review.body.length < 249
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      shortBody: !this.state.shortBody
+    })
   }
   render () {
-    var shortBody = this.state.body.length < 250;
     return (
-      <div className="ReviewTile" style={{border: "1px solid black", width: "75%"}} >
-        <div style={{border: "1px solid black", width: "33%"}}>
-          <span>Stars for this rating ** </span><br></br>
-          <span>Review Date: DD/MM/YYYY : hh:mm  ** </span><br></br>
-          <span>Name of Reviewer **</span>
+      <div className="ReviewTile" style={{border: "1px solid black", width: "100%"}} >
+        <div className="ReviewHeader" style={{border: "1px solid black", width: "100%"}}>
+          <span>{'★'.repeat(this.props.review.rating)} </span>
+          <span className="nameAndDate">
+            <span>{this.props.review.reviewer_name} @</span>
+            <span>{this.props.review.date.slice(0, -14)}</span>
+          </span>
         </div>
         <div>
-          {shortBody
-          ? <span>{this.state.body} **</span>
+          <p style={{fontWeight: "bolder"}}>{this.props.review.summary.slice(0, 60)}</p>
+          {this.state.shortBody
+          ? <span>{this.props.review.body}</span>
           :<>
-            <span>{this.state.body.slice(0, 249) + '...'}</span>
-            <button>Read More</button>
+            <span>{this.props.review.body.slice(0, 249) + '...'}
+            <button onClick={this.handleClick}>Read More</button>
+            </span>
           </>}
-          <span>Conditionally Rendered recommendation***</span>
-          <span>Responses to review***</span>
-          <span>Was this helpful?</span>
+          {!this.props.review.recommend
+          ? null
+          :<p>✓ I recommend this product</p>}
+          {!this.props.review.response
+          ? null
+          : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
+          <span>Was this helpful? ({this.props.review.helpfulness})</span>
         </div>
-          <br></br>
-
+        <br></br>
       </div>
     )
   }

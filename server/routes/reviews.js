@@ -1,9 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const controllers = require("../controllers/reviewsControllers");
+require("dotenv").config();
+const axios = require("axios");
+const models = require("../models/reviews.js");
+axios.defaults.baseURL = process.env.BASE_URL;
 
+axios.defaults.headers.common['Authorization'] = process.env.API_KEY;
 //set up router middleware
 router.use(function(req, res, next) {
+  console.log(req)
   console.log(req.url, "@", Date.now());
   next();
 });
