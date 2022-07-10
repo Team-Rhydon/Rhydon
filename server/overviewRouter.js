@@ -13,4 +13,6 @@ overviewRouter.get('/stars',  controller.getStars)
 // styles route
 overviewRouter.get('/styles',  controller.getStyles)
 
+overviewRouter.get('/reviews', controller.getReviews)
+
 module.exports = overviewRouter
