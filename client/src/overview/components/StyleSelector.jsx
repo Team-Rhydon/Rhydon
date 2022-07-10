@@ -7,7 +7,7 @@ let StyleSelector = ({get, changePrice}) => {
   const [selected, setSelected] = useState();
 
   let getStyles = () => {
-    get('/overview/styles')
+    get('/styles')
       .then(({data}) => {
         console.log(data);
         setStyles(prevState => data)

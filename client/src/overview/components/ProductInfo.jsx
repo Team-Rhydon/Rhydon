@@ -4,6 +4,7 @@ import StarRating from '../../Related/StarRating.jsx'
 let ProductInfo = (props) => {
   const [rating, setRating] = useState();
   const [product, setProduct] = useState({});
+  const [count, setCount] = useState();
   let {name, category, description, slogan, features} = product;
 
   useEffect(() => {
@@ -35,12 +36,20 @@ let ProductInfo = (props) => {
       setRating(prevState => stars/people)
     })
     .catch(err => console.error('setRating error', err));
+
+    props.get('/reviews')
+    .then(({data}) => {
+      setCount(prevState => data.count)
+    })
+    .catch(err => console.error('setCount error', err));
+
   }, [])
 
   return (<>
     <>product info</>
       <h4>{name}</h4>
       <>{rating ? <StarRating rating={rating}/> : null}</>
+      <div>Read All {count} Reviews</div>
       <h5>{category}</h5>
       <div>{slogan}</div>
       <div>{description}</div>

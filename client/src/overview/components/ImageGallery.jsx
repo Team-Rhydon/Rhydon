@@ -8,9 +8,10 @@ let ImageGallery = ({get}) => {
   const [albumn, setAlbumn] = useState()
 
   let getImage = () => {
-    get('/overview/styles')
+    get('/styles')
       .then(({data}) => {
         setImage(prevState => {
+          console.log(data)
           return data[0].photos[0].url
         });
         setAlbumn(prevState => {

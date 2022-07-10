@@ -15,6 +15,7 @@ let Overview = (props) => {
   }
 
   return (<>
+    <Styles get={get.bind(this)}/>
     <ProductInfo get={get.bind(this)} />
   </>)
 }
