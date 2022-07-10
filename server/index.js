@@ -8,14 +8,10 @@ const helpers = require('./helpers.js');
 const Promise = require('bluebird');
 
 let {getReviews, getStyles, getRelated, getDetails} = controllers;
-<<<<<<< HEAD
 
 // Overview Router
 overviewRouter = require('./overviewRouter.js');
 
-=======
-let {averageRating, promiseAllRelated, filterRelated} = helpers;
->>>>>>> related_items_start
 // Setup Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
