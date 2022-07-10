@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios'
 import ProductInfo from "./components/ProductInfo.jsx";
+import Styles from "./components/Styles.jsx";
 
 let Overview = (props) => {
   const [productID, setProductID] = useState(40346);
