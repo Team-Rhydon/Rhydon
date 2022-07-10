@@ -1,5 +1,5 @@
-import React, { Component} from "react";
-import Related_Items_Outfit from './Related/Related.jsx';
+import React, {Component} from "react";
+import Related from './Related/Related.jsx';
 
 class App extends Component{
   render(){

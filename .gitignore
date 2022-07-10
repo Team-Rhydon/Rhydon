@@ -2,4 +2,7 @@ node_modules
 client/distf
 dist
 .env
+<<<<<<< HEAD
 webpack.config.js
+=======
+>>>>>>> related_items_start
