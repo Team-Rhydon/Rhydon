@@ -7,7 +7,7 @@ import ImageGallery from "./components/ImageGallery.jsx";
 
 let App = (props) => {
 
-  const [productID, setProductID] = useState(40355)
+  const [productID, setProductID] = useState(40346)
   const [price, setPrice] = useState();
 
   const defaultProps = {
@@ -29,7 +29,6 @@ let App = (props) => {
   const changeProduct = (ID) => {
     return setProductID(prevState => ID)
   }
-
 
   return (
     <div>
