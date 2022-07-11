@@ -7,12 +7,13 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
 
   return (
     <section className="miniSlider">
+
     </section>
   )
 }
 
 export default MiniSlides;
-const [mini, setMini] = useState(gallery.slice(0, 7));
+// const [mini, setMini] = useState(gallery.slice(0, 7));
 
 // useEffect(() => {
 //   if (currentImage < 7) {
