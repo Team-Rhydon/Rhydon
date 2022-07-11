@@ -11,22 +11,28 @@ let Styles = ({get}) => {
   useEffect(() => {
     get('/styles')
       .then(({data}) => {
-        setSelectedStyle(prevState => data[0])
-        setProductStyles(prevState => data)
+        setSelectedStyle(data[0])
+        setProductStyles(data)
       })
   }, [])
 
+
+
+    const commonProps = {
+      productStyles,
+      selectedStyle,
+      setSelectedStyle
+    }
+
   return(
     <div>
-      <ImageGallery
-        get={get}
-        productStyles={productStyles}
-        selected={selectedStyle}
-        setStyle={setSelectedStyle}/>
+      <ImageGallery {...commonProps}/>
       <StyleSelector
-        get={get}
-        selectedStyle={selectedStyle}
-        setStyle={setSelectedStyle}/>
+        {...commonProps}
+        // productStyles={productStyles}
+        // selectedStyle={selectedStyle}
+        // setSelectedStyle={setSelectedStyle}
+        />
     </div>
   )
 }

@@ -37,3 +37,37 @@ h1 {
 .related-card {
   float: left;
 }
+
+/* .slider {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 2rem;
+  z-index: 10;
+  border-radius: 50px;
+  background-color: rgba(128, 128, 128, 0.579);
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 2rem;
+  z-index: 10;
+  border-radius: 50px;
+  background-color: rgba(128, 128, 128, 0.579);
+} */

@@ -4,7 +4,7 @@ import ProductInfo from "./components/ProductInfo.jsx";
 import Styles from "./components/Styles.jsx";
 
 let Overview = (props) => {
-  const [productID, setProductID] = useState(40346);
+  const [productID, setProductID] = useState(40351);
 
   let get = (endpoint) => {
     return axios.get('http://localhost:3000/overview' + endpoint, {
