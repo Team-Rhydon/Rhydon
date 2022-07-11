@@ -40,7 +40,7 @@ h1 {
 
 .miniSlider {
   height: 20vh;
-  justify-content: center;
+  justify-content: left;
   display: flex;
 }
 /* .slider {

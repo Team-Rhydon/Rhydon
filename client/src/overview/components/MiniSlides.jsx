@@ -8,11 +8,21 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
 
   useEffect(() => {
     if (currentImage < 7) {
-      setMini(prevState => gallery.slice(currentImage, currentImage + 7))
-    } else if (currentImage > gallery.length - 7) {
-      setMini(prevState => gallery.slice(-7))
+        setMini(gallery.slice(currentImage, currentImage + 7))
+      } else if (currentImage > gallery.length - 7) {
+        setMini(gallery.slice(-7))
+      }
+  }, [currentImage]);
+
+  useEffect(() => {
+    if (gallery.length < 7) {
+      setMini(prevState => gallery.slice())
     }
-  }, [gallery, currentImage])
+  }, [currentImage])
+
+  useEffect(() => {
+      setMini(prevState => gallery.slice(0, 7))
+  }, [gallery])
 
   return (
     <section className="miniSlider">
@@ -21,7 +31,7 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
           console.log(i, currentImage)
           return <img src={url} key={i} width="100" height="100"/>
         } else {
-          return <img src={url} key={i} width="90" height="90"/>
+          return <img src={url} key={i} width="70" height="70"/>
         }
       })}
     </section>

@@ -27,7 +27,7 @@ let Carousel = ({gallery}) => {
       {gallery.map(({url}, i) => {
         return (
           <div className={i === currentImage ? 'slide active' : 'slide'} key={i}>
-            {i === currentImage && (<img src={url} key={i} width="500" height="500"/>)}
+            {i === currentImage && (<img src={url} key={i} width="800" height="500"/>)}
           </div>
         )
       })}
