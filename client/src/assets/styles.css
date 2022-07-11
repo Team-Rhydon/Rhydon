@@ -38,6 +38,11 @@ h1 {
   float: left;
 }
 
+.miniSlider {
+  height: 20vh;
+  justify-content: center;
+  display: flex;
+}
 /* .slider {
   position: relative;
   height: 70vh;

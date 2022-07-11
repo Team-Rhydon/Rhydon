@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Price from './Price.jsx';
+import SalePrice from './SalePrice.jsx';
 import Thumbnail from './Thumbnail.jsx';
 
 let StyleSelector = ({get, selectedStyle, setSelectedStyle, productStyles}) => {
@@ -9,7 +9,8 @@ let StyleSelector = ({get, selectedStyle, setSelectedStyle, productStyles}) => {
 
   return (<>
     <h4>Style &#8594; {selectedStyle.name}</h4>
-    <div>{salePrice ? <Price style={selectedStyle} /> : `$${selectedStyle.original_price}`}</div>
+    <div>{salePrice ? <SalePrice style={selectedStyle} /> : `$${selectedStyle.original_price}`}</div>
+
     <Thumbnail
       style={selectedStyle}
       productStyles={productStyles}

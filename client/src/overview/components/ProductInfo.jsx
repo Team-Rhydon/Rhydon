@@ -48,10 +48,10 @@ let ProductInfo = (props) => {
   if (!count) return <></>
 
   return (<>
-      <h4>{name}</h4>
+      <aside><h2>{name}</h2><h5>{category}</h5></aside>
+
       <>{rating ? <StarRating rating={rating}/> : null}</>
       <div>Read All {count} Reviews</div>
-      <h5>{category}</h5>
       <div>{slogan}</div>
       <div>{description}</div>
       {features ? features.map(({feature, value}, i) => {
