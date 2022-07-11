@@ -7,6 +7,10 @@ class SortDrop extends React.Component{
   }
 
   //needs a handlechange and handlesubmit
+  handleChange(){
+
+  }
+
   render() {
     return (
       // {/* a display should indicate if list is filtered and how */}
@@ -14,7 +18,7 @@ class SortDrop extends React.Component{
       <form>
         <label> Reviews sorted by...
           {/* onChange eventlistener on select */}
-          <select value={this.state.value}  >
+          <select value={this.state.value} onChange={this.handleChange} >
             <option value="relevance">relevance</option>
             <option value="helpful">helpful</option>
             <option value="newest">newest</option>

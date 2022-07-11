@@ -40,7 +40,7 @@ class ReviewListItem extends React.Component{
           <span>{'★'.repeat(this.props.review.rating)} </span>
           <span className="nameAndDate">
             <span>{this.props.review.reviewer_name} @</span>
-            <span>{this.props.review.date.slice(0, -14)}</span>
+            <span style={{padding: "5px"}}>{this.props.review.date.slice(0, -14)}</span>
           </span>
         </div>
         <div>
@@ -58,7 +58,10 @@ class ReviewListItem extends React.Component{
           {!this.props.review.response
           ? null
           : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
-          <span>Was this helpful? ({this.props.review.helpfulness})</span>
+          <div>
+            <span>Was this helpful? ({this.props.review.helpfulness}) ||</span>
+            <span className="Report">  Report </span>
+          </div>
         </div>
         <br></br>
       </div>
