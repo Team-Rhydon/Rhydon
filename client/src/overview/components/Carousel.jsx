@@ -46,8 +46,8 @@ let Carousel = ({gallery}) => {
     <section className="slider">
       <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
       <BsArrowRightCircle className="right-arrow" onClick={nextSlide} />
+
       {gallery.map(({url}, i) => {
-        console.log(currentImage.count, i)
         return (
           <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
             {i === currentImage.count && (<img src={url} key={i} width="800" height="500"/>)}

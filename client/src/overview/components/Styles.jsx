@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
+import AddToCart from './AddToCart.jsx';
 
 
 let Styles = ({get}) => {
@@ -16,23 +17,21 @@ let Styles = ({get}) => {
       })
   }, [])
 
-
-
-    const commonProps = {
-      productStyles,
-      selectedStyle,
-      setSelectedStyle
-    }
+  const commonProps = {
+    productStyles,
+    selectedStyle,
+    setSelectedStyle
+  }
 
   return(
     <div>
-      <ImageGallery {...commonProps}/>
-      <StyleSelector
-        {...commonProps}
-        // productStyles={productStyles}
-        // selectedStyle={selectedStyle}
-        // setSelectedStyle={setSelectedStyle}
-        />
+      <ImageGallery {...commonProps}
+      // productStyles={productStyles}
+      // selectedStyle={selectedStyle}
+      // setSelectedStyle={setSelectedStyle}
+      />
+      <StyleSelector {...commonProps}/>
+      <AddToCart {...commonProps}/>
     </div>
   )
 }
