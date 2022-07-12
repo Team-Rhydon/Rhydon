@@ -1,7 +1,6 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
 import Overview from "./Overview.jsx";
-import "../assets/styles.css";
 
 const container = document.createElement("div");
 container.setAttribute("id", "root");

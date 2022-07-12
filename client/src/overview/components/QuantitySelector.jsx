@@ -1,22 +1,52 @@
 import React, {useEffect, useState} from 'react';
 
-let QuantitySelector = ({size, quantity}) => {
+let QuantitySelector = ({size, quantity, setPurchase}) => {
 
   const [amount, setAmount] = useState(1);
 
-  quantity = quantity > 15 ? 15 : quantity;
+  let stock = quantity > 15 ? 15 : quantity;
 
   let changeAmount = (e) => {
-    setAmount(prevState => e.target.value)
+    setAmount(prevState => {
+      setPurchase((prevState) => {
+        return {...prevState,
+          size: size,
+          quantity: e.target.value}
+      })
+      return e.target.value})
   }
+
+  useEffect(() => {
+    if (amount > stock) {
+      setPurchase(prevState => {
+        console.log(prevState)
+        return {
+          ...prevState,
+          size: size,
+          quantity: 1,
+          complete: true
+        }
+      })
+    } else {
+      setPurchase(prevState => {
+        console.log(prevState)
+        return {
+          ...prevState,
+          size: size,
+          quantity: amount,
+          complete: true
+        }
+      })
+    }
+  }, [size, quantity])
 
   return (<>
     <select onChange={e => changeAmount.call(this, e)}>
-      {quantity ? [...Array(quantity)].map((nothing, i) => {
+      {[...Array(stock)].map((nothing, i) => {
         return (
           <option key={i} value={i + 1}>{i + 1}</option>
         )
-      }) : <option value={undefined}>Out of Stock</option> }</select>
+      })}</select>
      </> )
 }
 

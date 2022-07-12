@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import QuantitySelector from './QuantitySelector.jsx';
 
-let SizeSelector = ({selectedStyle}) => {
+let SizeSelector = ({selectedStyle, setPurchase}) => {
 
   const [sku, setSku] = useState();
 
@@ -17,7 +17,7 @@ let SizeSelector = ({selectedStyle}) => {
       if (key == 'null' || !key || !quantity) return <button key={i} disabled>{buttonSize || 'Out Of Stock'}</button>
       return (<button key={key} onClick={changeSku.bind(this, skuNumber)}>{buttonSize}</button>)
     })}
-    <div>{sku ? <QuantitySelector {...sku}/> : null}</div>
+    <div>{sku ? <QuantitySelector {...sku} setPurchase={setPurchase}/> : null}</div>
 
   </div>)
 }
