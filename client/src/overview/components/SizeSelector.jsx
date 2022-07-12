@@ -9,6 +9,10 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
     setSku(selectedSku);
   }
 
+  useEffect(() => {
+    changeSku();
+  }, [selectedStyle])
+
   return (<div>
     {Object.keys(selectedStyle.skus).map((key, i) => {
       let buttonSize = selectedStyle.skus[key].size
@@ -18,7 +22,6 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
       return (<button key={key} onClick={changeSku.bind(this, skuNumber)}>{buttonSize}</button>)
     })}
     <div>{sku ? <QuantitySelector {...sku} setPurchase={setPurchase}/> : null}</div>
-
   </div>)
 }
 

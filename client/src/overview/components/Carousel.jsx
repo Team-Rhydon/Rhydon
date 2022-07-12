@@ -2,13 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
 import MiniSlides from './MiniSlides.jsx';
 
-let Carousel = ({gallery}) => {
+let Carousel = ({gallery, currentImage, setCurrentImage}) => {
   if (!gallery.length) return null;
-
-  const [currentImage, setCurrentImage] = useState({
-    count: 0,
-    url: gallery[0].url
-  });
 
   let length = gallery.length - 1
 
@@ -53,7 +48,6 @@ let Carousel = ({gallery}) => {
           </div>
         )
       })}
-      <MiniSlides gallery={gallery} setCurrentImage={setCurrentImage} currentImage={currentImage}/>
     </section>
   )
 }

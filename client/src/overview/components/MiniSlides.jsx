@@ -6,9 +6,9 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
 
   const [slide, setSlide] = useState(gallery);
 
-  // useEffect(() => {
-  //   setSlide(gallery);
-  // }, [currentImage])
+  useEffect(() => {
+    setSlide(gallery);
+  }, [gallery])
 
   return (
     <section className="miniSlider">
@@ -23,16 +23,6 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
       if (i > slide.length - 7) {
         return <img src={obj.url} key={obj.url} width="70" height="70"/>
       }
-      // if ((i > currentImage.count - 3 && i < currentImage.count +3) || i < 7) {
-      //   return <img src={url} key={i} width="70" height="70"/>
-      // } else
-      // if (i === 7) {
-      //   return
-      // }
-
-      // else if (i > gallery.length - 7) {
-      //   return <img src={url} key={i} width="70" height="70"/>
-      // }
       })}
     </section>
   )
