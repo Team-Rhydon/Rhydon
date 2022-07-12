@@ -12,8 +12,9 @@ let SizeSelector = ({selectedStyle}) => {
   return (<div>
     {Object.keys(selectedStyle.skus).map((key, i) => {
       let buttonSize = selectedStyle.skus[key].size
+      let quantity = selectedStyle.skus[key].quantity
       let skuNumber = selectedStyle.skus[key]
-      if (key == 'null' || !key) return <button key={i} disabled>{buttonSize || 'Out Of Stock'}</button>
+      if (key == 'null' || !key || !quantity) return <button key={i} disabled>{buttonSize || 'Out Of Stock'}</button>
       return (<button key={key} onClick={changeSku.bind(this, skuNumber)}>{buttonSize}</button>)
     })}
     <div>{sku ? <QuantitySelector {...sku}/> : null}</div>
