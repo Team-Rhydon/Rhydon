@@ -16,7 +16,7 @@ class SortDrop extends React.Component{
       // {/* a display should indicate if list is filtered and how */}
       // {/*   options: helpful, newest, relevant */}
       <form>
-        <label> Reviews sorted by...
+        <label> {this.props.total} Reviews sorted by...
           {/* onChange eventlistener on select */}
           <select value={this.state.value} onChange={this.handleChange} >
             <option value="relevance">relevance</option>

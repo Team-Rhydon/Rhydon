@@ -38,7 +38,7 @@
   .meter {
     height: 10px;
     position: relative;
-    background: #555;
+    background: rgb(136, 135, 135);
     border-radius: 25px;
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
   }
@@ -50,7 +50,7 @@
     border-bottom-right-radius: 1px;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
-    background-color: rgb(244, 162, 0);
+    background-color: rgb(69, 244, 0);
     box-shadow:
       inset 0 2px 9px  rgba(255,255,255,0.3),
       inset 0 -2px 6px rgba(0,0,0,0.4);
@@ -70,8 +70,9 @@
   }
 
   .ReviewContainer-scrollable {
-    overflow-x: auto;
+    overflow-x: hidden;
     max-height: 95vh;
+    padding-right: 1px;
   }
 
   .indicator {
@@ -112,6 +113,7 @@
     /* padding: 40px; */
     width: 70%;
     min-width: 300px;
+    border: 1px solid grey;
   }
 
   .star input {
@@ -137,3 +139,16 @@
   .off {
     color: #ccc;
   }
+
+  .New-Review-Summary {
+    width: 75%;
+    height: 40px;
+  }
+
+  .ReviewTile {
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+

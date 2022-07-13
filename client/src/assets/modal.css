@@ -12,11 +12,12 @@
 
 .modal-content {
   width: 45%;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
 }
 
 .modal-header, .modal-footer {
   padding: 10px;
+  border: 1px solid black;
 }
 
 .modal-title {
@@ -24,6 +25,8 @@
 }
 
 .modal-body {
+  max-height: 90vh;
+  overflow-y: scroll;
   padding: 0;
   border: 1px solid black;
 }

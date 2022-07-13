@@ -23,6 +23,7 @@ const Characteristics = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <img style={{width: "100%", height: "100%"}} src={require("/client/src/assets/CharacteristicsTable.png")} />
       <div onChange={e=> setSize(e.target.value)} className="Size" >
         <h4>Size</h4>
         <label> 1
@@ -129,7 +130,7 @@ const Characteristics = (props) => {
         </label>
         <label>5
           <input type="radio" value="5" name="Fit" />
-        </label>
+        </label><br></br>
         <input type="submit" value="Submit"/>
       </div>
     </form>

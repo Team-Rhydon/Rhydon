@@ -5,7 +5,6 @@ require("dotenv").config();
 
 module.exports = {
   getReviews: (query) => {
-      console.log('this is the model', query.product_id);
       return axios.get('/reviews', {params: {
         product_id: query.product_id,
         page: query.page || 1,

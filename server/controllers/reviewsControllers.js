@@ -4,7 +4,6 @@ const models = require("../models/reviews.js");
 module.exports = {
   get: {
     reviews: (req, res) => {
-      console.log('this is the controller');
       models.getReviews(req.query)
         .then(response=> {console.log(response);res.status(200).send(JSON.stringify(response.data))})
         .catch(err => {console.log(err);res.sendStatus(500)})

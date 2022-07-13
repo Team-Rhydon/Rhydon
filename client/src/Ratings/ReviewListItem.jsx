@@ -1,5 +1,5 @@
 import React from "react";
-
+import Modal from "./Modal.jsx";
 /*
 //this component will need to display
   //a star rating (from single reviewer)
@@ -23,9 +23,12 @@ class ReviewListItem extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      shortBody: this.props.review.body.length < 249
+      shortBody: this.props.review.body.length < 249,
+      show: false,
+      url: ''
     }
     this.handleClick = this.handleClick.bind(this);
+    this.enhancePhoto = this.enhancePhoto.bind(this);
   }
 
   handleClick() {
@@ -33,7 +36,27 @@ class ReviewListItem extends React.Component{
       shortBody: !this.state.shortBody
     })
   }
+
+  enhancePhoto(value) {
+    //open modal displaying full image
+    this.setState({
+      show: true,
+      url: value
+    })
+  }
+
+  onClose = event => {
+    this.setState({
+      show: false
+    })
+  }
+
   render () {
+    if (this.props.isFiltered) {
+      if (!this.props.filter[this.props.review.rating]) {
+        return null;
+      }
+    }
     return (
       <div className="ReviewTile" style={{border: "1px solid black", width: "100%"}} >
         <div className="ReviewHeader" style={{border: "1px solid black", width: "100%"}}>
@@ -52,16 +75,34 @@ class ReviewListItem extends React.Component{
             <button onClick={this.handleClick}>Read More</button>
             </span>
           </>}
+        </div>
+        <br></br>
+        <>
+          <span>
+            {!this.props.review.photos
+              ?null
+              :this.props.review.photos.map(photo=> photo.url ==="text"
+                ? null
+                :<img
+                  key={photo.id}
+                  style={{height: "5vh", width: "5vw"}}
+                  onClick={()=> this.enhancePhoto(photo.url)}
+                  src={photo.url}
+                  />)}
+                <Modal children={<img src={this.state.url}/>} show={this.state.show} onClose={this.onClose} />
+            </span>
+        </>
+        <>
           {!this.props.review.recommend
           ? null
           :<p>✓ I recommend this product</p>}
           {!this.props.review.response
           ? null
           : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
-          <div>
-            <span>Was this helpful? ({this.props.review.helpfulness}) ||</span>
-            <span className="Report">  Report </span>
-          </div>
+        </>
+        <div>
+          <span>Was this helpful? ({this.props.review.helpfulness}) ||</span>
+          <span className="Report">  Report </span>
         </div>
         <br></br>
       </div>
