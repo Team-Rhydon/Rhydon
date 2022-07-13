@@ -8,7 +8,7 @@ module.exports = {
       return axios.get('/reviews', {params: {
         product_id: query.product_id,
         page: query.page || 1,
-        count: query.count || 2,
+        count: query.count || 5,
         sort: query.sort || 'newest'
       }})
   },

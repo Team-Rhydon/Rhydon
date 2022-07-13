@@ -89,7 +89,11 @@ class ReviewListItem extends React.Component{
                   onClick={()=> this.enhancePhoto(photo.url)}
                   src={photo.url}
                   />)}
-                <Modal children={<img src={this.state.url}/>} show={this.state.show} onClose={this.onClose} />
+                <Modal
+                  children={<img src={this.state.url}/>}
+                  show={this.state.show}
+                  onClose={this.onClose}
+                />
             </span>
         </>
         <>
@@ -101,7 +105,7 @@ class ReviewListItem extends React.Component{
           : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
         </>
         <div>
-          <span>Was this helpful? ({this.props.review.helpfulness}) ||</span>
+          <span>Was this helpful? ({this.props.review.helpfulness}) </span>
           <span className="Report">  Report </span>
         </div>
         <br></br>

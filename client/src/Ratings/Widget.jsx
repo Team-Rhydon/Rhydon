@@ -40,11 +40,19 @@ function RatingsWidget(props) {
     //separate breakdown component?
     <div className="RatingWidget" style={{border: "1px solid black"}}>
       <div style={{width: "20%"}}>
-        <RatingBreakdown setFilter={setFilter} filter={filter} isFiltered={isFiltered} />
+        <RatingBreakdown
+          setFilter={setFilter}
+          filter={filter}
+          isFiltered={isFiltered}
+        />
         <ProductBreakdown traits={characteristics}/>
       </div>
       <div className="reviewBody" style={{width: "80%", height:"100%"}}>
-        <ReviewList product_id={product.product_id} filter={filter} isFiltered={isFiltered} />
+        <ReviewList
+          product_id={product.product_id}
+          filter={filter}
+          isFiltered={isFiltered}
+        />
       </div>
     </div>
   )

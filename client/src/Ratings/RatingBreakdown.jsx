@@ -35,7 +35,10 @@ function RatingBreakdown(props) {
         <p>Rating and Reviews </p>
         <span>
           <h2>{rating.toFixed(2)}
-          {rating ? <StarRating rating={rating.toFixed(2)}/> : "loading"}
+          {rating
+            ? <StarRating rating={rating.toFixed(2)}/>
+            : "loading"
+          }
           </h2>
         </span>
       </div>

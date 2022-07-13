@@ -3,12 +3,18 @@ import React from "react";
 class SortDrop extends React.Component{
   constructor(props){
     super(props);
-    this.state = {value: "relevance"}
+    this.state = {
+      value: 'relevant'
+    }
+    this.handleChange= this.handleChange.bind(this);
   }
 
   //needs a handlechange and handlesubmit
-  handleChange(){
-
+  handleChange(event){
+    event.preventDefault();
+    this.setState({
+      value: event.target.value
+    }, this.props.sort(event.target.value))
   }
 
   render() {
@@ -19,7 +25,7 @@ class SortDrop extends React.Component{
         <label> {this.props.total} Reviews sorted by...
           {/* onChange eventlistener on select */}
           <select value={this.state.value} onChange={this.handleChange} >
-            <option value="relevance">relevance</option>
+            <option value="relevant">relevant</option>
             <option value="helpful">helpful</option>
             <option value="newest">newest</option>
           </select>

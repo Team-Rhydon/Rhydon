@@ -45,6 +45,16 @@ function ReviewList(props) {
       .catch(err => console.log(err));
   }, [page, props.product_id])
 
+  useEffect(()=>{
+    axios.get('/reviews', params)
+      .then(response => {
+        setStorage(response.data.results);
+        setPage(1);
+        })
+
+      .catch(err => console.log(err));
+  }, [sortStyle])
+
   function handleClick(){
     setReviews(prevReviews=>{
       return prevReviews + 2;
@@ -83,9 +93,18 @@ function ReviewList(props) {
       {/* button will cause the next two tiles to appear by expanding the list (if they exist) */}
       {/* if there are enough reviews to fill up the entire page view, review list should be scrollable */}
       <div className="ReviewListFooter" style={{display: "flex"}}>
-        {reviews >= page*count ? null :<div id="review-btn"><button onClick={handleClick}>More Reviews</button></div>}
+        {reviews >= page*count
+          ? null
+          :<div id="review-btn">
+            <button onClick={handleClick}>More Reviews</button>
+          </div>
+        }
         <button onClick={()=>setShow(true)} > Modal/Review this Product</button>
-        <Modal children={<NewReviewForm />} onClose={()=>setShow(false)} show={show} />
+        <Modal
+          children={<NewReviewForm />}
+          onClose={()=>setShow(false)}
+          show={show}
+        />
       </div>
     </div>
   )

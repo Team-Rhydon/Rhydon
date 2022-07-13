@@ -20,7 +20,6 @@ class NewReviewForm extends React.Component{
       reviewer_name: '',
       reviewer_email: ''
     }
-    // this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.setStarRating = this.setStarRating.bind(this);
     this.setRecommended = this.setRecommended.bind(this);
@@ -166,7 +165,7 @@ class NewReviewForm extends React.Component{
           {!page[this.state.page] ? "loading" : page[this.state.page]}
           <div style={{overflow: "auto"}}>
             <div style={{float: "right"}}>
-              {this.state.page > 1 ?<button type="button" id="prevBtn" onClick={()=>this.handleClick(-1)} >Previous</button>: null}
+              {this.state.page > 1 ?<button type="button" id="prevBtn" onClick={()=>this.handleClick(-1)}>Previous</button>: null}
               {this.state.page < 8 ?<button type="button" id="nextBtn" onClick={()=>this.handleClick(1)}>Next</button> : null}
             </div>
           </div>
