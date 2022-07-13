@@ -67,6 +67,7 @@ h1 {
 }
 
 .related .carousel .slide .product-card {
+  position: relative;
   border: 1px solid grey;
   max-width: 100%;
   margin: 4px;
@@ -154,8 +155,8 @@ cursor: pointer;
 
 .related .star {
   position: absolute;
-  top: 15px;
-  right: 155px;
+  top: 2%;
+  right: 8%;
   cursor: pointer;
   color: white;
 }
@@ -275,13 +276,18 @@ cursor: pointer;
 
   .remove-outfit {
     position: absolute;
-    top: 15px;
-    right: 155px;
+    top: 2%;
+    right: 8%;
     cursor: pointer;
     color: black;
     font-size: 20px;
+  }
+
+  .remove-outfit-prev:hover {
+    opacity: 1;
   }
   .remove-outfit:before {
     content: "\2297";
     z-index: 10;
   }
+
