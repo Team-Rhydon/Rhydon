@@ -2,19 +2,28 @@ import React, {useState, useEffect} from 'react';
 import Carousel from './Carousel.jsx';
 import MiniSlides from './MiniSlides.jsx';
 
-let ImageGallery = ({productStyles, selectedStyle, setSelectedStyle}) => {
-  if (!selectedStyle || !productStyles) return null
+let ImageGallery = ({selectedStyle}) => {
+  if (!selectedStyle) return null
 
-  let images = selectedStyle.photos
+  let gallery = selectedStyle.photos
 
   const [currentImage, setCurrentImage] = useState({
     count: 0,
-    url: images[0].url
+    url: gallery[0].url
   });
 
+  const commonProps = {
+    gallery: gallery,
+    currentImage,
+    setCurrentImage
+  }
+
   return(<>
-    <Carousel gallery={images} currentImage={currentImage} setCurrentImage={setCurrentImage} className="image"/>
-    <MiniSlides gallery={images} setCurrentImage={setCurrentImage} currentImage={currentImage}/>
+    <Carousel className="image" {...commonProps}/>
+    <MiniSlides {...commonProps}/>
+      {/* // gallery={gallery}
+      // setCurrentImage={setCurrentImage}
+      currentImage={currentImage} */}
   </>)
 }
 

@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 
-
-
 let Cart = ({showCart, cart, setCart, updateCart}) => {
   if (!showCart || !cart) return null
 
@@ -28,10 +26,10 @@ let Cart = ({showCart, cart, setCart, updateCart}) => {
         {checkout.map((product, i) => {
           return (<div key={i} >
             <img src={product.photo} witdh="25" height="25"/>
-            <span>{product.name} </span>
-            <span>{product.price} </span>
-            <span>{product.quantity} </span>
-            <span>{product.size} </span>
+            <span>Product : {product.name} </span>
+            <span>Price : ${product.price} </span>
+            <span>Quantity : {product.quantity} </span>
+            <span>Size : {product.size} </span>
             <span><button onClick={() => rmItem(i)}>Remove</button></span>
           </div>)
         })}

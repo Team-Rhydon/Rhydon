@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import SalePrice from './SalePrice.jsx';
 import Thumbnail from './Thumbnail.jsx';
 
-let StyleSelector = ({get, selectedStyle, setSelectedStyle, productStyles}) => {
+let StyleSelector = ({selectedStyle, setSelectedStyle, productStyles}) => {
   if (!selectedStyle || !productStyles) return(<></>)
 
   let salePrice = selectedStyle.sale_price

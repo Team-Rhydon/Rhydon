@@ -8,7 +8,7 @@ const MODAL_STYLES = {
   left: '50%',
   trasnform: 'translate(-50%, -50%)',
   backgroundColor: '#FFF',
-  padding: '50px',
+  padding: '100px',
   zIndex: 1000
 }
 
@@ -22,8 +22,8 @@ const OVERLAY_STYLES = {
   zIndex: 1000
 }
 
-let ImageModal = ({show, setImageModal, gallery}) => {
-  if (!show) return null
+let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setImageModal}) => {
+  if (!showImageModal) return null
   return (
     <>
     <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />

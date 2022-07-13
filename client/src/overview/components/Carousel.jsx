@@ -7,6 +7,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
   if (!gallery.length) return null;
 
   const[showImageModal, setImageModal] = useState(false);
+
   let length = gallery.length - 1
 
   const nextSlide = () => {
@@ -36,6 +37,8 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
     }));
   }, [gallery])
 
+  const passProps = {gallery, currentImage, setCurrentImage, showImageModal, setImageModal};
+
   return (
     <section className="slider">
       <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
@@ -43,11 +46,11 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
       {gallery.map(({url}, i) => {
         return (
           <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
-            {i === currentImage.count && (<img onClick={() => setImageModal(true)} src={url} key={i} width="800" height="500"/>)}
+            {i === currentImage.count && (<img onClick={() => setImageModal(true)} src={url} key={i} width="800" height="600"/>)}
           </div>
         )
       })}
-      <ImageModal show={showImageModal} setImageModal={setImageModal} gallery={gallery}/>
+      <ImageModal {...passProps}/>
     </section>
   )
 }

@@ -22,11 +22,11 @@ let Overview = (props) => {
 
   useEffect(() => {
     setProductID(props.id || 40351)
-  }, [productID])
+  }, [props.id])
 
   return (<>
-    <Styles get={get.bind(this)}/>
-    <ProductInfo get={get.bind(this)} />
+    <Styles get={get}/>
+    <ProductInfo get={get} />
   </>)
 }
 

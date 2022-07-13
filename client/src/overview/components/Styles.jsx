@@ -17,20 +17,16 @@ let Styles = ({get}) => {
       })
   }, [])
 
-  const commonProps = {
-    productStyles,
-    selectedStyle,
-    setSelectedStyle
-  }
+  const commonProps = {productStyles, selectedStyle, setSelectedStyle}
 
   return(
     <div>
-      <ImageGallery {...commonProps}
+      <ImageGallery selectedStyle={selectedStyle}/>
+      <StyleSelector {...commonProps}
       // productStyles={productStyles}
       // selectedStyle={selectedStyle}
       // setSelectedStyle={setSelectedStyle}
       />
-      <StyleSelector {...commonProps}/>
       <AddToCart {...commonProps}/>
     </div>
   )
