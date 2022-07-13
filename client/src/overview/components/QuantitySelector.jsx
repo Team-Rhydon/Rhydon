@@ -19,7 +19,6 @@ let QuantitySelector = ({size, quantity, setPurchase}) => {
   useEffect(() => {
     if (amount > stock) {
       setPurchase(prevState => {
-        console.log(prevState)
         return {
           ...prevState,
           size: size,
@@ -29,7 +28,6 @@ let QuantitySelector = ({size, quantity, setPurchase}) => {
       })
     } else {
       setPurchase(prevState => {
-        console.log(prevState)
         return {
           ...prevState,
           size: size,
@@ -40,14 +38,14 @@ let QuantitySelector = ({size, quantity, setPurchase}) => {
     }
   }, [size, quantity])
 
-  return (<>
+  return (<div>
     <select onChange={e => changeAmount.call(this, e)}>
       {[...Array(stock)].map((nothing, i) => {
         return (
           <option key={i} value={i + 1}>{i + 1}</option>
         )
       })}</select>
-     </> )
+     </div> )
 }
 
 export default QuantitySelector;

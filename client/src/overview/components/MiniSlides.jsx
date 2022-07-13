@@ -1,10 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
 
-
 let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
 
   const [slide, setSlide] = useState(gallery);
+
+  let changeImage = (imageCount) => {
+    setCurrentImage({
+      count: imageCount,
+      url: gallery[imageCount].url
+    })
+  }
 
   useEffect(() => {
     setSlide(gallery);
@@ -12,24 +18,10 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
 
   return (
     <section className="miniSlider">
-    {slide.map((obj, i) => {
-      if (i === currentImage.count) {
-        console.log(obj.url === currentImage.url, i, currentImage.count);
-        return <img src={obj.url} key={obj.url} width="100" height="100"/>
-      }
-      if (i < 7) {
-        return <img src={obj.url} key={obj.url} width="70" height="70"/>
-      }
-      if (i > slide.length - 7) {
-        return <img src={obj.url} key={obj.url} width="70" height="70"/>
-      }
-      })}
+    {slide.map((obj, i) => { return <div key={i} onClick={() => changeImage(i)}>
+      {i === currentImage.count ? <img src={obj.url} key={obj.url} width="100" height="100"/> : <img src={obj.url} key={obj.url} width="70" height="70"/>}
+    </div>})}
     </section>
   )
 }
 export default MiniSlides;
-  // if (url === currentImage.url && i - 1 === currentImage.count - 1) {
-  //   return <img src={url} key={i} width="100" height="100"/>
-  // } else {
-  //
-  // }(i > currentImage.count - 2 && i < currentImage.count + 2) ||

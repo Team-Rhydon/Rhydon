@@ -16,7 +16,6 @@ let ProductInfo = (props) => {
     .then(({data}) => {
       setProduct(prevState => {
         return {
-          ...prevState,
           name: data.name,
           category: data.category,
           description: data.description,

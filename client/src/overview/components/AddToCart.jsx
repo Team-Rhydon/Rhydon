@@ -1,21 +1,39 @@
 import React, {useEffect, useState} from 'react';
 import SizeSelector from './SizeSelector.jsx'
+import Cart from './Cart.jsx'
 
 let AddToCart = ({selectedStyle}) => {
   if (!selectedStyle) return null;
 
-  let {name, original_price, sale_price} = selectedStyle;
+  let {name, original_price, sale_price, photos} = selectedStyle;
 
   const [purchase, setPurchase] = useState({
     complete: false,
     name: name,
-    price: original_price,
-    salePrice: sale_price
+    price: sale_price || original_price,
+    photo: photos[0].url
   });
+  const [cart, updateCart] = useState([])
+  const [showCart, setCart] = useState(false);
+
+  let fillCart = () => {
+    setCart(true)
+    updateCart(prevState => {
+      console.log('hi');
+      return [{
+        name: purchase.name,
+        photo: purchase.photo,
+        price: purchase.price,
+        quantity: purchase.quantity,
+        size: purchase.size
+      }, ...prevState]
+    })
+  }
 
   return (<div>
-    <SizeSelector selectedStyle={selectedStyle} setPurchase={setPurchase.bind(this)}/>
-    <button disabled={!purchase.complete}>Add To Cart</button>
+    <SizeSelector selectedStyle={selectedStyle} setPurchase={setPurchase}/>
+    <button onClick={fillCart} disabled={!purchase.complete}>Add To Cart</button>
+    {showCart ? <Cart showCart={showCart} setCart={setCart} cart={cart} updateCart={updateCart}/> : null}
   </div>)
 }
 

@@ -23,10 +23,6 @@ let Styles = ({get}) => {
     setSelectedStyle
   }
 
-  let liftToCart = () => {
-
-  }
-
   return(
     <div>
       <ImageGallery {...commonProps}
