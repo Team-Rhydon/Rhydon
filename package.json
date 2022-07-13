@@ -28,6 +28,13 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "dev-server": "^0.2.0",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "nodemon": "^2.0.19",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
@@ -44,5 +51,6 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "keywords": []
 }

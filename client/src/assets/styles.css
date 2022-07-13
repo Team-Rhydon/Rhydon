@@ -1,39 +1,287 @@
-.stars {
-position: relative;
-float: left;
-}
-
-.stars:before {
-  content: "\2606\2606\2606\2606\2606";
-  z-index: 1;
-  float: left;
-}
-
-.stars .filled-stars {
-position: absolute;
-z-index: -1;
-float: left;
-overflow: hidden;
-width: 50%;
-}
-
-.stars .filled-stars:after {
-  content: "\2605\2605\2605\2605\2605";
-  color: rgb(255,200,0);
-}
 
 p {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  color: blue;
 }
 
 h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  color: blue;
 }
 
-.related-card {
-  float: left;
+.app {
+  position: relative;
 }
+.related, .outfits {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.related .title {
+  font-size: 20px;
+}
+
+.related .carousel {
+  display: flex;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  height: 400px;
+}
+.related .carousel-inner {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-left: 50px;
+  margin-right: 50px;
+  overflow: hidden;
+}
+
+.related .carousel .carousel-next, .carousel .carousel-prev {
+  position: absolute;
+  font-size: 20px;
+  z-index: 10;
+  padding: 16px;
+  color: grey;
+  background: white;
+  opacity: .6;
+  cursor: pointer;
+  text-align: center;
+}
+
+.related .carousel .carousel-next:hover, .carousel .carousel-prev:hover {
+  opacity: 1;
+}
+
+.related .carousel .carousel-next {
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.related .carousel .carousel-prev {
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.related .carousel .slide .product-card {
+  border: 1px solid grey;
+  max-width: 100%;
+  margin: 4px;
+  padding: 4px;
+  height: 350px;
+  display: inline;
+}
+
+.related .carousel .slide .product-card h1 {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  font-size: 24px;
+  height: 15%;
+}
+
+.related .carousel .slide .product-card p{
+  text-align: left;
+  font-size: 16px;
+  height: 5%;
+}
+
+.related .carousel .slide {
+  display: flex;
+  position: absolute;
+  width: 25%;
+  transition: all .3s linear;
+}
+
+.related .carousel .slide.pleft {
+  left: -25%;
+}
+
+.related .carousel .slide.p1 {
+  left: 0%;
+}
+
+.related .carousel .slide.p2 {
+  left: 25%;
+}
+
+.related .carousel .slide.p3 {
+  left: 50%;
+}
+
+.related .carousel .slide.p4 {
+  left: 75%;
+}
+
+.related .carousel .slide.pright {
+  left: 100%;
+}
+
+.related .carousel .thumb {
+/* stretched */
+/* position: relative;
+width: 200px;
+height: 200px;
+cursor: pointer;
+min-width: 100px;
+background: center; */
+
+position: relative;
+margin: 0 auto;
+width: 200px;
+background-color: white;
+height: 200px;
+object-fit: cover;
+cursor: pointer;
+}
+
+.related .carousel .thumb.outfit{
+  cursor: auto;
+}
+
+.related .carousel .description {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15;
+}
+
+
+.related .star {
+  position: absolute;
+  top: 15px;
+  right: 155px;
+  cursor: pointer;
+  color: white;
+}
+  .related .star:before {
+    content: "\2605";
+    z-index: 10;
+  }
+
+  .related .star:hover {
+    color: rgb(219, 49, 43);
+  }
+
+.stars {
+  position: relative;
+  float: left;
+  }
+
+  .stars:before {
+    content: "\2606\2606\2606\2606\2606";
+    z-index: 1;
+    float: left;
+  }
+
+  .stars .filled-stars {
+  position: absolute;
+  z-index: -1;
+  float: left;
+  overflow: hidden;
+  width: 50%;
+  }
+
+  .stars .filled-stars:after {
+    content: "\2605\2605\2605\2605\2605";
+    color: rgb(255,200,0);
+  }
+
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 20;
+    margin: auto;
+  }
+
+  .modal .modal-background {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    margin: auto;
+  }
+
+  .modal .modal-content {
+    width: 30%;
+    background-color: white;
+    height: 30%;
+    border: 2px solid black;
+    text-align: center;
+    margin: auto;
+
+  }
+
+  .modal.hidden {
+    display: none;
+  }
+
+  .preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 20;
+  }
+
+  .preview-background {
+    width: 100%;
+    height: 100%;
+    /* background: rgba(60,60,60, .5); */
+    background: transparent;
+    text-align: center;
+  }
+
+  .preview-content {
+    margin: 0 auto;
+    width: 500px;
+    background-color: white;
+    height: 500px;
+    object-fit: cover;
+    border: 2px solid black;
+  }
+
+  .preview.hidden {
+    display: none;
+  }
+
+
+  .add-outfit {
+    position: absolute;
+    font-size: 20px;
+    z-index: 10;
+    padding: 16px;
+    color: grey;
+    background: white;
+    opacity: .6;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .add-outfit-prev:hover {
+    opacity: 1;
+  }
+
+  .remove-outfit {
+    position: absolute;
+    top: 15px;
+    right: 155px;
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+  }
+  .remove-outfit:before {
+    content: "\2297";
+    z-index: 10;
+  }
