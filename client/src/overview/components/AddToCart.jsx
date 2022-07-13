@@ -19,7 +19,6 @@ let AddToCart = ({selectedStyle}) => {
   let fillCart = () => {
     setCart(true)
     updateCart(prevState => {
-      console.log('hi');
       return [{
         name: purchase.name,
         photo: purchase.photo,

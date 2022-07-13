@@ -6,9 +6,9 @@ const MODAL_STYLES = {
   position: 'fixed',
   top: '50%',
   left: '50%',
-  trasnform: 'translate(-50%, -50%)',
+  transform: 'translate(-50%, -50%)',
   backgroundColor: '#FFF',
-  padding: '100px',
+  padding: '50px',
   zIndex: 1000
 }
 
@@ -30,6 +30,7 @@ let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setIm
     <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />
     <div style={MODAL_STYLES}>
       <button onClick={() => setImageModal(false)}> close</button>
+      <img src={currentImage.url}/>
       </div>
     </>
   )
