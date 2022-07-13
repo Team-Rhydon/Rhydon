@@ -2,7 +2,7 @@ import React, {Component, useState} from 'react';
 import axios from 'axios';
 import StarRating from './StarRating.jsx';
 
-function OutfitCard({outfit, position, id, addToOutfit}) {
+function OutfitCard({outfit, position, id, addToOutfit, removeOutfit}) {
   const {
     category, features, img, url, name, originalPrice, rating, salePrice, thumbnail,
   } = outfit;
@@ -12,7 +12,7 @@ function OutfitCard({outfit, position, id, addToOutfit}) {
       <div className='product-card'>
         <img className='thumb outfit' src={thumbnail}/>
         <div className="remove-outfit" onClick={(e) => {
-          removeOutfit(e, id);
+          removeOutfit(e, id, position);
         }}
         />
         <div className="description">

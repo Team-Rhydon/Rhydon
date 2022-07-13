@@ -3,7 +3,7 @@ import axios from 'axios';
 import OutfitCard from './OutfitCard.jsx';
 
 
-function Outfit({productStyle, outfits, addToOutfit, carouselPos}) {
+function Outfit({productStyle, outfits, addToOutfit, carouselPos, removeOutfit}) {
   function moveOutfitLeft(e) {
     e.preventDefault();
     if (document.getElementsByClassName('slide pleft outfit').length > 0) {
@@ -55,6 +55,7 @@ function Outfit({productStyle, outfits, addToOutfit, carouselPos}) {
           {Object.keys(outfits).map((id, index) => <OutfitCard
             key={id}
             addToOutfit={addToOutfit}
+            removeOutfit={removeOutfit}
             id={id}
             outfit={outfits[id]}
             position={carouselPos[id]} />)}

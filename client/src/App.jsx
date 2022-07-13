@@ -50,12 +50,47 @@ function App() {
     }
   }
 
+  function removeOutfit(e, id, position) {
+    e.preventDefault();
+    if (id in outfits) {
+      const newOutfit = {...outfits};
+      delete newOutfit[id];
+      setOutfit(newOutfit);
+
+      const swaps = {
+        p1: ['p2', 'p3', 'p4', 'pright'],
+        p2: ['p3', 'p4', 'pright'],
+        p3: ['p4', 'pright'],
+        p4: ['pright'],
+      };
+      const positions = {
+        p2: 'p1',
+        p3: 'p2',
+        p4: 'p3',
+        pright: 'p4',
+      };
+      const carouselPoscopy = {...carouselPos};
+      delete carouselPoscopy[id];
+
+      const positionsToSearch = swaps[position];
+      for (let i = 0; i < positionsToSearch.length; i++) {
+        const curPosSearch = positionsToSearch[i];
+        for (const id in carouselPoscopy) {
+          if (carouselPoscopy[id] === curPosSearch) {
+            carouselPoscopy[id] = positions[carouselPos[id]];
+          }
+        }
+      }
+      setCarouselPos(carouselPoscopy);
+    }
+  }
+
 
   return (
     <div className="app">
       {Object.keys(product).length !== 0 ? [
         <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
-        <Outfit productStyle={productStyle.data} outfits={outfits} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
+        <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
       ] : null}
     </div>
   );
