@@ -24,6 +24,7 @@ const OVERLAY_STYLES = {
 
 let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setImageModal}) => {
   if (!showImageModal) return null
+
   return (
     <>
     <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />

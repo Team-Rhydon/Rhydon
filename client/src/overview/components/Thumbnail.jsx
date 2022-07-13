@@ -1,6 +1,6 @@
 import React from 'react';
 
-let Thumbnail = ({style, productStyles, setSelectedStyle}) => {
+let Thumbnail = ({productStyles, setSelectedStyle}) => {
 
   let changeStyle = (style) => {
     setSelectedStyle(prevState => style)

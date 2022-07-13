@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
-import MiniSlides from './MiniSlides.jsx';
 import ImageModal from './ImageModal.jsx';
 
 let Carousel = ({gallery, currentImage, setCurrentImage}) => {
