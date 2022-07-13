@@ -1,6 +1,4 @@
-import React, { Component} from "react";
-import "./app.css";
-import RatingsWidget from "./Ratings/Widget.jsx";
+import React, {Component} from "react";
 import Related from './Related/Related.jsx';
 
 class App extends Component{
