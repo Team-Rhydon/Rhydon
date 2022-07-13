@@ -5,8 +5,8 @@ import Styles from "./components/Styles.jsx";
 import "../assets/styles.css";
 
 let Overview = (props) => {
-   const [productID, setProductID] = useState(40351); // yeasy
-  // const [productID, setProductID] = useState(40346); // joggers
+  //  const [productID, setProductID] = useState(40351); // yeasy
+  const [productID, setProductID] = useState(40346); // joggers
   // const [productID, setProductID] = useState(40344); // onesie
   // const [productID, setProductID] = useState(40376); // oout of stock size
   // const [productID, setProductID] = useState(40348); // air force 1's

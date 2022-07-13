@@ -25,10 +25,12 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
       let skuNumber = selectedStyle.skus[key]
       let buttonSize = skuNumber.size
       let quantity = skuNumber.quantity
-      if (key == 'null' || !key || !quantity) return <button key={i} disabled>{<s>{buttonSize}</s> || 'Out Of Stock'}</button>
+      if (key == 'null' || !key || !quantity) {
+        return <button key={i} disabled>{{buttonSize} || 'Out Of Stock'}</button>
+      }
       return (<button key={key} onClick={changeSku.bind(this, skuNumber)}>{buttonSize}</button>)
     })}
-    {sku ? <QuantitySelector {...sku} setPurchase={setPurchase}/> : null}
+      {sku ? <QuantitySelector {...sku} setPurchase={setPurchase}/> : null}
   </div>)
 }
 
