@@ -8,10 +8,18 @@ const Promise = require('bluebird');
 const controllers = require('./controllers.js');
 const helpers = require('./helpers.js');
 
+<<<<<<< HEAD
 const {
   getReviews, getStyles, getRelated, getDetails,
 } = controllers;
 const { averageRating, promiseAllRelated, filterRelated, promiseAllDetails, filterDetails } = helpers;
+=======
+let {getReviews, getStyles, getRelated, getDetails} = controllers;
+
+// Overview Router
+overviewRouter = require('./overviewRouter.js');
+
+>>>>>>> main
 // Setup Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -22,7 +30,8 @@ axios.defaults.baseURL = process.env.BASE_URL;
 // Adds API key to all requests
 axios.defaults.headers.common.Authorization = process.env.API_KEY;
 
-// Setup Routes
+// set up overview router
+app.use('/overview', overviewRouter);
 
 // Get related items
 app.get('/related', (req, res) => {

@@ -13,6 +13,7 @@ function App() {
     updateCurrentProduct(null, '40345');
   }, []);
 
+<<<<<<< HEAD
   function updateCurrentProduct(e, id) {
     const params = {params: {id: id}};
     axios.get('/details', params).then((data) => {
@@ -48,6 +49,15 @@ function App() {
       carouselPoscopy[id] = 'p1';
       setCarouselPos(carouselPoscopy);
     }
+=======
+class App extends Component{
+  render(){
+    return(
+      <div className="App">
+        <h1> Rhydon Store </h1>
+      </div>
+    );
+>>>>>>> main
   }
 
   function removeOutfit(e, id, position) {
