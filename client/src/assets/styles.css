@@ -13,6 +13,7 @@
   position: absolute;
   z-index: -1;
   float: left;
+<<<<<<< HEAD
   overflow: hidden;
   width: 50%;
   }
@@ -152,3 +153,12 @@
     justify-content: space-around;
   }
 
+=======
+}
+
+.miniSlider {
+  height: 12vh;
+  justify-content: left;
+  display: flex;
+}
+>>>>>>> main
