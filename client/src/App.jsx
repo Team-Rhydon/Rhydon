@@ -11,6 +11,7 @@ function App() {
   const [productStyle, setProductStyle] = useState({});
   const [outfits, setOutfit] = useState({});
   const [carouselPos, setCarouselPos] = useState({});
+
   useEffect(() => {
     updateCurrentProduct(null, '40345');
   }, []);
