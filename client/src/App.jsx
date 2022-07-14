@@ -86,12 +86,12 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Overview /> */}
-      {Object.keys(product).length !== 0 ? [
+      <Overview {...product}/>
+      {/* {Object.keys(product).length !== 0 ? [
         <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
         <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
-      ] : null}
-      <RatingsWidget product={product.data} />
+      ] : null} */}
+      {/* <RatingsWidget product={product.data} /> */}
     </div>
   );
 }

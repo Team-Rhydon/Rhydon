@@ -5,16 +5,15 @@ import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
 
 
-let Styles = ({get}) => {
-  const [productStyles, setProductStyles] = useState()
+let Styles = ({styles}) => {
+  let {results} = styles;
+
+  const [productStyles, setProductStyles] = useState();
   const [selectedStyle, setSelectedStyle] = useState();
 
   useEffect(() => {
-    get('/styles')
-      .then(({data}) => {
-        setSelectedStyle(data[0])
-        setProductStyles(data)
-      })
+    setSelectedStyle(results[0])
+    setProductStyles(results)
   }, [])
 
   const commonProps = {productStyles, selectedStyle, setSelectedStyle}
