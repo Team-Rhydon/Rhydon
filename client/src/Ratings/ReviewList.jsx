@@ -93,7 +93,7 @@ function ReviewList(props) {
       {/* button will cause the next two tiles to appear by expanding the list (if they exist) */}
       {/* if there are enough reviews to fill up the entire page view, review list should be scrollable */}
       <div className="ReviewListFooter" style={{display: "flex"}}>
-        {reviews >= page*count
+        {reviews > storage.length
           ? null
           :<div id="review-btn">
             <button onClick={handleClick}>More Reviews</button>
@@ -101,7 +101,8 @@ function ReviewList(props) {
         }
         <button onClick={()=>setShow(true)} > Modal/Review this Product</button>
         <Modal
-          children={<NewReviewForm />}
+          title={"Review This Product"}
+          children={<NewReviewForm product={props.product} />}
           onClose={()=>setShow(false)}
           show={show}
         />

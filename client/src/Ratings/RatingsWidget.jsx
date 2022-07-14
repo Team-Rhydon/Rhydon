@@ -49,6 +49,7 @@ function RatingsWidget(props) {
       </div>
       <div className="reviewBody" style={{width: "80%", height:"100%"}}>
         <ReviewList
+          product={props.product}
           product_id={product.product_id}
           filter={filter}
           isFiltered={isFiltered}

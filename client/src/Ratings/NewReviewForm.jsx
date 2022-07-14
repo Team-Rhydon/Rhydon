@@ -12,7 +12,7 @@ class NewReviewForm extends React.Component{
     this.state = {
       page: 1,
       rating: 0,
-      recommended: false,
+      recommended: null,
       characteristics: {},
       summary: '',
       body: '',
@@ -31,6 +31,9 @@ class NewReviewForm extends React.Component{
     this.sendPostRequest = this.sendPostRequest.bind(this);
   }
 
+  componentDidUpdate() {
+
+  }
   setChars(value){
     this.setState({
       characteristics: value
@@ -124,7 +127,7 @@ class NewReviewForm extends React.Component{
         <p>{this.state.rating === 0 ? null : this.state.rating + " STAR RATING -"}  {[null, "Poor", "Fair", "Average", "Good", "Great!"][this.state.rating]}</p>
         </div>),
       2:(<div className="tab"> Do you recommend this product?
-         <p>{this.state.recommended ? "YES" : "NO"}</p>
+         <p>{this.state.recommended === null ? null : this.state.recommended ? "YES" : "NO"}</p>
          <br></br>
           <button
             type="button"
@@ -157,16 +160,25 @@ class NewReviewForm extends React.Component{
           <button onClick={this.sendPostRequest}>Submit</button>
         </>
     };
-
+    let initialState = {
+      1: 0,
+      2: null,
+      3: {},
+      4: '',
+      5: '',
+      6: [],
+      7: '',
+      8: ''
+    };
     return (
         <div id="reviewForm">
-          <label> Tell us about the **product name**!</label>
+          <label> Tell us about the {this.props.product.name}</label>
           <br></br>
           {!page[this.state.page] ? "loading" : page[this.state.page]}
           <div style={{overflow: "auto"}}>
             <div style={{float: "right"}}>
               {this.state.page > 1 ?<button type="button" id="prevBtn" onClick={()=>this.handleClick(-1)}>Previous</button>: null}
-              {this.state.page < 8 ?<button type="button" id="nextBtn" onClick={()=>this.handleClick(1)}>Next</button> : null}
+              {initialState[page] === this.state.ratings ? null : this.state.page < 8 ?<button type="button" id="nextBtn" onClick={()=>this.handleClick(1)}>Next</button> : null}
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ const Modal = (props) => {
     <div className="modal" onClick={props.onClose}>
       <div className="modal-content" onClick={event=> event.stopPropagation()}>
         <div className="modal-header">
-          {/* Write Your Review! */}
+          {props.title}
         </div>
         <div className="modal-body">
           {props.children}
