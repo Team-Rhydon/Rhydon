@@ -37,3 +37,9 @@ h1 {
 .related-card {
   float: left;
 }
+
+.miniSlider {
+  height: 12vh;
+  justify-content: left;
+  display: flex;
+}
