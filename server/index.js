@@ -16,7 +16,6 @@ overviewRouter = require('./overviewRouter.js');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-
 // Creates base url for API
 axios.defaults.baseURL = process.env.BASE_URL;
 
