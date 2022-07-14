@@ -6,27 +6,39 @@ const axios = require('axios');
 const app = express();
 const Promise = require('bluebird');
 const controllers = require('./controllers.js');
+const reviewRouter = require('./routes/reviews.js');
 const helpers = require('./helpers.js');
 
 const {getReviews, getStyles, getRelated, getDetails,} = controllers;
 const { averageRating, promiseAllRelated, filterRelated, promiseAllDetails, filterDetails } = helpers;
 
 // Overview Router
-overviewRouter = require('./overviewRouter.js');
+const overviewRouter = require('./overviewRouter.js');
 
 // Setup Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+<<<<<<< HEAD
 // Creates base url for API
 axios.defaults.baseURL = process.env.BASE_URL;
 
 // Adds API key to all requests
 axios.defaults.headers.common.Authorization = process.env.API_KEY;
+=======
 
+//Creates base url for API
+ axios.defaults.baseURL = process.env.BASE_URL;
+
+// // Adds API key to all requests
+axios.defaults.headers.common['Authorization'] = process.env.API_KEY;
+>>>>>>> 0388dca0260346029c03a1274208098b7ac5d926
+
+// Setup Routes
+app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
 // set up overview router
-app.use('/overview', overviewRouter);
 
+app.use('/overview', overviewRouter)
 // Get related items
 app.get('/related', (req, res) => {
   const product_id = req.query.id;

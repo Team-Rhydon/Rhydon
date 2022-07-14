@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 p {
   font-family: 'Lato', sans-serif;
@@ -318,3 +319,169 @@ cursor: pointer;
     z-index: 10;
   }
 
+=======
+.stars {
+  position: relative;
+  float: left;
+  }
+
+  .stars:before {
+    content: "\2606\2606\2606\2606\2606";
+    z-index: 1;
+    float: left;
+  }
+
+  .stars .filled-stars {
+  position: absolute;
+  z-index: -1;
+  float: left;
+<<<<<<< HEAD
+  overflow: hidden;
+  width: 50%;
+  }
+
+  .star-rating {
+    display: inline-block;
+  }
+
+  .stars .filled-stars:after {
+    content: "\2605\2605\2605\2605\2605";
+    color: rgb(255,200,0);
+  }
+
+  p {
+    color: rgb(0, 0, 0);
+  }
+
+  h1 {
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+  }
+
+  .meter {
+    height: 10px;
+    position: relative;
+    background: rgb(136, 135, 135);
+    border-radius: 25px;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: rgb(69, 244, 0);
+    box-shadow:
+      inset 0 2px 9px  rgba(255,255,255,0.3),
+      inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .RatingWidget {
+    display: flex;
+  }
+
+  .ReviewHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2px;
+    padding-right: 2px;
+  }
+
+  .ReviewContainer-scrollable {
+    overflow-x: hidden;
+    max-height: 95vh;
+    padding-right: 1px;
+  }
+
+  .indicator {
+    height: 15px;
+    position: relative;
+    background: blue;
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .indicator > span {
+    position: relative;
+    display: inline-flex;
+    height: 100%;
+    /* width: 2px; */
+    background-color: black;
+  }
+
+  .ReviewsList-Header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #review-btn{
+    display: flex;
+    justify-content: center;
+    height: 1.5em;
+    width: 20%;
+  }
+
+  .ReviewListFooter {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #reviewForm {
+    background-color: grey;
+    margin: 100px auto;
+    /* padding: 40px; */
+    width: 70%;
+    min-width: 300px;
+    border: 1px solid grey;
+  }
+
+  .star input {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #aaaaaa;
+  }
+
+  input.invalid {
+    background-color: #ffdddd;
+  }
+
+  #star-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .on {
+    color: rgb(255, 247, 0);
+  }
+  .off {
+    color: #ccc;
+  }
+
+  .New-Review-Summary {
+    width: 75%;
+    height: 40px;
+  }
+
+  .ReviewTile {
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+=======
+}
+
+.miniSlider {
+  height: 12vh;
+  justify-content: left;
+  display: flex;
+}
+>>>>>>> main
+>>>>>>> 0388dca0260346029c03a1274208098b7ac5d926
