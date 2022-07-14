@@ -10,7 +10,7 @@ const reviewRouter = require('./routes/reviews.js');
 const helpers = require('./helpers.js');
 
 const {getReviews, getStyles, getRelated, getDetails,} = controllers;
-const { averageRating, promiseAllRelated, filterRelated, promiseAllDetails, filterDetails } = helpers;
+const { averageRating, promiseAllRelated, filterRelated, promiseAllDetails, promiseAllOverview, filterDetails } = helpers;
 
 // Overview Router
 const overviewRouter = require('./overviewRouter.js');
@@ -23,13 +23,13 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 axios.defaults.baseURL = process.env.BASE_URL;
 
 // Adds API key to all requests
-axios.defaults.headers.common.Authorization = process.env.JAPI_KEY;
+axios.defaults.headers.common.Authorization = process.env.API_KEY;
 
 // Setup Routes
-app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
+// app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
 // set up overview router
 
-app.use('/overview', overviewRouter)
+// app.use('/overview', overviewRouter)
 // Get related items
 
 app.get('/related', (req, res) => {
@@ -47,6 +47,20 @@ app.get('/details', (req, res) => {
   const product_id = req.query.id;
   getDetails(product_id).then(({data}) => {
     res.status(201).send(data);
+  }).catch((err) => {
+    console.log(err);
+    res.status(404).send(err);
+  });
+});
+
+app.get('/overview', (req, res) => {
+  const product_id = req.query.id;
+  promiseAllOverview(product_id).then((data) => {
+    let resObj = {};
+    resObj['reviews'] = data[0].data;
+    resObj['styles'] = data[1].data;
+    resObj['details'] = data[2].data;
+    res.status(201).send(resObj);
   }).catch((err) => {
     console.log(err);
     res.status(404).send(err);

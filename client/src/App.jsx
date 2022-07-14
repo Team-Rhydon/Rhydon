@@ -7,25 +7,19 @@ import axios from 'axios';
 import _ from 'lodash';
 
 function App() {
-  const [product, setProduct] = useState({});
-  const [productStyle, setProductStyle] = useState({});
+  const [product, setProduct] = useState();
+  // const [productStyle, setProductStyle] = useState({});
   const [outfits, setOutfit] = useState({});
   const [carouselPos, setCarouselPos] = useState({});
 
   useEffect(() => {
-    updateCurrentProduct(null, '40345');
+    updateCurrentProduct(null, '40348');
   }, []);
 
   function updateCurrentProduct(e, id) {
     const params = {params: {id: id}};
-    axios.get('/details', params).then((data) => {
-      setProduct({data});
-    }).catch((err) => {
-      console.log(err);
-    });
-
-    axios.get('/styles', params).then((data) => {
-      setProductStyle({data});
+    axios.get('/overview', params).then(({data}) => {
+      setProduct(data);
     }).catch((err) => {
       console.log(err);
     });
@@ -88,9 +82,11 @@ function App() {
     }
   }
 
+  if (!product) return null;
+
   return (
     <div className="app">
-      <Overview />
+      {/* <Overview /> */}
       {Object.keys(product).length !== 0 ? [
         <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
         <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
