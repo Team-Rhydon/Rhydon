@@ -3,50 +3,47 @@ import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
 import StarRating from '../../Related/StarRating.jsx'
 import Description from './Description.jsx';
 
-let ProductInfo = (props) => {
+let ProductInfo = ({details, reviews}) => {
+  let {ratings} = reviews;
+
   const [rating, setRating] = useState();
-  const [product, setProduct] = useState({});
-  const [count, setCount] = useState();
+  const [product, setProduct] = useState(details);
+  const [count, setCount] = useState(1);
   const [toggleDescription, setDescription] = useState(false);
 
   let {name, category, description, slogan, features} = product;
 
+  const getRatingsAvg = (data) => {
+    let people = 0;
+    let stars = 0;
+
+    for (let star in data) {
+      people += parseInt(data[star]);
+      stars += (data[star] * star);
+    }
+    console.log(stars/people)
+    setRating(prevState => stars/people)
+  }
+
   useEffect(() => {
-    props.get('/products')
-    .then(({data}) => {
-      setProduct(prevState => {
-        return {
-          name: data.name,
-          category: data.category,
-          description: data.description,
-          slogan: data.slogan,
-          features: data.features,
-        }
-      })
-    })
-    .catch(err => console.error('setProduct error', err));
-
-    props.get('/stars')
-    .then(({data}) => {
-      let people = 0;
-      let stars = 0;
-
-      for (let star in data.ratings) {
-        people += parseInt(data.ratings[star]);
-        stars += (data.ratings[star] * star);
+    setProduct(prevState => {
+      return {
+        name: name,
+        category: category,
+        description: description,
+        slogan: slogan,
+        features: features,
       }
-
-      setRating(prevState => stars/people)
     })
-    .catch(err => console.error('setRating error', err));
 
-    props.get('/reviews')
-    .then(({data}) => {
-      setCount(prevState => data.count)
-    })
-    .catch(err => console.error('setCount error', err));
+    getRatingsAvg(reviews.ratings)
+    // props.get('/reviews')
+    // .then(({data}) => {
+    //   setCount(prevState => data.count)
+    // })
+    // .catch(err => console.error('setCount error', err));
 
-  }, [])
+  }, [details, reviews])
 
   let displayDescription = () => {
     setDescription(prevState => !prevState)
