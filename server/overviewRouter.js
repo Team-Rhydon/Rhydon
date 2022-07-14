@@ -4,9 +4,15 @@ let overviewRouter = require('express').Router();
 // connect controller methods to corresponding routes
 
 
-//product route
+// product route
+overviewRouter.get('/products',  controller.getProduct)
 
-overviewRouter.get('/products',  /* controller func*/)
-overviewRouter.get('/')
+// stars route
+overviewRouter.get('/stars',  controller.getStars)
+
+// styles route
+overviewRouter.get('/styles',  controller.getStyles)
+
+overviewRouter.get('/reviews', controller.getReviews)
 
 module.exports = overviewRouter
