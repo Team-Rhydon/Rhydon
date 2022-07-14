@@ -20,19 +20,19 @@ const OVERLAY_STYLES = {
   zIndex: 1000
 }
 
-let Cart = ({showCart, cart, setCart, updateCart}) => {
-  if (!showCart || !cart) return null
+let Cart = ({showCart, cartData, setCart, updateCart}) => {
+  if (!showCart || !cartData) return null
 
-  const [checkout, setCheckout] = useState(cart);
+  const [checkout, setCheckout] = useState(cartData);
 
   let rmItem = (key) => {
-    let filtered = cart.filter((product, i) => i !== key);
+    let filtered = cartData.filter((product, i) => i !== key);
     updateCart(filtered)
   }
 
   useEffect(() => {
-    setCheckout(prevState => cart);
-  }, [cart])
+    setCheckout(prevState => cartData);
+  }, [cartData])
 
   return (
     <div>

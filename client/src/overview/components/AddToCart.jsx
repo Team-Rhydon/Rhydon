@@ -13,7 +13,7 @@ let AddToCart = ({selectedStyle}) => {
     price: sale_price || original_price,
     photo: photos[0].url
   });
-  const [cart, updateCart] = useState([])
+  const [cartData, updateCart] = useState([])
   const [showCart, setCart] = useState(false);
 
   let fillCart = () => {
@@ -32,7 +32,7 @@ let AddToCart = ({selectedStyle}) => {
   return (<div>
     <SizeSelector selectedStyle={selectedStyle} setPurchase={setPurchase}/>
     <button onClick={fillCart} disabled={!purchase.complete}>Add To Cart</button>
-    {showCart ? <Cart showCart={showCart} setCart={setCart} cart={cart} updateCart={updateCart}/> : null}
+    {showCart ? <Cart showCart={showCart} setCart={setCart} cartData={cartData} updateCart={updateCart}/> : null}
   </div>)
 }
 

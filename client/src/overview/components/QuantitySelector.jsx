@@ -2,23 +2,19 @@ import React, {useEffect, useState} from 'react';
 
 let QuantitySelector = ({sku, size, quantity, setPurchase}) => {
 
-  const [amount, setAmount] = useState(1);
   const [stock, setStock] = useState(quantity > 15 ? [...Array(15)] : [...Array(quantity)])
-  console.log('this is stock', stock);
 
   let changeAmount = (e) => {
-    setAmount(prevState => {
-      setPurchase((prevState) => ({
-          ...prevState,
-          size: size,
-          quantity: e.target.value
-        })
-      )
-      return e.target.value
-    })
+    console.log(e.target.value);
+    setPurchase((prevState) => ({
+      ...prevState,
+      size: size,
+      quantity: e.target.value
+    }))
   }
 
   useEffect(() => {
+    setStock(quantity > 15 ? [...Array(15).keys()] : [...Array(quantity).keys()])
     setPurchase(prevState => {
       return {
         ...prevState,
@@ -27,13 +23,13 @@ let QuantitySelector = ({sku, size, quantity, setPurchase}) => {
         complete: true
       }
     })
-    setStock(quantity > 15 ? [...Array(15)] : [...Array(quantity)])
-  }, [sku])
+  }, [size])
 
   return (<div>
-    <select value={amount} onChange={e => changeAmount.call(this, e)}>
-      {stock.map((nothing, i) => {
-        return (<option key={i} value={i + 1}>{i + 1}</option>)
+    <select onChange={e => changeAmount(e)}>
+      {stock.map((val, i) => {
+        if (i === 0) return (<option key={val+1 || i} defaultValue={i + 1}>{i + 1}</option>)
+        return (<option key={val+1 || i} value={i + 1}>{i + 1}</option>)
       })}</select>
      </div> )
 }
