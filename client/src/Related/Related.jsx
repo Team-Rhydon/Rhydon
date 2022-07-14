@@ -24,7 +24,8 @@ function Related({product, updateCurrentProduct}) {
       },
     };
     axios.get('/related', params).then(({data}) => {
-      const positions = ['p1', 'p2', 'p3', 'p4'];
+      carouselPos.current = {};
+      const positions = ['related-p1', 'related-p2', 'related-p3', 'related-p4'];
       const keys = Object.keys(data);
       const keyLen = keys.length;
       // there could be less than 4 related items
@@ -35,7 +36,7 @@ function Related({product, updateCurrentProduct}) {
       }
       if (keyLen > 4) {
         for (let i = 4; i < keyLen; i++) {
-          carouselPos.current[keys[i]] = 'pright';
+          carouselPos.current[keys[i]] = 'related-pright';
         }
       }
       setCards(data);
@@ -77,17 +78,16 @@ function Related({product, updateCurrentProduct}) {
 
   function moveRelatedLeft(e) {
     e.preventDefault();
-    if (document.getElementsByClassName('slide pleft related').length > 0) {
+    if (document.getElementsByClassName('related-pleft').length > 0) {
       const positions = {
-        pleft: 'p1',
-        p1: 'p2',
-        p2: 'p3',
-        p3: 'p4',
-        p4: 'pright',
+        'related-p4': 'related-pright',
+        'related-p3': 'related-p4',
+        'related-p2': 'related-p3',
+        'related-p1': 'related-p2',
+        'related-pleft': 'related-p1',
       };
       for (const pos in positions) {
-        const curPosition = 'slide '+ pos + ' related';
-        const elements = document.getElementsByClassName(curPosition);
+        const elements = document.getElementsByClassName(pos);
         const element = elements[elements.length - 1];
         updatePosition(element, pos, positions[pos]);
       }
@@ -96,17 +96,16 @@ function Related({product, updateCurrentProduct}) {
 
   function moveRelatedRight(e) {
     e.preventDefault();
-    if (document.getElementsByClassName('slide pright related').length > 0) {
+    if (document.getElementsByClassName('related-pright').length > 0) {
       const positions = {
-        p1: 'pleft',
-        p2: 'p1',
-        p3: 'p2',
-        p4: 'p3',
-        pright: 'p4',
+        'related-p1': 'related-pleft',
+        'related-p2': 'related-p1',
+        'related-p3': 'related-p2',
+        'related-p4': 'related-p3',
+        'related-pright': 'related-p4',
       };
       for (let pos in positions) {
-        const curPosition = 'slide '+ pos + ' related';
-        const element = document.getElementsByClassName(curPosition)[0];
+        const element = document.getElementsByClassName(pos)[0];
         updatePosition(element, pos, positions[pos]);
       }
     }
@@ -116,7 +115,6 @@ function Related({product, updateCurrentProduct}) {
     element.classList.remove(curPosition);
     element.classList.add(newPosition);
   }
-
   return (
     <div className="related">
       <h5 className="title">RELATED PRODUCTS</h5>

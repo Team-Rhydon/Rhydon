@@ -98,29 +98,56 @@ h1 {
   transition: all .3s linear;
 }
 
-.related .carousel .slide.pleft {
+.related .carousel .slide.related-pleft {
   left: -25%;
 }
 
-.related .carousel .slide.p1 {
+.related .carousel .slide.related-p1 {
   left: 0%;
 }
 
-.related .carousel .slide.p2 {
+.related .carousel .slide.related-p2 {
   left: 25%;
 }
 
-.related .carousel .slide.p3 {
+.related .carousel .slide.related-p3 {
   left: 50%;
 }
 
-.related .carousel .slide.p4 {
+.related .carousel .slide.related-p4 {
   left: 75%;
 }
 
-.related .carousel .slide.pright {
+.related .carousel .slide.related-pright {
   left: 100%;
 }
+
+.related .carousel .slide.outfit-pleft {
+  left: -25%;
+}
+
+.related .carousel .slide.outfit-p1 {
+  left: 0%;
+}
+
+.related .carousel .slide.outfit-p2 {
+  left: 25%;
+}
+
+.related .carousel .slide.outfit-p3 {
+  left: 50%;
+}
+
+.related .carousel .slide.outfit-p4 {
+  left: 75%;
+}
+
+.related .carousel .slide.outfit-pright {
+  left: 100%;
+}
+
+
+
 
 .related .carousel .thumb {
 /* stretched */

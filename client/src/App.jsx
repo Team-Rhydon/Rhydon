@@ -13,7 +13,6 @@ function App() {
     updateCurrentProduct(null, '40345');
   }, []);
 
-<<<<<<< HEAD
   function updateCurrentProduct(e, id) {
     const params = {params: {id: id}};
     axios.get('/details', params).then((data) => {
@@ -36,28 +35,19 @@ function App() {
       setOutfit(newOutfit);
 
       const positions = {
-        p1: 'p2',
-        p2: 'p3',
-        p3: 'p4',
-        p4: 'pright',
-        pright: 'pright',
+        'outfit-p1': 'outfit-p2',
+        'outfit-p2': 'outfit-p3',
+        'outfit-p3': 'outfit-p4',
+        'outfit-p4': 'outfit-pright',
+        'outfit-pright': 'outfit-pright',
       };
       const carouselPoscopy = {...carouselPos};
       for (const id in carouselPos) {
         carouselPoscopy[id] = positions[carouselPos[id]];
       }
-      carouselPoscopy[id] = 'p1';
+      carouselPoscopy[id] = 'outfit-p1';
       setCarouselPos(carouselPoscopy);
     }
-=======
-class App extends Component{
-  render(){
-    return(
-      <div className="App">
-        <h1> Rhydon Store </h1>
-      </div>
-    );
->>>>>>> main
   }
 
   function removeOutfit(e, id, position) {
@@ -68,16 +58,16 @@ class App extends Component{
       setOutfit(newOutfit);
 
       const swaps = {
-        p1: ['p2', 'p3', 'p4', 'pright'],
-        p2: ['p3', 'p4', 'pright'],
-        p3: ['p4', 'pright'],
-        p4: ['pright'],
+        'outfit-p1': ['outfit-p2', 'outfit-p3', 'outfit-p4', 'outfit-pright'],
+        'outfit-p2': ['outfit-p3', 'outfit-p4', 'outfit-pright'],
+        'outfit-p3': ['outfit-p4', 'outfit-pright'],
+        'outfit-p4': ['outfit-pright'],
       };
       const positions = {
-        p2: 'p1',
-        p3: 'p2',
-        p4: 'p3',
-        pright: 'p4',
+        'outfit-p2': 'outfit-p1',
+        'outfit-p3': 'outfit-p2',
+        'outfit-p4': 'outfit-p3',
+        'outfit-pright': 'outfit-p4',
       };
       const carouselPoscopy = {...carouselPos};
       delete carouselPoscopy[id];

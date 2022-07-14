@@ -6,17 +6,16 @@ import OutfitCard from './OutfitCard.jsx';
 function Outfit({productStyle, outfits, addToOutfit, carouselPos, removeOutfit}) {
   function moveOutfitLeft(e) {
     e.preventDefault();
-    if (document.getElementsByClassName('slide pleft outfit').length > 0) {
+    if (document.getElementsByClassName('outfit-pleft').length > 0) {
       const positions = {
-        pleft: 'p1',
-        p1: 'p2',
-        p2: 'p3',
-        p3: 'p4',
-        p4: 'pright',
+        'outfit-p4': 'outfit-pright',
+        'outfit-p3': 'outfit-p4',
+        'outfit-p2': 'outfit-p3',
+        'outfit-p1': 'outfit-p2',
+        'outfit-pleft': 'outfit-p1',
       };
       for (const pos in positions) {
-        const curPosition = 'slide '+ pos + ' outfit';
-        const elements = document.getElementsByClassName(curPosition);
+        const elements = document.getElementsByClassName(pos);
         const element = elements[elements.length - 1];
         updatePosition(element, pos, positions[pos]);
       }
@@ -25,17 +24,16 @@ function Outfit({productStyle, outfits, addToOutfit, carouselPos, removeOutfit})
 
   function moveOutfitRight(e) {
     e.preventDefault();
-    if (document.getElementsByClassName('slide pright outfit').length > 0) {
+    if (document.getElementsByClassName('outfit-pright').length > 0) {
       const positions = {
-        p1: 'pleft',
-        p2: 'p1',
-        p3: 'p2',
-        p4: 'p3',
-        pright: 'p4',
+        'outfit-p1': 'outfit-pleft',
+        'outfit-p2': 'outfit-p1',
+        'outfit-p3': 'outfit-p2',
+        'outfit-p4': 'outfit-p3',
+        'outfit-pright': 'outfit-p4',
       };
       for (const pos in positions) {
-        const curPosition = 'slide '+ pos + ' outfit';
-        const element = document.getElementsByClassName(curPosition)[0];
+        const element = document.getElementsByClassName(pos)[0];
         updatePosition(element, pos, positions[pos]);
       }
     }
