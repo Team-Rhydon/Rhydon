@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 p {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -319,7 +317,6 @@ cursor: pointer;
     z-index: 10;
   }
 
-=======
 .stars {
   position: relative;
   float: left;
@@ -335,7 +332,6 @@ cursor: pointer;
   position: absolute;
   z-index: -1;
   float: left;
-<<<<<<< HEAD
   overflow: hidden;
   width: 50%;
   }
@@ -475,13 +471,8 @@ cursor: pointer;
     justify-content: space-around;
   }
 
-=======
-}
-
 .miniSlider {
   height: 12vh;
   justify-content: left;
   display: flex;
 }
->>>>>>> main
->>>>>>> 0388dca0260346029c03a1274208098b7ac5d926

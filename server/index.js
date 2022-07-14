@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 axios.defaults.baseURL = process.env.BASE_URL;
 
 // Adds API key to all requests
-axios.defaults.headers.common.Authorization = process.env.API_KEY;
+axios.defaults.headers.common.Authorization = process.env.JAPI_KEY;
 
 // Setup Routes
 app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
@@ -31,6 +31,7 @@ app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews'
 
 app.use('/overview', overviewRouter)
 // Get related items
+
 app.get('/related', (req, res) => {
   const product_id = req.query.id;
   getRelated(product_id).then(({ data }) => promiseAllRelated(data)).then((data) => {
