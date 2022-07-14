@@ -1,18 +1,5 @@
 node_modules
-<<<<<<< HEAD
 dist
 .env
-=======
-<<<<<<< HEAD
 client/dist
-.env
-dist
-webpack.config.js
-=======
-.env
-client/distf
-dist
 client/dist/
-webpack.config.js
->>>>>>> main
->>>>>>> 0388dca0260346029c03a1274208098b7ac5d926

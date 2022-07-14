@@ -1,29 +1,25 @@
 import React, {Component, useEffect, useState, useRef} from 'react';
 import Related from './Related/Related.jsx';
+import Overview from './overview/Overview.jsx';
 import Outfit from './Related/Outfit.jsx';
 import RatingsWidget from './Ratings/RatingsWidget.jsx';
-import Overview from './overview/Overview.jsx'
 import axios from 'axios';
 import _ from 'lodash';
+
 function App() {
-  const [product, setProduct] = useState({});
-  const [productStyle, setProductStyle] = useState({});
+  const [product, setProduct] = useState();
+  // const [productStyle, setProductStyle] = useState({});
   const [outfits, setOutfit] = useState({});
   const [carouselPos, setCarouselPos] = useState({});
+
   useEffect(() => {
-    updateCurrentProduct(null, '40345');
+    updateCurrentProduct(null, '40348');
   }, []);
 
   function updateCurrentProduct(e, id) {
     const params = {params: {id: id}};
-    axios.get('/details', params).then((data) => {
-      setProduct({data});
-    }).catch((err) => {
-      console.log(err);
-    });
-
-    axios.get('/styles', params).then((data) => {
-      setProductStyle({data});
+    axios.get('/overview', params).then(({data}) => {
+      setProduct(data);
     }).catch((err) => {
       console.log(err);
     });
@@ -49,44 +45,6 @@ function App() {
       carouselPoscopy[id] = 'outfit-p1';
       setCarouselPos(carouselPoscopy);
     }
-=======
-
-class App extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      product: {}
-    }
-  }
-  componentDidMount () {
-    axios.get('overview/products/', {params: {id: 40348}})
-      .then(response => {
-        return this.setState({
-          product: response.data
-        }, ()=> console.log(this.state.product))
-      })
-  }
-  render(){
-    return(
-      <div className="App">
-        <h1> Rhydon Store </h1>
-<<<<<<< HEAD
-        <div style={{border: "1px solid black", height: "33em"}}>
-          Product Overview Component
-          <h2>Product Overview Component</h2>
-        </div>
-        <div style={{border: "1px solid black", height: "33em"}}>
-          <Related />
-        </div>
-        <div>
-          <RatingsWidget product={this.state.product}/>
-        </div>
-=======
-        <Overview />
->>>>>>> main
-      </div>
-    );
->>>>>>> 0388dca0260346029c03a1274208098b7ac5d926
   }
 
   function removeOutfit(e, id, position) {
@@ -124,13 +82,16 @@ class App extends Component{
     }
   }
 
+  if (!product) return null;
 
   return (
     <div className="app">
+      {/* <Overview /> */}
       {Object.keys(product).length !== 0 ? [
         <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
         <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
       ] : null}
+      <RatingsWidget product={product.data} />
     </div>
   );
 }

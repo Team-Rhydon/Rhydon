@@ -332,6 +332,8 @@ cursor: pointer;
   position: absolute;
   z-index: -1;
   float: left;
+  overflow: hidden;
+  width: 50%;
   }
 
 .star-rating {
