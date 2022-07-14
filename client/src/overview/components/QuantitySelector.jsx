@@ -17,25 +17,14 @@ let QuantitySelector = ({size, quantity, setPurchase}) => {
   }
 
   useEffect(() => {
-    if (amount > stock) {
-      setPurchase(prevState => {
-        return {
-          ...prevState,
-          size: size,
-          quantity: 1,
-          complete: true
-        }
-      })
-    } else {
-      setPurchase(prevState => {
-        return {
-          ...prevState,
-          size: size,
-          quantity: amount,
-          complete: true
-        }
-      })
-    }
+    setPurchase(prevState => {
+      return {
+        ...prevState,
+        size: size,
+        quantity: 1,
+        complete: true
+      }
+    })
   }, [size, quantity])
 
   return (<div>
