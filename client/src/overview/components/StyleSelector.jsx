@@ -1,48 +1,20 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import SalePrice from './SalePrice.jsx';
+import Thumbnail from './Thumbnail.jsx';
 
-let StyleSelector = ({get, changePrice}) => {
+let StyleSelector = ({selectedStyle, setSelectedStyle, productStyles}) => {
+  if (!selectedStyle || !productStyles) return null
+  let {sale_price, original_price, name} = selectedStyle;
 
-  const [styles, setStyles] = useState();
-  const [selected, setSelected] = useState();
+  let sale = sale_price
 
-  let getStyles = () => {
-    get('/overview/styles')
-      .then(({data}) => {
-        console.log(data);
-        setStyles(prevState => data)
-      })
-  }
-
-  let changeStyle = (style) => {
-    setSelected(prevState => style.name);
-    if (style.sale_price) {
-      changePrice(style.sale_price)
-    } else {
-      changePrice(style.original_price)
-    }
-  }
-
-  useEffect(() => {
-    getStyles()
-  }, [])
-
-  let show;
-  if (styles) {
-    show = (<>
-      <h2>{selected ? <>Style &#8594; {selected}</> : <>Style &#8594; {styles[0].name}</>}</h2>
-      {styles.map((styleObj) => {
-      return <button
-        key={styleObj.style_id}
-        onClick={changeStyle.bind(this, styleObj)}
-        >{styleObj.name}</button>})}
-      </>)
-  }
-  return(
-    <>
-    {show}
-    </>
-  )
+  return (<>
+    <span>
+      <h4>Style &#8594; {name}</h4>
+      <div>{sale ? <SalePrice style={selectedStyle} /> : `$${original_price}`}</div>
+    </span>
+    <Thumbnail productStyles={productStyles} setSelectedStyle={setSelectedStyle}/>
+  </>)
 }
 
 export default StyleSelector

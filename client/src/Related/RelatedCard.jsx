@@ -1,16 +1,33 @@
 import React, {Component, useState} from 'react';
+import axios from 'axios';
 import StarRating from './StarRating.jsx';
-function RelatedCard({card}) {
-  let {category, features, img, name, originalPrice, rating, salePrice} = card;
-    return (
-      <div className="related-card">
-        <iframe src={img} title='item'></iframe>
-        <p>{category}</p>
-        <b>{name}</b>
-        <p>${Math.round(originalPrice)}</p>
-        {rating ? <StarRating rating={rating} /> : null}
+function RelatedCard({card, position, id, showModal, showPreview, updateCurrentProduct}) {
+  const {
+    category, features, img, url, name, originalPrice, rating, salePrice, thumbnail,
+  } = card;
+  const {carouselPos} = position;
+debugger;
+  return (
+    <div className={`slide ${position}`}>
+      <div className='product-card'>
+        <img className='thumb' onClick={(e) => {
+          showPreview(e, id);
+        }}src={thumbnail}/>
+        <div className="star" onClick={(e) => {
+          showModal(e, id);
+        }}
+        />
+        <div onClick={(e) => {
+          updateCurrentProduct(e, id);
+        }}className="description">
+          <p>{category}</p>
+          <b>{name}</b>
+          <p>${Math.round(originalPrice)}</p>
+          {rating ? <StarRating rating={rating} /> : null}
+        </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default RelatedCard;
