@@ -24,7 +24,15 @@ exports.promiseAllRelated = function(data) {
     reqArr.push(getDetails(id));
   });
   return Promise.all(reqArr);
-}
+};
+
+exports.promiseAllDetails = function(data) {
+  let reqArr = [];
+  data.forEach((id) => {
+    reqArr.push(getDetails(id));
+  });
+  return Promise.all(reqArr);
+};
 
 exports.filterRelated = function(data) {
   let resObj = {};
@@ -46,7 +54,8 @@ exports.filterRelated = function(data) {
       if(!resObj.originalPrice) {
         resObj[product_id].originalPrice = styles[0].original_price;
         resObj[product_id].salePrice = styles[0].sale_price;
-        resObj[product_id].img = styles[0].photos[0].thumbnail_url;
+        resObj[product_id].thumbnail = styles[0].photos[0].thumbnail_url;
+        resObj[product_id].img = styles[0].photos[0].url;
       }
 
       // get features and category
@@ -56,4 +65,3 @@ exports.filterRelated = function(data) {
     }
     return resObj;
 }
-

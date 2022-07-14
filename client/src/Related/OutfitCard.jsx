@@ -1,25 +1,21 @@
 import React, {Component, useState} from 'react';
 import axios from 'axios';
 import StarRating from './StarRating.jsx';
-function RelatedCard({card, position, id, showModal, showPreview, updateCurrentProduct}) {
+
+function OutfitCard({outfit, position, id, addToOutfit, removeOutfit}) {
   const {
     category, features, img, url, name, originalPrice, rating, salePrice, thumbnail,
-  } = card;
+  } = outfit;
   const {carouselPos} = position;
-debugger;
   return (
-    <div className={`slide ${position}`}>
+    <div className={`slide ${position} outfit`}>
       <div className='product-card'>
-        <img className='thumb' onClick={(e) => {
-          showPreview(e, id);
-        }}src={thumbnail}/>
-        <div className="star" onClick={(e) => {
-          showModal(e, id);
+        <img className='thumb outfit' src={thumbnail}/>
+        <div className="remove-outfit" onClick={(e) => {
+          removeOutfit(e, id, position);
         }}
         />
-        <div onClick={(e) => {
-          updateCurrentProduct(e, id);
-        }}className="description">
+        <div className="description">
           <p>{category}</p>
           <b>{name}</b>
           <p>${Math.round(originalPrice)}</p>
@@ -30,4 +26,4 @@ debugger;
   );
 }
 
-export default RelatedCard;
+export default OutfitCard;
