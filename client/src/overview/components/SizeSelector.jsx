@@ -6,12 +6,8 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
 
   const [sku, setSku] = useState();
 
-  let changeSku = (selectedSku) => {
-    setSku(selectedSku);
-  }
-
   useEffect(() => {
-    changeSku();
+    setSku();
     setPurchase({
       complete: false,
       name: name,
@@ -28,9 +24,9 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
       if (key == 'null' || !key || !quantity) {
         return <button key={i} disabled>{{buttonSize} || 'Out Of Stock'}</button>
       }
-      return (<button key={key} onClick={changeSku.bind(this, skuNumber)}>{buttonSize}</button>)
+      return (<button key={key} onClick={setSku.bind(this, skuNumber)}>{buttonSize}</button>)
     })}
-      {sku ? <QuantitySelector {...sku} setPurchase={setPurchase}/> : null}
+      {sku ? <QuantitySelector {...sku} sku={sku} setPurchase={setPurchase}/> : null}
   </div>)
 }
 
