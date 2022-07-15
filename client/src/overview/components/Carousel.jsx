@@ -7,26 +7,25 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
 
   const[showImageModal, setImageModal] = useState(false);
 
-  let length = gallery.length - 1
+  let lastCount = gallery.length - 1
 
   let nextSlide = (e) => {
-    debugger;
-    setCurrentImage(prevState => currentImage.count === length ? {
+    setCurrentImage(currentImage.count === lastCount ? {
       count: 0,
       url: gallery[0].url
     } : {
-      count: prevState.count + 1,
-      url: gallery[currentImage.count].url
+      count: currentImage.count + 1,
+      url: gallery[currentImage.count + 1].url
     })
   }
 
   let prevSlide = (e) => {
     setCurrentImage(currentImage.count === 0 ? {
-      count: length,
-      url: gallery[length].url
+      count: lastCount,
+      url: gallery[lastCount].url
     } : {
       count: currentImage.count - 1,
-      url: gallery[currentImage.count].url
+      url: gallery[currentImage.count - 1].url
     })
   }
 

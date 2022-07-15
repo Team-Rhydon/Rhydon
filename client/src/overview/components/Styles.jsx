@@ -19,12 +19,12 @@ let Styles = ({styles}) => {
   return(
     <div>
       <ImageGallery selectedStyle={selectedStyle}/>
-      <StyleSelector {...commonProps}
+      <StyleSelector {...commonProps}/>
+      <AddToCart {...commonProps}
       // productStyles={productStyles}
       // selectedStyle={selectedStyle}
       // setSelectedStyle={setSelectedStyle}
       />
-      <AddToCart {...commonProps}/>
     </div>
   )
 }
