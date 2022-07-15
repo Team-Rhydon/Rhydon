@@ -1,6 +1,6 @@
 import React from 'react';
-import {createPortal} from 'react-dom'
-import styled from 'styled-components';
+import {createPortal} from 'react-dom';
+// import styled from 'styled-components';
 
 const MODAL_STYLES = {
   position: 'fixed',
@@ -23,7 +23,7 @@ const OVERLAY_STYLES = {
 }
 
 let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setImageModal}) => {
-  if (!showImageModal) return null
+  if (!showImageModal) return null;
 
   return (
     <>

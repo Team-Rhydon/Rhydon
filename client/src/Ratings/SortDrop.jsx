@@ -1,30 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 
-class SortDrop extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 'relevant'
+// class SortDrop extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       value: 'relevant'
+//     }
+//     this.handleChange= this.handleChange.bind(this);
+//   }
+  function SortDrop(props) {
+    const [value, setValue] = useState('relevant');
+    //needs a handlechange and handlesubmit
+    let handleChange = (event) => {
+      event.preventDefault()
+      props.sort(event.target.value);
+      setValue(()=> event.target.value);
     }
-    this.handleChange= this.handleChange.bind(this);
-  }
 
-  //needs a handlechange and handlesubmit
-  handleChange(event){
-    event.preventDefault();
-    this.setState({
-      value: event.target.value
-    }, this.props.sort(event.target.value))
-  }
 
-  render() {
     return (
       // {/* a display should indicate if list is filtered and how */}
       // {/*   options: helpful, newest, relevant */}
       <form>
-        <label> {this.props.total} Reviews sorted by...
+        <label> {props.total} Reviews sorted by...
           {/* onChange eventlistener on select */}
-          <select value={this.state.value} onChange={this.handleChange} >
+          <select value={value} onChange={e => handleChange(e)} >
             <option value="relevant">relevant</option>
             <option value="helpful">helpful</option>
             <option value="newest">newest</option>
@@ -33,6 +33,6 @@ class SortDrop extends React.Component{
       </form>
     )
   }
-}
+
 
 export default SortDrop;

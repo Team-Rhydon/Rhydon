@@ -5,12 +5,11 @@ module.exports = {
   get: {
     reviews: (req, res) => {
       models.getReviews(req.query)
-        .then(response=> {console.log(response);res.status(200).send(JSON.stringify(response.data))})
+        .then(response=> {res.status(200).send(JSON.stringify(response.data))})
         .catch(err => {console.log(err);res.sendStatus(500)})
     },
 
     metaData: (req, res) => {
-      console.log(req.query)
       models.getReviewMeta(req.query)
         .then(response=> res.status(200).json(response.data))
         .catch(err => {console.log(err); res.sendStatus(500)})

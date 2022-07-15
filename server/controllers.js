@@ -27,4 +27,3 @@ exports.getDetails = function(product_id) {
     console.log('error in get details');
   });
 };
-

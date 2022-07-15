@@ -9,7 +9,6 @@ axios.defaults.baseURL = process.env.BASE_URL;
 axios.defaults.headers.common['Authorization'] = process.env.API_KEY;
 //set up router middleware
 router.use(function(req, res, next) {
-  console.log(req)
   console.log(req.url, "@", Date.now());
   next();
 });
