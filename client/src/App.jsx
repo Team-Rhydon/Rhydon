@@ -3,9 +3,10 @@ import Related from './Related/Related.jsx';
 import Overview from './overview/Overview.jsx';
 import Outfit from './Related/Outfit.jsx';
 import RatingsWidget from './Ratings/RatingsWidget.jsx';
+import Nav from './Nav.jsx';
 import axios from 'axios';
 import _ from 'lodash';
-
+import logo from './assets/logos/rhydon-logos_black.png';
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
@@ -29,6 +30,12 @@ function App() {
       console.log(err);
     });
   }
+
+  function hidePreview() {
+    const modal = document.getElementsByClassName('preview')[0];
+    modal.classList.add('hidden');
+  }
+
   function addToOutfit(e) {
     e.preventDefault();
     let id;
@@ -86,9 +93,10 @@ function App() {
   if (!product) return null;
   return (
     <div className="app">
+      <Nav />
       {/* <Overview /> */}
       <Overview {...product}/>
-      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct}/>,
+      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       {/* {Object.keys(product).length !== 0 ? [
         <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,

@@ -1,10 +1,5 @@
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-}
-
-h1 {
-  font-family: 'Lato', sans-serif;
+p, b, div, h1, h2 {
+  font-family: Helvetica,Arial,system-ui,sans-serif;
   font-weight: 400;
 }
 
@@ -40,7 +35,7 @@ h1 {
 .related .carousel .carousel-next, .carousel .carousel-prev {
   position: absolute;
   font-size: 20px;
-  z-index: 10;
+  z-index: 5;
   padding: 16px;
   color: grey;
   background: white;
@@ -260,6 +255,7 @@ cursor: pointer;
     width: 100vw;
     background-color: transparent;
     z-index: 20;
+    margin: auto;
   }
 
   .preview-background {
@@ -272,9 +268,9 @@ cursor: pointer;
 
   .preview-content {
     margin: 0 auto;
-    width: 500px;
+    max-width: auto;
+    max-height: 100%;
     background-color: white;
-    height: 500px;
     object-fit: cover;
     border: 2px solid black;
   }
@@ -499,3 +495,52 @@ th:first-child, td:first-child {
 tr:nth-child(even) {
   background-color: beige;
 }
+
+.nav-bar {
+  width: 100%;
+  height: 73px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+  z-index: 7;
+}
+
+.nav-container {
+display: flex;
+width: 100%;
+height: 100%;
+position: relative;
+font-size: .6875rem;
+}
+
+.nav-bar .nav-container .left-nav {
+display: flex;
+max-height: 100%;
+}
+
+.logo {
+  object-fit: cover;
+}
+
+.nav-bar .nav-container .right-nav {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  max-height: 100%;
+  }
+
+.search-btn {
+cursor: pointer;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin-right: 20px;
+}
+
+.main-product-img {
+  max-width: auto;
+  max-height: 100%;
+}
+
+
