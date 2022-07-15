@@ -14,7 +14,7 @@ let QuantitySelector = ({sku, size, quantity, setPurchase}) => {
   }
 
   useEffect(() => {
-    setStock()
+    setStock(quantity > 15 ? [...Array(15).keys()] : [...Array(quantity).keys()])
     setPurchase(prevState => {
       return {
         ...prevState,
