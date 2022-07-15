@@ -19,8 +19,8 @@ let ImageGallery = ({selectedStyle}) => {
   }
 
   return(<>
-    <Carousel className="image" {...commonProps}/>
     <MiniSlides {...commonProps}/>
+    <Carousel className="image" {...commonProps}/>
   </>)
 }
 

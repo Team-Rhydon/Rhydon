@@ -474,6 +474,10 @@ cursor: pointer;
 .miniSlider {
   height: 12vh;
   justify-content: left;
+}
+.slider {
+  height: 90vh;
+  justify-content: center;
   display: flex;
 }
 
