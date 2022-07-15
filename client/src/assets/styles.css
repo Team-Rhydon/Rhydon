@@ -214,7 +214,7 @@ cursor: pointer;
     color: rgb(255,200,0);
   }
 
-  .modal {
+  /* .modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -245,7 +245,7 @@ cursor: pointer;
 
   .modal.hidden {
     display: none;
-  }
+  } */
 
   .preview {
     position: absolute;

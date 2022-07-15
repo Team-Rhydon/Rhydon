@@ -23,8 +23,10 @@ axios.defaults.baseURL = process.env.BASE_URL;
 axios.defaults.headers.common.Authorization = process.env.API_KEY;
 
 // Setup Routes
-// app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
-// set up overview router
+app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
+
+
+// Get related items
 
 app.get('/related', (req, res) => {
   const product_id = req.query.id;

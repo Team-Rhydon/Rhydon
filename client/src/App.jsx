@@ -25,6 +25,7 @@ function App() {
     setProduct();
     const params = {params: {id: id}};
     axios.get('/overview', params).then(({data}) => {
+      console.log(data);
       setProduct(data);
     }).catch((err) => {
       console.log(err);
@@ -94,15 +95,10 @@ function App() {
   return (
     <div className="app">
       <Nav />
-      {/* <Overview /> */}
       <Overview {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      {/* {Object.keys(product).length !== 0 ? [
-        <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
-        <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
-      ] : null} */}
-      {/* <RatingsWidget product={product.data} /> */}
+      <RatingsWidget meta={product.reviews} />
     </div>
   );
 }

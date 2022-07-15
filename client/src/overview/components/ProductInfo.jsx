@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
-import StarRating from '../../Related/StarRating.jsx'
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import StarRating from '../../Related/StarRating.jsx';
 import Description from './Description.jsx';
 
 let ProductInfo = ({details, reviews}) => {

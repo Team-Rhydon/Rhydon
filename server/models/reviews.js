@@ -9,7 +9,7 @@ module.exports = {
         product_id: query.product_id,
         page: query.page || 1,
         count: query.count || 5,
-        sort: query.sort || 'newest'
+        sort: query.sort || 'relevant'
       }})
   },
 
