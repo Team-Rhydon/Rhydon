@@ -4,7 +4,6 @@ import StarRating from '../../Related/StarRating.jsx'
 import Description from './Description.jsx';
 
 let ProductInfo = ({details, reviews}) => {
-  let {ratings} = reviews;
 
   const [rating, setRating] = useState();
   const [product, setProduct] = useState(details);
@@ -35,14 +34,7 @@ let ProductInfo = ({details, reviews}) => {
         features: features,
       }
     })
-
     getRatingsAvg(reviews.ratings)
-    // props.get('/reviews')
-    // .then(({data}) => {
-    //   setCount(prevState => data.count)
-    // })
-    // .catch(err => console.error('setCount error', err));
-
   }, [details, reviews])
 
   let displayDescription = () => {
@@ -58,7 +50,6 @@ let ProductInfo = ({details, reviews}) => {
       <div>Read All {count} Reviews</div>
       <h3 onClick={displayDescription.bind(this)}>Description {toggleDescription ? <BsChevronUp/> : <BsChevronDown/>}</h3>
       {toggleDescription ? <Description {...product} /> : null}
-
   </>)
 }
 
