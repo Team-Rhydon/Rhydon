@@ -12,9 +12,6 @@ const helpers = require('./helpers.js');
 const {getReviews, getStyles, getRelated, getDetails} = controllers;
 const {averageRating, promiseAllRelated, filterRelated, promiseAllDetails, promiseAllOverview, filterDetails} = helpers;
 
-// Overview Router
-const overviewRouter = require('./overviewRouter.js');
-
 // Setup Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
@@ -28,9 +25,6 @@ axios.defaults.headers.common.Authorization = process.env.API_KEY;
 // Setup Routes
 // app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
 // set up overview router
-
-// app.use('/overview', overviewRouter)
-// Get related items
 
 app.get('/related', (req, res) => {
   const product_id = req.query.id;
