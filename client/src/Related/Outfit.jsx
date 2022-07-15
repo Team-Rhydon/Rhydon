@@ -3,7 +3,10 @@ import axios from 'axios';
 import OutfitCard from './OutfitCard.jsx';
 
 
-function Outfit({productStyle, outfits, addToOutfit, carouselPos, removeOutfit}) {
+function Outfit({product, outfits, addToOutfit, removeOutfit}) {
+  useEffect(() => {
+
+  }, [outfits]);
   function moveOutfitLeft(e) {
     e.preventDefault();
     if (document.getElementsByClassName('outfit-pleft').length > 0) {
@@ -47,7 +50,7 @@ function Outfit({productStyle, outfits, addToOutfit, carouselPos, removeOutfit})
     <div className="related">
       <h5 className="title">YOUR OUTFIT</h5>
       <div className="carousel">
-        <button onClick={(e) => addToOutfit(e, Object.keys(productStyle.data)[0])} className="add-outfit">{'+'}</button>
+        <button onClick={(e) => addToOutfit(e, product)} className="add-outfit">{'+'}</button>
         <button onClick={(e) => moveOutfitLeft(e)} className="carousel-prev">{'<'}</button>
         <div className="carousel-inner">
           {Object.keys(outfits).map((id, index) => <OutfitCard
@@ -55,8 +58,8 @@ function Outfit({productStyle, outfits, addToOutfit, carouselPos, removeOutfit})
             addToOutfit={addToOutfit}
             removeOutfit={removeOutfit}
             id={id}
-            outfit={outfits[id]}
-            position={carouselPos[id]} />)}
+            outfit={outfits[id]['product']}
+            position={outfits[id]['position']} />)}
         </div>
         <button onClick={(e) => moveOutfitRight(e)} className="carousel-next">{'>'}</button>
       </div>

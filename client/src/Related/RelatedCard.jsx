@@ -1,12 +1,8 @@
 import React, {Component, useState} from 'react';
 import axios from 'axios';
 import StarRating from './StarRating.jsx';
-function RelatedCard({card, position, id, showModal, showPreview, updateCurrentProduct}) {
-  const {
-    category, features, img, url, name, originalPrice, rating, salePrice, thumbnail,
-  } = card;
-  const {carouselPos} = position;
-debugger;
+function RelatedCard({card, position, id, showModal, showPreview, updateCurrentProduct, setProduct}) {
+  let {category, name, originalPrice, rating, salePrice, thumbnail} = card;
   return (
     <div className={`slide ${position}`}>
       <div className='product-card'>
@@ -22,7 +18,13 @@ debugger;
         }}className="description">
           <p>{category}</p>
           <b>{name}</b>
-          <p>${Math.round(originalPrice)}</p>
+          {salePrice === null ?
+          <p>${Math.round(originalPrice)}</p> :
+          <>
+            <del>$SALE{Math.round(originalPrice)}</del>
+            <ins>$SALE{Math.round(salePrice)}</ins>
+          </>
+          }
           {rating ? <StarRating rating={rating} /> : null}
         </div>
       </div>
