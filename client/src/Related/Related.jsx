@@ -7,7 +7,6 @@ import RelatedModal from './RelatedModal.jsx';
 import RelatedPreview from './RelatedPreview.jsx';
 
 function Related({product, updateCurrentProduct}) {
-  // similar to componentDidMount
   const [cards, setCards] = useState({});
   // const [currentProduct, setProduct] = useState(product.data);
   const [modalContent, setModalContent] = useState({});
@@ -20,7 +19,7 @@ function Related({product, updateCurrentProduct}) {
   useEffect(() => {
     const params = {
       params: {
-        id: product.data.id,
+        id: product.details.id,
       },
     };
     axios.get('/related', params).then(({data}) => {
@@ -60,21 +59,8 @@ function Related({product, updateCurrentProduct}) {
   }, [modalContent]);
 
   function showModal(e, id) {
-    const resArr = [];
-    resArr.push(cards[id]);
-    resArr.push(product.data);
-    setModalContent(resArr);
+    setModalContent({current: product, compare: cards[id]});
   }
-
-  // function updateCurrentProduct(e, id) {
-  //   const params = {params: {id: id}};
-  //   axios.get('/details', params).then(({data}) => {
-  //     console.log(data);
-  //     setProduct(data);
-  //   }).catch((err) => {
-  //     console.log(err);
-  //   });
-  // }
 
   function moveRelatedLeft(e) {
     e.preventDefault();
@@ -104,7 +90,7 @@ function Related({product, updateCurrentProduct}) {
         'related-p4': 'related-p3',
         'related-pright': 'related-p4',
       };
-      for (let pos in positions) {
+      for (const pos in positions) {
         const element = document.getElementsByClassName(pos)[0];
         updatePosition(element, pos, positions[pos]);
       }
@@ -136,26 +122,3 @@ function Related({product, updateCurrentProduct}) {
 }
 
 export default Related;
-
-
-{/* <div className="container" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-        <button style={{ position: 'absolute', left: 0 }}>Left</button>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-          {testArr.map((num) => (<div style={{
-            width: '100px',
-            height: '150px',
-            border: '1px solid gray',
-          }}>{num}</div>))}
-        </div>
-        <div className="container__right" style={{
-          position: 'absolute',
-          right: 0,
-          background: 'green',
-          width: 100,
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          }}>
-          <button>Right</button>
-        </div> */}
-{/* </div> */}

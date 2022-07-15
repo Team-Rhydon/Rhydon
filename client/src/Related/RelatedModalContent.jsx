@@ -1,7 +1,7 @@
 import React, {
   Component, useState, useEffect, useRef,
 } from 'react';
-function RelatedModalContent({modalContent, characteristics}) {
+function RelatedModalContent({curName, compName, characteristics}) {
   return (
     <table className="modal-content">
       <thead>
@@ -9,9 +9,9 @@ function RelatedModalContent({modalContent, characteristics}) {
           <th>Comparing</th>
         </tr>
         <tr>
-          <th>{modalContent[1].name}</th>
+          <th>{curName}</th>
           <th></th>
-          <th>{modalContent[0].name}</th>
+          <th>{compName}</th>
         </tr>
       </thead>
       <tbody>
