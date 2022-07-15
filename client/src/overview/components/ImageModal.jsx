@@ -27,8 +27,8 @@ const OVERLAY_STYLES = {
 let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setImageModal, prevSlide, nextSlide}) => {
   if (!showImageModal) return null
 
-  const [preview, setPreview] = useState(currentImage.url);
-
+  // const [preview, setPreview] = useState(currentImage.url);
+console.log('currentimage:', currentImage, 'showImageModal', showImageModal, 'currentImage:', currentImage )
   return (
     <>
     <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />
@@ -36,7 +36,7 @@ let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setIm
       <button onClick={() => setImageModal(false)}> close</button>
       <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
       <BsArrowRightCircle className="right-arrow" onClick={nextSlide}/>
-      <img src={preview} witdh="400px" height="400px"/>
+      <img src={currentImage.url} witdh="400px" height="400px"/>
       <ExpandedIcons gallery={gallery} currentImage={currentImage} setCurrentImage={setCurrentImage}/>
       </div>
     </>

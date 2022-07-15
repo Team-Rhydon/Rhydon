@@ -16,7 +16,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
       url: gallery[0].url
     } : {
       count: prevState.count + 1,
-      url: gallery[currentImage.count].url
+      url: gallery[currentImage.count + 1].url
     })
   }
 
@@ -26,7 +26,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
       url: gallery[length].url
     } : {
       count: currentImage.count - 1,
-      url: gallery[currentImage.count].url
+      url: gallery[currentImage.count - 1].url
     })
   }
 
