@@ -2,19 +2,16 @@ import React, {
   Component, useState, useEffect, useRef,
 } from 'react';
 
-function RelatedPreview({url}) {
-  function hidePreview() {
-    const modal = document.getElementsByClassName('preview')[0];
-    modal.classList.add('hidden');
-  }
-
+function RelatedPreview({url, setPreview}) {
   return (
-    <div className="preview hidden">
+    <div className="preview hidden" >
       <div className="preview-background" onClick={(e) => {
-        hidePreview(e);
+        setPreview({});
       }}
       >
-        <img src={url} className="preview-content"/>
+        <img src={url} className="preview-content" onClick={(e) => {
+          setPreview({});
+        }}/>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ module.exports = {
     axios.get(`/products/${productId}`)
       .then(({data}) => handleResponse(res, data, 200))
       .catch((err) => handlerError(res, err))
-    },
+  },
 
   getStars: (req, res) => {
     productId = req.query.id;
@@ -31,7 +31,7 @@ module.exports = {
     })
       .then(({data}) => handleResponse(res, data, 200))
       .catch((err) => handlerError(res, err))
-    },
+  },
 
   getStyles: (req, res) => {
       productId = req.query.id;
