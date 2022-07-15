@@ -7,21 +7,47 @@ import axios from 'axios';
 import _ from 'lodash';
 
 function App() {
-  const [product, setProduct] = useState();
-  // const [productStyle, setProductStyle] = useState({});
-  const [outfits, setOutfit] = useState({});
-  const [carouselPos, setCarouselPos] = useState({});
+  const [product, setProduct] = useState(null);
+  const [metaData, setMetaData] = useState(null);
+ // const [related, setRelated] = useState(null);
+ // const [productStyle, setProductStyle] = useState({});
+  const [outfits, setOutfit] = useState(null);
+  const [carouselPos, setCarouselPos] = useState(null);
+
+  const getRequests = {
+    metadata: axios.get('/reviews/meta', {params: {product_id: 40348}}),
+    overview: axios.get('/overview', {params: {id: 40348}}),
+    related: axios.get('/related', {params: {id: 40348}})
+  }
+
+  function sendRequest(fn) {
+    return ()=>{
+      return fn;
+    }
+  }
 
   useEffect(() => {
     updateCurrentProduct(null, '40348');
   }, []);
 
   function updateCurrentProduct(e, id) {
-    const params = {params: {id: id}};
-    axios.get('/overview', params).then(({data}) => {
-      setProduct(data);
-    }).catch((err) => {
-      console.log(err);
+    // const params = {params: {id: id}};
+    // axios.get('/reviews/meta', params).then(({data}) => {
+    //   console.log(data);
+    let promiseArray = [
+      sendRequest(getRequests.metadata)(),
+      sendRequest(getRequests.overview)()
+      // sendRequest(getRequests.related)()
+    ];
+
+    Promise.all(promiseArray)
+      .then(response => {
+        console.log(response[1].data)
+        setMetaData(response[0].data);
+        setProduct(response[1].data);
+//        setRelated(response[2].data)
+      }).catch((err) => {
+        console.log(err);
     });
   }
   function addToOutfit(e, id) {
@@ -82,16 +108,19 @@ function App() {
     }
   }
 
-  if (!product) return null;
 
+
+  if (!product) {
+    return null;
+  }
   return (
     <div className="app">
-      {/* <Overview /> */}
-      {Object.keys(product).length !== 0 ? [
-        <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
+      {/* <Overview product={product}/> */}
+      {/* {Object.keys(product).length !== 0 ? [
+        <Related product={product.details} updateCurrentProduct={updateCurrentProduct}/>,
         <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
-      ] : null}
-      <RatingsWidget product={product.data} />
+      ] : null} */}
+      <RatingsWidget meta={metaData} details={product.details} />
     </div>
   );
 }

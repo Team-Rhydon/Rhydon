@@ -9,7 +9,7 @@ import RelatedPreview from './RelatedPreview.jsx';
 function Related({product, updateCurrentProduct}) {
   // similar to componentDidMount
   const [cards, setCards] = useState({});
-  // const [currentProduct, setProduct] = useState(product.data);
+  const [currentProduct, setProduct] = useState(product.data);
   const [modalContent, setModalContent] = useState({});
   const carouselPos = useRef({});
   const [imagePreview, setPreview] = useState({});
