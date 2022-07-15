@@ -4,7 +4,7 @@ import Modal from "./Modal.jsx";
 function ReviewListItem({review, filter, isFiltered}) {
   const [show, setShow] = useState(false);
   const [url, setUrl] = useState('');
-  const [shortBody, setShortBody] = useState(review.body > 2);
+  const [shortBody, setShortBody] = useState(true);
 
   let enhancePhoto = (value) => {
     //open modal displaying full image
@@ -36,7 +36,7 @@ function ReviewListItem({review, filter, isFiltered}) {
       </div>
       <div>
         <p style={{fontWeight: "bolder"}}>{review.summary.slice(0, 60)}</p>
-        {shortBody
+        {review.body.length < 250
         ?<span>{review.body}</span>
         :<>
           <span>{review.body.slice(0, 249) + '...'}
