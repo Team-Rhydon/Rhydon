@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
+import {FiMaximize} from 'react-icons/fi'
 import ImageModal from './ImageModal.jsx';
 
 let Carousel = ({gallery, currentImage, setCurrentImage}) => {
@@ -42,10 +43,11 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
     <section className="slider">
       <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
       <BsArrowRightCircle className="right-arrow" onClick={nextSlide} />
+      <FiMaximize onClick={() => setImageModal(true)}/>
       {gallery.map(({url}, i) => {
         return (
           <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
-            {i === currentImage.count && (<img onClick={() => setImageModal(true)} src={url} key={i} width="800" height="600"/>)}
+            {i === currentImage.count && (<img  src={url} key={i} width="800" height="600"/>)}
           </div>
         )
       })}

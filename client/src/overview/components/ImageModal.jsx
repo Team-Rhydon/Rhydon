@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
+import {FiMinimize} from 'react-icons/fi'
 import {createPortal} from 'react-dom'
 import styled from 'styled-components';
 import ExpandedIcons from './ExpandedIcons.jsx';
@@ -31,9 +32,9 @@ let ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setIm
     <>
     <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />
     <div style={MODAL_STYLES}>
-      <button onClick={() => setImageModal(false)}> close</button>
       <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
       <BsArrowRightCircle className="right-arrow" onClick={nextSlide}/>
+      <FiMinimize onClick={() => setImageModal(false)}/>
       <img src={currentImage.url} witdh="400px" height="400px"/>
       <ExpandedIcons gallery={gallery} currentImage={currentImage} setCurrentImage={setCurrentImage}/>
       </div>
