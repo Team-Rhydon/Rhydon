@@ -6,6 +6,12 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
 
   const [sku, setSku] = useState();
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  let onSkuClick = (e, skuNumber) => {
+    setSelectedQuantity(1);
+    setSku(skuNumber);
+  }
+
   useEffect(() => {
     setSku();
     setPurchase({
@@ -17,10 +23,6 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
     })
   }, [selectedStyle])
 
-  function onSkuClick(e, skuNumber) {
-    setSelectedQuantity(1);
-    setSku(skuNumber);
-  }
   return (<div>
     {Object.keys(selectedStyle.skus).map((key, i) => {
       let skuNumber = selectedStyle.skus[key]

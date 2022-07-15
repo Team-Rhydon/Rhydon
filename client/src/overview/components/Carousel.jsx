@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
+import {FiMaximize} from 'react-icons/fi'
 import ImageModal from './ImageModal.jsx';
 
 let Carousel = ({gallery, currentImage, setCurrentImage}) => {
@@ -7,23 +8,22 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
 
   const[showImageModal, setImageModal] = useState(false);
 
-  let length = gallery.length - 1
+  let lastCount = gallery.length - 1
 
   let nextSlide = (e) => {
-    debugger;
-    setCurrentImage(prevState => currentImage.count === length ? {
+    setCurrentImage(currentImage.count === lastCount ? {
       count: 0,
       url: gallery[0].url
     } : {
-      count: prevState.count + 1,
+      count: currentImage.count + 1,
       url: gallery[currentImage.count + 1].url
     })
   }
 
   let prevSlide = (e) => {
     setCurrentImage(currentImage.count === 0 ? {
-      count: length,
-      url: gallery[length].url
+      count: lastCount,
+      url: gallery[lastCount].url
     } : {
       count: currentImage.count - 1,
       url: gallery[currentImage.count - 1].url
@@ -43,6 +43,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
     <section className="slider">
       <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
       <BsArrowRightCircle className="right-arrow" onClick={nextSlide} />
+      <FiMaximize onClick={() => setImageModal(true)}/>
       {gallery.map(({url}, i) => {
         return (
           <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>

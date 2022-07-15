@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-let QuantitySelector = ({sku, size, quantity, setPurchase, selectedQuantity, setSelectedQuantity}) => {
+let QuantitySelector = ({size, quantity, setPurchase, selectedQuantity, setSelectedQuantity}) => {
 
   const [stock, setStock] = useState(quantity > 15 ? [...Array(15)] : [...Array(quantity)])
+
   let changeAmount = (e) => {
     setSelectedQuantity(e.target.value);
     console.log(e.target.value);
@@ -23,11 +24,10 @@ let QuantitySelector = ({sku, size, quantity, setPurchase, selectedQuantity, set
         complete: true
       }
     })
-    return () => {
-      setStock(quantity > 15 ? [...Array(15).keys()] : [...Array(quantity).keys()])
-    }
-  }, [sku, size, quantity])
+  }, [size])
+
   if (!stock) return null
+
   return (<div>
     <select className="quantity-selector" value={selectedQuantity} onChange={e => changeAmount(e)}>
       {stock.map((val, i) => {
