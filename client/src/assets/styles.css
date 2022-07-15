@@ -255,6 +255,7 @@ cursor: pointer;
     width: 100vw;
     background-color: transparent;
     z-index: 20;
+    margin: auto;
   }
 
   .preview-background {

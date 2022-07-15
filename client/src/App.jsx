@@ -30,6 +30,12 @@ function App() {
       console.log(err);
     });
   }
+
+  function hidePreview() {
+    const modal = document.getElementsByClassName('preview')[0];
+    modal.classList.add('hidden');
+  }
+
   function addToOutfit(e) {
     e.preventDefault();
     let id;
@@ -90,7 +96,7 @@ function App() {
       <Nav />
       {/* <Overview /> */}
       <Overview {...product}/>
-      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct}/>,
+      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       {/* {Object.keys(product).length !== 0 ? [
         <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,

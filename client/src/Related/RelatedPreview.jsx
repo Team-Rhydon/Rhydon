@@ -3,11 +3,6 @@ import React, {
 } from 'react';
 
 function RelatedPreview({url, setPreview}) {
-  function hidePreview() {
-    const modal = document.getElementsByClassName('preview')[0];
-    modal.classList.add('hidden');
-  }
-
   return (
     <div className="preview hidden" >
       <div className="preview-background" onClick={(e) => {

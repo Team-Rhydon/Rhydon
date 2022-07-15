@@ -1,5 +1,5 @@
 import React, {Component, useEffect, useState, useRef} from 'react';
-import logo from './assets/logos/rhydon.png';
+import logo from './assets/logos/rhydon-logos_black 2.png';
 import search from './assets/icons/icons8-search-30.svg';
 function Nav() {
   return (
