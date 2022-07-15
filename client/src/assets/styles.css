@@ -493,6 +493,5 @@ th:first-child, td:first-child {
 }
 
 tr:nth-child(even) {
-  width: 33%;
   background-color: beige;
 }

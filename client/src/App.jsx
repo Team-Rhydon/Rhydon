@@ -12,7 +12,12 @@ function App() {
   const [carouselPos, setCarouselPos] = useState({});
 
   useEffect(() => {
-    updateCurrentProduct(null, '40348');
+    updateCurrentProduct(null, '40348'); // air force 1's
+    // updateCurrentProduct(null, '40351'); // yeasy
+    // updateCurrentProduct(null, '40346'); // joggers
+    // updateCurrentProduct(null, '40344'); // camo onesie
+    // updateCurrentProduct(null, '40376'); // oout of stock size
+    // updateCurrentProduct(null, '40353'); // stones
   }, []);
 
   function updateCurrentProduct(e, id) {
@@ -82,9 +87,13 @@ function App() {
   return (
     <div className="app">
       {/* <Overview /> */}
-
+      <Overview {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
+      {/* {Object.keys(product).length !== 0 ? [
+        <Related product={product.data} updateCurrentProduct={updateCurrentProduct}/>,
+        <Outfit productStyle={productStyle.data} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>,
+      ] : null} */}
       {/* <RatingsWidget product={product.data} /> */}
     </div>
   );
