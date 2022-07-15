@@ -1,13 +1,14 @@
 import React, {Component, useState} from 'react';
 import axios from 'axios';
 import StarRating from './StarRating.jsx';
-function RelatedCard({card, position, id, showModal, showPreview, updateCurrentProduct, setProduct}) {
-  let {category, name, originalPrice, rating, salePrice, thumbnail} = card;
+function RelatedCard({card, position, id, showModal, setPreview, updateCurrentProduct, setProduct}) {
+  let {category, name, originalPrice, rating, salePrice, img, thumbnail} = card;
+
   return (
     <div className={`slide ${position}`}>
       <div className='product-card'>
         <img className='thumb' onClick={(e) => {
-          showPreview(e, id);
+          setPreview(img);
         }}src={thumbnail}/>
         <div className="star" onClick={(e) => {
           showModal(e, id);

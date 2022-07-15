@@ -46,7 +46,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
       {gallery.map(({url}, i) => {
         return (
           <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
-            {i === currentImage.count && (<img onClick={() => setImageModal(true)} src={url} key={i} width="800" height="600"/>)}
+            {i === currentImage.count && (<img className='main-product-img'onClick={() => setImageModal(true)} src={url} key={i} width="800" height="600"/>)}
           </div>
         )
       })}

@@ -3,9 +3,10 @@ import Related from './Related/Related.jsx';
 import Overview from './overview/Overview.jsx';
 import Outfit from './Related/Outfit.jsx';
 import RatingsWidget from './Ratings/RatingsWidget.jsx';
+import Nav from './Nav.jsx';
 import axios from 'axios';
 import _ from 'lodash';
-
+import logo from './assets/logos/rhydon-logos_black.png';
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
@@ -86,6 +87,7 @@ function App() {
   if (!product) return null;
   return (
     <div className="app">
+      <Nav />
       {/* <Overview /> */}
       <Overview {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct}/>,
