@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
+// import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs';
 
 let MiniSlides = ({gallery, setCurrentImage, currentImage}) => {
 

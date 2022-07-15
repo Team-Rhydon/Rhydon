@@ -2,6 +2,7 @@ import React, {StrictMode} from "react";
 import {createRoot} from "react-dom/client";
 import App from "./App.jsx";
 import "./assets/styles.css";
+import "./assets/modal.css";
 const container = document.createElement("div");
 container.setAttribute("id", "root");
 document.body.appendChild(container);

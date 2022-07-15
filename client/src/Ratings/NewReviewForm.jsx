@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import Body from "./NewReviewPages/Body.jsx";
 import Characteristics from "./NewReviewPages/Characteristics.jsx";
 import ReviewPhotos from "./NewReviewPages/ReviewPhotos.jsx";
@@ -6,184 +6,135 @@ import Summary from "./NewReviewPages/Summary.jsx";
 import UserInfo from "./NewReviewPages/UserInfo.jsx";
 const axios = require("axios");
 
-class NewReviewForm extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: 1,
-      rating: 0,
-      recommended: null,
-      characteristics: {},
-      summary: '',
-      body: '',
-      photos: [],
-      reviewer_name: '',
-      reviewer_email: ''
-    }
-    this.handleClick = this.handleClick.bind(this);
-    this.setStarRating = this.setStarRating.bind(this);
-    this.setRecommended = this.setRecommended.bind(this);
-    this.setChars = this.setChars.bind(this);
-    this.setSummary = this.setSummary.bind(this);
-    this.setBody = this.setBody.bind(this);
-    this.setPhotos = this.setPhotos.bind(this);
-    this.setUserInfo = this.setUserInfo.bind(this);
-    this.sendPostRequest = this.sendPostRequest.bind(this);
-  }
+function NewReviewForm(props) {
+  const [page, setPage] = useState(1);
+  const [rating, setRating] = useState(0);
+  const [recommended, setRecommended] = useState(null);
+  const [characteristics, setCharacteristics] = useState(null);
+  const [summary, setSummary] = useState('');
+  const [body, setBody] = useState('');
+  const [photos, setPhotos] = useState(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
-  componentDidUpdate() {
 
-  }
-  setChars(value){
-    this.setState({
-      characteristics: value
-    }, ()=>{
-      console.log(this.state.characteristics)
-    })
+  let ratingRef = useRef(rating);
+  let recommendedRef = useRef(recommended);
+  let characteristicsRef = useRef(characteristics);
+  let bodyRef = useRef(body);
+  let nameRef = useRef(name);
+  let emailRef = useRef(email);
 
-  }
-  handleClick(value){
-    if(this.state.page > 0 || this.state.page < 8) {
-      this.setState({
-        page: this.state.page + value
-      })
-    }
-  }
+  // sendPostRequest(obj) {
+  //   let params = {product_id: 40344};
+  //   let data = this.state;
+  //   axios.post('/reviews', {params: params, data: data})
+  //     .then(()=>  alert('successfully posted! please close form'))
+  //     .catch(err => {return alert('successfully posted! please close form');console.log('err posting data')});
+  // }
 
-  setStarRating(value) {
-    this.setState({
-      rating: value
-    }, ()=>{
-      console.log(this.state.rating);
-    })
-  }
-
-  setRecommended(value) {
-    this.setState({
-      recommended: value
-    }, ()=>{
-      console.log(this.state.recommended);
-    })
-  }
-
-  setSummary(value) {
-    this.setState({
-      summary: value
-    }, ()=> {
-      console.log(this.state.summary)
-    })
-  }
-
-  setBody(value) {
-    this.setState({
-      body: value
-    }, ()=> {
-      console.log(this.state.body)
-    })
-  }
-
-  setPhotos(value) {
-    this.setState({
-      photos: value
-    }, ()=> {
-      console.log(this.state.photos)
-    })
-  }
-
-  setUserInfo(obj) {
-    this.setState({
-      reviewer_name: obj.nickname,
-      reviewer_email: obj.email
-    }, ()=> {
-      console.log(this.state.reviewer_name, this.state.reviewer_email)
-    })
-  }
-
-  sendPostRequest(obj) {
-    let params = {product_id: 40344};
-    let data = this.state;
-    axios.post('/reviews', {params: params, data: data})
-      .then(()=>  alert('successfully posted! please close form'))
-      .catch(err => {return alert('successfully posted! please close form');console.log('err posting data')});
-  }
-
-  render() {
-    const page = {
-      1:(<div className="star-rating">
-        {[...Array(5)].map((star, index) => {
-          index += 1;
-          return (
-            <button
-              id="star-button"
-              type="button"
-              key={index}
-              className={index <= this.state.rating ? "on" : "off"}
-              onClick={() => this.setStarRating(index)}
-            >
-              <span className="star">&#9733;</span>
-            </button>
-          );
-        })}
-        <p>{this.state.rating === 0 ? null : this.state.rating + " STAR RATING -"}  {[null, "Poor", "Fair", "Average", "Good", "Great!"][this.state.rating]}</p>
-        </div>),
-      2:(<div className="tab"> Do you recommend this product?
-         <p>{this.state.recommended === null ? null : this.state.recommended ? "YES" : "NO"}</p>
-         <br></br>
+  const pageForm = {
+    1:(<div className="star-rating">
+      {[...Array(5)].map((star, index) => {
+        index += 1;
+        return (
           <button
+            id="star-button"
             type="button"
-            onClick={()=>this.setRecommended(true)}
-            > Yes
+            key={index}
+            className={index <= rating ? "on" : "off"}
+            onClick={() => setRating(index)}>
+            <span className="star">&#9733;</span>
           </button>
-          <button
-            type="button"
-            onClick={()=> this.setRecommended(false)}
-            > No
-          </button>
-        </div>),
-      3:(<div className="tab">
-          <Characteristics setChars={this.setChars} />
-        </div>),
-      4:(<div className="tab"> Review Summary
-          <Summary setSum={this.setSummary} />
-        </div>),
-      5:(<div className="tab"> Review body --mandatory--
-         <Body  setBody={this.setBody} />
-         </div>),
-      6:( <div className="tab"> upload photos
-          <ReviewPhotos setPhotos={this.setPhotos} />
-        </div>),
-      7:(<div className="tab"> nickname --mandatory--
-            <UserInfo setUserInfo={this.setUserInfo} />
-        </div> ),
-      8:<>
-          <h3>Post Your Review!</h3>
-          <button onClick={this.sendPostRequest}>Submit</button>
-        </>
-    };
-    let initialState = {
-      1: 0,
-      2: null,
-      3: {},
-      4: '',
-      5: '',
-      6: [],
-      7: '',
-      8: ''
-    };
-    return (
-        <div id="reviewForm">
-          <label> Tell us about the {this.props.product.name}</label>
-          <br></br>
-          {!page[this.state.page] ? "loading" : page[this.state.page]}
-          <div style={{overflow: "auto"}}>
-            <div style={{float: "right"}}>
-              {this.state.page > 1 ?<button type="button" id="prevBtn" onClick={()=>this.handleClick(-1)}>Previous</button>: null}
-              {initialState[page] === this.state.ratings ? null : this.state.page < 8 ?<button type="button" id="nextBtn" onClick={()=>this.handleClick(1)}>Next</button> : null}
-            </div>
+        );
+      })}
+      <p>{rating === 0 ? null : rating + " STAR RATING -"}  {[null, "Poor", "Fair", "Average", "Good", "Great!"][rating]}</p>
+      <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            {ratingRef.current !== rating ?<button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button> : null}
           </div>
         </div>
-    )
-  }
+      </div>),
+    2:(<div className="tab"> Do you recommend this product?
+        <p>{recommended === null ? null : recommended ? "YES" : "NO"}</p>
+        <br></br>
+        <button
+          type="button"
+          onClick={()=>setRecommended(true)}
+          > Yes
+        </button>
+        <button
+          type="button"
+          onClick={()=> setRecommended(false)}
+          > No
+        </button>
+        <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            {recommendedRef.current !== recommended ?<button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button> : null}
+          </div>
+        </div>
+      </div>),
+    3:(<div className="tab">
+        <Characteristics setChars={setCharacteristics} />
+        <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            {characteristicsRef.current !== characteristics ?<button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button> : null}
+          </div>
+        </div>
+      </div>),
+    4:(<div className="tab"> Review Summary
+        <Summary setSum={setSummary} />
+        <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
+          </div>
+        </div>
+      </div>),
+    5:(<div className="tab">
+        <Body  setBody={setBody} />
+        <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            {bodyRef.current !== body ?<button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button> : null}
+          </div>
+        </div>
+        </div>),
+    6:( <div className="tab"> upload photos
+        <ReviewPhotos setPhotos={setPhotos} />
+        <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
+          </div>
+        </div>
+      </div>),
+    7:(<div className="tab"> nickname
+          <UserInfo setName={setName} setEmail={setEmail} />
+          <div style={{overflow: "auto"}}>
+          <div style={{float: "right"}}>
+            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
+            {nameRef.current !== name && emailRef.current !== email ?<button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button> : null}
+          </div>
+        </div>
+      </div> ),
+    8:<>
+        <h3>Post Your Review!</h3>
+        <button onClick={e=> sendPostRequest(e)}>Submit</button>
+      </>
+  };
+
+  return (
+      <div id="reviewForm">
+        <label> Tell us about the {props.name}</label>
+        <br></br>
+        {!pageForm[page] ? "loading" : pageForm[page]}
+      </div>
+  )
 }
+
 
 export default NewReviewForm;
