@@ -9,18 +9,19 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
 
   let length = gallery.length - 1
 
-  const nextSlide = () => {
+  let nextSlide = (e) => {
+    debugger;
     setCurrentImage(prevState => currentImage.count === length ? {
       count: 0,
       url: gallery[0].url
     } : {
-      count: currentImage.count + 1,
+      count: prevState.count + 1,
       url: gallery[currentImage.count].url
     })
   }
 
-  const prevSlide = () => {
-    setCurrentImage(prevState => currentImage.count === 0 ? {
+  let prevSlide = (e) => {
+    setCurrentImage(currentImage.count === 0 ? {
       count: length,
       url: gallery[length].url
     } : {
@@ -36,7 +37,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
     }));
   }, [gallery])
 
-  const passProps = {gallery, currentImage, setCurrentImage, showImageModal, setImageModal};
+  const passProps = {gallery, currentImage, setCurrentImage, showImageModal, setImageModal, prevSlide, nextSlide};
 
   return (
     <section className="slider">

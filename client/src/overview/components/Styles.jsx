@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
-
 
 let Styles = ({styles}) => {
   let {results} = styles;

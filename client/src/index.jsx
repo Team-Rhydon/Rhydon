@@ -7,5 +7,5 @@ container.setAttribute("id", "root");
 document.body.appendChild(container);
 const root = createRoot(container);
 root.render(
-  <StrictMode><App /></StrictMode>,
+  <><App /></>,
 );
