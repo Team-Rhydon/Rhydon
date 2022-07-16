@@ -1,29 +1,58 @@
 .overview-widget {
   display: flex;
-  justify-content: space-around;
-  background-color: rgba(53, 62, 57, 0.417);
-  flex-wrap: wrap;
-  margin: 10px;
-  padding: 0.2em;
+  flex-direction: column;
 }
 
 .overview-styles {
   display: flex;
-  flex: 1 0 100%;
-  background-color: rgb(71, 232, 232);
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0px 50px 0px 50px;
 }
 
 .o-image-gallery {
   display: flex;
-  background-color: black;
+}
+
+.slider {
+  display:flex;
 }
 
 .miniSlider {
-  height: 12vh;
-  justify-content: left;
-}
-.slider {
-  height: 50vh;
-  justify-content: center;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.ms-image {
+  width: 55px;
+  height: 55px;
+  border-radius: 7px;
+}
+
+.ms-image-selected {
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+}
+
+.ms-arrowup {
+  position: relative;
+  top: 35px;
+  font-size: 30px;
+  opacity: .4;
+}
+
+.ms-arrowdown {
+  position: relative;
+  bottom: 35px;
+  font-size: 30px;
+  opacity: .4;
+}
+
+.ms-arrowup:hover, .ms-arrowdown:hover{
+  cursor: pointer;
+  opacity: 1;
 }

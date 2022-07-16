@@ -19,7 +19,6 @@ let ImageGallery = ({selectedStyle}) => {
   }
 
   return(<div className="o-image-gallery">
-    <MiniSlides {...commonProps}/>
     <Carousel className="image" {...commonProps}/>
   </div>)
 }
