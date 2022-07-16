@@ -4,20 +4,33 @@ const ReviewPhotos = props => {
   const [photos, setPhotos] = useState([]);
   const [photoStorage, setPhotoStorage] = useState([]);
 
+  const url = "https://api.cloudinary.com/v1_1/dxhzukgow/image/upload";
+  const cloudinaryPreset = 'ygdd9nwq';
 
   useEffect(()=> {
-    if (photos.length < 1 || photos.length > 4) {
+    if (photos.length < 1 || photos.length > 5) {
       return;
     }
     const newPhotoStorage = [];
-    photos.forEach(photo => newPhotoStorage.push(URL.createObjectURL(photo)));
+    photos.forEach(photo => {
+      let data = new FormData();
+      data.append('file', photo);
+      data.append("upload_preset", cloudinaryPreset);
+      data.append("cloud_name", 'dxhzukgow');
+      fetch(url, {
+        method: "post",
+        body: data
+      }).then(response => response.json())
+        .then(data=> {
+          newPhotoStorage.push(data.url);
+        })
+        .catch(err=>console.log(err));
+    })
     setPhotoStorage(newPhotoStorage);
   }, [photos]);
 
   function handlePhotoChange(event) {
     setPhotos([...photos, ...event.target.files]);
-    console.log(photos)
-    console.log(photoStorage)
   }
 
   function handleSubmit (event) {
@@ -28,7 +41,7 @@ const ReviewPhotos = props => {
 
   return (
     <div className="Review-Photos">
-      <input type="file" multiple accept="image/*" onChange={handlePhotoChange} />
+      <input type="file" id="photoUpload" multiple accept="image/*" onChange={handlePhotoChange} />
       <br></br>
       {photoStorage.map((photoSrc, index) => <div key={index}>
         <span>Image # {index + 1}</span>

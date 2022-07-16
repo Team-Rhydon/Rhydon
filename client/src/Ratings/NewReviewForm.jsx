@@ -13,7 +13,7 @@ function NewReviewForm(props) {
   const [characteristics, setCharacteristics] = useState(null);
   const [summary, setSummary] = useState('');
   const [body, setBody] = useState('');
-  const [photos, setPhotos] = useState(null);
+  const [photos, setPhotos] = useState(['']);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
@@ -25,13 +25,31 @@ function NewReviewForm(props) {
   let nameRef = useRef(name);
   let emailRef = useRef(email);
 
-  // sendPostRequest(obj) {
-  //   let params = {product_id: 40344};
-  //   let data = this.state;
-  //   axios.post('/reviews', {params: params, data: data})
-  //     .then(()=>  alert('successfully posted! please close form'))
-  //     .catch(err => {return alert('successfully posted! please close form');console.log('err posting data')});
-  // }
+  let sendPostRequest =(event) => {
+
+    let params = {product_id: Number(props.product.product_id)};
+    let data = {
+      ...params,
+      rating: rating,
+      summary: summary,
+      body: body,
+      recommend: recommended,
+      name: name,
+      email: email,
+      photos: photos,
+      characteristics: characteristics
+    };
+    let options = {
+      url: '/reviews',
+      method: 'post',
+      params: params,
+      data: data
+    }
+    console.log(options);
+    axios(options)
+      .then(()=>  alert('successfully posted! please close form'))
+      .catch(err => {return alert('error! please review form entries');console.log('err posting data')});
+  }
 
   const pageForm = {
     1:(<div className="star-rating">
@@ -77,7 +95,7 @@ function NewReviewForm(props) {
         </div>
       </div>),
     3:(<div className="tab">
-        <Characteristics setChars={setCharacteristics} />
+        <Characteristics chars={props.product.characteristics} setChars={setCharacteristics} />
         <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
@@ -129,7 +147,7 @@ function NewReviewForm(props) {
 
   return (
       <div id="reviewForm">
-        <label> Tell us about the {props.name}</label>
+        <label> Tell us about the {props.details.name}</label>
         <br></br>
         {!pageForm[page] ? "loading" : pageForm[page]}
       </div>

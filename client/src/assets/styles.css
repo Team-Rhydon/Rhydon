@@ -389,6 +389,21 @@ cursor: pointer;
   .Ratings-Breakdown {
     display: flex;
     flex-direction: row;
+    width: 75%;
+    align-self: center;
+  }
+
+  .Ratings-Reviews-Summary {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Star-Ratings {
+    display: flex;
+    flex-direction: row;
   }
 
   .ReviewHeader {
@@ -396,7 +411,8 @@ cursor: pointer;
     justify-content: space-between;
     margin-right: 2px;
     padding-right: 2px;
-    margin-top: 1em;
+    margin-top: .5em;
+    border-bottom: 2px solid black;
   }
 
   .ReviewContainer-scrollable {
@@ -480,7 +496,12 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: 1em transparent grey;
+    background-color: rgb(180, 180, 180);
+    margin: 1em;
+    border: 1px solid black;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 25px;
   }
 
 .miniSlider {
@@ -558,5 +579,3 @@ margin-right: 20px;
   max-width: auto;
   max-height: 100%;
 }
-
-

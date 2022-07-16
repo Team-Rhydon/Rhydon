@@ -5,7 +5,7 @@ function ProductBreakdown(props) {
   return (
     //might be a good place to try a react table?
     //can probably replace all the spans with sliding components
-    <div style={{border: "1px solid black"}}>
+    <div className="Product-Breakdown" style={{width: "33%"}}>
       {Object.entries(props.traits).map(([trait, {value}], index)=>{
         // console.log(trait);
         return (
@@ -22,6 +22,7 @@ function ProductBreakdown(props) {
           </div>
        )
      })}
+
     </div>
   )
 }

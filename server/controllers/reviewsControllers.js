@@ -17,9 +17,10 @@ module.exports = {
   },
   post: {
     review: (req, res) => {
-      models.postReview(req.query, req.body)
-        .then(response=> res.status(201).send('Successful Post!'))
-        .catch(err => res.statusStatus(500))
+      console.log('query :', req.query, 'body :', req.body)
+      models.postReview(req.body)
+        .then(()=> res.status(201).send('Successful Post!'))
+        .catch(err => {console.log(err);res.sendStatus(500)})
     }
   },
 

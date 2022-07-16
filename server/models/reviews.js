@@ -13,8 +13,14 @@ module.exports = {
       }})
   },
 
-  postReview: (query, body) => {
-      //TODO
+  postReview: (body) => {
+    console.log(body);
+    let options = {
+      url: '/reviews',
+      method: 'post',
+      data: body
+    }
+    return axios(options)
   },
 
   getReviewMeta: (query) => {

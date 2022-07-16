@@ -26,7 +26,7 @@ function RatingsWidget(props) {
 
   return (
     <div className="RatingWidget" style={{border: '1px solid black'}}>
-      <div className="Ratings-Breakdown" style={{width: '20%'}}>
+      <div className="Ratings-Breakdown">
         <RatingBreakdown
           setFilter={setFilter}
           filter={filter}
@@ -35,7 +35,8 @@ function RatingsWidget(props) {
         />
         <ProductBreakdown traits={props.meta.characteristics}/>
       </div>
-      <div className="reviewBody" style={{width: '80%', height: '100%'}}>
+      <br></br>
+      <div className="reviewBody" style={{width: '100%', height: '100%'}}>
         <ReviewList
           product={props.meta}
           product_id={props.meta.product_id}

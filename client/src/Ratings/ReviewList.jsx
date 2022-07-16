@@ -98,7 +98,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
         <button onClick={()=>setShow(true)} > Modal/Review this Product</button>
         <Modal
           title={'Review This Product'}
-          children={<NewReviewForm product={product} name={details.name} />}
+          children={<NewReviewForm product={product} details={details} />}
           onClose={()=>setShow(false)}
           show={show}
         />
