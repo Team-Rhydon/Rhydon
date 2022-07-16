@@ -154,9 +154,11 @@ background: center; */
 
 position: relative;
 margin: 0 auto;
+/* max-width: 25%; */
 width: 200px;
 background-color: white;
 height: 200px;
+/* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
 }
@@ -214,8 +216,8 @@ cursor: pointer;
     color: rgb(255,200,0);
   }
 
-  .related-modal {
-    position: absolute;
+  .modal {
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -225,7 +227,7 @@ cursor: pointer;
     margin: auto;
   }
 
-  .related-modal .related-modal-background {
+  .modal .modal-background {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -233,39 +235,46 @@ cursor: pointer;
     background: transparent;
   }
 
-  .related-modal .related-modal-content {
+  .modal .modal-content {
     width: 30%;
     height: 30%;
     border: 2px solid black;
     text-align: center;
-    margin: auto;
+    /* margin: auto; */
     z-index: 10;
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   }
 
-  .related-modal.hidden {
+  .modal.hidden {
     display: none;
   }
 
   .preview {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: transparent;
-    z-index: 20;
+    background: rgba(60,60,60, .5);
+    z-index: 8;
     margin: auto;
   }
 
-  .preview-background {
+  .preview .preview-background {
     width: 100%;
     height: 100%;
-    /* background: rgba(60,60,60, .5); */
-    background: transparent;
     text-align: center;
+    margin: auto;
+    background: transparent;
   }
 
-  .preview-content {
+
+  .preview .preview-content {
     margin: 0 auto;
     max-width: auto;
     max-height: 100%;
@@ -374,6 +383,12 @@ cursor: pointer;
 
   .RatingWidget {
     display: flex;
+    flex-direction: column;
+  }
+
+  .Ratings-Breakdown {
+    display: flex;
+    flex-direction: row;
   }
 
   .ReviewHeader {
@@ -381,6 +396,7 @@ cursor: pointer;
     justify-content: space-between;
     margin-right: 2px;
     padding-right: 2px;
+    margin-top: 1em;
   }
 
   .ReviewContainer-scrollable {
@@ -464,6 +480,7 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border: 1em transparent grey;
   }
 
 .miniSlider {

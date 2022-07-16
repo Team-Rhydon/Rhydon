@@ -11,7 +11,7 @@ function RelatedModal({modalContent}) {
 
   function hideModal(e) {
     e.preventDefault();
-    const modal = document.getElementsByClassName('related-modal')[0];
+    const modal = document.getElementsByClassName('modal')[0];
     modal.classList.add('hidden');
   }
 
@@ -60,9 +60,9 @@ function RelatedModal({modalContent}) {
   const characteristics = formatCharacteristics(modalContent);
 
   return (
-    <div className="related-modal hidden">
+    <div className="modal hidden">
       <div
-        className="related-modal-background"
+        className="modal-background"
         onClick={(e) => {
           hideModal(e);
         }}

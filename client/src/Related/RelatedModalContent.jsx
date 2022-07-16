@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 function RelatedModalContent({curName, compName, characteristics}) {
   return (
-    <table className="related-modal-content">
+    <table className="modal-content">
       <thead>
         <tr>
           <th>Comparing</th>
