@@ -17,7 +17,7 @@ let Styles = ({styles}) => {
   const commonProps = {productStyles, selectedStyle, setSelectedStyle}
 
   return(
-    <div>
+    <div className="overview-styles">
       <ImageGallery selectedStyle={selectedStyle}/>
       <StyleSelector {...commonProps}/>
       <AddToCart {...commonProps}

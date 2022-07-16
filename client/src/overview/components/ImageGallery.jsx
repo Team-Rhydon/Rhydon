@@ -18,10 +18,10 @@ let ImageGallery = ({selectedStyle}) => {
     setCurrentImage
   }
 
-  return(<>
+  return(<div className="o-image-gallery">
     <MiniSlides {...commonProps}/>
     <Carousel className="image" {...commonProps}/>
-  </>)
+  </div>)
 }
 
 export default ImageGallery

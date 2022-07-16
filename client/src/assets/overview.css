@@ -1,6 +1,21 @@
 .overview-widget {
   display: flex;
-  background-color: rgb(225, 65, 65);
+  justify-content: space-around;
+  background-color: rgba(53, 62, 57, 0.417);
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 0.2em;
+}
+
+.overview-styles {
+  display: flex;
+  flex: 1 0 100%;
+  background-color: rgb(71, 232, 232);
+}
+
+.o-image-gallery {
+  display: flex;
+  background-color: black;
 }
 
 .miniSlider {
@@ -8,7 +23,7 @@
   justify-content: left;
 }
 .slider {
-  height: 90vh;
+  height: 50vh;
   justify-content: center;
   display: flex;
 }
