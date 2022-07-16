@@ -6,15 +6,15 @@ const Modal = (props) => {
     return null;
   }
   return (
-    <div className="modal" onClick={props.onClose}>
-      <div className="modal-content" onClick={event=> event.stopPropagation()}>
-        <div className="modal-header">
+    <div className="ratings-modal" onClick={props.onClose}>
+      <div className="ratings-modal-content" onClick={event=> event.stopPropagation()}>
+        <div className="ratings-modal-header">
           {props.title}
         </div>
-        <div className="modal-body">
+        <div className="ratings-modal-body">
           {props.children}
         </div>
-        <div className="modal-footer">
+        <div className="ratings-modal-footer">
           <button onClick={props.onClose} className="button">Close</button>
         </div>
 

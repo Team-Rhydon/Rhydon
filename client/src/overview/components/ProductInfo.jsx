@@ -20,7 +20,7 @@ let ProductInfo = ({details, reviews}) => {
       people += parseInt(data[star]);
       stars += (data[star] * star);
     }
-    console.log(stars/people)
+    setCount(people)
     setRating(prevState => stars/people)
   }
 

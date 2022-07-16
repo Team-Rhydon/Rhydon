@@ -112,8 +112,8 @@ function Related({product, updateCurrentProduct, hidePreview}) {
         </div>
         <button onClick={(e) => moveRelatedRight(e)} className="carousel-next">{'>'}</button>
       </div>
-      {Object.keys(modalContent).length !== 0 ? <RelatedModal modalContent={modalContent} /> : null}
       {Object.keys(imagePreview).length !== 0 ? <RelatedPreview url={imagePreview} setPreview={setPreview}/> : null}
+      {Object.keys(modalContent).length !== 0 ? <RelatedModal modalContent={modalContent} /> : null}
     </div>
   );
 }
