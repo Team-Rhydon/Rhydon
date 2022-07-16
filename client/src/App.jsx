@@ -25,7 +25,6 @@ function App() {
     setProduct();
     const params = {params: {id: id}};
     axios.get('/overview', params).then(({data}) => {
-      console.log(data);
       setProduct(data);
     }).catch((err) => {
       console.log(err);
@@ -98,7 +97,7 @@ function App() {
       <Overview {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget meta={product.reviews} />
+      <RatingsWidget meta={product.reviews} details={product.details}/>
     </div>
   );
 }
