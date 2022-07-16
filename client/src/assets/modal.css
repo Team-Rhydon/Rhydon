@@ -1,4 +1,4 @@
-.modal {
+.ratings-modal {
   position: fixed;
   left: 0;
   top: 0;
@@ -10,22 +10,22 @@
   justify-content: center;
 }
 
-.modal-content {
+.ratings-modal-content {
   min-width: 45%;
   max-width: 90%;
   background-color: rgb(255, 255, 255);
 }
 
-.modal-header, .modal-footer {
+.ratings-modal-header, .ratings-modal-footer {
   padding: 10px;
   border: 1px solid black;
 }
 
-.modal-title {
+.ratings-modal-title {
   margin: 0;
 }
 
-.modal-body {
+.ratings-modal-body {
   max-height: 90vh;
   max-width: 90vw;
   overflow-y: scroll;

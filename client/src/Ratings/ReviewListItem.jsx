@@ -26,7 +26,7 @@ function ReviewListItem({review, filter, isFiltered}) {
     }
   }
   return (
-    <div className="ReviewTile" style={{border: "1px solid black", width: "100%"}} >
+    <div className="ReviewTile" style={{width: "100%"}} >
       <div className="ReviewHeader" style={{border: "1px solid black", width: "100%"}}>
         <span>{'★'.repeat(review.rating)} </span>
         <span className="nameAndDate">

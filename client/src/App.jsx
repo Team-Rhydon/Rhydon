@@ -97,7 +97,11 @@ function App() {
       <Overview {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
+<<<<<<< HEAD
       <RatingsWidget meta={product.reviews} details={product.details} />
+=======
+      <RatingsWidget details={product.details} meta={product.reviews} />
+>>>>>>> 167cc37482131e2ffb51a614ec7581f61cf9663d
     </div>
   );
 }
