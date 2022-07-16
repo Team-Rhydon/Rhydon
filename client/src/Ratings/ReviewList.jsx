@@ -7,7 +7,6 @@ import Modal from './Modal.jsx';
 import '../assets/modal.css';
 
 function ReviewList({product, product_id, filter, isFiltered, details}) {
-  console.log('product: ', product)
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(5);
   const [sortStyle, setSortStyle] = useState('relevant');
