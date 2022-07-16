@@ -6,15 +6,12 @@ import RelatedCard from './RelatedCard.jsx';
 import RelatedModal from './RelatedModal.jsx';
 import RelatedPreview from './RelatedPreview.jsx';
 
-function Related({product, updateCurrentProduct}) {
+function Related({product, updateCurrentProduct, hidePreview}) {
   const [cards, setCards] = useState({});
-  // const [currentProduct, setProduct] = useState(product.data);
+  const [currentProduct, setProduct] = useState(product.data);
   const [modalContent, setModalContent] = useState({});
   const carouselPos = useRef({});
   const [imagePreview, setPreview] = useState({});
-  function showPreview(e, id) {
-    setPreview(cards[id].img);
-  }
 
   useEffect(() => {
     const params = {
@@ -110,13 +107,13 @@ function Related({product, updateCurrentProduct}) {
           {Object.keys(cards).map((id, index) => <RelatedCard
             key={id} id={id} showModal={showModal} card={cards[id]}
             updateCurrentProduct={updateCurrentProduct}
-            showPreview={showPreview}
+            setPreview={setPreview}
             position={carouselPos.current[id]} />)}
         </div>
         <button onClick={(e) => moveRelatedRight(e)} className="carousel-next">{'>'}</button>
       </div>
       {Object.keys(modalContent).length !== 0 ? <RelatedModal modalContent={modalContent} /> : null}
-      {Object.keys(imagePreview).length !== 0 ? <RelatedPreview url={imagePreview}/> : null}
+      {Object.keys(imagePreview).length !== 0 ? <RelatedPreview url={imagePreview} setPreview={setPreview}/> : null}
     </div>
   );
 }

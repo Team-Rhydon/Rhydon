@@ -5,7 +5,7 @@ const dotenv = require('dotenv').config({
 });
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry: path.join(__dirname, './client/src/index.jsx'), // change this file path to YOUR index.js file
+  entry: path.join(__dirname, './client/src/index.jsx'),
   mode: 'development',
   module: {
     rules: [

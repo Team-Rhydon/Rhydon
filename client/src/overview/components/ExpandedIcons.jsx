@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
 import {FaCircleNotch, FaCircle} from 'react-icons/fa'
+import {VscCircleFilled} from 'react-icons/vsc'
 
 let ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
 
@@ -20,7 +21,7 @@ let ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
   return (
     <section className="miniSlider">
     {slide.map((obj, i) => { return <div key={i} onClick={() => changeImage(i)}>
-      {i === currentImage.count ? <FaCircleNotch /> : <FaCircle /> }
+      {i === currentImage.count ? <FaCircleNotch /> : <VscCircleFilled /> }
     </div>})}
     </section>
   )

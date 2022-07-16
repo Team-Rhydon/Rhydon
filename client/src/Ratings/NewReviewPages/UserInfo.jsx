@@ -6,11 +6,8 @@ const UserInfo = props => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.setUserInfo({
-      nickname: nickname,
-      email: email
-    });
-    return () => {console.log(nickname, email)};
+    props.setName(nickname)
+    props.setEmail(email)
   }
 
   return (
