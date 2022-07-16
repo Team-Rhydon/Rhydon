@@ -26,7 +26,7 @@ function RatingsWidget(props) {
 
   return (
     <div className="RatingWidget" style={{border: '1px solid black'}}>
-      <div style={{width: '20%'}}>
+      <div className="Ratings-Breakdown" style={{width: '20%'}}>
         <RatingBreakdown
           setFilter={setFilter}
           filter={filter}
