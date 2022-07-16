@@ -50,7 +50,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
 
   useEffect(() => {
     if (Object.keys(modalContent).length !== 0) {
-      const modal = document.getElementsByClassName('modal')[0];
+      const modal = document.getElementsByClassName('related-modal')[0];
       modal.classList.remove('hidden');
     }
   }, [modalContent]);

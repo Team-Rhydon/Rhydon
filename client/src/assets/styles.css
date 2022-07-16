@@ -214,38 +214,37 @@ cursor: pointer;
     color: rgb(255,200,0);
   }
 
-  /* .modal {
+  .related-modal {
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: transparent;
-    z-index: 20;
+    background: rgba(60,60,60, .5);
+    z-index: 8;
     margin: auto;
   }
 
-  .modal .modal-background {
+  .related-modal .related-modal-background {
     width: 100%;
     height: 100%;
-    background-color: transparent;
     text-align: center;
     margin: auto;
+    background: transparent;
   }
 
-  .modal .modal-content {
+  .related-modal .related-modal-content {
     width: 30%;
-    background-color: white;
     height: 30%;
     border: 2px solid black;
     text-align: center;
     margin: auto;
-
+    z-index: 10;
   }
 
-  .modal.hidden {
+  .related-modal.hidden {
     display: none;
-  } */
+  }
 
   .preview {
     position: absolute;
