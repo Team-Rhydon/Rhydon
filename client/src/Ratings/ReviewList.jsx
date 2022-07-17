@@ -30,6 +30,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
       ratings += parseInt(star);
     });
     setTotal(ratings);
+    setCount(ratings);
   }, [product_id]);
 
   useEffect(()=>{
@@ -47,7 +48,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
           return setStorage(prevStorage=> {
             return [...prevStorage, ...response.data.results]});
         }).catch(console.log('err getting reviews'));
-  }, [page, product_id, sortStyle]);
+  }, [page, product_id, sortStyle, count]);
 
   //if sortstyle changes, reset page and empty storage
 
@@ -63,7 +64,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
   }
 
   return (
-    <div style={{border: '1px solid black'}}>
+    <div className="ReviewList">
       {/* sort and dropdown buttons should always remain fixed outside of the scrollable area */}
       <div className="ReviewsList-Header">
         <SortDrop
@@ -95,7 +96,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
             <button onClick={handleClick}>More Reviews</button>
           </div>
         }
-        <button onClick={()=>setShow(true)} > Modal/Review this Product</button>
+        <button onClick={()=>setShow(true)} > Review this Product</button>
         <Modal
           title={'Review This Product'}
           children={<NewReviewForm product={product} details={details} />}

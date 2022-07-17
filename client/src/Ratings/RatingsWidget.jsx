@@ -25,7 +25,7 @@ function RatingsWidget(props) {
 
 
   return (
-    <div className="RatingWidget" style={{border: '1px solid black'}}>
+    <div className="RatingWidget">
       <div className="Ratings-Breakdown">
         <RatingBreakdown
           setFilter={setFilter}

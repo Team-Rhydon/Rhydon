@@ -26,27 +26,26 @@ function ReviewListItem({review, filter, isFiltered}) {
     }
   }
   return (
-    <div className="ReviewTile" style={{width: "95%"}} >
-      <div className="ReviewHeader" style={{width: "100%"}}>
-        <span>{'★'.repeat(review.rating)} </span>
+    <div className="ReviewTile" >
+      <div className="ReviewHeader">
+        {/* <span className="ReviewTitle"> */}
+          <span className="ReviewRating">{'★'.repeat(review.rating)}{'☆'.repeat(5-review.rating)}</span>
+        {/* </span> */}
+        <span className="ReviewSummary">{review.summary.slice(0, 60)}</span>
         <span className="nameAndDate">
           <span>{review.reviewer_name} @</span>
           <span>{review.date.slice(6, -14)}-{review.date.slice(0, 4)}</span>
         </span>
       </div>
-      <div>
-        <p style={{fontWeight: "bolder"}}>{review.summary.slice(0, 60)}</p>
+      <div className="ReviewBody">
         {review.body.length < 250
-        ?<span>{review.body}</span>
+        ?<span className="ReviewText">{review.body}</span>
         :<>
-          <span>{review.body.slice(0, 249) + '...'}
-            <button onClick={e=> setShortBody(true)}>Read More</button>
+          <span className="ReviewText">{review.body.slice(0, 249) + '...'}
+            <button onClick={e=> setShortBody(false)}>Read More</button>
           </span>
         </>}
-      </div>
-      <br></br>
-      <>
-        <span>
+        <span className="ReviewPhotos">
           {!review.photos
             ?null
             :review.photos.map(photo=> photo.url ==="text"
@@ -62,23 +61,20 @@ function ReviewListItem({review, filter, isFiltered}) {
                 show={show}
                 onClose={onClose}
               />
-          </span>
-      </>
-      <>
+        </span>
         {!review.recommend
         ? null
-        :<p>✓ I recommend this product</p>}
+        :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>}
+        <div className="Review-Puts">
+          <span >Was this helpful?
+            <button onClick={e => sendPut()}>({review.helpfulness}) </button>
+            </span>
+          <span className="Report">  Report </span>
+        </div>
         {!review.response
         ? null
         : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
-      </>
-      <div>
-        <span >Was this helpful?
-          <button onClick={e => sendPut()}>({review.helpfulness}) </button>
-          </span>
-        <span className="Report">  Report </span>
       </div>
-      <br></br>
     </div>
   )
 }
