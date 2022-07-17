@@ -59,7 +59,6 @@
   font-size: 30px;
   position: absolute;
   top: 46.5%;
-  background-color: ;
   color: rgb(146, 146, 146);
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -164,7 +163,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 275px;
+  height: max-content;
 }
 
 .ss-name {
@@ -201,7 +200,7 @@
   border-radius: 4px;
   width: 61px;
   height: 61px;
-  margin: 2px;
+  margin: 2px ;
 }
 
 .s-thumbnail-image:hover {
@@ -209,7 +208,7 @@
   object-fit: cover;
   width: 57px;
   height: 57px;
-  border-style: double;
+  border-style: solid;
   border-width: 2px;
   border-color: black;
 }
@@ -218,7 +217,7 @@
   object-fit: cover;
   width: 57px;
   height: 57px;
-  border-style: double;
+  border-style: solid;
   border-width: 2px;
   border-color: black;
 }
@@ -236,7 +235,6 @@
 .s-addtocart {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: flex-start;
   height: 300px;
   max-height: 350px;
@@ -246,17 +244,21 @@
   color: white;
   background-color: rgba(216, 77, 77, 0.809);
   border-radius: 2px;
-  width: 200px;
+  width: 212px;
   height: 50px;
   margin: 5px 0px 0px 6px;
 }
 
 .ss-size-title {
+  font-family: "AdihausDIN Cn",Helvetica,Arial,sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 38px;
   position: relative;
   font-size: larger;
   width: 335px;
   margin: 5px;
-  bottom: 3pz;
+  bottom: 3pxs;
 }
 .ss-allsizes {
   display: flex;
@@ -275,14 +277,14 @@
 
 .sizebuttons {
   width: 104.1px;
-  height: 40px;
+  height: 35px;
   padding-right: 6px;
   margin: 2px;
 }
 
 .quantity-selector {
-  width: 310px;
-  height: 30px;
+  width: 321px;
+  height: 35px;
   margin: 10px 0px 0px 2px;
-
+  border-radius: 2px;
 }
