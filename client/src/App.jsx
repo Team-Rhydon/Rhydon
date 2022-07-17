@@ -73,13 +73,42 @@ function App() {
     e.preventDefault();
     if (id in outfits) {
       const newOutfit = {...outfits};
+      debugger;
       delete newOutfit[id];
-      const positions = {
-        'outfit-p2': 'outfit-p1',
-        'outfit-p3': 'outfit-p2',
-        'outfit-p4': 'outfit-p3',
-        'outfit-pright': 'outfit-p4',
-      };
+      let positions;
+      if (position === 'outfit-p1') {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p1',
+          'outfit-p3': 'outfit-p2',
+          'outfit-p4': 'outfit-p3',
+          'outfit-pright': 'outfit-p4',
+        };
+      } else if (position ==='outfit-p2') {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p2',
+          'outfit-p3': 'outfit-p2',
+          'outfit-p4': 'outfit-p3',
+          'outfit-pright': 'outfit-p4',
+        };
+      } else if (position ==='outfit-p3') {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p2',
+          'outfit-p3': 'outfit-p3',
+          'outfit-p4': 'outfit-p3',
+          'outfit-pright': 'outfit-p4',
+        };
+      } else {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p2',
+          'outfit-p3': 'outfit-p3',
+          'outfit-p4': 'outfit-p4',
+          'outfit-pright': 'outfit-p4',
+        };
+      }
       for (const id in newOutfit) {
         const curPos = newOutfit[id]['position'];
         newOutfit[id]['position'] = positions[newOutfit[id]['position']];
