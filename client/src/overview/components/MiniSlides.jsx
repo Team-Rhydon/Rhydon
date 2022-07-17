@@ -29,7 +29,7 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlide}
           if (i < 7 && currentImage.count < 4) {
             return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
           }
-          if (i > slide.length - 7 && currentImage.count > slide.length - 5) {
+          if (i >= slide.length - 7 && currentImage.count > slide.length - 5) {
             return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
           }
         })}

@@ -20,10 +20,9 @@
 
 .o-sidebar {
   display: flex;
-  height: max-content;
+  max-height: 750px;
   width: 500px;
   flex-direction: column;
-  justify-content: space-around;
   margin-left: 11.9px;
 }
 
@@ -51,9 +50,11 @@
 .m-carousel .s-leftarrow {
   font-size: 50px;
   position: absolute;
-  top: 50%;
+  top: 46.5%;
   background-color: ;
   color: rgb(255, 255, 255);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   background-color: rgb(199, 199, 199);
   opacity: .7;
 }
@@ -61,9 +62,11 @@
 .m-carousel .s-rightarrow {
   font-size: 50px;
   position: absolute;
-  top: 50%;
+  top: 46.5%;
   right: 0;
   color: rgb(255, 255, 255);
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
   background-color: rgb(199, 199, 199);
   opacity: .7;
 }
@@ -106,20 +109,20 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 35px 10px 35px 0px;
+  padding: 25px 10px 25px 0px;
 }
 
 .ms-image {
   object-fit: cover;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 7px;
 }
 
 .ms-image-selected {
   object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 7px;
 }
 
