@@ -19,6 +19,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
       },
     };
     axios.get('/related', params).then(({data}) => {
+      debugger;
       carouselPos.current = {};
       const positions = ['related-p1', 'related-p2', 'related-p3', 'related-p4'];
       const keys = Object.keys(data);

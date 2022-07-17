@@ -39,11 +39,10 @@ function OutfitCard({outfit, position, id, removeOutfit}) {
     <div className={`slide ${position} outfit`}>
       <div className='product-card'>
         <img className='thumb outfit' src={thumbnail}/>
-        <div className='btn-container remove-outfit'>
-        <img src={closeBtn} className="close-btn center-vert-horz" onClick={(e) => {
+        <div className='btn-container remove-outfit' onClick={(e) => {
           removeOutfit(e, id, position);
-        }}
-        />
+        }}>
+        <img src={closeBtn} className="close-btn center-vert-horz"/>
         </div>
         <div className="description">
           <p className='card-name'>{name}</p>
