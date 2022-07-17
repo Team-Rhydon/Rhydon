@@ -43,7 +43,7 @@ let ProductInfo = ({details, reviews}) => {
 
   if (!count) return <></>
 
-  return (<>
+  return (<div className="o-details">
   <div className="o-product-info">
       <h2 className="pi-name">{name}</h2>
       <h5>{category}</h5>
@@ -52,7 +52,7 @@ let ProductInfo = ({details, reviews}) => {
   </div>
       <h3 onClick={displayDescription.bind(this)} className="pi-description">Description {toggleDescription ? <BsChevronUp className="pi-up"/> : <BsChevronDown className="pi-down"/>}</h3>
       {toggleDescription ? <Description {...product} /> : null}
-</>  )
+</div>)
 }
 
 export default ProductInfo;

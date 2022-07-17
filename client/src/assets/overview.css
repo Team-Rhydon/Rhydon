@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   width: 300;
-  margin-left: 11.9px;
+  padding-left: 11.9px;
 }
 
 .slider {
@@ -123,7 +123,7 @@
   flex: 1, 1;
   justify-content: space-evenly;
   align-items: center;
-  padding: 25px 10px 25px 0px;
+  padding: 25px 10px 25px 10px;
 }
 
 .ms-image {
@@ -213,7 +213,7 @@
   border-color: rgba(186, 186, 186, 0.747);
 }
 
-.selected-thumbnail{
+.selected-thumbnail {
   object-fit: cover;
   width: 46.2px;
   height: 46.2px;
@@ -298,8 +298,17 @@
 }
 
 .quantity-selector {
+  text-align: center;
   width: 321px;
   height: 35px;
   margin: 10px 0px 0px 2px;
   border-radius: 2px;
+}
+
+.o-details {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  width: 1341px;
+  margin: 0 auto;
 }
