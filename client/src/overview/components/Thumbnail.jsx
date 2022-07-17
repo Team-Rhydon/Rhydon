@@ -1,14 +1,12 @@
 import React from 'react';
 
-let Thumbnail = ({productStyles, setSelectedStyle}) => {
-
-  return (<>
+let Thumbnail = ({productStyles, style, setSelectedStyle}) => {
+  console.log('style', style)
+  return (<div className="s-thumbnail">
     {productStyles.map((styleObj, i) => (
-      <span key={styleObj.style_id} onClick={setSelectedStyle.bind(null, styleObj)}>
-        <img src={styleObj.photos[0].url} width="40" height="40" />
-      </span>
+        <img className={styleObj.style_id === style.style_id ? 'selected-thumbnail s-thumbnail-image' : 's-thumbnail-image'} src={styleObj.photos[0].thumbnail_url} key={styleObj.style_id} onClick={setSelectedStyle.bind(null, styleObj)}/>
     ))}
-  </>)
+  </div>)
 }
 
 export default Thumbnail;

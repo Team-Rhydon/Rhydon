@@ -19,7 +19,6 @@ function RelatedModal({modalContent}) {
     const characteristics = {};
     const curFeatures = modalContent.current.details.features;
     const compFeatures = modalContent.compare.features;
-    debugger;
     for (let i = 0; i < curFeatures.length; i++) {
       const characteristic = curFeatures[i].feature;
       let value = curFeatures[i].value;

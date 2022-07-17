@@ -20,7 +20,7 @@ let ProductInfo = ({details, reviews}) => {
       people += parseInt(data[star]);
       stars += (data[star] * star);
     }
-    console.log(stars/people)
+    setCount(people)
     setRating(prevState => stars/people)
   }
 
@@ -44,13 +44,15 @@ let ProductInfo = ({details, reviews}) => {
   if (!count) return <></>
 
   return (<>
-      <h2>{name}</h2>
+  <div className="o-product-info">
+      <h2 className="pi-name">{name}</h2>
       <h5>{category}</h5>
       <>{rating ? <StarRating rating={rating} count={count}/> : null}</>
       <div>Read All {count} Reviews</div>
-      <h3 onClick={displayDescription.bind(this)}>Description {toggleDescription ? <BsChevronUp/> : <BsChevronDown/>}</h3>
+  </div>
+      <h3 onClick={displayDescription.bind(this)} className="pi-description">Description {toggleDescription ? <BsChevronUp className="pi-up"/> : <BsChevronDown className="pi-down"/>}</h3>
       {toggleDescription ? <Description {...product} /> : null}
-  </>)
+</>  )
 }
 
 export default ProductInfo;

@@ -1,0 +1,288 @@
+.overview-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1520px;
+}
+
+.overview-styles {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0px 30px 0px 30px;
+  height: 550px;
+}
+
+.o-image-gallery {
+  display: flex;
+  flex: 1, 1, 300px;
+  min-width: 970px;
+  min-width: 300px;
+}
+
+.o-sidebar {
+  display: flex;
+  height: 550px;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300;
+  margin-left: 11.9px;
+}
+
+.slider {
+  display:flex;
+  flex: 1, 1, 300px;
+  padding-right: 16px;
+  margin-right: 11.9px;
+}
+
+.m-carousel {
+  display: flex;
+  position: relative;
+  flex: 1, 1;
+}
+
+.m-carousel-image {
+  flex: 1, 1, 300px;
+  object-fit: cover;
+  width: 800px;
+  height: 550px;
+  border-radius: 5px;
+}
+
+.m-carousel img {
+  display: flex;
+}
+
+.m-carousel .s-leftarrow {
+  font-size: 30px;
+  position: absolute;
+  top: 46.5%;
+  background-color: ;
+  color: rgb(146, 146, 146);
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  opacity: .8;
+}
+
+.m-carousel .s-rightarrow {
+  font-size: 30px;
+  position: absolute;
+  top: 46.5%;
+  right: 0;
+  color: rgb(146, 146, 146);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  opacity: .8;
+}
+
+.m-carousel .s-expand {
+  color: white;
+  font-size: 23px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: .75;
+}
+
+.m-carousel .m-logo {
+  position: absolute;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  width:67px;
+  height: 67px;
+  top: 40px;
+  left: 47px;
+}
+
+.s-leftarrow:hover, .s-rightarrow:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(146, 146, 146);
+  opacity: 1;
+}
+
+.s-expand:hover {
+  cursor: pointer;
+  color: white;
+  opacity: 1;
+}
+
+.slide {
+  display: flex;
+  flex: 1, 1;
+}
+
+.miniSlider {
+  display: flex;
+  flex-direction: column;
+  flex: 1, 1;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 25px 10px 25px 0px;
+}
+
+.ms-image {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 7px;
+}
+
+.ms-image-selected {
+  object-fit: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 7px;
+}
+
+.ms-arrowup {
+  position: relative;
+  font-size: 30px;
+  opacity: .4;
+}
+
+.ms-arrowdown {
+  position: relative;
+  font-size: 30px;
+  opacity: .4;
+}
+
+.ms-arrowup:hover, .ms-arrowdown:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+
+.styleselector {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 275px;
+}
+
+.ss-name {
+  display: flex;
+  align-self: flex-start;
+  font-size: 25px;
+  line-height: 38px;
+  font-family: "AdihausDIN Cn",Helvetica,Arial,sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  margin: 2px 5px 5px 5px;
+}
+.ss-s-name {
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 38px;
+  font-family: "AdihausDIN Cn",Helvetica,Arial,sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  margin: 2px 5px 5px 5px;
+}
+
+.s-thumbnail {
+  display: flex;
+  flex-flow: row wrap;
+  width: 325px;
+  align-content: space-between;
+  justify-content: start;
+  padding: 5px;
+}
+
+.s-thumbnail-image {
+  object-fit: cover;
+  border-radius: 4px;
+  width: 61px;
+  height: 61px;
+  margin: 2px;
+}
+
+.s-thumbnail-image:hover {
+  cursor: pointer;
+  object-fit: cover;
+  width: 57px;
+  height: 57px;
+  border-style: double;
+  border-width: 2px;
+  border-color: black;
+}
+
+.selected-thumbnail {
+  object-fit: cover;
+  width: 57px;
+  height: 57px;
+  border-style: double;
+  border-width: 2px;
+  border-color: black;
+}
+
+.ss-price {
+  position: relative;
+  align-self: flex-start;
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: bold;
+  top: 5px;
+  padding: 0px 0px 5px 7px;
+}
+
+.s-addtocart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 300px;
+  max-height: 350px;
+}
+
+.s-add-button {
+  color: white;
+  background-color: rgba(216, 77, 77, 0.809);
+  border-radius: 2px;
+  width: 200px;
+  height: 50px;
+  margin: 5px 0px 0px 6px;
+}
+
+.ss-size-title {
+  position: relative;
+  font-size: larger;
+  width: 335px;
+  margin: 5px;
+  bottom: 3pz;
+}
+.ss-allsizes {
+  display: flex;
+  flex-flow: row wrap;
+  width: 325px;
+  justify-content: start;
+  padding: 5px;
+}
+
+/* .sizebuttons {
+  width: 100px;
+  height: 40px;
+  padding-right: 6px;
+  margin: 2px;
+} */
+
+.sizebuttons {
+  width: 104.1px;
+  height: 40px;
+  padding-right: 6px;
+  margin: 2px;
+}
+
+.quantity-selector {
+  width: 310px;
+  height: 30px;
+  margin: 10px 0px 0px 2px;
+
+}
