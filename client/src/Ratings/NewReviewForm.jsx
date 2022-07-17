@@ -53,6 +53,7 @@ function NewReviewForm(props) {
 
   const pageForm = {
     1:(<div className="star-rating">
+      <h3>*How would your rate the {props.details.name}?*</h3>
       {[...Array(5)].map((star, index) => {
         index += 1;
         return (
@@ -69,12 +70,12 @@ function NewReviewForm(props) {
       <p>{rating === 0 ? null : rating + " STAR RATING -"}  {[null, "Poor", "Fair", "Average", "Good", "Great!"][rating]}</p>
       <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             {ratingRef.current !== rating ?<button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button> : null}
           </div>
         </div>
       </div>),
-    2:(<div className="tab"> Do you recommend this product?
+    2:(<div className="tab">
+        <h3> *Would you recommend this product to others?*</h3>
         <p>{recommended === null ? null : recommended ? "YES" : "NO"}</p>
         <br></br>
         <button
@@ -95,6 +96,7 @@ function NewReviewForm(props) {
         </div>
       </div>),
     3:(<div className="tab">
+      <h3>*Please rate the {props.details.name} on the following*: </h3>
         <Characteristics chars={props.product.characteristics} setChars={setCharacteristics} />
         <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
@@ -103,7 +105,8 @@ function NewReviewForm(props) {
           </div>
         </div>
       </div>),
-    4:(<div className="tab"> Review Summary
+    4:(<div className="tab">
+      <h3>Please give a one sentence summary of how you feel about the {props.details.name}</h3>
         <Summary setSum={setSummary} />
         <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
@@ -113,6 +116,7 @@ function NewReviewForm(props) {
         </div>
       </div>),
     5:(<div className="tab">
+      <h3>*Please let us know exactly how you feel about the {props.details.name}.* </h3>
         <Body  setBody={setBody} />
         <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
@@ -121,7 +125,8 @@ function NewReviewForm(props) {
           </div>
         </div>
         </div>),
-    6:( <div className="tab"> upload photos
+    6:( <div className="tab">
+      <h3>Enhance your review with your photos!</h3>
         <ReviewPhotos setPhotos={setPhotos} />
         <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
@@ -130,7 +135,8 @@ function NewReviewForm(props) {
           </div>
         </div>
       </div>),
-    7:(<div className="tab"> nickname
+    7:(<div className="tab">
+      <h3>*New phone who dis?*</h3>
           <UserInfo setName={setName} setEmail={setEmail} />
           <div style={{overflow: "auto"}}>
           <div style={{float: "right"}}>
@@ -140,15 +146,15 @@ function NewReviewForm(props) {
         </div>
       </div> ),
     8:<>
-        <h3>Post Your Review!</h3>
-        <button onClick={e=> sendPostRequest(e)}>Submit</button>
+        <h3>Please take a moment to verify your review!</h3>
+        <table>
+        </table>
+        <button onClick={e=> sendPostRequest(e)}>Post your review!</button>
       </>
   };
 
   return (
       <div id="reviewForm">
-        <label> Tell us about the {props.details.name}</label>
-        <br></br>
         {!pageForm[page] ? "loading" : pageForm[page]}
       </div>
   )

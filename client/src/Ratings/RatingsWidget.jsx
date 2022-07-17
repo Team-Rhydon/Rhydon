@@ -33,10 +33,10 @@ function RatingsWidget(props) {
           isFiltered={isFiltered}
           product={props.meta}
         />
-        <ProductBreakdown traits={props.meta.characteristics}/>
+        <ProductBreakdown traits={props.meta.characteristics} product={props.meta} />
       </div>
       <br></br>
-      <div className="reviewBody" style={{width: '100%', height: '100%'}}>
+      <div className="reviewBody">
         <ReviewList
           product={props.meta}
           product_id={props.meta.product_id}

@@ -22,7 +22,7 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
       <div className="Star-Bars" style={{width: "50%"}}>
         {Object.keys(ratingBars).sort((a, b)=> {a-b; return -1}).map((star, i) => {
           return (
-            <div key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
+            <div className="StarNumber" key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
               <p> {star} Stars: {100 * ratingBars[star] + '%'} </p>
               <div className="meter">
                 <span style={{width: `${100 * ratingBars[star]}%`}}></span>

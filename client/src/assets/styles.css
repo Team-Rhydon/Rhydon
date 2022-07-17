@@ -183,14 +183,15 @@ cursor: pointer;
   cursor: pointer;
   color: white;
 }
-  .related .star:before {
-    content: "\2605";
-    z-index: 10;
-  }
 
-  .related .star:hover {
-    color: rgb(219, 49, 43);
-  }
+.related .star:before {
+  content: "\2605";
+  z-index: 10;
+}
+
+.related .star:hover {
+  color: rgb(219, 49, 43);
+}
 
 .stars {
   position: relative;
@@ -402,6 +403,8 @@ cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   .Star-Ratings {
@@ -409,12 +412,16 @@ cursor: pointer;
     flex-direction: row;
   }
 
+  .Star-Bars {
+    align-self: center;
+  }
+
   .ReviewHeader {
     grid-row-start: 1;
     width: 100%;
     border-bottom: 2px solid black;
     display: grid;
-    grid-template-columns: .5fr 5.5fr  1fr 1fr;
+    grid-template-columns: .6fr 5.4fr  1fr 1fr;
   }
 
   .ReviewSummary {
@@ -495,10 +502,9 @@ cursor: pointer;
 
   #reviewForm {
     background-color: grey;
-    margin: 100px auto;
-    /* padding: 40px; */
-    width: 70%;
-    min-width: 300px;
+
+    height: 80%;
+    width: 80%;
     border: 1px solid grey;
   }
 
@@ -519,6 +525,10 @@ cursor: pointer;
     cursor: pointer;
   }
 
+  .StarNumber:hover {
+    background-color: green;
+  }
+
   .on {
     color: rgb(255, 247, 0);
   }
@@ -532,7 +542,7 @@ cursor: pointer;
   }
 
   .ReviewTile {
-    height: 33vh;
+    height: 45%;
     width: 72vw;
     /* display: flex;
     flex-direction: column;
@@ -551,6 +561,12 @@ cursor: pointer;
   .ReviewList {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+  }
+
+  .trait-description {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
   }
 
 .miniSlider {
@@ -627,4 +643,53 @@ margin-right: 20px;
 .main-product-img {
   max-width: auto;
   max-height: 100%;
+}
+
+
+.circle-background,
+.circle-progress {
+  fill: none;
+}
+
+.circle-background {
+  stroke: #ddd;
+}
+
+.circle-progress {
+  stroke: rgb(0, 255, 26);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.circle-text {
+  font-size: 1em;
+  font-weight: bold;
+  fill: rgb(0, 0, 0);
+}
+
+.Product-Breakdown {
+  width: 33%;
+  padding-top: .5em;
+}
+.product-score {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 33% 34% 33%;
+  grid-template-rows: 18% 64% 18%;
+  justify-items: center;
+}
+
+.PD-low {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: flex-end;
+}
+.PD-high {
+  grid-row: 2;
+  grid-column: 3;
+  align-self: flex-end;
+}
+svg {
+  grid-column-start: 2;
+  grid-row: 2;
 }

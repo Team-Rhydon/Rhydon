@@ -11,24 +11,26 @@
 }
 
 .ratings-modal-content {
-  min-width: 45%;
   max-width: 90%;
   background-color: rgb(255, 255, 255);
 }
 
 .ratings-modal-header, .ratings-modal-footer {
   padding: 10px;
-  border: 1px solid black;
 }
 
 .ratings-modal-title {
-  margin: 0;
+
 }
 
 .ratings-modal-body {
+  min-width: 50vw;
+  min-height: 50vh;
   max-height: 90vh;
   max-width: 90vw;
-  overflow-y: scroll;
-  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
 }

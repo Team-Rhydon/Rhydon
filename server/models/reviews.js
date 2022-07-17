@@ -14,7 +14,6 @@ module.exports = {
   },
 
   postReview: (body) => {
-    console.log(body);
     let options = {
       url: '/reviews',
       method: 'post',
@@ -24,16 +23,15 @@ module.exports = {
   },
 
   getReviewMeta: (query) => {
-    //TODO
     let params = {params: {product_id: query.product_id}};
     return axios.get('/reviews/meta', params)
   },
 
-  putHelpful: (query) => {
-      //TODO
+  putHelpful: (review_id) => {
+    return axios.put(`reviews/${review_id}/helpful`);
   },
 
-  putReport: (query) => {
-      //TODO
+  putReport: (review_id) => {
+    return axios.put(`reviews/${review_id}/report`);
   }
 };

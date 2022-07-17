@@ -1,6 +1,5 @@
-//import models
 const models = require("../models/reviews.js");
-// define exports
+
 module.exports = {
   get: {
     reviews: (req, res) => {
@@ -17,7 +16,6 @@ module.exports = {
   },
   post: {
     review: (req, res) => {
-      console.log('query :', req.query, 'body :', req.body)
       models.postReview(req.body)
         .then(()=> res.status(201).send('Successful Post!'))
         .catch(err => {console.log(err);res.sendStatus(500)})
@@ -26,17 +24,15 @@ module.exports = {
 
   put: {
     helpful: (req, res) => {
-      models.putHelpful(req.query)
+      models.putHelpful(req.body.review_id)
         .then(()=> res.sendStatus(204))
         .catch(()=> res.sendStatus(500))
     },
 
     report: (req, res) => {
-      models.putHelpful(req.query)
+      models.putReport(req.body.review_id)
         .then(()=> res.sendStatus(204))
         .catch(()=> res.sendStatus(500))
     }
   }
-
-
 }

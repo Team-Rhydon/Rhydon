@@ -2,7 +2,6 @@ import React, {useState} from "react";
 
 const Characteristics = (props) => {
   const [characteristics, setCharacteristics] = useState({})
-  console.log(props.chars)
 
   function handleSubmit(event) {
     event.preventDefault();

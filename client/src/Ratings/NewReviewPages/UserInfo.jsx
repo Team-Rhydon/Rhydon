@@ -11,30 +11,28 @@ const UserInfo = props => {
   }
 
   return (
-    <div >
-      <div>
-        <label style={{width: "33%"}}>Nickname:
-          <input style={{width: "66%"}}
-            type="text"
-            value={nickname}
-            placeholder="Example: jackson11!"
-            onChange={(e)=> setNickName(e.target.value)}
-            required
-            />
-        </label>
+    <div style={{width: "100%"}}>
+
+        <label style={{width: "33%"}}>Nickname:</label>
+        <input style={{width: "66%"}}
+          type="text"
+          value={nickname}
+          placeholder="Example: jackson11!"
+          onChange={(e)=> setNickName(e.target.value)}
+          required
+          />
         <p>For privacy reasons, do not use your full name or email address</p>
-      </div>
+
       <br></br>
       <div>
-        <label style={{width: "33%"}}>Email:
-          <input style={{width: "66%"}}
-            type="text"
-            placeholder="Example: jackson11@email.com"
-            value={email}
-            onChange={e=> setEmail(e.target.value)}
-            required
-            />
-        </label>
+        <label style={{width: "33%"}}>Email:</label>
+        <input style={{width: "66%"}}
+          type="text"
+          placeholder="Example: jackson11@email.com"
+          value={email}
+          onChange={e=> setEmail(e.target.value)}
+          required
+          />
         <p>For authentification reasons, you will not be emailed</p>
         </div>
       <br></br>
