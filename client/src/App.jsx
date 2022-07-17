@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     // updateCurrentProduct(null, '40348'); // air force 1's
-    // updateCurrentProduct(null, '40351'); // yeasy
+    updateCurrentProduct(null, '40351'); // yeasy
     // updateCurrentProduct(null, '40346'); // joggers
     // updateCurrentProduct(null, '40344'); // camo onesie
     // updateCurrentProduct(null, '40376'); // oout of stock size
