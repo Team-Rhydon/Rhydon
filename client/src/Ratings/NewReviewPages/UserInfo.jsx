@@ -32,7 +32,7 @@ const UserInfo = props => {
           value={email}
           onChange={e=> setEmail(e.target.value)}
           required
-          />
+        />
         <p>For authentification reasons, you will not be emailed</p>
         </div>
       <br></br>

@@ -51,8 +51,6 @@ class CircularProgressBar extends React.Component {
             textAnchor="middle">
             {`${this.props.value}`}
           </text>
-
-
       </svg>
     );
   }

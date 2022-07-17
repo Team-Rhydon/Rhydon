@@ -24,25 +24,32 @@ function ProductBreakdown(props) {
         return (
           <div key ={index}>
             {!trait
-              ? null
+              ?null
               :<div className="product-score">
-                {/* <span> {trait}: {Number(value).toFixed(2)}</span> */}
-                <span className="PD-low">{descriptions[trait][0]}</span>
-                <CircularProgressBar strokeWidth='5' sqSize="75" percentage={(Number(value)/.05).toFixed(0)} trait={trait} value={Number(value).toFixed(2)} />
                 <span className="PD-high">{descriptions[trait][1]}</span>
-                {/* <div className="indicator">
-                  <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (value/5).toFixed(3)}%`}}></span>
-                  <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-                </div> */}
-                  {/* <span className="trait-description">
-                  </span> */}
+                <CircularProgressBar
+                  strokeWidth='5'
+                  sqSize="75"
+                  percentage={(Number(value)/.05).toFixed(0)}
+                  trait={trait}
+                  value={Number(value).toFixed(2)}
+                />
+                <span className="PD-low">{descriptions[trait][0]}</span>
                   <br></br>
               </div>}
           </div>
        )
-     })}
+      })}
     </div>
   )
 }
-//seems like a good place to
+
 export default ProductBreakdown;
+
+{/* <span> {trait}: {Number(value).toFixed(2)}</span> */}
+{/* <div className="indicator">
+  <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (value/5).toFixed(3)}%`}}></span>
+  <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
+</div> */}
+  {/* <span className="trait-description">
+  </span> */}
