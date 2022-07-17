@@ -3,6 +3,7 @@ import {createRoot} from "react-dom/client";
 import App from "./App.jsx";
 import "./assets/styles.css";
 import "./assets/modal.css";
+import "./assets/overview.css";
 const container = document.createElement("div");
 container.setAttribute("id", "root");
 document.body.appendChild(container);
