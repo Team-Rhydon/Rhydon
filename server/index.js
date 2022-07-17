@@ -26,18 +26,28 @@ axios.defaults.headers.common.Authorization = process.env.API_KEY;
 app.use('/reviews', reviewRouter); // directs all requests to endpoint 'reviews' to reviews router
 
 
-// Get related items
+// Get related items in chunks
+// app.get('/related', (req, res) => {
+//   const product_id = req.query.id;
+//   getRelated(product_id).then(({data}) => promiseAllRelated(data)).then((data) => {
+//     let arr = [];
+//     for(let i = 0; i < data.length; i++) {
+//       arr[i * 3] = data[i][0].data;
+//       arr[i * 3 + 1] = data[i][1].data;
+//       arr[i * 3 + 2] = data[i][2].data;
+//     }
+//     resObj = filterRelated(arr);
+//     res.status(201).send(resObj);
+//   }).catch((err) => {
+//     console.log(err);
+//     res.status(404).send(err);
+//   });
+// });
 
 app.get('/related', (req, res) => {
   const product_id = req.query.id;
   getRelated(product_id).then(({data}) => promiseAllRelated(data)).then((data) => {
-    let arr = [];
-    for(let i = 0; i < data.length; i++) {
-      arr[i * 3] = data[i][0].data;
-      arr[i * 3 + 1] = data[i][1].data;
-      arr[i * 3 + 2] = data[i][2].data;
-    }
-    resObj = filterRelated(arr);
+    resObj = filterRelated(data);
     res.status(201).send(resObj);
   }).catch((err) => {
     console.log(err);

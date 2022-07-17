@@ -1,14 +1,13 @@
-import React, {
-  Component, useState, useEffect, useRef,
-} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import RelatedCard from './RelatedCard.jsx';
 import RelatedModal from './RelatedModal.jsx';
 import RelatedPreview from './RelatedPreview.jsx';
+import nextArrow from '../assets/icons/chevron-right-solid.svg';
+import prevArrow from '../assets/icons/chevron-left-solid.svg';
 
 function Related({product, updateCurrentProduct, hidePreview}) {
   const [cards, setCards] = useState({});
-  const [currentProduct, setProduct] = useState(product.data);
   const [modalContent, setModalContent] = useState({});
   const carouselPos = useRef({});
   const [imagePreview, setPreview] = useState({});
@@ -34,6 +33,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
         for (let i = 4; i < keyLen; i++) {
           carouselPos.current[keys[i]] = 'related-pright';
         }
+        document.getElementsByClassName('carousel-next-container')[0].classList.remove('hidden');
       }
       setCards(data);
     }).catch((err) => {
@@ -59,9 +59,38 @@ function Related({product, updateCurrentProduct, hidePreview}) {
     setModalContent({current: product, compare: cards[id]});
   }
 
+  function hasRightSlide() {
+    return document.getElementsByClassName('related-pright').length > 0;
+  };
+  function hasLeftSlide() {
+    return document.getElementsByClassName('related-pleft').length > 0;
+  };
+
+  function relatedBtnCheck() {
+    if (hasLeftSlide()) {
+      if (document.getElementsByClassName('carousel-prev-container')[0].classList.contains('hidden')) {
+        document.getElementsByClassName('carousel-prev-container')[0].classList.remove('hidden');
+      }
+    } else {
+      if (!document.getElementsByClassName('carousel-prev-container')[0].classList.contains('hidden')) {
+        document.getElementsByClassName('carousel-prev-container')[0].classList.add('hidden');
+      }
+    }
+
+    if (hasRightSlide()) {
+      if (document.getElementsByClassName('carousel-next-container')[0].classList.contains('hidden')) {
+        document.getElementsByClassName('carousel-next-container')[0].classList.remove('hidden');
+      }
+    } else {
+      if (!document.getElementsByClassName('carousel-next-container')[0].classList.contains('hidden')) {
+        document.getElementsByClassName('carousel-next-container')[0].classList.add('hidden');
+      }
+    }
+  };
+
   function moveRelatedLeft(e) {
     e.preventDefault();
-    if (document.getElementsByClassName('related-pleft').length > 0) {
+    if (hasLeftSlide()) {
       const positions = {
         'related-p4': 'related-pright',
         'related-p3': 'related-p4',
@@ -75,11 +104,12 @@ function Related({product, updateCurrentProduct, hidePreview}) {
         updatePosition(element, pos, positions[pos]);
       }
     }
+    relatedBtnCheck();
   }
 
   function moveRelatedRight(e) {
     e.preventDefault();
-    if (document.getElementsByClassName('related-pright').length > 0) {
+    if (hasRightSlide()) {
       const positions = {
         'related-p1': 'related-pleft',
         'related-p2': 'related-p1',
@@ -92,17 +122,22 @@ function Related({product, updateCurrentProduct, hidePreview}) {
         updatePosition(element, pos, positions[pos]);
       }
     }
+    relatedBtnCheck();
   }
 
   function updatePosition(element, curPosition, newPosition) {
     element.classList.remove(curPosition);
     element.classList.add(newPosition);
   }
+
+
   return (
     <div className="related">
-      <h5 className="title">RELATED PRODUCTS</h5>
+      <h3 className="title">RELATED PRODUCTS</h3>
       <div className="carousel">
-        <button onClick={(e) => moveRelatedLeft(e)} className="carousel-prev">{'<'}</button>
+        <div className='carousel-prev-container hidden'>
+        <img src={prevArrow} onClick={(e) => moveRelatedLeft(e)} className="carousel-prev"/>
+        </div>
         <div className="carousel-inner">
           {Object.keys(cards).map((id, index) => <RelatedCard
             key={id} id={id} showModal={showModal} card={cards[id]}
@@ -110,7 +145,9 @@ function Related({product, updateCurrentProduct, hidePreview}) {
             setPreview={setPreview}
             position={carouselPos.current[id]} />)}
         </div>
-        <button onClick={(e) => moveRelatedRight(e)} className="carousel-next">{'>'}</button>
+        <div className='carousel-next-container hidden'>
+        <img src={nextArrow} onClick={(e) => moveRelatedRight(e)} className="carousel-next"/>
+        </div>
       </div>
       {Object.keys(imagePreview).length !== 0 ? <RelatedPreview url={imagePreview} setPreview={setPreview}/> : null}
       {Object.keys(modalContent).length !== 0 ? <RelatedModal modalContent={modalContent} /> : null}
