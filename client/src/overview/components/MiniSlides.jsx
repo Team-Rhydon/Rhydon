@@ -23,13 +23,13 @@ let MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlide}
           if (i === currentImage.count) {
             return <img className="ms-image-selected" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
           }
-          if (i > currentImage.count - 3 && i < currentImage.count + 3) {
+          if (i > currentImage.count - 4 && i < currentImage.count + 4) {
             return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
           }
-          if (i < 5 && currentImage.count < 3) {
+          if (i < 7 && currentImage.count < 4) {
             return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
           }
-          if (i > slide.length - 6 && currentImage.count > slide.length - 4) {
+          if (i > slide.length - 7 && currentImage.count > slide.length - 5) {
             return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
           }
         })}
@@ -41,14 +41,14 @@ export default MiniSlides;
 
 // 7 carousel version
 // if (i === currentImage.count) {
-//   return <img  onClick={() => changeImage(i)} src={obj.url} widthkey={obj.url} ="100" height="100"/>
+//   return <img className="ms-image-selected" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
 // }
 // if (i > currentImage.count - 4 && i < currentImage.count + 4) {
-//   return <img onClick={() => changeImage(i)} src={obj.url} widthkey={obj.url} ="70" height="70"/>
+//   return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
 // }
 // if (i < 7 && currentImage.count < 4) {
-//   return <img onClick={() => changeImage(i)} src={obj.url} widthkey={obj.url} ="70" height="70"/>
+//   return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
 // }
 // if (i > slide.length - 7 && currentImage.count > slide.length - 5) {
-//   return <img onClick={() => changeImage(i)} src={obj.url} widthkey={obj.url} ="70" height="70"/>
+//   return <img className="ms-image" key={obj.url} onClick={() => changeImage(i)} src={obj.url}/>
 // }

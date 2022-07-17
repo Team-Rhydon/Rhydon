@@ -29,7 +29,7 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
       let buttonSize = skuNumber.size
       let quantity = skuNumber.quantity
       if (key == 'null' || !key || !quantity) {
-        return <button key={i} disabled>{{buttonSize} || 'Out Of Stock'}</button>
+        return <button key={i} disabled>{ buttonSize || 'Out Of Stock'}</button>
       }
       return (<button key={key} onClick={(e) => {onSkuClick(e, skuNumber)}}>{buttonSize}</button>)
     })}

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
+import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import {FiMaximize} from 'react-icons/fi'
+import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 
@@ -46,15 +48,16 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
       {gallery.map(({url}, i) => (
         <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
           {i === currentImage.count && (
-            <div>
-              <BsArrowLeftCircle className="s-leftarrow" onClick={prevSlide}/>
-                <img className='m-pi-image'onClick={() => setImageModal(true)} src={url} key={i}    width="1150" height="750"/>
-              <BsArrowRightCircle className="s-rightarrow" onClick={nextSlide}/>
+            <div className="m-carousel">
+                <img className='m-carousel-image'onClick={() => setImageModal(true)} src={url} key={i} />
+                <img className="m-logo" src={logo} />
+                <IoIosArrowBack className="s-leftarrow" onClick={prevSlide}/>
+                <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
+                <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
             </div>
           )}
         </div>
       ))}
-      <FiMaximize onClick={() => setImageModal(true)}/>
       <ImageModal {...passProps}/>
     </section>
   )
