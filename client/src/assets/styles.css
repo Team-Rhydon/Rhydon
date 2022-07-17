@@ -506,16 +506,6 @@ object-fit: cover;
     border: 1em transparent grey;
   }
 
-.miniSlider {
-  height: 12vh;
-  justify-content: left;
-}
-.slider {
-  height: 90vh;
-  justify-content: center;
-  display: flex;
-}
-
 table {
   border: 1px solid;
   border-spacing: 0;

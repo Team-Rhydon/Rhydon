@@ -23,15 +23,15 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
     })
   }, [selectedStyle])
 
-  return (<div>
+  return (<div className="ss-allsizes"><div className="ss-size-title">Select Size</div>
     {Object.keys(selectedStyle.skus).map((key, i) => {
       let skuNumber = selectedStyle.skus[key]
       let buttonSize = skuNumber.size
       let quantity = skuNumber.quantity
       if (key == 'null' || !key || !quantity) {
-        return <button key={i} disabled>{buttonSize || 'Out Of Stock'}</button>
+        return <button className="sizebuttons" key={i} disabled>{ buttonSize || 'Out Of Stock'}</button>
       }
-      return (<button key={key} onClick={(e) => {onSkuClick(e, skuNumber)}}>{buttonSize}</button>)
+      return (<button className="sizebuttons" key={key} onClick={(e) => {onSkuClick(e, skuNumber)}}>{buttonSize}</button>)
     })}
       {sku ? <QuantitySelector selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} {...sku} sku={sku} setPurchase={setPurchase}/> : null}
   </div>)
