@@ -1,6 +1,4 @@
-import React, {
-  Component, useState, useEffect, useRef,
-} from 'react';
+import React from 'react';
 
 function RelatedPreview({url, setPreview}) {
   return (

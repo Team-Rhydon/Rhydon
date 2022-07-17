@@ -3,8 +3,7 @@ const controllers = require('./controllers.js');
 const Promise = require('bluebird');
 const _ = require('lodash');
 const {getReviews, getStyles, getDetails} = controllers;
-function averageRating(data) {
-  const ratings = data.ratings;
+function averageRating(ratings) {
   let count = 0;
   let total = 0;
   for (const val in ratings) {
@@ -16,18 +15,21 @@ function averageRating(data) {
   return total/count;
 };
 
+// // promiseAllRelated in chunks
+// exports.promiseAllRelated = function(data) {
+//   return Promise.mapSeries(data, function(dataObj) {
+//     return promiseAllOverview2(dataObj);
+//   });
+// };
+
 exports.promiseAllRelated = function(data) {
-  // console.log('1');
-  // // const reqArr = [];
-  // let chain = Promise.resolve();
-  // data.forEach((id) =>
-  //   chain = chain.then(()=> promiseAllOverview(id))
-  //       .then(Wait)
-  // );
-  // return chain;
-  return Promise.mapSeries(data, function(dataObj) {
-    return promiseAllOverview2(dataObj);
+  const reqArr = [];
+  data.forEach((id) => {
+    reqArr.push(getReviews(id));
+    reqArr.push(getStyles(id));
+    reqArr.push(getDetails(id));
   });
+  return Promise.all(reqArr);
 };
 
 const promiseAllOverview2 = function(id) {
@@ -73,15 +75,15 @@ exports.filterRelated = function(data) {
     // } else {
     //   continue;
     // }
-    const product_id = data[i*3].product_id;
+    const product_id = data[i*3].data.product_id;
     resObj[product_id] = {};
 
     // if (ratingGood) {
-    const ratingData = data[i*3].data;
-    resObj[product_id].rating = averageRating(data[i*3]);
+    const ratingData = data[i*3].data.ratings;
+    resObj[product_id].rating = averageRating(ratingData);
     // }
     // if (stylesGood) {
-    const styles = data[i*3 + 1].results;
+    const styles = data[i*3 + 1].data.results;
     for (let j = 0; j < styles.length; j++) {
       if (styles[j]['default?']) {
         resObj[product_id].originalPrice = styles[j].original_price;
@@ -98,7 +100,7 @@ exports.filterRelated = function(data) {
     }
     // }
     // if (detailsGood) {
-    const detailsData = data[i*3 + 2];
+    const detailsData = data[i*3 + 2].data;
     resObj[product_id].features = detailsData.features;
     resObj[product_id].category = detailsData.category;
     resObj[product_id].name = detailsData.name;
@@ -106,3 +108,43 @@ exports.filterRelated = function(data) {
   }
   return resObj;
 };
+
+// // filter by chunks
+// exports.filterRelated = function(data) {
+//   const resObj = {};
+//   debugger;
+//   for (let i = 0; i < data.length/3; i++) {
+//     const product_id = data[i*3].product_id;
+//     resObj[product_id] = {};
+
+//     // if (ratingGood) {
+//     const ratingData = data[i*3].data;
+//     resObj[product_id].rating = averageRating(data[i*3]);
+//     // }
+//     // if (stylesGood) {
+//     const styles = data[i*3 + 1].results;
+//     for (let j = 0; j < styles.length; j++) {
+//       if (styles[j]['default?']) {
+//         resObj[product_id].originalPrice = styles[j].original_price;
+//         resObj[product_id].salePrice = styles[j].sale_price;
+//         resObj[product_id].thumbnail = styles[j].photos[0].thumbnail_url;
+//         resObj[product_id].img = styles[j].photos[0].url;
+//         break;
+//       } else {
+//         resObj[product_id].originalPrice = styles[j].original_price;
+//         resObj[product_id].salePrice = styles[j].sale_price;
+//         resObj[product_id].thumbnail = styles[j].photos[0].thumbnail_url;
+//         resObj[product_id].img = styles[j].photos[0].thumbnail_url;
+//       }
+//     }
+//     // }
+//     // if (detailsGood) {
+//     const detailsData = data[i*3 + 2];
+//     resObj[product_id].features = detailsData.features;
+//     resObj[product_id].category = detailsData.category;
+//     resObj[product_id].name = detailsData.name;
+//     // }
+//   }
+//   return resObj;
+// };
+

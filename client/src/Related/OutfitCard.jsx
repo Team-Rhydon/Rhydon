@@ -1,13 +1,13 @@
-import React, {Component, useState} from 'react';
-import axios from 'axios';
+import React from 'react';
 import StarRating from './StarRating.jsx';
+import closeBtn from '../assets/icons/xmark-solid.svg';
 
-function OutfitCard({outfit, position, id, addToOutfit, removeOutfit}) {
+function OutfitCard({outfit, position, id, removeOutfit}) {
   if (!outfit) {
     return;
   }
   let originalPrice, salePrice, thumbnail, img;
-  const {name, category, features} = outfit.details;
+  const {name, category} = outfit.details;
   const {ratings} = outfit.reviews;
   const styles = outfit.styles.results;
   let count = 0;
@@ -39,14 +39,21 @@ function OutfitCard({outfit, position, id, addToOutfit, removeOutfit}) {
     <div className={`slide ${position} outfit`}>
       <div className='product-card'>
         <img className='thumb outfit' src={thumbnail}/>
-        <div className="remove-outfit" onClick={(e) => {
+        <div className='btn-container remove-outfit' onClick={(e) => {
           removeOutfit(e, id, position);
-        }}
-        />
+        }}>
+        <img src={closeBtn} className="close-btn center-vert-horz"/>
+        </div>
         <div className="description">
-          <p>{category}</p>
-          <b>{name}</b>
-          <p>${Math.round(originalPrice)}</p>
+          <p className='card-name'>{name}</p>
+          <p className='card-category'>{category}</p>
+          {salePrice === null ?
+          <p className='card-price'>${Math.round(originalPrice)}</p> :
+          <>
+            <del>${Math.round(originalPrice)}</del>
+            <ins>${Math.round(salePrice)}</ins>
+          </>
+          }
           {rating ? <StarRating rating={rating} /> : null}
         </div>
       </div>
