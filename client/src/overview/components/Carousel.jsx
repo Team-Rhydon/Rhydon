@@ -5,10 +5,12 @@ import {FiMaximize} from 'react-icons/fi'
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
+import StarRating from '../../Related/StarRating.jsx';
 
-let Carousel = ({gallery, currentImage, setCurrentImage}) => {
+let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}) => {
   if (!gallery.length) return null;
 
+  let {name, category} = product;
   const[showImageModal, setImageModal] = useState(false);
 
   let lastCount = gallery.length - 1
@@ -54,6 +56,16 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
                 <IoIosArrowBack className="s-leftarrow" onClick={prevSlide}/>
                 <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
                 <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
+                <div className="o-title-review-container">
+                  <div className="o-name-category">
+                    <h2 className="pi-name">{name}</h2>
+                    <h5>{category}</h5>
+                  </div>
+                  <div className="pi-reviewstars">
+                    <div className="pi-stars">{rating ? <StarRating rating={rating} count={count}/> : null}</div>
+                    <div className="pi-reviews" onClick={() => console.log('implement')}>Read All {count} Reviews</div>
+                  </div>
+                </div>
             </div>
           )}
         </div>

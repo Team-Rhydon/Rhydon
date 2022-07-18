@@ -12,6 +12,7 @@ function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
   const [carouselPos, setCarouselPos] = useState({});
+  const ratingsRef = useRef('ratings');
 
   useEffect(() => {
     updateCurrentProduct(null, '40348'); // air force 1's
@@ -120,14 +121,21 @@ function App() {
     }
   }
 
+  const ratingsScroll = () => {
+    console.log('clicked')
+    console.log(ratingsScroll)
+    ratingsScroll.current?.scrollIntoView();
+  };
+
+  console.log(ratingsRef)
   if (!product) return null;
   return (
     <div className="app">
       <Nav />
-      <Overview className="overview-widget" {...product}/>
+      <Overview {...product} ratingsScroll={ratingsScroll}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      {/* <RatingsWidget details={product.details} meta={product.reviews} /> */}
+      <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
     </div>
   );
 }

@@ -3,9 +3,8 @@ import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
 
-let Styles = ({styles}) => {
+let Styles = ({styles, product, rating, count}) => {
   let {results} = styles;
-
   const [productStyles, setProductStyles] = useState();
   const [selectedStyle, setSelectedStyle] = useState();
 
@@ -14,11 +13,12 @@ let Styles = ({styles}) => {
     setProductStyles(results)
   }, [])
 
-  const commonProps = {productStyles, selectedStyle, setSelectedStyle}
+  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count}
 
+  console.log('this', product)
   return(
     <div className="overview-styles">
-      <ImageGallery selectedStyle={selectedStyle}/>
+      <ImageGallery {...commonProps}/>
       <section className="o-sidebar">
         <StyleSelector {...commonProps}/>
         <AddToCart {...commonProps}

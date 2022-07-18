@@ -7,5 +7,6 @@ function StarRating({id, rating}) {
       </div>
     );
 }
-
 export default StarRating;
+
+

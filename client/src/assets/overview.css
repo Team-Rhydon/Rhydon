@@ -15,8 +15,6 @@
 
 .o-image-gallery {
   display: flex;
-  flex: 1, 1, 300px;
-  min-width: 970px;
   min-width: 300px;
 }
 
@@ -34,10 +32,10 @@
   flex: 1, 1, 300px;
   padding-right: 16px;
   margin-right: 11.9px;
+  max-height: 550px;
 }
 
 .m-carousel {
-  display: flex;
   position: relative;
   flex: 1, 1;
 }
@@ -47,13 +45,20 @@
   object-fit: cover;
   /* width: 800px;
   height: 550px; */
-  max-width: 55vw;
+  width: 55vw;
+  max-width: 800px;
   height: 78vh;
+  max-height: 550px;
+  min-height: 550px;
   border-radius: 5px;
 }
 
 .m-carousel img {
-  display: flex;
+  display: block;
+}
+
+.m-carousel .o-title-review-container {
+  position: relative;
 }
 
 .m-carousel .s-leftarrow {
@@ -94,10 +99,12 @@
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  width: 4.9vw;
-  height: 10vh;
-  top: 40px;
-  left: 47px;
+  min-width: 1vw;
+  max-width: 4vw;
+  min-height: 4vh;
+  max-height: 60px;
+  top: 30px;
+  left: 37px;
 }
 
 .s-leftarrow:hover, .s-rightarrow:hover {
@@ -309,8 +316,23 @@
 .o-details {
   display: flex;
   flex-direction: column;
-  align-content: space-around;
-  width: 1341px;
-  margin: 0 auto;
   padding: 0px 30px 0px 30px;
+  max-width: 1460px;
 }
+
+.o-title-review-container {
+  display: flex;
+  width: 55vw;
+  justify-content: space-between;
+  max-width: 800px;
+}
+
+.o-name-category {
+  display: flex;
+}
+
+.pi-reviewstars {
+  display: flex;
+
+}
+
