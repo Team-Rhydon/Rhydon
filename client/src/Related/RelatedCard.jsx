@@ -1,9 +1,12 @@
 import React, {Component, useState} from 'react';
-import axios from 'axios';
 import StarRating from './StarRating.jsx';
+import image_placeholder from '../assets/icons/No-Image-Placeholder.svg';
 function RelatedCard({card, position, id, showModal, setPreview, updateCurrentProduct, setProduct}) {
   let {category, name, originalPrice, rating, salePrice, img, thumbnail} = card;
-
+  if (!thumbnail || !img) {
+    thumbnail = image_placeholder;
+    img = image_placeholder;
+  }
   return (
     <div className={`slide ${position}`}>
       <div className='product-card'>
@@ -17,13 +20,13 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
         <div onClick={(e) => {
           updateCurrentProduct(e, id);
         }}className="description">
-          <p>{category}</p>
-          <b>{name}</b>
+          <p className='card-name'>{name}</p>
+          <p className='card-category'>{category}</p>
           {salePrice === null ?
-          <p>${Math.round(originalPrice)}</p> :
+          <p className='card-price'>${Math.round(originalPrice)}</p> :
           <>
-            <del>$SALE{Math.round(originalPrice)}</del>
-            <ins>$SALE{Math.round(salePrice)}</ins>
+            <del>${Math.round(originalPrice)}</del>
+            <ins>${Math.round(salePrice)}</ins>
           </>
           }
           {rating ? <StarRating rating={rating} /> : null}

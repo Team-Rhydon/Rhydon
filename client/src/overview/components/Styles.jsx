@@ -17,14 +17,16 @@ let Styles = ({styles}) => {
   const commonProps = {productStyles, selectedStyle, setSelectedStyle}
 
   return(
-    <div>
+    <div className="overview-styles">
       <ImageGallery selectedStyle={selectedStyle}/>
-      <StyleSelector {...commonProps}/>
-      <AddToCart {...commonProps}
-      // productStyles={productStyles}
-      // selectedStyle={selectedStyle}
-      // setSelectedStyle={setSelectedStyle}
-      />
+      <section className="o-sidebar">
+        <StyleSelector {...commonProps}/>
+        <AddToCart {...commonProps}
+        // productStyles={productStyles}
+        // selectedStyle={selectedStyle}
+        // setSelectedStyle={setSelectedStyle}
+        />
+      </section>
     </div>
   )
 }

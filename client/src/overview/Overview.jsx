@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from "react";
 import ProductInfo from "./components/ProductInfo.jsx";
 import Styles from "./components/Styles.jsx";
-import "../assets/styles.css";
 
 let Overview = ({reviews, styles, details}) => {
 
-  return (<>
+  return (<div className="overview-widget">
     <Styles styles={styles}/>
     <ProductInfo reviews={reviews} details={details} />
-  </>)
+  </div>)
 }
 
 export default Overview;

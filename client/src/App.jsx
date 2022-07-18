@@ -7,6 +7,7 @@ import Nav from './Nav.jsx';
 import axios from 'axios';
 import _ from 'lodash';
 import logo from './assets/logos/rhydon-logos_black.png';
+
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
@@ -15,8 +16,8 @@ function App() {
   useEffect(() => {
     // updateCurrentProduct(null, '40348'); // air force 1's
     // updateCurrentProduct(null, '40351'); // yeasy
-    // updateCurrentProduct(null, '40346'); // joggers
-    updateCurrentProduct(null, '40344'); // camo onesie
+    updateCurrentProduct(null, '40346'); // joggers
+    // updateCurrentProduct(null, '40344'); // camo onesie
     // updateCurrentProduct(null, '40376'); // oout of stock size
     // updateCurrentProduct(null, '40353'); // stones
   }, []);
@@ -73,12 +74,40 @@ function App() {
     if (id in outfits) {
       const newOutfit = {...outfits};
       delete newOutfit[id];
-      const positions = {
-        'outfit-p2': 'outfit-p1',
-        'outfit-p3': 'outfit-p2',
-        'outfit-p4': 'outfit-p3',
-        'outfit-pright': 'outfit-p4',
-      };
+      let positions;
+      if (position === 'outfit-p1') {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p1',
+          'outfit-p3': 'outfit-p2',
+          'outfit-p4': 'outfit-p3',
+          'outfit-pright': 'outfit-p4',
+        };
+      } else if (position ==='outfit-p2') {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p2',
+          'outfit-p3': 'outfit-p2',
+          'outfit-p4': 'outfit-p3',
+          'outfit-pright': 'outfit-p4',
+        };
+      } else if (position ==='outfit-p3') {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p2',
+          'outfit-p3': 'outfit-p3',
+          'outfit-p4': 'outfit-p3',
+          'outfit-pright': 'outfit-p4',
+        };
+      } else {
+        positions = {
+          'outfit-p1': 'outfit-p1',
+          'outfit-p2': 'outfit-p2',
+          'outfit-p3': 'outfit-p3',
+          'outfit-p4': 'outfit-p4',
+          'outfit-pright': 'outfit-p4',
+        };
+      }
       for (const id in newOutfit) {
         const curPos = newOutfit[id]['position'];
         newOutfit[id]['position'] = positions[newOutfit[id]['position']];
@@ -93,11 +122,12 @@ function App() {
   if (!product) return null;
   return (
     <div className="app">
-      <Nav />
-      <Overview {...product}/>
+      <Nav updateCurrentProduct={updateCurrentProduct}/>
+      <Overview className="overview-widget" {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget meta={product.reviews} details={product.details} />
+      <RatingsWidget details={product.details} meta={product.reviews} />
+
     </div>
   );
 }

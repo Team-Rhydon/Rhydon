@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
+import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import {FiMaximize} from 'react-icons/fi'
+import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import ImageModal from './ImageModal.jsx';
+import MiniSlides from './MiniSlides.jsx';
 
 let Carousel = ({gallery, currentImage, setCurrentImage}) => {
   if (!gallery.length) return null;
@@ -41,16 +44,20 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
 
   return (
     <section className="slider">
-      <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
-      <BsArrowRightCircle className="right-arrow" onClick={nextSlide} />
-      <FiMaximize onClick={() => setImageModal(true)}/>
-      {gallery.map(({url}, i) => {
-        return (
-          <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
-            {i === currentImage.count && (<img className='main-product-img'onClick={() => setImageModal(true)} src={url} key={i} width="800" height="600"/>)}
-          </div>
-        )
-      })}
+    <MiniSlides {...passProps}/>
+      {gallery.map(({url}, i) => (
+        <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
+          {i === currentImage.count && (
+            <div className="m-carousel">
+                <img className='m-carousel-image'onClick={() => setImageModal(true)} src={url} key={i} />
+                <img className="m-logo" src={logo} />
+                <IoIosArrowBack className="s-leftarrow" onClick={prevSlide}/>
+                <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
+                <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
+            </div>
+          )}
+        </div>
+      ))}
       <ImageModal {...passProps}/>
     </section>
   )
