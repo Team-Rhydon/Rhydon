@@ -42,8 +42,6 @@
 .m-carousel-image {
   flex: 1, 1, 300px;
   object-fit: cover;
-  /* width: 800px;
-  height: 550px; */
   width: 55vw;
   max-width: 800px;
   height: 78vh;
@@ -284,13 +282,6 @@
   padding: 5px;
 }
 
-/* .sizebuttons {
-  width: 100px;
-  height: 40px;
-  padding-right: 6px;
-  margin: 2px;
-} */
-
 .sizebuttons {
   width: 104.1px;
   height: 35px;
@@ -302,7 +293,7 @@
   background-color: white;
 }
 
-.sizebuttons:hover {
+.sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover {
   cursor: pointer;
 }
 
@@ -361,8 +352,8 @@
 
 .o-name-category {
   display: flex;
+  position: relative;
 }
-
 
 .title-line {
   align-self: center;
@@ -372,10 +363,12 @@
 
 .pi-name {
   font-size: 2.07vw;
+  margin-right: .35vw;
 }
 
 .pi-category {
   font-size: 1vw;
+  margin-left: .35vw;
   align-self: center;
 }
 
@@ -400,4 +393,17 @@
   justify-content: space-between;
   align-self: center;
   font-size: 30px;
+}
+
+.o-name-category .title-line {
+  position: absolute;
+  right: 3.8vh;
+}
+
+.pi-stars {
+  padding-right: .5vw;
+}
+
+.pi-reviews {
+  font-size: .9vw;
 }
