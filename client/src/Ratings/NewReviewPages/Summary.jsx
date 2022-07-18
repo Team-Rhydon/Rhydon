@@ -9,18 +9,18 @@ const Summary = props => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} >
-        <textarea
-          className="New-Review-Summary"
-          placeholder="Example: Best purchase ever!"
-          value={value}
-          onChange={(e)=>setValue(e.target.value)}
-          required >
-        </textarea>
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+    <form className="New-Review-Summary" onSubmit={handleSubmit} >
+      <input
+        placeholder="Example: Best purchase ever!"
+        value={value}
+        maxLength={60}
+        onChange={(e)=>setValue(e.target.value)}
+      />
+      <br></br>
+      <div className="container-btn">
+        <input className="submit-btn" type="submit" value="Submit" />
+      </div>
+    </form>
   )
 }
 
