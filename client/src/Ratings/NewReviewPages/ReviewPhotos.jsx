@@ -35,7 +35,7 @@ const ReviewPhotos = props => {
 
   function handleSubmit (event) {
     event.preventDefault()
-    props.setPhotos(photoStorage);
+    props.setPhotos(()=>photoStorage);
     console.log('submitted photos')
   }
 

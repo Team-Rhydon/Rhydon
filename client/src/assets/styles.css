@@ -502,11 +502,77 @@ cursor: pointer;
   }
 
   #reviewForm {
-    background-color: grey;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(110, 110, 110, 0.5);
+    border-radius: 2%;
+    margin: 1em;
+    min-height: 25vh;
+    min-width: 40vw;
+    /* border: 1px solid grey; */
+  }
 
-    height: 80%;
-    width: 80%;
+
+  .container-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container-rbtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* .Recommended-btn {
+    height: 1.5em;
+    width: 5vw;
+    background-color: transparent;
+  } */
+
+  .Button {
+    height: 1.5em;
+    width: 5vw;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .Button.null {
+    height: 1.5em;
+    width: 5vw;
+    background-color: white;
     border: 1px solid grey;
+  }
+  .Button.true {
+    height: 1.5em;
+    width: 5vw;
+    background-color: green;
+    border: 1px solid grey;
+  }
+  .Button.false {
+    height: 1.5em;
+    width: 5vw;
+    background-color: red;
+    border: 1px solid grey;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tab h3 {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .recommend {
+    padding-left: .35em;
+    padding-right: .35em;
+    background-color: white;
+    align-self: center;
+    border: 1px solid black;
   }
 
   .star input {
@@ -528,18 +594,40 @@ cursor: pointer;
 
   .StarNumber:hover {
     background-color: green;
+    cursor: pointer;
   }
+
 
   .on {
     color: rgb(255, 247, 0);
   }
   .off {
-    color: #ccc;
+    color: rgb(255, 255, 255);
   }
 
   .New-Review-Summary {
-    width: 75%;
-    height: 40px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .New-Review-Summary textarea{
+    width: 99%;
+    height: 3em;
+  }
+
+  .New-Review-Body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .New-Review-Body textarea {
+    width: 99%;
+    height: 33vh;
   }
 
   .ReviewTile {
@@ -568,6 +656,35 @@ cursor: pointer;
     display: flex;
     justify-content: space-between;
     background-color: white;
+  }
+
+  .Submit-Form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: .5em;
+  }
+
+  .Submit-Form-page {
+    display: inline-grid;
+    justify-content: space-between;
+  }
+
+  .row-a {
+    background-color: rgb(255, 255, 255);
+  }
+  .Submit-Form-page:hover {
+    background-color: rgb(0, 0, 255, .5);
+    cursor: pointer;
+  }
+  .form-col-1 {
+    grid-column-start: 1;
+    /* align-self: flex-end; */
+  }
+  .form-col-2 {
+    grid-column-start: 2;
+    /* align-self: flex-start; */
   }
 
 .miniSlider {

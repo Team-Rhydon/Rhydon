@@ -13,10 +13,15 @@
 .ratings-modal-content {
   max-width: 90%;
   background-color: rgb(255, 255, 255);
+  border-radius: 1em;
 }
 
 .ratings-modal-header, .ratings-modal-footer {
   padding: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
 }
 
 .ratings-modal-title {
@@ -25,12 +30,12 @@
 
 .ratings-modal-body {
   min-width: 50vw;
-  min-height: 50vh;
+  min-height: fit-content;
   max-height: 90vh;
   max-width: 90vw;
   overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }

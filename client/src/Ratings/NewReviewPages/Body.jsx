@@ -9,20 +9,21 @@ const Body = props => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} >
-        <textarea
-          className="New-Review-Body"
-          style={{height: "33vh", width: "25vw"}}
-          placeholder="Why did you like the product or not?"
-          value={value}
-          onChange={(e)=>setValue(e.target.value)}
-          required>
-        </textarea>
-        <br></br>
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+    <form className="New-Review-Body" onSubmit={handleSubmit} >
+      <textarea
+        name="textarea"
+        rows="10"
+        cols="100"
+        placeholder="Why did you like the product or not?"
+        value={value}
+        onChange={(e)=>setValue(e.target.value)}
+        maxLength="1000"
+        required
+     />
+      <div className="container-btn">
+        <input disabled={value.length < 50} type="submit"/>
+      </div>
+    </form>
   )
 }
 

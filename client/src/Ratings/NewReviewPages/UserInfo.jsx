@@ -11,33 +11,31 @@ const UserInfo = props => {
   }
 
   return (
-    <div style={{width: "100%"}}>
-
-        <label style={{width: "33%"}}>Nickname:</label>
-        <input style={{width: "66%"}}
-          type="text"
-          value={nickname}
-          placeholder="Example: jackson11!"
-          onChange={(e)=> setNickName(e.target.value)}
-          required
-          />
-        <p>For privacy reasons, do not use your full name or email address</p>
-
-      <br></br>
-      <div>
-        <label style={{width: "33%"}}>Email:</label>
-        <input style={{width: "66%"}}
-          type="text"
-          placeholder="Example: jackson11@email.com"
-          value={email}
-          onChange={e=> setEmail(e.target.value)}
-          required
+    <form onSubmit={handleSubmit} style={{width: "100%"}}>
+      <label>Nickname:</label>
+      <input style={{width: "99%"}}
+        type="text"
+        value={nickname}
+        placeholder="Example: jackson11!"
+        onChange={(e)=> setNickName(e.target.value)}
+        maxLength={60}
+        required
         />
-        <p>For authentification reasons, you will not be emailed</p>
-        </div>
-      <br></br>
-      <button type="submit" onClick={handleSubmit} >Submit</button>
-    </div>
+      <p>For privacy reasons, do not use your full name or email address</p>
+      <label>Email:</label>
+      <input style={{width: "99%"}}
+        type="text"
+        placeholder="Example: jackson11@email.com"
+        value={email}
+        onChange={e=> setEmail(e.target.value)}
+        maxLength={60}
+        required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+      <p>For authentification reasons, you will not be emailed</p>
+      <div className="container-btn">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
   )
 }
 
