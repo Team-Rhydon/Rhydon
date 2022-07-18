@@ -11,7 +11,7 @@ function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
     <table className="modal-content">
       <tbody>
         <tr>
-          <th colSpan='3' className='table-title'>Comparing</th>
+          <th colSpan='1' className='table-title'>Comparing</th>
         </tr>
         <tr>
           <th>
