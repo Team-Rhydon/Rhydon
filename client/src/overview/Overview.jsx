@@ -6,7 +6,6 @@ let Overview = ({reviews, styles, details, ratingsScroll}) => {
   const [rating, setRating] = useState();
   const [count, setCount] = useState();
   const [product, setProduct] = useState(details);
-  console.log(product)
   let {name, category, description, slogan, features} = product;
 
   const getRatingsAvg = (data) => {

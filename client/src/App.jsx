@@ -127,7 +127,6 @@ function App() {
     ratingsScroll.current?.scrollIntoView();
   };
 
-  console.log(ratingsRef)
   if (!product) return null;
   return (
     <div className="app">

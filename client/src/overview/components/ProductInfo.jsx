@@ -16,7 +16,9 @@ let ProductInfo = ({product}) => {
 
   return (
     <div className="o-details">
-      <h3 onClick={displayDescription.bind(this)} className="pi-description">Description {toggleDescription ? <BsChevronUp className="pi-up"/> : <BsChevronDown className="pi-down"/>}</h3>
+      <h3 onClick={displayDescription.bind(this)} className="pi-description">Description
+
+      {toggleDescription ? <BsChevronUp className="pi-up"/> : <BsChevronDown className="pi-down"/>}</h3>
       {toggleDescription ? <Description {...product} /> : null}
     </div>
   )

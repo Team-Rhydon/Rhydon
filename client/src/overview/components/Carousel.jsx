@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import {FiMaximize} from 'react-icons/fi'
+import {TbMinusVertical} from 'react-icons/tb'
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
+import line from '../../assets/icons/thick-vertical-line.png';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 import StarRating from '../../Related/StarRating.jsx';
@@ -59,7 +60,9 @@ let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}
                 <div className="o-title-review-container">
                   <div className="o-name-category">
                     <h2 className="pi-name">{name}</h2>
-                    <h5>{category}</h5>
+                    {/* <TbMinusVertical className="title-line" /> */}
+                    <img className="title-line" src={line}/>
+                    <h5 className="pi-category">{category}</h5>
                   </div>
                   <div className="pi-reviewstars">
                     <div className="pi-stars">{rating ? <StarRating rating={rating} count={count}/> : null}</div>

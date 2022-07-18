@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
+import Share from './Share.jsx'
 
 let Styles = ({styles, product, rating, count}) => {
   let {results} = styles;
@@ -15,7 +16,6 @@ let Styles = ({styles, product, rating, count}) => {
 
   const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count}
 
-  console.log('this', product)
   return(
     <div className="overview-styles">
       <ImageGallery {...commonProps}/>
@@ -26,6 +26,7 @@ let Styles = ({styles, product, rating, count}) => {
         // selectedStyle={selectedStyle}
         // setSelectedStyle={setSelectedStyle}
         />
+        <Share />
       </section>
     </div>
   )
