@@ -1,4 +1,4 @@
-p, b, div, h1, h2 {
+tr, td, th, p, b, div, h1, h2, table {
   font-family: Helvetica,Arial,system-ui,sans-serif;
   font-weight: 400;
 }
@@ -69,6 +69,8 @@ p, b, div, h1, h2 {
 }
 
 .related .carousel .carousel-next-container, .outfit-next-container {
+  height: 1.5rem;
+  width: 1.5rem;
   z-index: 5;
   position: absolute;
   right: 1.6vw;
@@ -79,6 +81,8 @@ p, b, div, h1, h2 {
 
 
 .related .carousel .carousel-prev-container, .outfit-prev-container {
+  height: 1.5rem;
+  width: 1.5rem;
   z-index: 5;
   position: absolute;
   left: 0;
@@ -102,7 +106,7 @@ p, b, div, h1, h2 {
 
 .related .carousel .slide .product-card {
   position: relative;
-  /* border: 1px solid #e7e7e7; */
+  border: 1px solid #e7e7e7;
   max-width: 100%;
   padding: 4px;
   display: inline;
@@ -116,7 +120,7 @@ p, b, div, h1, h2 {
   display: flex;
   position: absolute;
   width: 25%;
-  transition: all .3s linear;
+  transition: all .5s linear;
 }
 
 .related .carousel .slide.related-pleft, .slide.outfit-pleft {
@@ -156,7 +160,6 @@ position: relative;
 margin: 0 auto;
 /* max-width: 25%; */
 width: 17.5vw;
-background-color: white;
 height: 17.5vw;
 /* max-height: 25%; */
 object-fit: cover;
@@ -238,7 +241,7 @@ cursor: pointer;
   .modal .modal-content {
     width: 30%;
     height: 30%;
-    border: 1px solid #e7e7e7;
+    border: 2px solid #767676;
     text-align: center;
     /* margin: auto; */
     z-index: 10;
@@ -310,17 +313,39 @@ object-fit: cover;
     cursor: pointer;
     height: .875rem;
     width: .875rem;
+    padding: .3rem;
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
   }
 
   .card-outline {
-    border: solid 1px #767676;
+    border: dashed 1px #767676;
   }
+
 
   .add-outfit-prev:hover {
     opacity: 1;
   }
 
+  .add-btn {
+    margin-top: 4vw;
+    height: 5vw;
+    width: 5vw;
+    filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
+    background: transparent;
+  }
+
+
+  .add-card {
+    text-align: center;
+    background-color: transparent;
+  }
+
+.add-btn-desc {
+  background: transparent;
+  filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
+  text-align: center;
+  font-size: .875rem;
+}
   .btn-container {
     width: 1.5rem;
     height: 1.5rem;
@@ -513,18 +538,16 @@ table {
   background-color: white;
   overflow: scroll;
   width: 100%;
+  color: #767676;
 }
 
 td {
   text-align: center;
-  padding: 16px;
 }
 
 .table-header {
   text-align: center;
   font-weight: bold;
-  padding-top: 16px;
-  padding-bottom: 16px;
 }
 
 
@@ -553,6 +576,7 @@ max-height: 100%;
 
 .logo {
   object-fit: cover;
+  cursor: pointer;
 }
 
 .nav-bar .nav-container .right-nav {
@@ -584,45 +608,46 @@ margin-right: 20px;
   width: 100%;
 }
 
-.table-current-product-column{
+.table-current-product-column, .table-compare-product-column{
   background-color: #ffe;
   text-align: center;
 }
 
-tr:nth-child(even) .table-current-product-column {
+/* tr:nth-child(even) .table-current-product-column, .table-compare-product-column {
   background-color: #ffffde;
+} */
+
+.table-current-product-column {
+  align-items: left;
 }
 
-.table-characteristic {
-background-color: white;
+.table-compare-product-column {
+  align-items: right;
 }
-
 /* tr:nth-child(2) {
   border-bottom: 1px solid #e7e7e7;
 } */
 
 
-tr:nth-child(even) .table-compare-product-column {
+/* tr:nth-child(even) .table-compare-product-column {
   background-color: rgba(181, 255, 181, 0.3);
-}
+} */
 
-tr:nth-child(odd) .table-compare-product-column {
+/* tr:nth-child(odd) .table-compare-product-column {
   background-color: rgba(204, 255, 204, 0.3);
-}
+} */
 
-tr:nth-child(even) .table-characteristic {
+/* tr:nth-child(even) .table-characteristic {
   background-color: rgba(173, 172, 172, 0.3);
 }
 
 tr:nth-child(odd) .table-characteristic {
   background-color: #f6f6f6;
-}
+} */
 
 .table-title {
   width: 100%;
-  padding: 16px;
-  font-size: 24px;
-  color: #c45500!important
+  font-size: 1rem;
 }
 
 .card-category {
@@ -639,6 +664,7 @@ margin: 0;
 text-align: left;
 }
 
+
 .card-price {
 margin: 0;
 color: #000;
@@ -647,3 +673,12 @@ line-height: 1.2;
 letter-spacing: .025rem;
 }
 
+.add-btn-desc-container {
+  width: 80%;
+  margin: auto;
+}
+
+.plus-logo {
+  position: absolute;
+  font-size: 2rem;
+}
