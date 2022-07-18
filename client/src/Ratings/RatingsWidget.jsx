@@ -25,8 +25,8 @@ const RatingsWidget = React.forwardRef((props, ref)  => {
 
   console.log(ref)
   return (
-    <div ref={ref} className="RatingWidget" style={{border: '1px solid black'}}>
-      <div className="Ratings-Breakdown" style={{width: '20%'}}>
+    <div ref={ref} className="RatingWidget">
+      <div className="Ratings-Breakdown">
         <RatingBreakdown
           setFilter={setFilter}
           filter={filter}
