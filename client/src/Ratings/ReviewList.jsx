@@ -46,7 +46,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
         .then((response) => {
           return setStorage(prevStorage=> {
             return [...prevStorage, ...response.data.results]});
-        }).catch(console.log('err getting reviews'));
+        })/*.catch(console.log('err getting reviews'))*/;
   }, [page, product_id, sortStyle]);
 
   //if sortstyle changes, reset page and empty storage
