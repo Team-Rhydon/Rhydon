@@ -5,34 +5,38 @@ import nextArrow from '../assets/icons/chevron-right-solid.svg';
 import prevArrow from '../assets/icons/chevron-left-solid.svg';
 
 function Outfit({product, outfits, addToOutfit, removeOutfit}) {
+
   useEffect(() => {
+    debugger;
     outfitBtnCheck();
-    if (shouldInsertAddCard()) {
-      moveOutfitLeft(true);
-    }
+      if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1 && document.getElementsByClassName('outfit-p1').length > 1 ) {
+        moveOutfitLeft(true);
+      }
   }, [outfits]);
-  function moveOutfitLeft(shift) {
-    function moveLeft() {
-      const positions = {
-        'outfit-p4': 'outfit-pright',
-        'outfit-p3': 'outfit-p4',
-        'outfit-p2': 'outfit-p3',
-        'outfit-p1': 'outfit-p2',
-        'outfit-pleft': 'outfit-p1',
-      };
-      for (const pos in positions) {
-        const elements = document.getElementsByClassName(pos);
-        const element = elements[elements.length - 1];
-        if(element) {
-          updatePosition(element, pos, positions[pos]);
-        }
+
+
+  function moveLeft() {
+    const positions = {
+      'outfit-p4': 'outfit-pright',
+      'outfit-p3': 'outfit-p4',
+      'outfit-p2': 'outfit-p3',
+      'outfit-p1': 'outfit-p2',
+      'outfit-pleft': 'outfit-p1',
+    };
+    for (const pos in positions) {
+      const elements = document.getElementsByClassName(pos);
+      const element = elements[elements.length - 1];
+      if(element) {
+        updatePosition(element, pos, positions[pos]);
       }
     }
+  };
+  function moveOutfitLeft(shouldShift) {
     if (hasLeftSlide()) {
       moveLeft();
       outfitBtnCheck();
     }
-    if (shift) {
+    if (shouldShift === true) {
       moveLeft();
       outfitBtnCheck();
     }
@@ -78,7 +82,9 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
       };
       for (const pos in positions) {
         const element = document.getElementsByClassName(pos)[0];
-        updatePosition(element, pos, positions[pos]);
+        if(element) {
+          updatePosition(element, pos, positions[pos]);
+        }
       }
     }
     outfitBtnCheck();

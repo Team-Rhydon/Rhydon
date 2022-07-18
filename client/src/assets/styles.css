@@ -553,6 +553,7 @@ max-height: 100%;
 
 .logo {
   object-fit: cover;
+  cursor: pointer;
 }
 
 .nav-bar .nav-container .right-nav {

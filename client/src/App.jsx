@@ -50,6 +50,7 @@ function App() {
       alert('erorr in adding outfit');
       return;
     }
+    debugger;
     if (!(id in outfits)) {
       const newOutfit = {...outfits};
       const positions = {
@@ -73,7 +74,6 @@ function App() {
     e.preventDefault();
     if (id in outfits) {
       const newOutfit = {...outfits};
-      debugger;
       delete newOutfit[id];
       let positions;
       if (position === 'outfit-p1') {
@@ -123,7 +123,7 @@ function App() {
   if (!product) return null;
   return (
     <div className="app">
-      <Nav />
+      <Nav updateCurrentProduct={updateCurrentProduct}/>
       <Overview className="overview-widget" {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
