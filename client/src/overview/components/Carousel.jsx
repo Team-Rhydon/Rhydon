@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {BsArrowLeftCircle, BsArrowRightCircle} from 'react-icons/bs'
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
 import {FiMaximize} from 'react-icons/fi'
+import {TbMinusVertical} from 'react-icons/tb'
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
+import line from '../../assets/icons/thick-vertical-line.png';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
+import StarRating from '../../Related/StarRating.jsx';
 
-let Carousel = ({gallery, currentImage, setCurrentImage}) => {
+let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}) => {
   if (!gallery.length) return null;
 
+  let {name, category} = product;
   const[showImageModal, setImageModal] = useState(false);
 
   let lastCount = gallery.length - 1
@@ -54,6 +57,21 @@ let Carousel = ({gallery, currentImage, setCurrentImage}) => {
                 <IoIosArrowBack className="s-leftarrow" onClick={prevSlide}/>
                 <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
                 <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
+                <div className="o-title-review-container">
+
+                  <div className="o-name-category">
+                    <div className="o-name-container">
+                      <h2 className="pi-name">{name}</h2>
+                    </div>
+                      <img className="title-line" src={line}/>
+                    {/* <TbMinusVertical className="title-line" /> */}
+                    <h5 className="pi-category">{category}</h5>
+                  </div>
+                  <div className="pi-reviewstars">
+                    <div className="pi-stars">{rating ? <StarRating rating={rating} count={count}/> : null}</div>
+                    <div className="pi-reviews" onClick={() => console.log('implement')}>Read All {count} Reviews</div>
+                  </div>
+                </div>
             </div>
           )}
         </div>
