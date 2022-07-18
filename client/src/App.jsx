@@ -50,7 +50,6 @@ function App() {
       alert('erorr in adding outfit');
       return;
     }
-    debugger;
     if (!(id in outfits)) {
       const newOutfit = {...outfits};
       const positions = {
