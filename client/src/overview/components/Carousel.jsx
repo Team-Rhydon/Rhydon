@@ -58,10 +58,13 @@ let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}
                 <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
                 <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
                 <div className="o-title-review-container">
+
                   <div className="o-name-category">
-                    <h2 className="pi-name">{name}</h2>
+                    <div className="o-name-container">
+                      <h2 className="pi-name">{name}</h2>
+                    </div>
+                      <img className="title-line" src={line}/>
                     {/* <TbMinusVertical className="title-line" /> */}
-                    <img className="title-line" src={line}/>
                     <h5 className="pi-category">{category}</h5>
                   </div>
                   <div className="pi-reviewstars">

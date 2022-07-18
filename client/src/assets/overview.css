@@ -4,7 +4,7 @@
   justify-content: center;
   padding-top: 10px;
   margin: 0 auto;
-  max-width: 1520px;
+  max-width: 93vw;
 }
 
 .overview-styles {
@@ -337,8 +337,8 @@
 .o-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 0px 30px 0px 30px;
-  max-width: 1460px;
 }
 
 .o-title-review-container {
@@ -363,12 +363,15 @@
 
 .pi-name {
   font-size: 2.07vw;
-  margin-right: .35vw;
 }
 
 .pi-category {
   font-size: 1vw;
-  margin-left: .35vw;
+  align-self: center;
+}
+
+.pi-reviews {
+  font-size: .9vw;
   align-self: center;
 }
 
@@ -382,28 +385,39 @@
   .pi-category {
     font-size: 13px;
   }
+  .pi-reviews {
+    font-size: 13px;
+  }
 }
 
 .pi-reviewstars {
   display: flex;
+  align-self: center;
+}
+
+.o-description-icon-container {
+  display: flex;
+  align-items: center;
+  width: 1283px;
 }
 
 .pi-description {
   display: flex;
-  justify-content: space-between;
-  align-self: center;
-  font-size: 30px;
+  font-size: 25px;
+  padding-right: 20px;
 }
 
-.o-name-category .title-line {
+.o-name-container {
+  display: flex;
+  position: relative;
+}
+
+.o-name-container .title-line {
   position: absolute;
-  right: 3.8vh;
 }
 
 .pi-stars {
   padding-right: .5vw;
 }
 
-.pi-reviews {
-  font-size: .9vw;
-}
+

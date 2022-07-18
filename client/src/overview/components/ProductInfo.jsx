@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { AiOutlinePlus, AiOutlineMinus,  } from 'react-icons/ai';
 import StarRating from '../../Related/StarRating.jsx';
 import Description from './Description.jsx';
 
@@ -16,9 +16,10 @@ let ProductInfo = ({product}) => {
 
   return (
     <div className="o-details">
-      <h3 onClick={displayDescription.bind(this)} className="pi-description">Description
-
-      {toggleDescription ? <BsChevronUp className="pi-up"/> : <BsChevronDown className="pi-down"/>}</h3>
+      <div className="o-description-icon-container">
+        <h3 onClick={displayDescription.bind(this)} className="pi-description">Description</h3>
+        {toggleDescription ? <AiOutlineMinus className="pi-minus"/> : <AiOutlinePlus className="pi-plus"/>}
+      </div>
       {toggleDescription ? <Description {...product} /> : null}
     </div>
   )
