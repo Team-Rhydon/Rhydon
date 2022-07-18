@@ -7,32 +7,34 @@ import prevArrow from '../assets/icons/chevron-left-solid.svg';
 function Outfit({product, outfits, addToOutfit, removeOutfit}) {
   useEffect(() => {
     outfitBtnCheck();
-    if (shouldInsertAddCard()) {
+    if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1 && document.getElementsByClassName('outfit-p1').length > 1 ) {
       moveOutfitLeft(true);
     }
   }, [outfits]);
-  function moveOutfitLeft(shift) {
-    function moveLeft() {
-      const positions = {
-        'outfit-p4': 'outfit-pright',
-        'outfit-p3': 'outfit-p4',
-        'outfit-p2': 'outfit-p3',
-        'outfit-p1': 'outfit-p2',
-        'outfit-pleft': 'outfit-p1',
-      };
-      for (const pos in positions) {
-        const elements = document.getElementsByClassName(pos);
-        const element = elements[elements.length - 1];
-        if(element) {
-          updatePosition(element, pos, positions[pos]);
-        }
+
+
+  function moveLeft() {
+    const positions = {
+      'outfit-p4': 'outfit-pright',
+      'outfit-p3': 'outfit-p4',
+      'outfit-p2': 'outfit-p3',
+      'outfit-p1': 'outfit-p2',
+      'outfit-pleft': 'outfit-p1',
+    };
+    for (const pos in positions) {
+      const elements = document.getElementsByClassName(pos);
+      const element = elements[elements.length - 1];
+      if (element) {
+        updatePosition(element, pos, positions[pos]);
       }
     }
+  };
+  function moveOutfitLeft(shouldShift) {
     if (hasLeftSlide()) {
       moveLeft();
       outfitBtnCheck();
     }
-    if (shift) {
+    if (shouldShift === true) {
       moveLeft();
       outfitBtnCheck();
     }
@@ -78,7 +80,9 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
       };
       for (const pos in positions) {
         const element = document.getElementsByClassName(pos)[0];
-        updatePosition(element, pos, positions[pos]);
+        if (element) {
+          updatePosition(element, pos, positions[pos]);
+        }
       }
     }
     outfitBtnCheck();
@@ -112,7 +116,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
       <h3 className="title">YOUR OUTFIT</h3>
       <div className="carousel">
         <div className='outfit-prev-container btn hidden'>
-        <img src={prevArrow} onClick={(e) => moveOutfitLeft(e)} className="outfit-prev"/>
+          <img src={prevArrow} onClick={(e) => moveOutfitLeft(e)} className="outfit-prev"/>
         </div>
         <div className="carousel-inner">
           {shouldInsertAddCard() ? <OutfitAddCard key='add-btn' addToOutfit={addToOutfit} product={product}/> : null}
@@ -124,7 +128,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
             position={outfits[id]['position']} />)}
         </div>
         <div className='outfit-next-container btn hidden'>
-        <img src={nextArrow} onClick={(e) => moveOutfitRight(e)} className="outfit-next"/>
+          <img src={nextArrow} onClick={(e) => moveOutfitRight(e)} className="outfit-next"/>
         </div>
       </div>
     </div>

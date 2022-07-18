@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRating from './StarRating.jsx';
 import closeBtn from '../assets/icons/xmark-solid.svg';
-
+import image_placeholder from '../assets/icons/No-Image-Placeholder.svg';
 function OutfitCard({outfit, position, id, removeOutfit}) {
   if (!outfit) {
     return;
@@ -25,19 +25,21 @@ function OutfitCard({outfit, position, id, removeOutfit}) {
       originalPrice = styles[j].original_price;
       salePrice = styles[j].sale_price;
       thumbnail = styles[j].photos[0].thumbnail_url;
-      img = styles[j].photos[0].url;
       break;
     } else {
       originalPrice = styles[j].original_price;
       salePrice = styles[j].sale_price;
       thumbnail = styles[j].photos[0].thumbnail_url;
-      img = styles[j].photos[0].thumbnail_url;
     }
   }
 
+  if (!thumbnail) {
+    thumbnail = image_placeholder;
+  }
+
   return (
-    <div className={`slide ${position} outfit`}>
-      <div className='product-card'>
+    <div className={`slide ${position}`}>
+      <div className='product-card outfit-card'>
         <img className='thumb outfit' src={thumbnail}/>
         <div className='btn-container remove-outfit' onClick={(e) => {
           removeOutfit(e, id, position);
