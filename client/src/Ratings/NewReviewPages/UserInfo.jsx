@@ -11,9 +11,9 @@ const UserInfo = props => {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{width: "100%"}}>
+    <form className="info-form" onSubmit={handleSubmit}>
       <label>Nickname:</label>
-      <input style={{width: "99%"}}
+      <input
         type="text"
         value={nickname}
         placeholder="Example: jackson11!"
@@ -23,7 +23,7 @@ const UserInfo = props => {
         />
       <p>For privacy reasons, do not use your full name or email address</p>
       <label>Email:</label>
-      <input style={{width: "99%"}}
+      <input
         type="text"
         placeholder="Example: jackson11@email.com"
         value={email}
@@ -33,7 +33,7 @@ const UserInfo = props => {
       />
       <p>For authentification reasons, you will not be emailed</p>
       <div className="container-btn">
-        <input type="submit" value="Submit" />
+        <input className="submit-btn" type="submit" value="Submit" />
       </div>
     </form>
   )

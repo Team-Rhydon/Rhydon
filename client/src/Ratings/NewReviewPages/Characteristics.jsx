@@ -17,7 +17,7 @@ const Characteristics = (props) => {
     Width: ['Too narrow', 'Slightly narrow', 'Perfect', 'Slightly Wide',  'Too wide']
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="chars-form" onSubmit={handleSubmit}>
       {Object.entries(props.chars).map(([char, {id}])=>{
         return (
         <div key={id} onChange={e=> setCharacteristics({...characteristics, [id]:Number(e.target.value)})} className={char}>
@@ -53,7 +53,7 @@ const Characteristics = (props) => {
           : disabled.current = true
       }
       <div className="container-btn">
-        <input disabled={disabled.current} type="submit" value="Submit"/>
+        <input disabled={disabled.current} className="submit-btn" type="submit" value="Submit"/>
       </div>
     </form>
   )

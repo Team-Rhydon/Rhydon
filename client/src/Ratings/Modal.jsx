@@ -15,11 +15,9 @@ const Modal = (props) => {
           {props.children}
         </div>
         <div className="ratings-modal-footer container-btn">
-          <button onClick={props.onClose} className="button">Close</button>
+          <button onClick={props.onClose} className="modal-button">Close</button>
         </div>
-
       </div>
-
     </div>
   )
 }

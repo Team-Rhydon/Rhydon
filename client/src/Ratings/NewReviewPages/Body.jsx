@@ -21,7 +21,7 @@ const Body = props => {
         required
      />
       <div className="container-btn">
-        <input disabled={value.length < 50} type="submit"/>
+        <input className="submit-btn" disabled={value.length < 50} type="submit"/>
       </div>
     </form>
   )

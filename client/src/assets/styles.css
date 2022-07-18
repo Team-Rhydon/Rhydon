@@ -370,10 +370,10 @@ cursor: pointer;
   .meter > span {
     display: block;
     height: 100%;
-    border-top-right-radius: 1px;
-    border-bottom-right-radius: 1px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     background-color: rgb(69, 244, 0);
     box-shadow:
       inset 0 2px 9px  rgba(255,255,255,0.3),
@@ -383,10 +383,10 @@ cursor: pointer;
   }
 
   .RatingWidget {
-    width: 75vw;
+    width: 95vw;
     border-top: 1px solid black;
     display: flex;
-    margin: 12.5vw;
+    margin: 2.5vw;
     flex-direction: column;
   }
 
@@ -504,7 +504,7 @@ cursor: pointer;
   #reviewForm {
     display: flex;
     justify-content: center;
-    background-color: rgba(110, 110, 110, 0.5);
+    background-color: rgb(255, 255, 255);
     border-radius: 2%;
     margin: 1em;
     min-height: 25vh;
@@ -555,17 +555,50 @@ cursor: pointer;
     background-color: red;
     border: 1px solid grey;
   }
+  #prevBtn {
+    height: 3vh;
+    width: 8vw;
+    background-color: white;
+    border-color: #aaaaaa;
+  }
+  #prevBtn:hover{
+    border-color: black;
+  }
+  #nextBtn {
+    height: 3vh;
+    width: 8vw;
+    background-color: white;
+    border-color: #aaaaaa;
+  }
 
+  #nextBtn:hover{
+    border-color: black;
+  }
+
+  .submit-btn {
+    height: 3vh;
+    min-width: 8vw;
+    width: fit-content;
+    color: black;
+    background-color: white;
+    border-color: #aaaaaa;
+  }
+  .submit-btn:hover{
+    border-color: black;
+  }
   .tab {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid rgb(128, 128, 128, .5);
+    border-radius: .5em;
   }
 
   .tab h3 {
     padding-left: 1em;
     padding-right: 1em;
+    text-decoration: underline;
   }
   .recommend {
     padding-left: .35em;
@@ -579,6 +612,9 @@ cursor: pointer;
     padding: 5px;
     width: 100%;
     border: 1px solid #aaaaaa;
+  }
+  .info-form input {
+    width: -webkit-fill-available;
   }
 
   input.invalid {
@@ -600,9 +636,12 @@ cursor: pointer;
 
   .on {
     color: rgb(255, 247, 0);
+    border: 1px solid grey;
+
   }
   .off {
-    color: rgb(255, 255, 255);
+    color: rgb(100, 100, 100);
+    border: 1px solid grey;
   }
 
   .New-Review-Summary {
@@ -639,7 +678,8 @@ cursor: pointer;
     /* background-color: rgb(180, 180, 180); */
     display: grid;
     grid-template-rows: 1fr 9fr;
-    margin: 1em;
+    margin: auto;
+    margin-bottom: 1em;
     border: 1px solid rgb(0, 0, 0, .5);
     padding-top: .25em;
     padding-left: .5em;
@@ -662,8 +702,8 @@ cursor: pointer;
     display: flex;
     width: 100%;
     flex-direction: column;
-    border: 1px solid grey;
-    border-radius: .5em;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
   }
 
   .Submit-Form-page {
@@ -672,11 +712,16 @@ cursor: pointer;
   }
 
   .row-a {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(191, 191, 191);
   }
   .Submit-Form-page:hover {
     background-color: rgb(0, 0, 255, .5);
     cursor: pointer;
+  }
+
+  .chars-form {
+    align-self: flex-start;
+    margin-left: 10%
   }
   .form-col-1 {
     grid-column-start: 1;
@@ -808,6 +853,8 @@ margin-right: 20px;
   align-self: flex-end;
 }
 svg {
+  border: 1px solid grey;
+  border-radius: 3em;
   grid-column-start: 2;
   grid-row: 2;
 }

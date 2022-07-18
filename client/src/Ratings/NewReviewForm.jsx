@@ -189,7 +189,7 @@ function NewReviewForm(props) {
         </div>
         <br></br>
         <div>
-          <button onClick={e=> sendPostRequest(e)}>Post your review!</button>
+          <button className="submit-btn" onClick={e=> sendPostRequest(e)}>Post your review!</button>
         </div>
       </div>
   };

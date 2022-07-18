@@ -48,7 +48,7 @@ const ReviewPhotos = props => {
           <img style={{height: "5vh", width: "5vw"}}  src={photoSrc} />
           <br></br>
       </div>)}
-      <button type="submit" onClick={handleSubmit}>Submit Photos</button>
+      <button className="submit-btn" type="submit" onClick={handleSubmit}>Submit Photos</button>
     </div>
   )
 }
