@@ -17,8 +17,8 @@ let ProductInfo = ({product}) => {
   return (
     <div className="o-details">
       <div className="o-description-icon-container">
-        <h3 onClick={displayDescription.bind(this)} className="pi-description">Description</h3>
-        {toggleDescription ? <AiOutlineMinus className="pi-minus"/> : <AiOutlinePlus className="pi-plus"/>}
+        <h3 onClick={displayDescription} className="pi-description">Description</h3>
+        {toggleDescription ? <AiOutlineMinus onClick={displayDescription} className="pi-minus"/> : <AiOutlinePlus onClick={displayDescription}className="pi-plus"/>}
       </div>
       {toggleDescription ? <Description {...product} /> : null}
     </div>

@@ -17,9 +17,32 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
   }
 
   return (
-    <div style={{border: "1px solid black", width: "100%"}}>
-      <div>
-        <p>Rating and Reviews </p>
+    <div className="Star-Ratings" style={{width: "66%"}}>
+      {/* each column should display a ratio of #reviewsofthisstarcategory/#totalreviews */}
+      <div className="Star-Bars" style={{width: "50%"}}>
+        {Object.keys(ratingBars).sort((a, b)=> {a-b; return -1}).map((star, i) => {
+          return (
+            <div className="StarNumber" key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
+              <p> {star} Stars: {100 * ratingBars[star] + '%'} </p>
+              <div className="meter">
+                <span style={{width: `${100 * ratingBars[star]}%`}}></span>
+              </div>
+            </div>)
+        })}
+        <div>
+          {isFiltered
+          ?<span>Displaying
+            {Object.keys(filter).map((key, i) => {return filter[key] ? <span key={i}> {key} </span>: null})}
+            star reviews
+            <br></br>
+            <button onClick={e=> setFilter({1: false, 2: false, 3: false, 4: false, 5: false})}>Remove Filters</button>
+          </span>
+          : null}
+        </div>
+      </div>
+      <br></br>
+      <div className="Ratings-Reviews-Summary">
+        <h2>Rating and Reviews </h2>
         <span>
           <h2>{rating.toFixed(2)}
           {rating
@@ -28,28 +51,7 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
           }
           </h2>
         </span>
-      </div>
-      <p>{100 * (Number(recommended.true)/(Number(recommended.true) + Number(recommended.false))).toFixed(2)}% of buyers recommend this product </p>
-      {/* each column should display a ratio of #reviewsofthisstarcategory/#totalreviews */}
-      {Object.keys(ratingBars).sort((a, b)=> {a-b; return -1}).map((star, i) => {
-        return (
-          <div key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
-            <p> {star} Stars: </p>
-            <div className="meter">
-              <span style={{width: `${100 * ratingBars[star]}%`}}></span>
-            </div>
-          </div>)
-      })}
-      <br></br>
-      <div>
-        {isFiltered
-        ?<span>Displaying
-          {Object.keys(filter).map((key, i) => {return filter[key] ? <span key={i}> {key} </span>: null})}
-          star reviews
-          <br></br>
-          <button onClick={e=> setFilter({1: false, 2: false, 3: false, 4: false, 5: false})}>Remove Filters</button>
-        </span>
-        : null}
+        <p>{100 * (Number(recommended.true)/(Number(recommended.true) + Number(recommended.false))).toFixed(2)}% of buyers recommend this product </p>
       </div>
       {/* clicking each star level should also sort the review list by star amount clicked */}
     </div>
@@ -57,34 +59,3 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
 }
 
 export default RatingBreakdown;
-{/*
-      <div onClick={e => setFilter(prevFilter => {return {...prevFilter, 5: !prevFilter[5]}})}>
-        <p> 5 Stars: {ratings[5]}</p>
-        <div className="meter">
-          <span style={{width: `${100 * ratingBars[5]}%`}}></span>
-        </div>
-      </div>
-      <div onClick={e => setFilter(prevFilter => {return {...prevFilter, 4: !prevFilter[4]}})}>
-        <p> 4 Stars: {ratings[4]}</p>
-        <div className="meter">
-          <span style={{width: `${100 * ratingBars[4]}%`}}> </span>
-        </div>
-      </div>
-      <div onClick={e => setFilter(prevFilter => {return {...prevFilter, 3: !prevFilter[3]}})}>
-        <p> 3 Stars: {ratings[3]}</p>
-        <div className="meter">
-          <span style={{width: `${100 * ratingBars[3]}%`}}> </span>
-        </div>
-      </div>
-      <div onClick={e => setFilter(prevFilter => {return {...prevFilter, 2: !prevFilter[2]}})}>
-        <p> 2 Stars: {ratings[2]}</p>
-        <div className="meter">
-          <span style={{width: `${100 * ratingBars[2]}%`}}> </span>
-        </div>
-      </div>
-      <div onClick={e => setFilter(prevFilter => {return {...prevFilter, 1: !prevFilter[1]}})}>
-        <p> 1 Star: {ratings[1]}</p>
-        <div className="meter">
-          <span style={{width: `${100 * ratingBars[1]}%`}}> </span>
-        </div>
-      </div> */}

@@ -25,11 +25,11 @@ router //params of a product_id
   .get(controllers.get.metaData);
 
 router //params are review_id --> marks review as helpful(unlimited?)
-  .route("/:review_id/helpful")
+  .route("/helpful")
   .put(controllers.put.helpful);
 
 router //requires review_id --> marks a review as reported and won't be returned by GET requests
-  .route("/:review_id/report")
+  .route("/report")
   .put(controllers.put.report);
 
 module.exports = router;

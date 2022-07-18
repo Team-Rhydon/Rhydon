@@ -1,10 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Modal from "./Modal.jsx";
+const axios = require('axios');
 
 function ReviewListItem({review, filter, isFiltered}) {
   const [show, setShow] = useState(false);
   const [url, setUrl] = useState('');
-  const [shortBody, setShortBody] = useState(true);
+  const [isHelpful, setIsHelpful] = useState(false);
+  const [shortBody, setShortBody] = useState(250);
 
   let enhancePhoto = (value) => {
     //open modal displaying full image
@@ -16,37 +18,46 @@ function ReviewListItem({review, filter, isFiltered}) {
     setShow(false)
   }
 
-  let sendPut = () => {
-    console.log('sending put');
-  }
-
-  if (isFiltered) {
-    if (!filter[review.rating]) {
-      return null;
+  let sendPut = (e, value) => {
+    if (value === "helpful") {
+      if (isHelpful) {
+        return;
+      }
+      setIsHelpful(true);
+      axios.put(`/reviews/helpful`, {review_id: review.review_id})
+        .catch(err=> console.log(err));
+    }
+    if (value === "report") {
+      axios.put(`/reviews/report`, {review_id: review.review_id})
+        .catch(err=> console.log(err));
     }
   }
+  //currently the ratings widget pulls all available reviews as API doesn't have ability to directly search for reviews of a particular star rating
+  // if (isFiltered) {
+  //   if (!filter[review.rating]) {
+  //     return null;
+  //   }
+  // }
   return (
-    <div className="ReviewTile" style={{width: "100%"}} >
-      <div className="ReviewHeader" style={{border: "1px solid black", width: "100%"}}>
-        <span>{'★'.repeat(review.rating)} </span>
+    <div className="ReviewTile" >
+      <div className="ReviewHeader">
+        {/* <span className="ReviewTitle"> */}
+          <span className="ReviewRating">{'★'.repeat(review.rating)}{'☆'.repeat(5-review.rating)}</span>
+        {/* </span> */}
+        <span className="ReviewSummary">{review.summary.slice(0, 60)}</span>
         <span className="nameAndDate">
-          <span>{review.reviewer_name} @</span>
-          <span style={{padding: "5px"}}>{review.date.slice(6, -14)}-{review.date.slice(0, 4)}</span>
+          <span>by {review.reviewer_name} on </span>
+          <span>{review.date.slice(6, -14)}-{review.date.slice(0, 4)}</span>
         </span>
       </div>
-      <div>
-        <p style={{fontWeight: "bolder"}}>{review.summary.slice(0, 60)}</p>
-        {review.body.length < 250
-        ?<span>{review.body}</span>
-        :<>
-          <span>{review.body.slice(0, 249) + '...'}
-            <button onClick={e=> setShortBody(true)}>Read More</button>
-          </span>
-        </>}
-      </div>
-      <br></br>
-      <>
-        <span>
+      <div className="ReviewBody">
+        {review.body.length > shortBody
+          ?<span className="ReviewText">{review.body.slice(0, 249) + '...'}
+              <button onClick={e=> setShortBody(1000)}>Read More</button>
+            </span>
+          :<span className="ReviewText">{review.body}</span>
+        }
+        <span className="ReviewPhotos">
           {!review.photos
             ?null
             :review.photos.map(photo=> photo.url ==="text"
@@ -62,23 +73,22 @@ function ReviewListItem({review, filter, isFiltered}) {
                 show={show}
                 onClose={onClose}
               />
-          </span>
-      </>
-      <>
-        {!review.recommend
-        ? null
-        :<p>✓ I recommend this product</p>}
+        </span>
         {!review.response
         ? null
         : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
-      </>
-      <div>
-        <span >Was this helpful?
-          <button onClick={e => sendPut()}>({review.helpfulness}) </button>
+        {!review.recommend
+        ? null
+        :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>}
+        <div className="Review-Puts">
+          <span >Was this helpful?
+            <button onClick={e => sendPut(e, "helpful")}>({(isHelpful? 1 : 0) + review.helpfulness}) </button>
+            </span>
+          <span className="Report">
+            <button onClick={e => sendPut(e, "report")}> Report</button>
           </span>
-        <span className="Report">  Report </span>
+        </div>
       </div>
-      <br></br>
     </div>
   )
 }

@@ -33,9 +33,10 @@ const RatingsWidget = React.forwardRef((props, ref)  => {
           isFiltered={isFiltered}
           product={props.meta}
         />
-        <ProductBreakdown traits={props.meta.characteristics}/>
+        <ProductBreakdown traits={props.meta.characteristics} product={props.meta} />
       </div>
-      <div className="reviewBody" style={{width: '80%', height: '100%'}}>
+      <br></br>
+      <div className="reviewBody">
         <ReviewList
           product={props.meta}
           product_id={props.meta.product_id}
