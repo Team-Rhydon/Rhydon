@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect, useRef} from 'react';
+import React from 'react';
 import RelatedModalContent from './RelatedModalContent.jsx';
 
 function RelatedModal({modalContent}) {
@@ -19,7 +19,6 @@ function RelatedModal({modalContent}) {
     const characteristics = {};
     const curFeatures = modalContent.current.details.features;
     const compFeatures = modalContent.compare.features;
-    debugger;
     for (let i = 0; i < curFeatures.length; i++) {
       const characteristic = curFeatures[i].feature;
       let value = curFeatures[i].value;
@@ -56,9 +55,10 @@ function RelatedModal({modalContent}) {
     }
     return characteristics;
   }
-
   const characteristics = formatCharacteristics(modalContent);
-
+  const thumbnails = {};
+  thumbnails['current'] = modalContent.current.styles.results[0].photos[0].thumbnail_url;
+  thumbnails['compare'] = modalContent.compare.thumbnail;
   return (
     <div className="modal hidden">
       <div
@@ -67,7 +67,7 @@ function RelatedModal({modalContent}) {
           hideModal(e);
         }}
       >
-        {Object.keys(characteristics).length > 0 ? <RelatedModalContent curName={curName} compName={compName} characteristics={characteristics}/> : null}
+        {Object.keys(characteristics).length > 0 ? <RelatedModalContent curName={curName} compName={compName} characteristics={characteristics} thumbnails={thumbnails}/> : null}
       </div>
     </div>
   );
