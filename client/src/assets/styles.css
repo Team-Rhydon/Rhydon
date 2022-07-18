@@ -982,3 +982,15 @@ svg {
   grid-column-start: 2;
   grid-row: 2;
 }
+
+.put-btn {
+  border-color: transparent;
+  background-color: white;
+  color: black;
+  width: fit-content;
+}
+
+.put-btn:hover {
+  color: blue;
+  box-shadow: 0, 0, .5em, .5em #6a6a6a;
+}
