@@ -39,7 +39,7 @@ const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef}) => {
 
   if (!product) return null;
 
-  return (<div className="overview-widget">
+  return (<div id="overview" className="overview-widget">
     <Styles
       styles={styles}
       product={product}

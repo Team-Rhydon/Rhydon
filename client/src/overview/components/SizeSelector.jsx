@@ -34,11 +34,11 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
       if (key == 'null' || !key || !quantity) {
         return <button className="sizebuttons" key={i} disabled>{ buttonSize || 'Out Of Stock'}</button>;
       }
-      return (<button className="sizebuttons" key={key} onClick={(e) => {
+      return (<button className={sku && sku.size === buttonSize ? 'sizebuttons sizebuttons-picked' : 'sizebuttons'} key={key} onClick={(e) => {
         onSkuClick(e, skuNumber);
       }}>{buttonSize}</button>);
     })}
-    {sku ? <QuantitySelector selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} {...sku} sku={sku} setPurchase={setPurchase}/> : null}
+    {sku ? <QuantitySelector selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} {...sku} setPurchase={setPurchase}/> : null}
   </div>);
 };
 

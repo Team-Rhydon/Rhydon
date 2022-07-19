@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-productData = {
+module.exports.productData = {
   details: {
     'id': 40344,
     'campus': 'hr-rfp',

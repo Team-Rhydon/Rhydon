@@ -140,6 +140,10 @@
   border-radius: 7px;
 }
 
+.ms-image:hover {
+  cursor: pointer;
+}
+
 .ms-image-selected {
   object-fit: cover;
   width: 90px;
@@ -293,8 +297,25 @@
   background-color: white;
 }
 
+.sizebuttons:hover, .sizebuttons-picked {
+  color: aliceblue;
+  width: 104.1px;
+  height: 35px;
+  padding-right: 6px;
+  margin: 2px;
+  border-width: .01px;
+  border-radius: 3px;
+  border-color: lightgray;
+  background-color: rgb(0, 0, 0);
+}
+
+
 .sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover {
   cursor: pointer;
+}
+
+.sizebuttons-picked:hover {
+  cursor: default;
 }
 
 .quantity-selector {
@@ -375,6 +396,8 @@
 }
 
 .pi-reviews:hover {
+  text-decoration: none;
+  border-bottom: 1px solid rgb(0, 106, 255);
   cursor: pointer;
 }
 
@@ -422,3 +445,19 @@
 .pi-stars {
   padding-right: .5vw;
 }
+
+.pi-minus, .pi-plus {
+  opacity: .5;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.pi-minus:hover, .pi-plus:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+

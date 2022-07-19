@@ -1,12 +1,45 @@
+import React from 'react';
+import ReactDom from 'react-dom';
+import { createRoot, unmountComponentAtNode } from 'react-dom/client';
+import { act } from 'react-dom/test-utils';
+import {render, screen, cleanup} from '@testing-library/react';
+import {productData} from './product.js';
+import Overview from '../src/overview/Overview.jsx';
 
-import {screen} from '@testing-library/dom';
+let container;
 
-test('uses jest-dom', () => {
-  document.body.innerHTML = `
-    <span data-testid="not-empty"><span data-testid="empty"></span></span>
-    <div data-testid="visible">Visible Example</div>
-  `;
+beforeEach(() => {
+  container = document.createElement('div');
+  document.body.appendChild(container);
+});
 
-  expect(screen.queryByTestId('not-empty')).not.toBeEmptyDOMElement();
-  expect(screen.getByText('Visible Example')).toBeVisible();
+afterEach(() => {
+  document.body.removeChild(container);
+  container = null;
+});
+
+test('should render overview component', () => {
+  const root = createRoot(container);
+  act(() => {
+    root.render(<Overview {...productData}/>);
+  });
+  expect(<Overview />).toBeDefined();
+});
+
+test('should render overview component', () => {
+  const root = createRoot(container);
+  act(() => {
+    root.render(<Overview {...productData}/>);
+  });
+  const test1 = screen.getByText(/onesie/i);
+  expect(test1).toBeDefined();
+});
+
+test('should render overview component', () => {
+  const root = createRoot(container);
+  act(() => {
+    root.render(<Overview {...productData}/>);
+  });
+  const test1 = screen.getByText(/onesie/i);
+  expect(test1).toBeDefined();
 });
