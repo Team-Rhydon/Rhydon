@@ -128,12 +128,13 @@ function App() {
 
   if (!product) return null;
   return (
-    <div className="app">
-      <Nav updateCurrentProduct={updateCurrentProduct}/>
+    <div data-testid="appChild" className="app">
+      <Nav  data-testid="appChild"updateCurrentProduct={updateCurrentProduct}/>
       <Overview className="overview-widget" {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
+      <RatingsWidget details={product.details} meta={product.reviews} />
+      <span></span>
     </div>
   );
 }

@@ -11,6 +11,8 @@ import StarRating from '../../Related/StarRating.jsx';
 let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}) => {
   if (!gallery.length) return null;
 
+
+
   let {name, category} = product;
   const[showImageModal, setImageModal] = useState(false);
 
@@ -34,6 +36,11 @@ let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}
       count: currentImage.count - 1,
       url: gallery[currentImage.count - 1].url
     })
+  }
+
+  let scrollToElement = (className) => {
+    const anchor = document.querySelector(`.${className}`);
+    anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
 
   useEffect(() => {
@@ -69,7 +76,7 @@ let Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count}
                   </div>
                   <div className="pi-reviewstars">
                     <div className="pi-stars">{rating ? <StarRating rating={rating} count={count}/> : null}</div>
-                    <div className="pi-reviews" onClick={() => console.log('implement')}>Read All {count} Reviews</div>
+                    <div className="pi-reviews" onClick={() => scrollToElement('RatingWidget')}>Read All {count} Reviews</div>
                   </div>
                 </div>
             </div>

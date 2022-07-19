@@ -6,6 +6,7 @@ const Body = props => {
   function handleSubmit(event) {
     event.preventDefault();
     props.setBody(value);
+    props.page(prevPage => prevPage + 1);
   }
 
   return (

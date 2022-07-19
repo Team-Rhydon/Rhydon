@@ -458,10 +458,12 @@ object-fit: cover;
   .Star-Ratings {
     display: flex;
     flex-direction: row;
+    width: 66%;
   }
 
   .Star-Bars {
     align-self: center;
+    width: 50%;
   }
 
   .ReviewHeader {
@@ -515,6 +517,8 @@ object-fit: cover;
     overflow-x: hidden;
     max-height: 75vh;
     padding-right: 1px;
+    margin-bottom: 2em;
+    box-shadow: inset 0 -1em 2em -2em grey;
   }
 
   .indicator {
@@ -539,11 +543,31 @@ object-fit: cover;
   }
 
   #review-btn{
-    display: flex;
-    height: 1.5em;
-    width: 20%;
+    height: 3em;
+    width: 7em;
+    background-color: white;
+    border: transparent;
+    box-shadow: 0 0 .25em .25em grey;
+    margin-left: 7%;
+    margin-bottom: 1%;
+  }
+  #review-btn:hover{
+    background-color: #6a6a6a;
   }
 
+  #open-modal-btn {
+    height: 3em;
+    width: 7em;
+    background-color: white;
+    border: transparent;
+    box-shadow: 0 0 .25em .25em grey;
+    margin-right: 7%;
+    margin-bottom: 1%;
+  }
+
+  #open-modal-btn:hover{
+    background-color: #6a6a6a;
+  }
   .ReviewListFooter {
     display: flex;
     justify-content: space-between;
@@ -560,7 +584,10 @@ object-fit: cover;
     /* border: 1px solid grey; */
   }
 
-
+  .reviewsubmitchars {
+    display: flex;
+    justify-content: flex-end;
+  }
   .container-btn {
     display: flex;
     flex-direction: row;
@@ -608,6 +635,7 @@ object-fit: cover;
     width: 8vw;
     background-color: white;
     border-color: #aaaaaa;
+    grid-column-start: 1;
   }
   #prevBtn:hover{
     border-color: black;
@@ -617,23 +645,38 @@ object-fit: cover;
     width: 8vw;
     background-color: white;
     border-color: #aaaaaa;
+    grid-column-start: 3;
   }
 
   #nextBtn:hover{
     border-color: black;
   }
 
+  .prev-next {
+    width: 100%;
+    display: grid;
+    grid-template-columns: [first] 8vw [line2] auto [line3] 8vw [end];
+  }
+
   .submit-btn {
     height: 3vh;
     min-width: 8vw;
+    max-width: max-content;
     width: fit-content;
     color: black;
     background-color: white;
     border-color: #aaaaaa;
   }
-  .submit-btn:hover{
+  .submit-btn:hover:not([disabled]){
     border-color: black;
   }
+
+  .submit-btn:disabled {
+    text-decoration: line-through;
+    border-color: white;
+  }
+
+
   .tab {
     display: flex;
     flex-direction: column;
@@ -674,6 +717,7 @@ object-fit: cover;
     border: none;
     outline: none;
     cursor: pointer;
+    text-shadow: 0 0 1px black;
   }
 
   .StarNumber:hover {
@@ -976,7 +1020,7 @@ tr:nth-child(odd) .table-characteristic {
   grid-column: 1;
   align-self: flex-end;
 }
-svg {
+.circle {
   border: 1px solid grey;
   border-radius: 3em;
   grid-column-start: 2;

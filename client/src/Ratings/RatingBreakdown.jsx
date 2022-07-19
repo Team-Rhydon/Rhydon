@@ -17,9 +17,9 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
   }
 
   return (
-    <div className="Star-Ratings" style={{width: "66%"}}>
+    <div className="Star-Ratings">
       {/* each column should display a ratio of #reviewsofthisstarcategory/#totalreviews */}
-      <div className="Star-Bars" style={{width: "50%"}}>
+      <div className="Star-Bars">
         {Object.keys(ratingBars).sort((a, b)=> {a-b; return -1}).map((star, i) => {
           return (
             <div className="StarNumber" key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>

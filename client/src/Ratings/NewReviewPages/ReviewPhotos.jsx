@@ -44,6 +44,7 @@ const ReviewPhotos = props => {
       <input type="file" id="photoUpload" multiple accept="image/*" onChange={handlePhotoChange} />
       <br></br>
       {photoStorage.map((photoSrc, index) => <div key={index}>
+        {photoSrc}
         <span>Image # {index + 1}</span>
           <img style={{height: "5vh", width: "5vw"}}  src={photoSrc} />
           <br></br>
