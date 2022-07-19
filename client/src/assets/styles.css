@@ -1,3 +1,7 @@
+.widgets {
+  width: 93vw;
+  margin: auto;
+}
 tr, td, th, p, b, div, h1, h2, table {
   font-family: Helvetica,Arial,system-ui,sans-serif;
   font-weight: 400;
@@ -24,7 +28,7 @@ th {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   color: #000;
-  width: 80%;
+  width: 93vw;
   display: flex;
   position: relative;
   margin: auto;
@@ -37,7 +41,7 @@ th {
   /* display: flex; */
   display: block;
   position: relative;
-  width: 80%;
+  width: 93vw;
   margin: 0 auto;
   margin-top: 2vh;
 }
@@ -59,8 +63,8 @@ th {
   filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
   cursor: pointer;
   text-align: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   background-color: transparent;
 }
 
@@ -73,24 +77,24 @@ th {
 }
 
 .related .carousel .carousel-next-container, .outfit-next-container {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
   z-index: 5;
   position: absolute;
-  right: 1.6vw;
-  top: 34.5%;
+  right: 1.75vw;
+  top: 40%;
   transform: translateY(-50%);
   background: #fff;
 }
 
 
 .related .carousel .carousel-prev-container, .outfit-prev-container {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
   z-index: 5;
   position: absolute;
   left: 0;
-  top: 34.5%;
+  top: 40%;
   transform: translateY(-50%);
   background: #fff;
 }
@@ -163,8 +167,8 @@ background: center; */
 position: relative;
 margin: 0 auto;
 /* max-width: 25%; */
-width: 17.5vw;
-height: 17.5vw;
+width: 20.75vw;
+height: 20.75vw;
 /* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
@@ -361,8 +365,8 @@ object-fit: cover;
   font-size: .875rem;
 }
   .btn-container {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     border: solid 1px #767676;
   }
 

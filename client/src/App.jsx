@@ -134,10 +134,12 @@ function App() {
   return (
     <div data-testid="" className="app">
       <Nav updateCurrentProduct={updateCurrentProduct}/>
+      <div className='widgets'>
       <Overview className="overview-widget" {...product}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
+      </div>
     </div>
   );
 }
