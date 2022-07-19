@@ -1,69 +1,55 @@
-import React from "react";
+import React, {ReactElement} from "react";
+import CircularProgressBar from './CircularProgressBar.jsx';
 
 function ProductBreakdown(props) {
   let {Size, Width, Comfort, Quality, Length, Fit} = props.traits;
+  let {recommended} = props.product;
+
+  const descriptions = {
+    Size: ['Too Small', 'Too Large'],
+    Comfort: ['Uncomfort.', 'Perfect'],
+    Length: ['Runs short', 'Runs long'],
+    Quality: ['Poor', 'Perfect'],
+    Fit: ['Runs Tight', 'Runs long'],
+    Width: ['Too narrow', 'Too wide']
+  }
+
   return (
-    //might be a good place to try a react table?
-    //can probably replace all the spans with sliding components
-    <div style={{border: "1px solid black"}}>
+
+    <div className="Product-Breakdown">
+      {/* <p>{100 * (Number(recommended.true)/(Number(recommended.true) + Number(recommended.false))).toFixed(2)}% of buyers recommend this product </p> */}
+
       {Object.entries(props.traits).map(([trait, {value}], index)=>{
         // console.log(trait);
         return (
           <div key ={index}>
             {!trait
-              ? null
-              :<div>
-                <p> {trait}: {Number(value).toFixed(2)}</p>
-                <div className="indicator">
-                  <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (value/5).toFixed(3)}%`}}></span>
-                  <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-                </div>
+              ?null
+              :<div className="product-score">
+                <span className="PD-high">{descriptions[trait][1]}</span>
+                <CircularProgressBar
+                  strokeWidth='5'
+                  sqSize="75"
+                  percentage={(Number(value)/.05).toFixed(0)}
+                  trait={trait}
+                  value={Number(value).toFixed(2)}
+                />
+                <span className="PD-low">{descriptions[trait][0]}</span>
+                  <br></br>
               </div>}
           </div>
        )
-     })}
+      })}
     </div>
   )
 }
-//seems like a good place to
+
 export default ProductBreakdown;
-{/* {!Width ? null
-:<div>
-  <p> Width: {Number(Width.value).toFixed(2)}</p>
-  <div className="indicator">
-    <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (Width.value/5).toFixed(3)}%`}}></span>
-    <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-  </div>
-</div>}
-{!Comfort ? null
-:<div>
-  <p> Comfort: {Number(Comfort.value).toFixed(2)}</p>
-  <div className="indicator">
-    <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (Comfort.value/5).toFixed(3)}%`}}></span>
-    <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-  </div>
-</div> }
-{!Quality ? null
-:<div>
-  <p> Quality: {Number(Quality.value).toFixed(2)}</p>
-  <div className="indicator">
-    <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (Quality.value/5).toFixed(3)}%`}}></span>
-    <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-  </div>
-</div>}
-{!Length ? null
-:<div>
-  <p> Length: {Number(Length.value).toFixed(2)}</p>
-  <div className="indicator">
-    <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (Length.value/5).toFixed(3)}%`}}></span>
-    <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-  </div>
-</div>}
-{!Fit ? null
-:<div>
-  <p> Fit: {Number(Fit.value).toFixed(2)}</p>
-  <div className="indicator">
-    <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (Fit.value/5).toFixed(3)}%`}}></span>
-    <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-  </div>
-</div>} */}
+
+{/* <span> {trait}: {Number(value).toFixed(2)}</span> */}
+{/* <div className="indicator">
+  <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (value/5).toFixed(3)}%`}}></span>
+  <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
+</div> */}
+  {/* <span className="trait-description">
+  </span> */}

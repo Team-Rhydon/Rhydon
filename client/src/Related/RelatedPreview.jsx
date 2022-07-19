@@ -15,5 +15,4 @@ function RelatedPreview({url, setPreview}) {
   );
 }
 
-
 export default RelatedPreview;

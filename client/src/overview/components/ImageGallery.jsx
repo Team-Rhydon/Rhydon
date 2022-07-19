@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Carousel from './Carousel.jsx';
 import MiniSlides from './MiniSlides.jsx';
 
-let ImageGallery = ({selectedStyle}) => {
+let ImageGallery = ({selectedStyle, product, rating, count}) => {
   if (!selectedStyle) return null
 
   let gallery = selectedStyle.photos
@@ -15,7 +15,10 @@ let ImageGallery = ({selectedStyle}) => {
   const commonProps = {
     gallery: gallery,
     currentImage,
-    setCurrentImage
+    setCurrentImage,
+    product,
+    rating,
+    count
   }
 
   return(<div className="o-image-gallery">

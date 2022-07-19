@@ -15,7 +15,6 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
   const [storage, setStorage] = useState([])
   const [total, setTotal] = useState(0);
   const prevSortStyleRef = useRef(sortStyle);
-  // assumption here is that this component will be passed a product ID
   const params = {params: {
     product_id: product_id,
     page: page,
@@ -30,6 +29,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
       ratings += parseInt(star);
     });
     setTotal(ratings);
+    setCount(ratings);
   }, [product_id]);
 
   useEffect(()=>{
@@ -47,9 +47,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
           return setStorage(prevStorage=> {
             return [...prevStorage, ...response.data.results]});
         }).catch(console.log('err getting reviews'));
-  }, [page, product_id, sortStyle]);
-
-  //if sortstyle changes, reset page and empty storage
+  }, [page, product_id, sortStyle, count]);
 
   function handleClick() {
     setReviews((prevReviews)=>{
@@ -63,8 +61,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
   }
 
   return (
-    <div style={{border: '1px solid black'}}>
-      {/* sort and dropdown buttons should always remain fixed outside of the scrollable area */}
+    <div className="ReviewList">
       <div className="ReviewsList-Header">
         <SortDrop
           total={total}
@@ -72,9 +69,12 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
         />
       </div>
       <div className="ReviewContainer-scrollable">
-        {!storage.length?
-        null:
-        storage.slice(0, reviews).map((review, i) => {
+        {!storage.length
+        ?null
+        :storage
+        .filter(review=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
+        .slice(0, reviews)
+        .map((review, i) => {
           return (
             <div key={i}>
               <ReviewListItem
@@ -86,8 +86,6 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
           );
         })}
       </div>
-      {/* button will cause the next two tiles to appear by expanding the list (if they exist) */}
-      {/* if there are enough reviews to fill up the entire page view, review list should be scrollable */}
       <div className="ReviewListFooter" style={{display: 'flex'}}>
         {reviews >= storage.length ?
           null:
@@ -95,10 +93,10 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
             <button onClick={handleClick}>More Reviews</button>
           </div>
         }
-        <button onClick={()=>setShow(true)} > Modal/Review this Product</button>
+        <button onClick={()=>setShow(true)} > Review this Product</button>
         <Modal
-          title={'Review This Product'}
-          children={<NewReviewForm product={product} name={details.name} />}
+          title={'Review This Product: Tell us about the ' + details.name}
+          children={<NewReviewForm product={product} details={details} />}
           onClose={()=>setShow(false)}
           show={show}
         />

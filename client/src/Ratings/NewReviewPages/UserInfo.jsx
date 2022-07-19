@@ -11,35 +11,31 @@ const UserInfo = props => {
   }
 
   return (
-    <div >
-      <div>
-        <label style={{width: "33%"}}>Nickname:
-          <input style={{width: "66%"}}
-            type="text"
-            value={nickname}
-            placeholder="Example: jackson11!"
-            onChange={(e)=> setNickName(e.target.value)}
-            required
-            />
-        </label>
-        <p>For privacy reasons, do not use your full name or email address</p>
+    <form className="info-form" onSubmit={handleSubmit}>
+      <label>Nickname:</label>
+      <input
+        type="text"
+        value={nickname}
+        placeholder="Example: jackson11!"
+        onChange={(e)=> setNickName(e.target.value)}
+        maxLength={60}
+        required
+        />
+      <p>For privacy reasons, do not use your full name or email address</p>
+      <label>Email:</label>
+      <input
+        type="text"
+        placeholder="Example: jackson11@email.com"
+        value={email}
+        onChange={e=> setEmail(e.target.value)}
+        maxLength={60}
+        required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+      />
+      <p>For authentification reasons, you will not be emailed</p>
+      <div className="container-btn">
+        <input className="submit-btn" type="submit" value="Submit" />
       </div>
-      <br></br>
-      <div>
-        <label style={{width: "33%"}}>Email:
-          <input style={{width: "66%"}}
-            type="text"
-            placeholder="Example: jackson11@email.com"
-            value={email}
-            onChange={e=> setEmail(e.target.value)}
-            required
-            />
-        </label>
-        <p>For authentification reasons, you will not be emailed</p>
-        </div>
-      <br></br>
-      <button type="submit" onClick={handleSubmit} >Submit</button>
-    </div>
+    </form>
   )
 }
 

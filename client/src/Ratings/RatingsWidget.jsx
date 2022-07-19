@@ -6,7 +6,7 @@ const axios = require('axios');
 const _ = require('lodash');
 
 /** */
-function RatingsWidget(props) {
+const RatingsWidget = React.forwardRef((props, ref)  => {
   const [filter, setFilter] = useState(
       {1: false, 2: false, 3: false, 4: false, 5: false});
   const [isFiltered, toggleFilter] = useState(false);
@@ -23,19 +23,20 @@ function RatingsWidget(props) {
     }
   }, [filter]);
 
-
+  console.log(ref)
   return (
-    <div className="RatingWidget" style={{border: '1px solid black'}}>
-      <div className="Ratings-Breakdown" style={{width: '20%'}}>
+    <div ref={ref} className="RatingWidget">
+      <div className="Ratings-Breakdown">
         <RatingBreakdown
           setFilter={setFilter}
           filter={filter}
           isFiltered={isFiltered}
           product={props.meta}
         />
-        <ProductBreakdown traits={props.meta.characteristics}/>
+        <ProductBreakdown traits={props.meta.characteristics} product={props.meta} />
       </div>
-      <div className="reviewBody" style={{width: '80%', height: '100%'}}>
+      <br></br>
+      <div className="reviewBody">
         <ReviewList
           product={props.meta}
           product_id={props.meta.product_id}
@@ -46,6 +47,6 @@ function RatingsWidget(props) {
       </div>
     </div>
   )
-}
+})
 
 export default RatingsWidget;
