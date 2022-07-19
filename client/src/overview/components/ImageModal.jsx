@@ -33,8 +33,8 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
 
   return (
     <>
-      <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />
-      <div style={MODAL_STYLES}>
+      <div className="i-overlay" onClick={() => setImageModal(false)} />
+      <div className="i-modal-style">
         <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
         <BsArrowRightCircle className="right-arrow" onClick={nextSlide}/>
         <FiMinimize onClick={() => setImageModal(false)}/>
