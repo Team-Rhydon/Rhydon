@@ -11,7 +11,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 0px 30px 15px 30px;
+  padding: 0px 0px 15px 0px;
 }
 
 .o-image-gallery {
@@ -22,8 +22,8 @@
 .o-sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 300;
+  justify-content: space-around;
+  width: 300px;
   padding-left: 11.9px;
 }
 
@@ -478,4 +478,24 @@
 .o-description-container {
   display: flex;
 
+}
+
+.i-overlay {
+  position: 'fixed';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: 'rgba(0, 0, 0 , .7)';
+  z-index: 1000;
+}
+
+.i-modal-style {
+  position: 'fixed';
+  top: '50%';
+  left: '50%';
+  transform: 'translate(-50%, -50%)';
+  background-color: '#FFF';
+  padding: '20px';
+  z-index: 1000;
 }
