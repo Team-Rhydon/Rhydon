@@ -3,6 +3,10 @@ import ProductInfo from "./components/ProductInfo.jsx";
 import Styles from "./components/Styles.jsx";
 
 let Overview = ({reviews, styles, details, ratingsScroll}) => {
+  console.log('reviews', reviews)
+  console.log('styles',styles)
+  console.log('details', details)
+
   const [rating, setRating] = useState();
   const [count, setCount] = useState();
   const [product, setProduct] = useState(details);
