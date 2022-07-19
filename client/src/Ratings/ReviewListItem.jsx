@@ -82,10 +82,10 @@ function ReviewListItem({review, filter, isFiltered}) {
         :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>}
         <div className="Review-Puts">
           <span >Was this helpful?
-            <button onClick={e => sendPut(e, "helpful")}>({(isHelpful? 1 : 0) + review.helpfulness}) </button>
+            <button className="put-btn" onClick={e => sendPut(e, "helpful")}>({(isHelpful? 1 : 0) + review.helpfulness}) </button>
             </span>
-          <span className="Report">
-            <button onClick={e => sendPut(e, "report")}> Report</button>
+          <span className="Report">||
+            <button className="put-btn" onClick={e => sendPut(e, "report")}> Report</button>
           </span>
         </div>
       </div>

@@ -37,6 +37,11 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
     });
   };
 
+  let scrollToElement = (className) => {
+    const anchor = document.querySelector(`.${className}`);
+    anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+
   useEffect(() => {
     setCurrentImage((prevState) => ({
       count: 0,
@@ -59,7 +64,6 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
               <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
               <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
               <div className="o-title-review-container">
-
                 <div className="o-name-category">
                   <div className="o-name-container">
                     <h2 className="pi-name">{name}</h2>

@@ -1,0 +1,27 @@
+{
+  "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "jsx"
+  ],
+  "extensionsToTreatAsEsm": [
+    ".jsx"
+  ],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
+    "\\.(css|less)$": "identity-obj-proxy"
+  },
+  "preprocessorIgnorePatterns": [
+    "/node_modules/"
+  ],
+  "unmockedModulePathPatterns": [
+    "<rootDir>/node_modules/react",
+    "<rootDir>/node_modules/react-dom",
+    "<rootDir>/node_modules/react-addons-test-utils",
+    "<rootDir>/EmptyModule.js"
+  ],
+  "testEnvironment": "jsdom",
+  "verbose": true,
+  "testURL": "http://localhost/"
+}
