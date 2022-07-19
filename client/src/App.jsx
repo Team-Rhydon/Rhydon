@@ -1,4 +1,7 @@
-import React, {Component, useEffect, useState, useRef} from 'react';
+/* eslint-disable max-len */
+/* eslint-disable guard-for-in */
+/* eslint-disable require-jsdoc */
+import React, {useEffect, useState, useRef} from 'react';
 import Related from './Related/Related.jsx';
 import Overview from './overview/Overview.jsx';
 import Outfit from './Related/Outfit.jsx';
@@ -6,18 +9,17 @@ import RatingsWidget from './Ratings/RatingsWidget.jsx';
 import Nav from './Nav.jsx';
 import axios from 'axios';
 import _ from 'lodash';
-import logo from './assets/logos/rhydon-logos_black.png';
 
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
   const [carouselPos, setCarouselPos] = useState({});
-  const ratingsRef = useRef('ratings');
+  const ratingsRef = useRef();
 
   useEffect(() => {
-    updateCurrentProduct(null, '40348'); // air force 1's
+    // updateCurrentProduct(null, '40348'); // air force 1's
     // updateCurrentProduct(null, '40351'); // yeasy
-    // updateCurrentProduct(null, '40346'); // joggers
+    updateCurrentProduct(null, '40346'); // joggers
     // updateCurrentProduct(null, '40344'); // camo onesie
     // updateCurrentProduct(null, '40376'); // oout of stock size
     // updateCurrentProduct(null, '40353'); // stones
@@ -78,6 +80,7 @@ function App() {
       let positions;
       if (position === 'outfit-p1') {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p1',
           'outfit-p3': 'outfit-p2',
@@ -86,6 +89,7 @@ function App() {
         };
       } else if (position ==='outfit-p2') {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p2',
           'outfit-p3': 'outfit-p2',
@@ -94,6 +98,7 @@ function App() {
         };
       } else if (position ==='outfit-p3') {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p2',
           'outfit-p3': 'outfit-p3',
@@ -102,6 +107,7 @@ function App() {
         };
       } else {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p2',
           'outfit-p3': 'outfit-p3',
@@ -120,21 +126,25 @@ function App() {
     }
   }
 
-  const ratingsScroll = () => {
-    console.log('clicked')
-    console.log(ratingsScroll)
-    ratingsScroll.current?.scrollIntoView();
+  const ratingsScroll = (ref=ratingsRef) => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: ref.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   };
 
   if (!product) return null;
   return (
-    <div data-testid="appChild" className="app">
-      <Nav  data-testid="appChild"updateCurrentProduct={updateCurrentProduct}/>
-      <Overview className="overview-widget" {...product}/>
+    <div data-testid="" className="app">
+      <Nav updateCurrentProduct={updateCurrentProduct}/>
+      <div className='widgets'>
+      <Overview className="overview-widget" {...product} ratingsRef={ratingsRef} ratingsScroll={ratingsScroll} />
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget details={product.details} meta={product.reviews} />
-      <span></span>
+      <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
+      </div>
     </div>
   );
 }
