@@ -94,9 +94,10 @@ tr, td, th, p, b, div, h1, h2, table {
 .related .carousel .carousel-next-container:hover, .outfit-next-container:hover, .remove-outfit:hover {
   background:#6a6a6a;
 }
-.remove-outfit:hover {
 
-}
+/* .remove-outfit:hover {
+
+} */
 
 .related .carousel .carousel-prev-container:hover, .outfit-prev-container:hover {
   background:#6a6a6a;
@@ -976,9 +977,11 @@ tr:nth-child(odd) .table-characteristic {
   grid-column: 1;
   align-self: flex-end;
 }
-svg {
+
+
+/* svg {
   border: 1px solid grey;
   border-radius: 3em;
   grid-column-start: 2;
   grid-row: 2;
-}
+} */

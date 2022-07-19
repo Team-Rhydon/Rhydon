@@ -1,15 +1,18 @@
-import React, {useState, useEffect} from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable max-len */
+import React, {useState} from 'react';
 import Carousel from './Carousel.jsx';
-import MiniSlides from './MiniSlides.jsx';
 
-let ImageGallery = ({selectedStyle, product, rating, count}) => {
-  if (!selectedStyle) return null
+const ImageGallery = ({selectedStyle, product, rating, count, ratingsScroll, ratingsRef}) => {
+  if (!selectedStyle) return null;
 
-  let gallery = selectedStyle.photos
+
+
+  const gallery = selectedStyle.photos;
 
   const [currentImage, setCurrentImage] = useState({
     count: 0,
-    url: gallery[0].url
+    url: gallery[0].url,
   });
 
   const commonProps = {
@@ -18,12 +21,14 @@ let ImageGallery = ({selectedStyle, product, rating, count}) => {
     setCurrentImage,
     product,
     rating,
-    count
-  }
+    count,
+    ratingsScroll,
+    ratingsRef,
+  };
 
-  return(<div className="o-image-gallery">
+  return (<div className="o-image-gallery">
     <Carousel className="image" {...commonProps}/>
-  </div>)
-}
+  </div>);
+};
 
-export default ImageGallery
+export default ImageGallery;
