@@ -9,7 +9,7 @@ import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 import StarRating from '../../Related/StarRating.jsx';
 
-const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count, ratingsScroll}) => {
+const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count, ratingsScroll, ratingsRef}) => {
   if (!gallery.length) return null;
 
   const {name, category} = product;
@@ -70,7 +70,7 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                 </div>
                 <div className="pi-reviewstars">
                   <div className="pi-stars">{rating ? <StarRating rating={rating} count={count}/> : null}</div>
-                  <div className="pi-reviews" onClick={ratingsScroll}>Read All {count} Reviews</div>
+                  <div className="pi-reviews" onClick={() => ratingsScroll(ratingsRef)}>Read All {count} Reviews</div>
                 </div>
               </div>
             </div>

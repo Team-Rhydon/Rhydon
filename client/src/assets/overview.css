@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 5px;
   margin: 0 auto;
   max-width: 93vw;
 }
@@ -324,7 +324,6 @@
 }
 
 .facebook {
-  size: 5px;
   color: rgb(55, 111, 255);
 }
 .twitter {
@@ -373,6 +372,10 @@
 .pi-reviews {
   font-size: .9vw;
   align-self: center;
+}
+
+.pi-reviews:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1200px) {

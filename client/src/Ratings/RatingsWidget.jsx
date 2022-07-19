@@ -6,7 +6,7 @@ const axios = require('axios');
 const _ = require('lodash');
 
 /** */
-const RatingsWidget = (props, {ratingsRef})  => {
+const RatingsWidget = (props)  => {
   const [filter, setFilter] = useState(
       {1: false, 2: false, 3: false, 4: false, 5: false});
   const [isFiltered, toggleFilter] = useState(false);
@@ -24,7 +24,7 @@ const RatingsWidget = (props, {ratingsRef})  => {
   }, [filter]);
 
   return (
-    <div ref={ratingsRef} className="RatingWidget" style={{border: '1px solid black'}}>
+    <div ref={props.ratingsRef} className="RatingWidget" style={{border: '1px solid black'}}>
       <div className="Ratings-Breakdown" style={{width: '20%'}}>
         <RatingBreakdown
           setFilter={setFilter}

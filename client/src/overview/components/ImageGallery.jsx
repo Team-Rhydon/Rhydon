@@ -3,8 +3,10 @@
 import React, {useState} from 'react';
 import Carousel from './Carousel.jsx';
 
-const ImageGallery = ({selectedStyle, product, rating, count, ratingsScroll}) => {
+const ImageGallery = ({selectedStyle, product, rating, count, ratingsScroll, ratingsRef}) => {
   if (!selectedStyle) return null;
+
+
 
   const gallery = selectedStyle.photos;
 
@@ -21,6 +23,7 @@ const ImageGallery = ({selectedStyle, product, rating, count, ratingsScroll}) =>
     rating,
     count,
     ratingsScroll,
+    ratingsRef,
   };
 
   return (<div className="o-image-gallery">

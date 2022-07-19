@@ -4,11 +4,7 @@ import React, {useState, useEffect} from 'react';
 import ProductInfo from './components/ProductInfo.jsx';
 import Styles from './components/Styles.jsx';
 
-const Overview = ({reviews, styles, details, ratingsScroll}) => {
-  console.log('reviews', reviews);
-  console.log('styles', styles);
-  console.log('details', details);
-
+const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef}) => {
   const [rating, setRating] = useState();
   const [count, setCount] = useState();
   const [product, setProduct] = useState(details);
@@ -44,8 +40,15 @@ const Overview = ({reviews, styles, details, ratingsScroll}) => {
   if (!product) return null;
 
   return (<div className="overview-widget">
-    <Styles styles={styles} product={product} rating={rating} count={count} ratingsScroll={ratingsScroll}/>
-    <ProductInfo product={product} ratingsScroll={ratingsScroll}/>
+    <Styles
+      styles={styles}
+      product={product}
+      rating={rating}
+      count={count}
+      ratingsScroll={ratingsScroll}
+      ratingsRef={ratingsRef}
+    />
+    <ProductInfo product={product}/>
   </div>);
 };
 

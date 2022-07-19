@@ -122,10 +122,10 @@ function App() {
     }
   }
 
-  const ratingsScroll = () => {
+  const ratingsScroll = (ref=ratingsRef) => {
     if (typeof window !== 'undefined') {
       window.scrollTo({
-        top: ratingsRef.current.offsetTop,
+        top: ref.current.offsetTop,
         behavior: 'smooth',
       });
     }
@@ -135,7 +135,7 @@ function App() {
   return (
     <div className="app">
       <Nav updateCurrentProduct={updateCurrentProduct}/>
-      <Overview className="overview-widget" {...product} ratingsScroll={ratingsScroll}/>
+      <Overview className="overview-widget" {...product} ratingsScroll={ratingsScroll} ratingsRef={ratingsRef}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
