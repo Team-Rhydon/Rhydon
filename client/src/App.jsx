@@ -1,4 +1,7 @@
-import React, {Component, useEffect, useState, useRef} from 'react';
+/* eslint-disable max-len */
+/* eslint-disable guard-for-in */
+/* eslint-disable require-jsdoc */
+import React, {useEffect, useState, useRef} from 'react';
 import Related from './Related/Related.jsx';
 import Overview from './overview/Overview.jsx';
 import Outfit from './Related/Outfit.jsx';
@@ -6,17 +9,16 @@ import RatingsWidget from './Ratings/RatingsWidget.jsx';
 import Nav from './Nav.jsx';
 import axios from 'axios';
 import _ from 'lodash';
-import logo from './assets/logos/rhydon-logos_black.png';
 
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
   const [carouselPos, setCarouselPos] = useState({});
-  const ratingsRef = useRef('ratings');
+  const ratingsRef = useRef();
 
   useEffect(() => {
-    updateCurrentProduct(null, '40348'); // air force 1's
-    // updateCurrentProduct(null, '40351'); // yeasy
+    // updateCurrentProduct(null, '40348'); // air force 1's
+    updateCurrentProduct(null, '40351'); // yeasy
     // updateCurrentProduct(null, '40346'); // joggers
     // updateCurrentProduct(null, '40344'); // camo onesie
     // updateCurrentProduct(null, '40376'); // oout of stock size
@@ -121,19 +123,22 @@ function App() {
   }
 
   const ratingsScroll = () => {
-    console.log('clicked')
-    console.log(ratingsScroll)
-    ratingsScroll.current?.scrollIntoView();
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: ratingsRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
   };
 
   if (!product) return null;
   return (
     <div className="app">
       <Nav updateCurrentProduct={updateCurrentProduct}/>
-      <Overview className="overview-widget" {...product}/>
+      <Overview className="overview-widget" {...product} ratingsScroll={ratingsScroll}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
+      <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
     </div>
   );
 }

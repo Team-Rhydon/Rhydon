@@ -1,16 +1,19 @@
+/* eslint-disable max-len */
+/* eslint-disable camelcase */
+/* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
 import QuantitySelector from './QuantitySelector.jsx';
 
-let SizeSelector = ({selectedStyle, setPurchase}) => {
-  let {name, original_price, sale_price, photos} = selectedStyle;
+const SizeSelector = ({selectedStyle, setPurchase}) => {
+  const {name, original_price, sale_price, photos} = selectedStyle;
 
   const [sku, setSku] = useState();
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-  let onSkuClick = (e, skuNumber) => {
+  const onSkuClick = (e, skuNumber) => {
     setSelectedQuantity(1);
     setSku(skuNumber);
-  }
+  };
 
   useEffect(() => {
     setSku();
@@ -20,21 +23,23 @@ let SizeSelector = ({selectedStyle, setPurchase}) => {
       price: sale_price || original_price,
       photo: photos[0].url,
       quantity: 1,
-    })
-  }, [selectedStyle])
+    });
+  }, [selectedStyle]);
 
   return (<div className="ss-allsizes"><div className="ss-size-title">Select Size</div>
     {Object.keys(selectedStyle.skus).map((key, i) => {
-      let skuNumber = selectedStyle.skus[key]
-      let buttonSize = skuNumber.size
-      let quantity = skuNumber.quantity
+      const skuNumber = selectedStyle.skus[key];
+      const buttonSize = skuNumber.size;
+      const quantity = skuNumber.quantity;
       if (key == 'null' || !key || !quantity) {
-        return <button className="sizebuttons" key={i} disabled>{ buttonSize || 'Out Of Stock'}</button>
+        return <button className="sizebuttons" key={i} disabled>{ buttonSize || 'Out Of Stock'}</button>;
       }
-      return (<button className="sizebuttons" key={key} onClick={(e) => {onSkuClick(e, skuNumber)}}>{buttonSize}</button>)
+      return (<button className="sizebuttons" key={key} onClick={(e) => {
+        onSkuClick(e, skuNumber);
+      }}>{buttonSize}</button>);
     })}
-      {sku ? <QuantitySelector selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} {...sku} sku={sku} setPurchase={setPurchase}/> : null}
-  </div>)
-}
+    {sku ? <QuantitySelector selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} {...sku} sku={sku} setPurchase={setPurchase}/> : null}
+  </div>);
+};
 
 export default SizeSelector;

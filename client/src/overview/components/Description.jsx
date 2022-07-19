@@ -1,14 +1,14 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-let Description = ({slogan, description, features}) => {
-
+const Description = ({slogan, description, features}) => {
   return (<>
     <h2>{slogan.toUpperCase()}</h2>
     <div className="d-features">{description}</div>
     {features ? features.map(({feature, value}, i) => {
-        return <div key={i}>{feature} : {value}</div>
-      }) : null}
-  </>)
-}
+      return <div key={i}>{feature} : {value}</div>;
+    }) : null}
+  </>);
+};
 
 export default Description;

@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { AiOutlinePlus, AiOutlineMinus,  } from 'react-icons/ai';
-import StarRating from '../../Related/StarRating.jsx';
+/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
+import React, {useState} from 'react';
+import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai';
 import Description from './Description.jsx';
 
-let ProductInfo = ({product}) => {
-
-  const [count, setCount] = useState(1);
+const ProductInfo = ({product}) => {
   const [toggleDescription, setDescription] = useState(false);
 
-  let displayDescription = () => {
-    setDescription(prevState => !prevState)
-  }
-
-  if (!count) return <></>
+  const displayDescription = () => {
+    setDescription((prevState) => !prevState);
+  };
 
   return (
     <div className="o-details">
@@ -22,7 +19,7 @@ let ProductInfo = ({product}) => {
       </div>
       {toggleDescription ? <Description {...product} /> : null}
     </div>
-  )
-}
+  );
+};
 
 export default ProductInfo;
