@@ -1,6 +1,14 @@
+.widgets {
+  width: 93vw;
+  margin: auto;
+}
 tr, td, th, p, b, div, h1, h2, table {
   font-family: Helvetica,Arial,system-ui,sans-serif;
   font-weight: 400;
+}
+
+th {
+  padding: 0;
 }
 
 .app {
@@ -20,7 +28,7 @@ tr, td, th, p, b, div, h1, h2, table {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   color: #000;
-  width: 80%;
+  width: 93vw;
   display: flex;
   position: relative;
   margin: auto;
@@ -33,7 +41,7 @@ tr, td, th, p, b, div, h1, h2, table {
   /* display: flex; */
   display: block;
   position: relative;
-  width: 80%;
+  width: 93vw;
   margin: 0 auto;
   margin-top: 2vh;
 }
@@ -55,8 +63,8 @@ tr, td, th, p, b, div, h1, h2, table {
   filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
   cursor: pointer;
   text-align: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   background-color: transparent;
 }
 
@@ -69,24 +77,24 @@ tr, td, th, p, b, div, h1, h2, table {
 }
 
 .related .carousel .carousel-next-container, .outfit-next-container {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
   z-index: 5;
   position: absolute;
-  right: 1.6vw;
-  top: 34.5%;
+  right: 1.75vw;
+  top: 40%;
   transform: translateY(-50%);
   background: #fff;
 }
 
 
 .related .carousel .carousel-prev-container, .outfit-prev-container {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
   z-index: 5;
   position: absolute;
   left: 0;
-  top: 34.5%;
+  top: 40%;
   transform: translateY(-50%);
   background: #fff;
 }
@@ -160,12 +168,13 @@ background: center; */
 position: relative;
 margin: 0 auto;
 /* max-width: 25%; */
-width: 17.5vw;
-height: 17.5vw;
+width: 20.75vw;
+height: 20.75vw;
 /* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
 }
+
 
 .related .carousel .thumb.outfit{
   cursor: auto;
@@ -254,6 +263,9 @@ cursor: pointer;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   overflow: scroll;
+  border-radius: 0.5em;
+  padding: .5em;
+  border-spacing: 0;
   }
 
   .modal.hidden {
@@ -263,11 +275,16 @@ cursor: pointer;
   .modal .thumb {
     position: relative;
 margin: 0 auto;
-width: 200px;
+width: 17.5vw;
 background-color: white;
-height: 200px;
+height: 17.5vw;
 object-fit: cover;
   }
+
+.thumb-container {
+    height: 17.5vw;
+    width: 17.5vw;
+}
 
   .preview {
     position: fixed;
@@ -349,8 +366,8 @@ object-fit: cover;
   font-size: .875rem;
 }
   .btn-container {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     border: solid 1px #767676;
   }
 
@@ -782,17 +799,17 @@ object-fit: cover;
   }
 
 table {
-  border: 1px solid;
-  border-spacing: 0;
-  border-collapse: collapse;
   background-color: white;
   overflow: scroll;
   width: 100%;
-  color: #767676;
 }
 
 td {
   text-align: center;
+  padding-top: 7px;
+    padding-right: 14px;
+    padding-bottom: 6px;
+    padding-left: 14px;
 }
 
 .table-header {
@@ -858,31 +875,43 @@ margin-right: 20px;
   width: 100%;
 }
 
-.table-current-product-column, .table-compare-product-column{
+/* .table-current-product-column, .table-compare-product-column{
   background-color: #ffe;
   text-align: center;
+} */
+
+.table-current-product-column, .table-compare-product-column, .table-characteristic {
+  color: #767676;
 }
 
-/* tr:nth-child(even) .table-current-product-column, .table-compare-product-column {
-  background-color: #ffffde;
+.table-header {
+  color: black;
+}
+
+.table-logo {
+  width: 100%;
+  font-weight: bold;
+  margin: 0;
+  color: rgba(216, 77, 77, 0.809);
+}
+
+/* tr:nth-child(1) {
+  border-bottom: 1px solid #767676;
 } */
 
 
-.table-current-product-column {
-  align-items: left;
+tr:nth-child(even) {
+  background-color: #f3f3f3;
 }
 
-.table-compare-product-column {
-  align-items: right;
+.modal-content.table {
+  color: #767676;
+  font-size: 1rem;
 }
-/* tr:nth-child(2) {
-  border-bottom: 1px solid #e7e7e7;
-} */
+tr:nth-child(odd) {
+  background-color: white;
+}
 
-
-/* tr:nth-child(even) .table-compare-product-column {
-  background-color: rgba(181, 255, 181, 0.3);
-} */
 
 /* tr:nth-child(odd) .table-compare-product-column {
   background-color: rgba(204, 255, 204, 0.3);
@@ -891,11 +920,15 @@ margin-right: 20px;
 /* tr:nth-child(even) .table-characteristic {
   background-color: rgba(173, 172, 172, 0.3);
 }
-
+.
 tr:nth-child(odd) .table-characteristic {
   background-color: #f6f6f6;
 } */
 
+.table-characteristic {
+  border-left: solid 1px #767676;
+  border-right: solid 1px #767676;
+}
 .table-title {
   width: 100%;
   font-size: 1rem;

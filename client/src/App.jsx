@@ -80,6 +80,7 @@ function App() {
       let positions;
       if (position === 'outfit-p1') {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p1',
           'outfit-p3': 'outfit-p2',
@@ -88,6 +89,7 @@ function App() {
         };
       } else if (position ==='outfit-p2') {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p2',
           'outfit-p3': 'outfit-p2',
@@ -96,6 +98,7 @@ function App() {
         };
       } else if (position ==='outfit-p3') {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p2',
           'outfit-p3': 'outfit-p3',
@@ -104,6 +107,7 @@ function App() {
         };
       } else {
         positions = {
+          'outfit-pleft': 'outfit-pleft',
           'outfit-p1': 'outfit-p1',
           'outfit-p2': 'outfit-p2',
           'outfit-p3': 'outfit-p3',
@@ -133,12 +137,21 @@ function App() {
 
   if (!product) return null;
   return (
-    <div className="app">
+    <div data-testid="" className="app">
       <Nav updateCurrentProduct={updateCurrentProduct}/>
+<<<<<<< HEAD
+      <div className='widgets'>
+      <Overview className="overview-widget" {...product}/>
+      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
+      <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
+      <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
+      </div>
+=======
       <Overview className="overview-widget" {...product} ratingsScroll={ratingsScroll} ratingsRef={ratingsRef}/>
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
+>>>>>>> e3adb13a1ab3ce02ba116c1f10e1669ddc9468e2
     </div>
   );
 }
