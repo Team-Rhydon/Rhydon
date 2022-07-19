@@ -1,22 +1,24 @@
+/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
 import React, {useState, useEffect} from 'react';
 import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
-import Share from './Share.jsx'
+import Share from './Share.jsx';
 
-let Styles = ({styles, product, rating, count}) => {
-  let {results} = styles;
+const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef}) => {
+  const {results} = styles;
   const [productStyles, setProductStyles] = useState();
   const [selectedStyle, setSelectedStyle] = useState();
 
   useEffect(() => {
-    setSelectedStyle(results[0])
-    setProductStyles(results)
-  }, [])
+    setSelectedStyle(results[0]);
+    setProductStyles(results);
+  }, []);
 
-  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count}
+  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count, ratingsScroll, ratingsRef};
 
-  return(
+  return (
     <div className="overview-styles">
       <ImageGallery {...commonProps}/>
       <section className="o-sidebar">
@@ -29,7 +31,7 @@ let Styles = ({styles, product, rating, count}) => {
         <Share />
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Styles
+export default Styles;
