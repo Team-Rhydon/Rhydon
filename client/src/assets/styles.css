@@ -188,15 +188,17 @@ cursor: pointer;
 
 .related .star {
   position: absolute;
-  top: 2%;
-  right: 8%;
+  top: .5rem;
+  right: .5rem;
   cursor: pointer;
   color: white;
+  size: 1.5rem;
 }
 
 .related .star:before {
   content: "\2605";
   z-index: 10;
+  font-size: 1.5rem;
 }
 
 .related .star:hover {
