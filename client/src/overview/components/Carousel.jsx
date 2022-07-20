@@ -12,9 +12,9 @@ import StarRating from '../../Related/StarRating.jsx';
 const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count, ratingsScroll, ratingsRef}) => {
   if (!gallery.length) return null;
 
-  const {name, category} = product;
   const [showImageModal, setImageModal] = useState(false);
 
+  const {name, category} = product;
   const lastCount = gallery.length - 1;
 
   const nextSlide = (e) => {
@@ -58,23 +58,43 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
         <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
           {i === currentImage.count && (
             <div className="m-carousel">
-              <img className='m-carousel-image'onClick={() => setImageModal(true)} src={url} key={i} />
-              <img className="m-logo" src={logo} />
-              <IoIosArrowBack className="s-leftarrow" onClick={prevSlide}/>
-              <IoIosArrowForward className="s-rightarrow" onClick={nextSlide}/>
-              <FiMaximize className="s-expand" onClick={() => setImageModal(true)}/>
+              <img
+                className='m-carousel-image'
+                onClick={() => setImageModal(true)}
+                src={url} key={i}
+              />
+              <img
+                className="m-logo"
+                src={logo} />
+              <IoIosArrowBack
+                className="s-leftarrow"
+                onClick={prevSlide}
+              />
+              <IoIosArrowForward
+                className="s-rightarrow"
+                onClick={nextSlide}
+              />
+              <FiMaximize
+                className="s-expand"
+                onClick={() => setImageModal(true)}
+              />
               <div className="o-title-review-container">
                 <div className="o-name-category">
                   <div className="o-name-container">
                     <h2 className="pi-name">{name}</h2>
                   </div>
                   <img className="title-line" src={line}/>
-                  {/* <TbMinusVertical className="title-line" /> */}
                   <h5 className="pi-category">{category}</h5>
                 </div>
                 <div className="pi-reviewstars">
-                  <div className="pi-stars">{rating ? <StarRating rating={rating} count={count}/> : null}</div>
-                  <div className="pi-reviews" onClick={() => ratingsScroll(ratingsRef)}>Read All {count} Reviews</div>
+                  <div
+                    className="pi-stars">
+                    {rating ? <StarRating rating={rating} count={count}/> : null}
+                  </div>
+                  <div
+                    className="pi-reviews"
+                    onClick={() => ratingsScroll(ratingsRef)}
+                  >Read All {count} Reviews</div>
                 </div>
               </div>
             </div>

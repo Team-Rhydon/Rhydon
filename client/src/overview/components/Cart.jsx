@@ -32,13 +32,16 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
   };
 
   useEffect(() => {
-    setCheckout((prevState) => cartData);
+
+      setCheckout((prevState) => cartData)
   }, [cartData]);
+
+
 
   return (
     <div>
-      <div style={OVERLAY_STYLES}>
-        <div style={MODAL_STYLES}>
+      <div className='c-overlay'>
+        <div className='c-modal-style'>
           <div>
             <h3> Cart </h3>
           </div>
