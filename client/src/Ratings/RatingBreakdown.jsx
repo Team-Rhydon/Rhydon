@@ -41,7 +41,7 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
         </div>
       </div>
       <br></br>
-      <div className="Ratings-Reviews-Summary">
+      <div className="Ratings-Reviews-Summary conic-gradient">
         <h2>Rating and Reviews </h2>
         <span>
           <h2>{rating.toFixed(2)}
