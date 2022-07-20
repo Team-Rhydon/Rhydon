@@ -1,7 +1,9 @@
 .widgets {
-  width: 93vw;
+  width: 90vw;
+  max-width: 1300px;
   margin: auto;
 }
+
 tr, td, th, p, b, div, h1, h2, table {
   font-family: Helvetica,Arial,system-ui,sans-serif;
   font-weight: 400;
@@ -14,6 +16,26 @@ th {
 .app {
   position: relative;
 }
+
+.widget-title {
+    font-size: 2.07vw;
+}
+
+@media screen and (min-width: 1300px) {
+  .widget-title{
+    font-size: 31px;
+  }
+  /* .title-line {
+    width: 27px;
+  }
+  .pi-category {
+    font-size: 13px;
+  }
+  .pi-reviews {
+    font-size: 13px;
+  } */
+}
+
 .related, .outfits {
   width: 100%;
   position: relative;
@@ -28,7 +50,7 @@ th {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   color: #000;
-  width: 93vw;
+  width: 100%;
   display: flex;
   position: relative;
   margin: auto;
@@ -41,18 +63,17 @@ th {
   /* display: flex; */
   display: block;
   position: relative;
-  width: 93vw;
+  width: 100%;
   margin: 0 auto;
   margin-top: 2vh;
 }
 .related .carousel-inner {
+  margin: auto;
   display: flex;
   width: 100%;
   position: relative;
   overflow: hidden;
   height: 30vw;
-  margin-left: 0;
-  margin-right: 0;
   padding-top: 2vh;
 }
 
@@ -81,7 +102,7 @@ th {
   width: 1.75rem;
   z-index: 5;
   position: absolute;
-  right: 1.75vw;
+  right: 2.4vw;
   top: 40%;
   transform: translateY(-50%);
   background: #fff;
@@ -168,8 +189,8 @@ background: center; */
 position: relative;
 margin: 0 auto;
 /* max-width: 25%; */
-width: 20.75vw;
-height: 20.75vw;
+width: 18vw;
+height: 18vw;
 /* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
