@@ -620,3 +620,52 @@
   font-size: 20px;
   color: rgb(0, 0, 0)
 }
+
+.add-love-buttons {
+  display: flex;
+}
+
+.lovey-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: white;
+  background-color: rgb(40, 44, 52);
+  border-radius: 3px;
+  border-width: .2px;
+  width: 99px;
+  height: 50px;
+  margin: 5px 0px 5px 4px;
+}
+
+.react-button {
+  color: #61dafb;
+}
+.octo-button {
+  width: 37.2px;
+  color: #61dafb;
+}
+
+.c-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0 , .7);
+  z-index: 1000;
+}
+
+.c-modal-style {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding: 5px;
+  width: 700px;
+  border-radius: 5px;
+  z-index: 1000;
+}
