@@ -141,7 +141,7 @@ function App() {
       <Nav updateCurrentProduct={updateCurrentProduct}/>
       <div className='widgets'>
       <Overview className="overview-widget" {...product} ratingsRef={ratingsRef} ratingsScroll={ratingsScroll} />
-      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>,
+      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       <RatingsWidget details={product.details} meta={product.reviews} ref={ratingsRef}/>
       </div>
