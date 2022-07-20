@@ -18,11 +18,6 @@ function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
         </td>
         </tr>
       </tbody>
-      {/* <thead>
-        <tr>
-          <th colSpan='1' className='table-title'>Comparing</th>
-        </tr>
-      </thead> */}
       <tbody>
         <tr>
             <td><img className='thumb' src={thumbnails['current']}/></td>

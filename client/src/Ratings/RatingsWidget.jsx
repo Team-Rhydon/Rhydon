@@ -24,8 +24,13 @@ const RatingsWidget = (props)  => {
   }, [filter]);
 
   return (
+<<<<<<< HEAD
     <div ref={props.ratingsRef} className="RatingWidget" style={{border: '1px solid black'}}>
       <div className="Ratings-Breakdown" style={{width: '20%'}}>
+=======
+    <div ref={props.ratingsRef} className="RatingWidget">
+      <div className="Ratings-Breakdown">
+>>>>>>> main
         <RatingBreakdown
           setFilter={setFilter}
           filter={filter}

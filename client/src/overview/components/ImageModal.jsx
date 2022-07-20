@@ -33,13 +33,15 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
 
   return (
     <>
-      <div onClick={() => setImageModal(false)} style={OVERLAY_STYLES} />
-      <div style={MODAL_STYLES}>
-        <BsArrowLeftCircle className="left-arrow" onClick={prevSlide}/>
-        <BsArrowRightCircle className="right-arrow" onClick={nextSlide}/>
-        <FiMinimize onClick={() => setImageModal(false)}/>
-        <img src={currentImage.url} witdh="400px" height="400px"/>
-        <ExpandedIcons gallery={gallery} currentImage={currentImage} setCurrentImage={setCurrentImage}/>
+      <div className="i-overlay" onClick={() => setImageModal(false)}/>
+      <div className="i-modal-style">
+        <div className="i-image-container">
+          <BsArrowLeftCircle className="i-left-arrow" onClick={prevSlide}/>
+          <BsArrowRightCircle className="i-right-arrow" onClick={nextSlide}/>
+          <FiMinimize onClick={() => setImageModal(false)}/>
+          <img className="i-modal-image"src={currentImage.url}/>
+          <ExpandedIcons className="i-expanded-icons" gallery={gallery} currentImage={currentImage} setCurrentImage={setCurrentImage}/>
+        </div>
       </div>
     </>
   );
