@@ -51,7 +51,6 @@
 
 .m-carousel img {
   display: block;
-  height: fit-content;
 }
 
 .m-carousel .o-title-review-container {
@@ -356,7 +355,6 @@
 .o-details {
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
   border-top: 2px solid lightgrey;
   border-bottom: 2px solid lightgrey;
 }
@@ -429,7 +427,6 @@
 .o-description-icon-container-open {
   display: flex;
   width: 100%;
-  align-items: center;
   border-left: 4px solid black;
 }
 
@@ -453,6 +450,7 @@
 
 .pi-stars {
   padding-right: .5vw;
+  justify-content: center;
 }
 
 .pi-minus, .pi-plus {
@@ -472,11 +470,6 @@
   opacity: 1;
 }
 
-.o-description-container {
-  display: flex;
-  padding-bottom: 30px;
-}
-
 .i-overlay {
   position: fixed;
   top: 0px;
@@ -493,7 +486,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFF;
-  padding: 5px;
+  padding: 2.5px;
+  border-radius: 5px;
   z-index: 1000;
 }
 
@@ -504,6 +498,7 @@
   height: 90vw;
   max-height: 600px;
   display: block;
+  border-radius: 5px;
 }
 
 .i-image-container {
@@ -568,6 +563,14 @@
   opacity: 1;
 }
 
+.o-description-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 59px;
+  border-right: 4px solid black;
+}
+
 .i-expanded-icons {
   position: relative;
   display: flex;
@@ -587,15 +590,33 @@
 .d-description {
   align-self: center;
   width: 400px;
+  font-size: 13px;
 }
 
 .d-features {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .d-line {
   object-fit: cover;
   width: 50px;
 
+}
+
+.i-filler {
+  font-size: 20px;
+  color: white;
+  opacity: .6;
+}
+
+.i-filler:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.i-chosen{
+  font-size: 20px;
+  color: rgb(0, 0, 0)
 }
