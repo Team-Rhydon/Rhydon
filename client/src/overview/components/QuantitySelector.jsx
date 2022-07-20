@@ -29,12 +29,18 @@ const QuantitySelector = ({size, quantity, setPurchase, selectedQuantity, setSel
 
   if (!stock) return null;
 
-  return (<div>
-    <select className="quantity-selector" value={selectedQuantity} onChange={(e) => changeAmount(e)}>
+  return (
+    <div>
+    <select
+      className="quantity-selector"
+      value={selectedQuantity}
+      onChange={(e) => changeAmount(e)}
+      >
       {stock.map((val, i) => {
         if (i === 0) return (<option key={i} defaultValue={i + 1}>{i + 1}</option>);
         return (<option key={i} value={i+1}>{i + 1}</option>);
-      })}</select>
+      })}
+    </select>
   </div> );
 };
 

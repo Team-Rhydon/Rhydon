@@ -32,11 +32,25 @@ const AddToCart = ({selectedStyle}) => {
     });
   };
 
-  return (<div className="s-addtocart">
-    <SizeSelector selectedStyle={selectedStyle} setPurchase={setPurchase}/>
-    <button className="s-add-button" onClick={fillCart} disabled={!purchase.complete}>Add To Cart</button>
-    {showCart ? <Cart showCart={showCart} setCart={setCart} cartData={cartData} updateCart={updateCart}/> : null}
-  </div>);
+  return (
+    <div className="s-addtocart">
+      <SizeSelector
+        selectedStyle={selectedStyle}
+        setPurchase={setPurchase}
+      />
+      <button
+      className="s-add-button" onClick={fillCart} disabled={!purchase.complete}>Add To Cart</button>
+      {showCart
+        ? <Cart
+            showCart={showCart}
+            setCart={setCart}
+            cartData={cartData}
+            updateCart={updateCart}
+          />
+        : null
+      }
+    </div>
+  );
 };
 
 export default AddToCart;

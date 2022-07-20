@@ -6,8 +6,6 @@ import Carousel from './Carousel.jsx';
 const ImageGallery = ({selectedStyle, product, rating, count, ratingsScroll, ratingsRef}) => {
   if (!selectedStyle) return null;
 
-
-
   const gallery = selectedStyle.photos;
 
   const [currentImage, setCurrentImage] = useState({

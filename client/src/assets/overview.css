@@ -427,7 +427,7 @@
 .o-description-icon-container-open {
   display: flex;
   width: 100%;
-  border-left: 4px solid black;
+  border-left: 5px solid black;
 }
 
 .pi-description {
@@ -568,7 +568,7 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 59px;
-  border-right: 4px solid black;
+  border-right: 5px solid black;
 }
 
 .i-expanded-icons {

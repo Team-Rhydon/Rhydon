@@ -26,20 +26,47 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
     });
   }, [selectedStyle]);
 
-  return (<div className="ss-allsizes"><div className="ss-size-title">Select Size</div>
-    {Object.keys(selectedStyle.skus).map((key, i) => {
-      const skuNumber = selectedStyle.skus[key];
-      const buttonSize = skuNumber.size;
-      const quantity = skuNumber.quantity;
-      if (key == 'null' || !key || !quantity) {
-        return <button className="sizebuttons" key={i} disabled>{ buttonSize || 'Out Of Stock'}</button>;
-      }
-      return (<button className={sku && sku.size === buttonSize ? 'sizebuttons sizebuttons-picked' : 'sizebuttons'} key={key} onClick={(e) => {
-        onSkuClick(e, skuNumber);
-      }}>{buttonSize}</button>);
-    })}
-    {sku ? <QuantitySelector selectedQuantity={selectedQuantity} setSelectedQuantity={setSelectedQuantity} {...sku} setPurchase={setPurchase}/> : null}
-  </div>);
+  return (
+    <div className="ss-allsizes">
+      <div className="ss-size-title">Select Size</div>
+      {Object.keys(selectedStyle.skus).map((key, i) => {
+        const skuNumber = selectedStyle.skus[key];
+        const buttonSize = skuNumber.size;
+        const quantity = skuNumber.quantity;
+
+        if (key == 'null' || !key || !quantity) {
+          return (
+            <button
+              className="sizebuttons"
+              key={i}
+              disabled
+              >
+              { buttonSize || 'Out Of Stock'}
+            </button>;
+          )
+        }
+        return (
+          <button
+            className={sku && sku.size === buttonSize
+              ? 'sizebuttons sizebuttons-picked'
+              : 'sizebuttons'}
+            key={key}
+            onClick={(e) => {
+              onSkuClick(e, skuNumber);
+            }}
+            >
+            {buttonSize}
+          </button>);
+      })}
+      {sku
+        ? <QuantitySelector
+            selectedQuantity={selectedQuantity}
+            setSelectedQuantity={setSelectedQuantity} {...sku}
+            setPurchase={setPurchase}
+          />
+        : null}
+    </div>
+  );
 };
 
 export default SizeSelector;

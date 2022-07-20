@@ -20,9 +20,12 @@ const ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
   return (
     <section className="i-expanded-icons">
       {slide.map((obj, i) => {
-        return <div key={i} onClick={() => changeImage(i)}>
-          {i === currentImage.count ? <FaCircleNotch className="i-chosen"/> : <VscCircleFilled className="i-filler"/> }
-        </div>;
+        return (
+          <div
+            key={i}
+            onClick={() => changeImage(i)}
+          >{i === currentImage.count ? <FaCircleNotch className="i-chosen"/> : <VscCircleFilled className="i-filler"/>}</div>
+        )
       })}
     </section>
   );
