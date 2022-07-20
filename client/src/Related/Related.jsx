@@ -133,7 +133,9 @@ function Related({product, updateCurrentProduct, hidePreview}) {
 
   return (
     <div className="related">
-      <h2 className="widget-title">RELATED PRODUCTS</h2>
+      <div className="title-div">
+      <h2 className="title">RELATED PRODUCTS</h2>
+      </div>
       <div className="carousel">
         <div className='carousel-prev-container hidden'>
         <img src={prevArrow} onClick={(e) => moveRelatedLeft(e)} className="carousel-prev"/>
