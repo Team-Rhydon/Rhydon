@@ -1,5 +1,7 @@
 import React from 'react';
 import image_placeholder from '../assets/icons/No-Image-Placeholder.svg';
+import closeBtn from '../assets/icons/xmark-solid.svg';
+import logo from '../assets/logos/rhydon-logos_black 2.png';
 function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
   if (!thumbnails.current) {
     thumbnails.current = image_placeholder;
@@ -10,27 +12,32 @@ function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
   return (
     <table className="modal-content">
       <tbody>
+      <tr className='btn-container remove-outfit'>
+        <td>
+        <img src={closeBtn} className="close-btn center-vert-horz"/>
+        </td>
+        </tr>
+      </tbody>
+      <tbody>
         <tr>
-          <th colSpan='1' className='table-title'>Comparing</th>
+            <td><img className='thumb' src={thumbnails['current']}/></td>
+            <td>
+              <div>
+                <p className='table-logo'>Comparing</p>
+                <img className='center-horz-vert table-logo' src={logo}/>
+              </div>
+
+              </td>
+            <td><img className='thumb' src={thumbnails['compare']}/></td>
         </tr>
         <tr>
-          <th>
-            <div>
-              <img className='thumb' src={thumbnails['current']}/>
-            </div>
-            <div className='table-header'>
+        <td className='table-header'>
               {curName}
-            </div>
-          </th>
-          <td></td>
-          <th>
-            <div>
-              <img className='thumb' src={thumbnails['compare']}/>
-            </div>
-            <div className='table-header'>
+            </td>
+            <td className='table-header table-characteristic'>Characteristics</td>
+            <td className='table-header'>
               {compName}
-            </div>
-          </th>
+            </td>
         </tr>
         {
           Object.keys(characteristics).map((key, index) => {

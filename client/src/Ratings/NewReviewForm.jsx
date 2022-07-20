@@ -72,7 +72,7 @@ function NewReviewForm(props) {
         </div>
         {ratingRef.current === rating
           ? null
-          :<div>
+          :<div className="prev-next">
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
           </div>}
       </div>),
@@ -90,35 +90,35 @@ function NewReviewForm(props) {
         <div></div>
         {recommendedRef.current === recommended
           ?null
-          :<div>
+          :<div className="prev-next">
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
           </div>}
       </div>),
     3:(<div className="tab">
       <h3>*Please rate the {props.details.name} on the following*: </h3>
-        <Characteristics chars={props.product.characteristics} setChars={setCharacteristics} />
+        <Characteristics page={setPage} chars={props.product.characteristics} setChars={setCharacteristics} />
         {characteristicsRef.current === characteristics
         ?null
-        :<div>
+        :<div className="prev-next">
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-        </div>}
+        </div >}
       </div>),
     4:(<div className="tab">
       <h3>Please give a one sentence summary of how you feel about the {props.details.name}</h3>
         <Summary setSum={setSummary} />
-        <div>
+        <div className="prev-next">
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>
       </div>),
     5:(<div className="tab">
       <h3>*Please let us know exactly how you feel about the {props.details.name}.* </h3>
-        <Body  setBody={setBody} />
+        <Body  page={setPage} setBody={setBody} />
         {bodyRef.current === body
         ?null
-        :<div>
+        :<div className="prev-next">
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>}
@@ -126,17 +126,17 @@ function NewReviewForm(props) {
     6:( <div className="tab">
       <h3>Enhance your review with your photos!</h3>
         <ReviewPhotos setPhotos={setPhotos} />
-        <div>
+        <div className="prev-next">
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>
       </div>),
     7:(<div className="tab">
       <h3>*Enter your info*</h3>
-          <UserInfo setName={setName} setEmail={setEmail} />
+          <UserInfo page= {setPage} setName={setName} setEmail={setEmail} />
           {nameRef.current === name && emailRef.current === email
             ?null
-            :<div>
+            :<div className="prev-next">
             {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>}
@@ -159,7 +159,7 @@ function NewReviewForm(props) {
             :<span className="form-col-2">
               {Object.entries(props.product.characteristics).map(([char, {id}]) => {
               return (
-              <span key={id}>
+              <span className="reviewsubmitchars" key={id}>
                 <span>{char}: {characteristics[id]}</span>
                 <br></br>
               </span>)

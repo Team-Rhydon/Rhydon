@@ -3,9 +3,11 @@ import React, {useState, useRef} from "react";
 const Characteristics = (props) => {
   const [characteristics, setCharacteristics] = useState(null);
   const disabled = useRef(true);
+
   function handleSubmit(event) {
     event.preventDefault();
     props.setChars(characteristics);
+    props.page(prevPage => prevPage + 1);
   }
 
   const descriptions = {

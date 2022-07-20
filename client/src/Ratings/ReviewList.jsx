@@ -89,11 +89,9 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
       <div className="ReviewListFooter" style={{display: 'flex'}}>
         {reviews >= storage.length ?
           null:
-          <div id="review-btn">
-            <button onClick={handleClick}>More Reviews</button>
-          </div>
+            <button id="review-btn" onClick={handleClick}>More Reviews</button>
         }
-        <button onClick={()=>setShow(true)} > Review this Product</button>
+        <button id="open-modal-btn" onClick={()=>setShow(true)} > Review this Product</button>
         <Modal
           title={'Review This Product: Tell us about the ' + details.name}
           children={<NewReviewForm product={product} details={details} />}

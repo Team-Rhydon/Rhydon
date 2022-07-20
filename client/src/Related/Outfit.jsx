@@ -7,8 +7,12 @@ import prevArrow from '../assets/icons/chevron-left-solid.svg';
 function Outfit({product, outfits, addToOutfit, removeOutfit}) {
   useEffect(() => {
     outfitBtnCheck();
-    if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1 && document.getElementsByClassName('outfit-p1').length > 1 ) {
+    if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1) {
       moveOutfitLeft(true);
+    }
+    if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p1').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+      let element = document.getElementsByClassName('outfit-pleft')[0];
+      updatePosition(element, 'outfit-pleft', 'outfit-p1');
     }
   }, [outfits]);
 

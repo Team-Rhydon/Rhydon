@@ -11,7 +11,7 @@ const Summary = props => {
   return (
     <form className="New-Review-Summary" onSubmit={handleSubmit} >
       <input
-        placeholder="Example: Best purchase ever!"
+        placeholder="(Optional) Example: Best purchase ever!"
         value={value}
         maxLength={60}
         onChange={(e)=>setValue(e.target.value)}

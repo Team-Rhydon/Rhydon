@@ -13,7 +13,7 @@ class CircularProgressBar extends React.Component {
     const dashOffset = dashArray - dashArray * this.props.percentage / 100;
 
     return (
-      <svg
+      <svg className="circle"
           width={this.props.sqSize}
           height={this.props.sqSize}
           viewBox={viewBox}>

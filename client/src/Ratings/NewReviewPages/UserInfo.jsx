@@ -6,8 +6,9 @@ const UserInfo = props => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.setName(nickname)
-    props.setEmail(email)
+    props.setName(nickname);
+    props.setEmail(email);
+    props.page(prevPage => prevPage + 1);
   }
 
   return (
