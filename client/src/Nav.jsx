@@ -6,7 +6,7 @@ function Nav({updateCurrentProduct}) {
     <div className='nav-bar'>
       <div className='nav-container'>
         <div className='left-nav'>
-          <img onClick={(e) => updateCurrentProduct(e,'40346' )} className='logo' src ={logo}/>
+          <img onClick={(e) => updateCurrentProduct(e,'40351' )} className='logo' src ={logo}/>
         </div>
         <div className='right-nav'>
           <div className='search-btn'>
