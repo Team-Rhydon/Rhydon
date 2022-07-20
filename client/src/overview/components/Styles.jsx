@@ -22,13 +22,13 @@ const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef}) => 
     <div className="overview-styles">
       <ImageGallery {...commonProps}/>
       <section className="o-sidebar">
-        <StyleSelector {...commonProps}/>
-        <AddToCart {...commonProps}
-        // productStyles={productStyles}
-        // selectedStyle={selectedStyle}
-        // setSelectedStyle={setSelectedStyle}
-        />
-        <Share />
+          <StyleSelector {...commonProps}/>
+          <AddToCart {...commonProps}
+          // productStyles={productStyles}
+          // selectedStyle={selectedStyle}
+          // setSelectedStyle={setSelectedStyle}
+          />
+          <Share />
       </section>
     </div>
   );
