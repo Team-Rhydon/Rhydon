@@ -42,7 +42,7 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
               disabled
               >
               { buttonSize || 'Out Of Stock'}
-            </button>;
+            </button>
           )
         }
         return (
@@ -56,7 +56,8 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
             }}
             >
             {buttonSize}
-          </button>);
+          </button>
+        )
       })}
       {sku
         ? <QuantitySelector
