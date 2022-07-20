@@ -4,28 +4,29 @@ import OutfitAddCard from './OutfitAddCard.jsx';
 import nextArrow from '../assets/icons/chevron-right-solid.svg';
 import prevArrow from '../assets/icons/chevron-left-solid.svg';
 
-function Outfit({product, outfits, addToOutfit, removeOutfit, carouselPos}) {
+function Outfit({product, outfits, addToOutfit, removeOutfit}) {
   useEffect(() => {
     outfitBtnCheck();
     if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1) {
       moveOutfitLeft(true);
     }
-
-    if(document.getElementsByClassName('outfit-card').length > 3) {
-      if(document.getElementsByClassName('outfit-pleft').length > 0) {
-        if(document.getElementsByClassName('outfit-pleft').length > 0) {
-          moveLeft();
-        }
-      }
-    } else if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p1').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+    if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p1').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
       let element = document.getElementsByClassName('outfit-pleft')[0];
       updatePosition(element, 'outfit-pleft', 'outfit-p1');
-    } else if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p2').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
-      let element = document.getElementsByClassName('outfit-pleft')[0];
+    }
+    if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p2').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+      let element = document.getElementsByClassName('outfit-p1')[0];
       updatePosition(element, 'outfit-p1', 'outfit-p2');
-    } else if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p3').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
-      let element = document.getElementsByClassName('outfit-pleft')[0];
+      element = document.getElementsByClassName('outfit-pleft')[0];
+      updatePosition(element, 'outfit-pleft', 'outfit-p1');
+    }
+    if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p3').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+      let element = document.getElementsByClassName('outfit-p2')[0];
+      updatePosition(element, 'outfit-p2', 'outfit-p3');
+      element = document.getElementsByClassName('outfit-p1')[0];
       updatePosition(element, 'outfit-p1', 'outfit-p2');
+      element = document.getElementsByClassName('outfit-pleft')[0];
+      updatePosition(element, 'outfit-pleft', 'outfit-p1');
     }
   }, [outfits]);
 
@@ -44,9 +45,6 @@ function Outfit({product, outfits, addToOutfit, removeOutfit, carouselPos}) {
       if (element) {
         updatePosition(element, pos, positions[pos]);
       }
-    }
-    for(let id in carouselPos.current) {
-      carouselPos.current[id] = positions[carouselPos.current[id]];
     }
   };
   function moveOutfitLeft(shouldShift) {
@@ -103,9 +101,6 @@ function Outfit({product, outfits, addToOutfit, removeOutfit, carouselPos}) {
         if (element) {
           updatePosition(element, pos, positions[pos]);
         }
-      }
-      for(let id in carouselPos.current) {
-        carouselPos.current[id] = positions[carouselPos.current[id]];
       }
     }
     outfitBtnCheck();
