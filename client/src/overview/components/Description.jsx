@@ -10,9 +10,11 @@ const Description = ({slogan, description, features}) => {
     <div className="d-description">{description}</div>
     <img className='d-line' src={line}/>
     <div className="d-features">
-      {features ? features.map(({feature, value}, i) => {
+      {features
+        ? features.map(({feature, value}, i) => {
         return <div key={i}><GiCheckMark /> {feature} : {value}</div>;
-      }) : null}
+        })
+        : null}
     </div>
   </div>);
 };
