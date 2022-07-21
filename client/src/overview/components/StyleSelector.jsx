@@ -11,11 +11,24 @@ const StyleSelector = ({selectedStyle, setSelectedStyle, productStyles}) => {
 
   const sale = sale_price;
 
-  return (<div className="styleselector">
-    <div className="ss-name">Select Style &#8594; <div className="ss-s-name">{name}</div></div>
-    <div className="ss-price">{sale ? <SalePrice style={selectedStyle} /> : `$${original_price}`}</div>
-    <Thumbnail productStyles={productStyles} setSelectedStyle={setSelectedStyle} style={selectedStyle}/>
-  </div>);
+  return (
+    <div className="styleselector">
+      <div
+        className="ss-name">
+        Select Style &#8594;
+        <div className="ss-s-name">{name}</div>
+      </div>
+      <div
+        className="ss-price">
+        {sale ? <SalePrice style={selectedStyle} /> : `$${original_price}`}
+      </div>
+      <Thumbnail
+        productStyles={productStyles}
+        setSelectedStyle={setSelectedStyle}
+        style={selectedStyle}
+      />
+    </div>
+  );
 };
 
 export default StyleSelector;
