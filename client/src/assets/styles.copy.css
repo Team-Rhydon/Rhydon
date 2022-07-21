@@ -1026,7 +1026,7 @@ tr:nth-child(odd) .table-characteristic {
 .card-price {
   margin: 0;
   color: #000;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.2;
   letter-spacing: .025rem;
 }

@@ -397,13 +397,15 @@ object-fit: cover;
   .add-card {
     border: dashed 1px #767676;
     border-radius: .25em;
-    height: 28.75vw;
+    height: calc(26.8vw + 16px);
     position: relative;
 margin: 0 auto;
 object-fit: cover;
 border-radius: .25em;
 background: whitesmoke;
 text-align: center;
+width: calc(20vw + 8px);
+cursor: pointer;
   }
 
 .add-btn-desc {
@@ -1057,11 +1059,11 @@ tr:nth-child(odd) .table-characteristic {
   margin: 0;
   /* font-size: .875vw; */
   /* font-size: 1.3125vw; */
-  font-size: 1.96875;
+  /* font-size: 1.96875; */
   color: #767676;
-  /* color: black;
-  font-size: 1vw;
-  align-self: center; */
+  /* color: black; */
+  font-size: 1.25vw;
+  align-self: center;
 }
 
 .card-name {
@@ -1070,7 +1072,7 @@ tr:nth-child(odd) .table-characteristic {
   margin: 0; */
 
   margin: 0;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   padding-top: .25rem;
   margin: 0;
   text-align: left;
@@ -1080,9 +1082,10 @@ tr:nth-child(odd) .table-characteristic {
 .card-price {
   margin: 0;
   color: #000;
-  font-size: 1.25vw;
+  font-size: 1.2vw;
   line-height: 1.2;
   letter-spacing: .025vw;
+  align-self: self-end;
 }
 
 .add-btn-desc-container {
@@ -1182,13 +1185,14 @@ padding-bottom: 29.5px;
 }
 
 .outfit-card {
+  height: calc(26.8vw + 8px);
   position: relative;
-  width: 20vw;
+  border: 1px solid #e7e7e7;
+  width: calc(20vw + 10px);
+  padding: 4px;
   display: inline;
   border-radius: .25em;
   margin: auto;
-  height: 28.75vw;
-  cursor: pointer;
 }
 
 .add-btn-plus {

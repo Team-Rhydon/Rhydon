@@ -21,13 +21,9 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
         <div onClick={(e) => {
           updateCurrentProduct(e, id);
         }}className="description">
-          {/* <div className='card-name-div'>
+          <div className='card-name-div'>
           <p className='card-name'>{name}</p>
           <img src={line} className='vertical-line'/>
-          <p className='card-category'>{category}</p>
-          </div> */}
-          <p className='card-name'>{name}</p>
-          <p className='card-category'>{category}</p>
           {salePrice === null ?
           <p className='card-price'>${Math.round(originalPrice)}</p> :
           <>
@@ -35,7 +31,18 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
             <ins>${Math.round(salePrice)}</ins>
           </>
           }
+          </div>
+          {/* <p className='card-name'>{name}</p>
+          <p className='card-category'>{category}</p> */}
           {rating ? <StarRating rating={rating} /> : null}
+          {/* {salePrice === null ?
+          <p className='card-price'>${Math.round(originalPrice)}</p> :
+          <>
+            <del>${Math.round(originalPrice)}</del>
+            <ins>${Math.round(salePrice)}</ins>
+          </>
+          } */}
+            <p className='card-category'>{category}</p>
         </div>
       </div>
     </div>

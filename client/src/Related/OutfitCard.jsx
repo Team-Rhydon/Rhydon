@@ -48,13 +48,13 @@ function OutfitCard({outfit, position, id, removeOutfit}) {
         <img src={closeBtn} className="close-btn center-vert-horz"/>
         </div>
         <div className="description-outfits">
-        {/* <div className='card-name-div'>
+        <div className='card-name-div'>
           <p className='card-name'>{name}</p>
           <img src={line} className='vertical-line'/>
           <p className='card-category'>{category}</p>
-          </div> */}
-          <p className='card-name'>{name}</p>
-          <p className='card-category'>{category}</p>
+          </div>
+          {/* <p className='card-name'>{name}</p>
+          <p className='card-category'>{category}</p> */}
           {salePrice === null ?
           <p className='card-price'>${Math.round(originalPrice)}</p> :
           <>
