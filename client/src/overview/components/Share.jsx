@@ -14,10 +14,10 @@ const Share = (props) => {
         url='https://twitter.com/intent/tweet'
         id="twitter"><FaTwitter />
       </TwitterShareButton>
-      <button
-        url='//assets.pinterest.com/js/pinit.js'
+      <PinterestShareButton
+        url='http://pinterest.com/pin/create/button'
         id="pinterest"><FaPinterestP />
-      </button>
+      </PinterestShareButton>
     </div>
 
   );

@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 import ProductInfo from './components/ProductInfo.jsx';
 import Styles from './components/Styles.jsx';
 
-const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef}) => {
+const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef, cartData, updateCart}) => {
   const [rating, setRating] = useState();
   const [count, setCount] = useState();
   const [product, setProduct] = useState(details);
@@ -48,6 +48,8 @@ const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef}) => {
       ratingsScroll={ratingsScroll}
       ratingsRef={ratingsRef}
       productName={name}
+      cartData={cartData}
+      updateCart={updateCart}
     />
     <ProductInfo product={product}/>
   </div>);

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
 import {VscClose} from 'react-icons/vsc';
-import {MdDeleteOutline} from 'react-icons/md';
+import {TbShoppingCartX} from 'react-icons/tb';
 
 const Cart = ({showCart, cartData, setCart, updateCart}) => {
   if (!showCart || !cartData) return null;
@@ -37,21 +37,23 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
             <div className='cart-line'></div>
           </div>
           <div className='cart-container'>
-            {checkout
-              ? checkout.map((product, i) => (
-              <div className='cart-product'key={i}>
-                <img className="cart-image" src={product.photo} witdh="25" height="25"/>
-                <div className='cart-props'>
-                  <p className='cart-name'>{product.name}</p>
-                  <p className='cart-style'>{product.style} </p>
-                  <p className='cart-price'>${product.price} </p>
-                  <p className='cart-size'>Size : {product.size} </p>
-                  <p className='cart-quantity'>Quantity : {product.quantity} </p>
-                  <MdDeleteOutline onClick={() => rmItem(i)}/>
+            <div className='product-container'>
+              {checkout
+                ? checkout.map((product, i) => (
+                <div className='cart-product'key={i}>
+                  <img className="cart-image" src={product.photo} witdh="25" height="25"/>
+                  <div className='cart-props'>
+                    <p className='cart-name'>{product.name}</p>
+                    <p className='cart-style'>{product.style} </p>
+                    <p className='cart-price'>${product.price}</p>
+                    <p className='cart-size'>Size : {product.size} </p>
+                    <p className='cart-quantity'>Quantity : {product.quantity} </p>
+                    <TbShoppingCartX className='c-del-item' onClick={() => rmItem(i)}/>
+                  </div>
                 </div>
-              </div>
-              ))
-              : <h3> EMPTY </h3>}
+                ))
+                : <h3> EMPTY </h3>}
+            </div>
             <div className='cart-side'>
               <div className='side-props'>
                 <div className='quant-container'>
