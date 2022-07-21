@@ -1202,3 +1202,66 @@ padding-bottom: 29.5px;
   font-size: 4vw;
   font-weight: bold;
 }
+
+.search-btn.hidden {
+  display: none;
+}
+
+.search.hidden {
+  display: none;
+}
+
+.search-btn-container {
+  position: relative;
+  height: 3vh;
+  width: 3vh;
+  background: black;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.search-close-btn-container {
+  position: relative;
+  height: 3vh;
+  width: 3vh;
+  z-index: 5;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.header-search {
+  height: 3vh;
+  margin: 0;
+  padding: 0;
+}
+
+.search {
+  display: flex;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-close-btn {
+  position: relative;
+  font-size: 2vh;
+}
+
+.search-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(35deg) brightness(102%) contrast(103%);
+  width: 2vh;
+  height: 2vh;
+}
+
+.search-icon-init {
+  height: 24px;
+  width: 24px;
+}
+
+.search-icon-init-text {
+  font-size: 12px;
+}
