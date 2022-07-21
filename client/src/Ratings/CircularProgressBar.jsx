@@ -41,10 +41,10 @@ class CircularProgressBar extends React.Component {
             y="40%"
             dy=".3em"
             textAnchor="middle">
-            {`${this.props.trait}:`}
+            {`${this.props.trait}`}
           </text>
           <text
-            className="circle-text"
+            className="circle-value"
             x="50%"
             y="65%"
             dy=".3em"

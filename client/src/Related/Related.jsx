@@ -133,10 +133,13 @@ function Related({product, updateCurrentProduct, hidePreview}) {
 
   return (
     <div className="related">
-      <h2 className="widget-title">RELATED PRODUCTS</h2>
+      <div className="title-div">
+      <h5 className="title">Related Products</h5>
+      <p className="title-lines"></p>
+      </div>
       <div className="carousel">
-        <div className='carousel-prev-container hidden'>
-        <img src={prevArrow} onClick={(e) => moveRelatedLeft(e)} className="carousel-prev"/>
+        <div onClick={(e) => moveRelatedLeft(e)} className='carousel-prev-container hidden'>
+        <img src={prevArrow} className="carousel-prev center-vert-horz"/>
         </div>
         <div className="carousel-inner">
           {Object.keys(cards).map((id, index) => <RelatedCard
@@ -145,8 +148,8 @@ function Related({product, updateCurrentProduct, hidePreview}) {
             setPreview={setPreview}
             position={carouselPos.current[id]} />)}
         </div>
-        <div className='carousel-next-container hidden'>
-        <img src={nextArrow} onClick={(e) => moveRelatedRight(e)} className="carousel-next"/>
+        <div onClick={(e) => moveRelatedRight(e)} className='carousel-next-container hidden'>
+        <img src={nextArrow} className="carousel-next center-vert-horz"/>
         </div>
       </div>
       {Object.keys(imagePreview).length !== 0 ? <RelatedPreview url={imagePreview} setPreview={setPreview}/> : null}
