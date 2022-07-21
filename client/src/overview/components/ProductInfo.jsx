@@ -13,9 +13,23 @@ const ProductInfo = ({product}) => {
 
   return (
     <div className="o-details">
-      <div className={toggleDescription ? 'o-description-icon-container-open' : 'o-description-icon-container'}>
-        <h5 onClick={displayDescription} className="pi-description">Description</h5>
-        {toggleDescription ? <AiOutlineMinus onClick={displayDescription} className="pi-minus"/> : <AiOutlinePlus onClick={displayDescription}className="pi-plus"/>}
+      <div
+        className={toggleDescription
+          ? 'o-description-icon-container-open'
+          : 'o-description-icon-container'}
+        >
+        <h5
+          onClick={displayDescription}
+          className="pi-description"
+          >Description
+        </h5>
+        {toggleDescription
+          ? <AiOutlineMinus
+            onClick={displayDescription}
+            className="pi-minus"/>
+          : <AiOutlinePlus
+            onClick={displayDescription}
+            className="pi-plus"/>}
       </div>
       {toggleDescription ? <Description {...product} /> : null}
     </div>

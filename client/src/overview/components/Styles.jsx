@@ -6,7 +6,7 @@ import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
 import Share from './Share.jsx';
 
-const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef}) => {
+const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef, productName, cartData, updateCart}) => {
   const {results} = styles;
   const [productStyles, setProductStyles] = useState();
   const [selectedStyle, setSelectedStyle] = useState();
@@ -16,19 +16,19 @@ const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef}) => 
     setProductStyles(results);
   }, []);
 
-  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count, ratingsScroll, ratingsRef};
+  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count, ratingsScroll, ratingsRef, productName, cartData, updateCart};
 
   return (
     <div className="overview-styles">
       <ImageGallery {...commonProps}/>
       <section className="o-sidebar">
-        <StyleSelector {...commonProps}/>
-        <AddToCart {...commonProps}
-        // productStyles={productStyles}
-        // selectedStyle={selectedStyle}
-        // setSelectedStyle={setSelectedStyle}
-        />
-        <Share />
+          <StyleSelector {...commonProps}/>
+          <AddToCart {...commonProps}
+          // productStyles={productStyles}
+          // selectedStyle={selectedStyle}
+          // setSelectedStyle={setSelectedStyle}
+          />
+          <Share />
       </section>
     </div>
   );

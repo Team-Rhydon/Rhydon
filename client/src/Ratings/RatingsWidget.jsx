@@ -24,13 +24,14 @@ const RatingsWidget = (props)  => {
   }, [filter]);
 
   return (
-    <div ref={props.ratingsRef} className="RatingWidget">
+    <div className="RatingWidget">
       <div className="Ratings-Breakdown">
         <RatingBreakdown
           setFilter={setFilter}
           filter={filter}
           isFiltered={isFiltered}
           product={props.meta}
+          ratingsRef={props.ratingsRef}
         />
         <ProductBreakdown
           traits={props.meta.characteristics}

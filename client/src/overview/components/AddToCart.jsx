@@ -4,8 +4,12 @@
 import React, {useState} from 'react';
 import SizeSelector from './SizeSelector.jsx';
 import Cart from './Cart.jsx';
+import {FaReact} from 'react-icons/fa'
+// import {GiOctopus} from 'react-icons/gi'
+import octo from '../../assets/icons/octo.png';
 
-const AddToCart = ({selectedStyle}) => {
+
+const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCart}) => {
   if (!selectedStyle) return null;
 
   const {name, original_price, sale_price, photos} = selectedStyle;
@@ -16,14 +20,16 @@ const AddToCart = ({selectedStyle}) => {
     price: sale_price || original_price,
     photo: photos[0].url,
   });
-  const [cartData, updateCart] = useState([]);
+
   const [showCart, setCart] = useState(false);
+  const [like, setLike] = useState(false);
 
   const fillCart = () => {
     setCart(true);
     updateCart((prevState) => {
       return [{
-        name: purchase.name,
+        name: productName,
+        style: purchase.name,
         photo: purchase.photo,
         price: purchase.price,
         quantity: purchase.quantity,
@@ -32,11 +38,40 @@ const AddToCart = ({selectedStyle}) => {
     });
   };
 
-  return (<div className="s-addtocart">
-    <SizeSelector selectedStyle={selectedStyle} setPurchase={setPurchase}/>
-    <button className="s-add-button" onClick={fillCart} disabled={!purchase.complete}>Add To Cart</button>
-    {showCart ? <Cart showCart={showCart} setCart={setCart} cartData={cartData} updateCart={updateCart}/> : null}
-  </div>);
+  return (
+    <div className="s-addtocart">
+      <SizeSelector
+        selectedStyle={selectedStyle}
+        setPurchase={setPurchase}
+      />
+      <div className="add-love-buttons">
+        <button
+        className="s-add-button"
+        onClick={() => fillCart()}
+        disabled={!purchase.complete}
+        >
+          Add To Cart
+        </button>
+        <button
+          className={like ? 'lovey-button' : 'lovey-button to-love-button'}
+          onClick={() => setLike(!like)}
+          >
+            {like
+            ? <img className="octo-button" src={octo}/>
+            : <FaReact className="react-button" />}
+        </button>
+      </div>
+      {showCart
+        ? <Cart
+            showCart={showCart}
+            setCart={setCart}
+            cartData={cartData}
+            updateCart={updateCart}
+          />
+        : null
+      }
+    </div>
+  );
 };
 
 export default AddToCart;

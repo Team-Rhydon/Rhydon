@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 const axios = require("axios");
 import StarRating from "../Related/StarRating.jsx";
 
-function RatingBreakdown({setFilter, filter, isFiltered, product }) {
+function RatingBreakdown({setFilter, filter, isFiltered, product, ratingsRef }) {
   const [ratings, setRatings] = useState(product.ratings);
   // const [recommended, setRecommended] = useState(product.recommended)
   let {recommended} = product;
@@ -17,7 +17,7 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
   }
 
   return (
-    <div className="Star-Ratings">
+    <div ref={ratingsRef} className="Star-Ratings">
       {/* each column should display a ratio of #reviewsofthisstarcategory/#totalreviews */}
       <div className="Ratings-Reviews-Summary">
         <h2>Rating and Reviews </h2>

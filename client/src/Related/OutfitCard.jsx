@@ -2,6 +2,7 @@ import React from 'react';
 import StarRating from './StarRating.jsx';
 import closeBtn from '../assets/icons/xmark-solid.svg';
 import image_placeholder from '../assets/icons/No-Image-Placeholder.svg';
+import line from '../assets/icons/thick-vertical-line.png';
 function OutfitCard({outfit, position, id, removeOutfit}) {
   if (!outfit) {
     return;
@@ -46,9 +47,14 @@ function OutfitCard({outfit, position, id, removeOutfit}) {
         }}>
         <img src={closeBtn} className="close-btn center-vert-horz"/>
         </div>
-        <div className="description">
+        <div className="description-outfits">
+        <div className='card-name-div'>
           <p className='card-name'>{name}</p>
+          <img src={line} className='vertical-line'/>
           <p className='card-category'>{category}</p>
+          </div>
+          {/* <p className='card-name'>{name}</p>
+          <p className='card-category'>{category}</p> */}
           {salePrice === null ?
           <p className='card-price'>${Math.round(originalPrice)}</p> :
           <>
