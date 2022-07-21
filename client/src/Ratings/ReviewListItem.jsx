@@ -75,11 +75,13 @@ function ReviewListItem({review, filter, isFiltered}) {
               />
         </span>
         {!review.response
-        ? null
-        : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
+          ? null
+          : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>
+        }
         {!review.recommend
-        ? null
-        :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>}
+          ? null
+          :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>
+        }
         <div className="Review-Puts">
           <span >Was this helpful?
             <button className="put-btn" onClick={e => sendPut(e, "helpful")}>({(isHelpful? 1 : 0) + review.helpfulness}) </button>

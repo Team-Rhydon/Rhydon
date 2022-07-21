@@ -76,6 +76,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
           </div>}
       </div>),
+
     2:(<div className="tab">
         <h3> *Would you recommend this product to others?*</h3>
         <span>I would:
@@ -84,8 +85,16 @@ function NewReviewForm(props) {
             :<span className="recommend">{recommended ? "✓" : "✗"} </span> }
         </span>
         <div className="container-rbtn">
-          <Button color={JSON.stringify(recommended)} text={"Yes"} setStatus={setRecommended} />
-          <Button color={JSON.stringify(recommended)} text={"No"} setStatus={setRecommended} />
+          <Button
+            color={JSON.stringify(recommended)}
+            text={"Yes"}
+            setStatus={setRecommended}
+          />
+          <Button
+            color={JSON.stringify(recommended)}
+            text={"No"}
+            setStatus={setRecommended}
+          />
         </div>
         <div></div>
         {recommendedRef.current === recommended
@@ -95,6 +104,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
           </div>}
       </div>),
+
     3:(<div className="tab">
       <h3>*Please rate the {props.details.name} on the following*: </h3>
         <Characteristics page={setPage} chars={props.product.characteristics} setChars={setCharacteristics} />
@@ -105,6 +115,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div >}
       </div>),
+
     4:(<div className="tab">
       <h3>Please give a one sentence summary of how you feel about the {props.details.name}</h3>
         <Summary setSum={setSummary} />
@@ -113,6 +124,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>
       </div>),
+
     5:(<div className="tab">
       <h3>*Please let us know exactly how you feel about the {props.details.name}.* </h3>
         <Body  page={setPage} setBody={setBody} />
@@ -123,6 +135,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>}
         </div>),
+
     6:( <div className="tab">
       <h3>Enhance your review with your photos!</h3>
         <ReviewPhotos setPhotos={setPhotos} />
@@ -131,6 +144,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>
       </div>),
+
     7:(<div className="tab">
       <h3>*Enter your info*</h3>
           <UserInfo page= {setPage} setName={setName} setEmail={setEmail} />
@@ -141,6 +155,7 @@ function NewReviewForm(props) {
             <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
         </div>}
       </div> ),
+
     8:<div className="tab">
         <h3>Please take a moment to verify your review!</h3>
         <div className="Submit-Form">
@@ -155,16 +170,17 @@ function NewReviewForm(props) {
           <div className="Submit-Form-page row-a" onClick={()=>setPage(3)}>
             <span className="form-col-1">Characteristics: </span>
             {!characteristics
-            ? null
-            :<span className="form-col-2">
-              {Object.entries(props.product.characteristics).map(([char, {id}]) => {
-              return (
-              <span className="reviewsubmitchars" key={id}>
-                <span>{char}: {characteristics[id]}</span>
-                <br></br>
-              </span>)
-            })}
-            </span>}
+              ? null
+              :<span className="form-col-2">
+                {Object.entries(props.product.characteristics).map(([char, {id}]) => {
+                  return (
+                  <span className="reviewsubmitchars" key={id}>
+                    <span>{char}: {characteristics[id]}</span>
+                    <br></br>
+                  </span>)
+                })}
+              </span>
+            }
           </div>
           <div className="Submit-Form-page row-b" onClick={()=>setPage(4)}>
             <span className="form-col-1">Summary: </span>

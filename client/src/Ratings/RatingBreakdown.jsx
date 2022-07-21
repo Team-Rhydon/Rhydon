@@ -22,7 +22,10 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
       <div className="Star-Bars">
         {Object.keys(ratingBars).sort((a, b)=> {a-b; return -1}).map((star, i) => {
           return (
-            <div className="StarNumber" key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
+            <div className="StarNumber"
+              key={i}
+              onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
+
               <p> {star} Stars: {parseInt(100 * ratingBars[star])}%</p>
               <div className="meter">
                 <span style={{width: `${100 * ratingBars[star]}%`}}></span>
@@ -31,13 +34,14 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
         })}
         <div>
           {isFiltered
-          ?<span>Displaying
-            {Object.keys(filter).map((key, i) => {return filter[key] ? <span key={i}> {key} </span>: null})}
-            star reviews
-            <br></br>
-            <button onClick={e=> setFilter({1: false, 2: false, 3: false, 4: false, 5: false})}>Remove Filters</button>
-          </span>
-          : null}
+            ?<span>Displaying
+              {Object.keys(filter).map((key, i) => {return filter[key] ? <span key={i}> {key} </span>: null})}
+              star reviews
+              <br></br>
+              <button onClick={e=> setFilter({1: false, 2: false, 3: false, 4: false, 5: false})}>Remove Filters</button>
+            </span>
+            :null
+          }
         </div>
       </div>
       <br></br>
@@ -46,8 +50,8 @@ function RatingBreakdown({setFilter, filter, isFiltered, product }) {
         <span>
           <h2>{rating.toFixed(2)}
           {rating
-            ? <StarRating rating={rating.toFixed(4)}/>
-            : "loading"
+            ?<StarRating rating={rating.toFixed(4)}/>
+            :"loading"
           }
           </h2>
         </span>

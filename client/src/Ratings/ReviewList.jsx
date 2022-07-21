@@ -70,26 +70,27 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
       </div>
       <div className="ReviewContainer-scrollable">
         {!storage.length
-        ?null
-        :storage
-        .filter(review=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
-        .slice(0, reviews)
-        .map((review, i) => {
-          return (
-            <div key={i}>
-              <ReviewListItem
-                filter={filter}
-                review={review}
-                isFiltered={isFiltered}
-              />
-            </div>
-          );
-        })}
+          ?null
+          :storage
+            .filter(review=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
+            .slice(0, reviews)
+            .map((review, i) => {
+              return (
+                <div key={i}>
+                  <ReviewListItem
+                    filter={filter}
+                    review={review}
+                    isFiltered={isFiltered}
+                  />
+                </div>
+              );
+            })
+        }
       </div>
       <div className="ReviewListFooter" style={{display: 'flex'}}>
-        {reviews >= storage.length ?
-          null:
-            <button id="review-btn" onClick={handleClick}>More Reviews</button>
+        {reviews >= storage.length
+          ?null
+          :<button id="review-btn" onClick={handleClick}>More Reviews</button>
         }
         <button id="open-modal-btn" onClick={()=>setShow(true)} > Review this Product</button>
         <Modal

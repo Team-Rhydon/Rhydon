@@ -32,7 +32,10 @@ const RatingsWidget = (props)  => {
           isFiltered={isFiltered}
           product={props.meta}
         />
-        <ProductBreakdown traits={props.meta.characteristics} product={props.meta} />
+        <ProductBreakdown
+          traits={props.meta.characteristics}
+          product={props.meta}
+        />
       </div>
       <br></br>
       <div className="reviewBody">
