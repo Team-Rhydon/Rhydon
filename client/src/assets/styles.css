@@ -1085,7 +1085,7 @@ tr:nth-child(odd) .table-characteristic {
 }
 
 .circle-progress {
-  stroke: rgb(0, 255, 26);
+  stroke: rgb(51, 179, 0);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1148,7 +1148,7 @@ tr:nth-child(odd) .table-characteristic {
 }
 
 .spacer {
-  min-height: 3vh;
+  min-height: 5vh;
 }
 
 .recommend-select {
