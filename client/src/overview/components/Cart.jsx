@@ -32,8 +32,9 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
     <div>
       <div className='c-overlay'>
         <div className='c-modal-style'>
-          <div>
+          <div className='c-title-container'>
             <div className='cart-title'>Succesfully Added To Cart</div>
+            <div className='cart-line'></div>
           </div>
           <div className='cart-container'>
             {checkout
@@ -52,17 +53,19 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
               ))
               : <h3> EMPTY </h3>}
             <div className='cart-side'>
-              <div>
-                <p>Quantity</p>
-                <p>
-                  {checkout.length > 1
-                     ? `${checkout.length} items`
-                     : '1 item'
-                  }
-                </p>
-                <div>
-                  <p>Subtotal</p>
-                  <p>{totalPrice}</p>
+              <div className='side-props'>
+                <div className='quant-container'>
+                  <p>Quantity</p>
+                  <p>
+                    {checkout.length > 1
+                      ? `${checkout.length} items`
+                      : '1 item'
+                    }
+                  </p>
+                </div>
+                <div className='price-container'>
+                  <p className='c-total-description'>Subtotal</p>
+                  <p className='c-total-price'>${totalPrice}.00</p>
                 </div>
               </div>
               <div className='cart-exits'>
