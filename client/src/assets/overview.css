@@ -312,6 +312,7 @@
   border-width: .01px;
   border-radius: 3px;
   border-color: lightgray;
+  border-style: solid;
   background-color: white;
 }
 
@@ -333,12 +334,13 @@
 }
 
 
-.sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover, .view-bag, .keep-shopping{
-  cursor: pointer;
+.sizebuttons:hover, .s-add-button:enabled, .view-bag, .keep-shopping{
+  cursor: pointer ;
 }
 
-.twitter:hover, .facebook:hover, .pinterest:hover {
-  background-color: black;
+#twitter:hover, #facebook:hover, #pinterest:hover {
+  cursor: pointer !important;
+  background-color: black !important;
   -webkit-transition: all 600ms ease;
   -moz-transition: all 600ms ease;
   -ms-transition: all 600ms ease;
@@ -355,6 +357,7 @@
   width: 318px;
   height: 35px;
   margin: 10px 0px 0px 2px;
+  border-color: lightgray;
   border-radius: 2px;
 }
 
@@ -365,25 +368,24 @@
   padding: 5px;
 }
 
-.facebook, .twitter, .pinterest {
-  width: 104.1px;
+#facebook, #twitter, #pinterest {
+  width: 104.1px ;
   height: 35px;
-  padding-right: 6px;
+  padding-right: 6px !important;
   margin: 2px;
-  border-width: .01px;
+  border: 1px solid lightgray !important;
   border-radius: 3px;
-  border-color: lightgray;
-  background-color: white;
+  background-color: white !important;
 }
 
-.facebook {
-  color: rgb(55, 111, 255);
+#facebook {
+  color: rgb(55, 111, 255) !important;
 }
-.twitter {
-  color: rgb(183, 203, 255);
+#twitter {
+  color: rgb(183, 203, 255) !important;
 }
-.pinterest {
-  color: rgb(255, 48, 48);
+#pinterest {
+  color: rgb(255, 48, 48) !important;
 }
 
 .o-details {
