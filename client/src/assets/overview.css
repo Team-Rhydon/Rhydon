@@ -333,7 +333,7 @@
 }
 
 
-.sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover {
+.sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover, .view-bag, .keep-shopping{
   cursor: pointer;
 }
 
