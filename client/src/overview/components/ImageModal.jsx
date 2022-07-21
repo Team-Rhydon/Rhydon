@@ -30,6 +30,7 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
           <img
             className="i-modal-image"
             src={currentImage.url}
+            alt=''
           />
           <ExpandedIcons
             className="i-expanded-icons"

@@ -65,6 +65,7 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                 className='m-carousel-image'
                 onClick={() => setImageModal(true)}
                 src={url} key={i}
+                alt=''
               />
               <img
                 className="m-logo"
