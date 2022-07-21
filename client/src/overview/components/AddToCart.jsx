@@ -11,7 +11,6 @@ import octo from '../../assets/icons/octo.png';
 
 const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCart}) => {
   if (!selectedStyle) return null;
-  console.log(productName);
 
   const {name, original_price, sale_price, photos} = selectedStyle;
 
