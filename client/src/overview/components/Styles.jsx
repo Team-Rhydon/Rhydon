@@ -6,17 +6,18 @@ import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
 import Share from './Share.jsx';
 
-const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef}) => {
+const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef, productName}) => {
   const {results} = styles;
   const [productStyles, setProductStyles] = useState();
   const [selectedStyle, setSelectedStyle] = useState();
+
 
   useEffect(() => {
     setSelectedStyle(results[0]);
     setProductStyles(results);
   }, []);
 
-  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count, ratingsScroll, ratingsRef};
+  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count, ratingsScroll, ratingsRef, productName};
 
   return (
     <div className="overview-styles">

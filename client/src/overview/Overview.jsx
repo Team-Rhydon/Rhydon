@@ -47,6 +47,7 @@ const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef}) => {
       count={count}
       ratingsScroll={ratingsScroll}
       ratingsRef={ratingsRef}
+      productName={name}
     />
     <ProductInfo product={product}/>
   </div>);

@@ -109,12 +109,22 @@
   color: white;
   background-color: rgb(146, 146, 146);
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .s-expand:hover {
   cursor: pointer;
   color: white;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .slide {
@@ -164,6 +174,11 @@
 .ms-arrowup:hover, .ms-arrowdown:hover{
   cursor: pointer;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .styleselector {
@@ -219,7 +234,12 @@
   height: 47px;
   border-style: double;
   border-width: 7px;
-  border-color: rgba(186, 186, 186, 0.747);
+  border-color: rgba(0, 0, 0, 0.747);
+  -webkit-transition: all 50ms ease;
+  -moz-transition: all 50ms ease;
+  -ms-transition: all 50ms ease;
+  -o-transition: all 50ms ease;
+  transition: all 50ms ease;
 }
 
 .selected-thumbnail {
@@ -305,11 +325,25 @@
   border-radius: 3px;
   border-color: lightgray;
   background-color: rgb(0, 0, 0);
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 
 .sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover {
   cursor: pointer;
+}
+
+.twitter:hover, .facebook:hover, .pinterest:hover {
+  background-color: black;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .sizebuttons-picked:hover {
@@ -318,7 +352,7 @@
 
 .quantity-selector {
   text-align: center;
-  width: 321px;
+  width: 318px;
   height: 35px;
   margin: 10px 0px 0px 2px;
   border-radius: 2px;
@@ -468,6 +502,11 @@
 .pi-minus:hover, .pi-plus:hover {
   cursor: pointer;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-overlay {
@@ -555,12 +594,22 @@
   color: white;
   background-color: rgb(146, 146, 146);
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-minimize:hover:hover {
   cursor: pointer;
   color: white;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .o-description-container {
@@ -614,6 +663,11 @@
 .i-filler:hover {
   cursor: pointer;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-chosen{
@@ -635,9 +689,13 @@
   background-color: rgb(40, 44, 52);
   border-radius: 3px;
   border-width: .2px;
-  width: 99px;
+  width: 103px;
   height: 50px;
   margin: 5px 0px 5px 4px;
+}
+
+.lovey-button:hover {
+  cursor: pointer;
 }
 
 .react-button {
@@ -655,7 +713,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0 , .7);
-  z-index: 1000;
+  z-index: 900;
 }
 
 .c-modal-style {
@@ -664,8 +722,76 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFF;
-  padding: 5px;
+  padding: 0px 16px 16px 16px;
   width: 700px;
   border-radius: 5px;
   z-index: 1000;
+}
+
+.cart-title {
+  display: flex;
+  justify-content: start;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 600;
+  padding: 10px 0px 10px;
+}
+
+.cart-image {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 3px;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+}
+
+.cart-product {
+  display: flex;
+  width: 65%;
+}
+
+.cart-side {
+  align-content: center;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.cart-exits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.keep-shopping {
+  align-self: center;
+  background-color: rgb(255, 255, 255);
+  border-radius:3px;
+  width: 150px;
+  height: 50px;
+  margin: 5px 0px 10px 6px;
+}
+
+.view-bag {
+  align-self: center;
+  color: white;
+  background-color: red;
+  border-radius:3px;
+  width: 150px;
+  height: 50px;
+  margin: 5px 0px 10px 6px;
+}
+
+.cart-props {
+  padding-left: 5px;
+}
+
+.cart-name {
+  font-size: 25px;
 }

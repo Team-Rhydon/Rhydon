@@ -1,62 +1,81 @@
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
-
-const MODAL_STYLES = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: '#FFF',
-  padding: '100px',
-  zIndex: 1000,
-};
-
-const OVERLAY_STYLES = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0 , .7)',
-  zIndex: 1000,
-};
+import {VscClose} from 'react-icons/vsc';
+import {MdDeleteOutline} from 'react-icons/md';
 
 const Cart = ({showCart, cartData, setCart, updateCart}) => {
   if (!showCart || !cartData) return null;
 
   const [checkout, setCheckout] = useState(cartData);
+  const [totalPrice, setPrice] = useState()
+
 
   const rmItem = (key) => {
     const filtered = cartData.filter((product, i) => i !== key);
     updateCart(filtered);
   };
 
+  let countTotal = () => {
+    let total = parseInt(cartData[0].price);
+    for (let i = 1; i < cartData.length; i++) {
+      total += parseInt(cartData[i].price);
+    }
+    setPrice(total);
+  }
+
   useEffect(() => {
-
-      setCheckout((prevState) => cartData)
-  }, [cartData]);
-
-
+    setCheckout(cartData)
+    cartData.length > 0 ? countTotal() : setCart(false)
+  }, [cartData, checkout]);
 
   return (
     <div>
       <div className='c-overlay'>
         <div className='c-modal-style'>
           <div>
-            <h3> Cart </h3>
+            <div className='cart-title'>Succesfully Added To Cart</div>
           </div>
-          {checkout.map((product, i) => (
-            <div key={i}>
-              <img src={product.photo} witdh="25" height="25"/>
-              <span>Product : {product.name} </span>
-              <span>Price : ${product.price} </span>
-              <span>Quantity : {product.quantity} </span>
-              <span>Size : {product.size} </span>
-              <span><button onClick={() => rmItem(i)}>Remove</button></span>
+          <div className='cart-container'>
+            {checkout
+              ? checkout.map((product, i) => (
+              <div className='cart-product'key={i}>
+                <img className="cart-image" src={product.photo} witdh="25" height="25"/>
+                <div className='cart-props'>
+                  <p className='cart-name'>{product.name}</p>
+                  <p className='cart-style'>{product.style} </p>
+                  <p className='cart-price'>${product.price} </p>
+                  <p className='cart-size'>Size : {product.size} </p>
+                  <p className='cart-quantity'>Quantity : {product.quantity} </p>
+                  <MdDeleteOutline onClick={() => rmItem(i)}/>
+                </div>
+              </div>
+              ))
+              : <h3> EMPTY </h3>}
+            <div className='cart-side'>
+              <div>
+                <p>Quantity</p>
+                <p>
+                  {checkout.length > 1
+                     ? `${checkout.length} items`
+                     : '1 item'
+                  }
+                </p>
+                <div>
+                  <p>Subtotal</p>
+                  <p>{totalPrice}</p>
+                </div>
+              </div>
+              <div className='cart-exits'>
+                <button
+                  className='view-bag'
+                  onClick={() => setCart(false)}>View Bag & Checkout
+                </button>
+                <button
+                  className='keep-shopping'
+                  onClick={() => setCart(false)}>Continue Shopping</button>
+              </div>
             </div>
-          ))}
-          <div>
-            <button onClick={() => setCart(false)}>Close Cart</button>
+
           </div>
         </div>
       </div>

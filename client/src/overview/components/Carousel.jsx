@@ -55,7 +55,10 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
     <section className="slider">
       <MiniSlides {...passProps}/>
       {gallery.map(({url}, i) => (
-        <div className={i === currentImage.count ? 'slide active' : 'slide'} key={i}>
+        <div
+          className={i === currentImage.count ? 'slide active' : 'slide'}
+          key={i}
+        >
           {i === currentImage.count && (
             <div className="m-carousel">
               <img

@@ -9,8 +9,9 @@ import {FaReact} from 'react-icons/fa'
 import octo from '../../assets/icons/octo.png';
 
 
-const AddToCart = ({selectedStyle}) => {
+const AddToCart = ({selectedStyle, productName}) => {
   if (!selectedStyle) return null;
+  console.log(productName);
 
   const {name, original_price, sale_price, photos} = selectedStyle;
 
@@ -28,7 +29,8 @@ const AddToCart = ({selectedStyle}) => {
     setCart(true);
     updateCart((prevState) => {
       return [{
-        name: purchase.name,
+        name: productName,
+        style: purchase.name,
         photo: purchase.photo,
         price: purchase.price,
         quantity: purchase.quantity,
