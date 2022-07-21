@@ -46,7 +46,7 @@ const ReviewPhotos = props => {
       {photoStorage.map((photoSrc, index) => <div key={index}>
         {photoSrc}
         <span>Image # {index + 1}</span>
-          <img style={{height: "5vh", width: "5vw"}}  src={photoSrc} />
+          <img style={{height: "5em", width: "5em"}}  src={photoSrc} />
           <br></br>
       </div>)}
       <button className="submit-btn" type="submit" onClick={handleSubmit}>Submit Photos</button>

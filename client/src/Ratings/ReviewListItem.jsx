@@ -53,7 +53,7 @@ function ReviewListItem({review, filter, isFiltered}) {
       <div className="ReviewBody">
         {review.body.length > shortBody
           ?<span className="ReviewText">{review.body.slice(0, 249) + '...'}
-              <button onClick={e=> setShortBody(1000)}>Read More</button>
+              <button className="read-more-btn" onClick={e=> setShortBody(1000)}>Read More</button>
             </span>
           :<span className="ReviewText">{review.body}</span>
         }

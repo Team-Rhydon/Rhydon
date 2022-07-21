@@ -14,8 +14,8 @@ class CircularProgressBar extends React.Component {
 
     return (
       <svg className="circle"
-          width={this.props.sqSize}
-          height={this.props.sqSize}
+          width="5vw"
+          height="5vw"
           viewBox={viewBox}>
         <circle
           className="circle-background"

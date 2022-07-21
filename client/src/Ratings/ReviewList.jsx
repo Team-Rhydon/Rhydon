@@ -44,9 +44,9 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
     prevSortStyleRef.current = sortStyle;
     axios.get('/reviews', params)
         .then((response) => {
-          return setStorage(prevStorage=> {
+          setStorage(prevStorage=> {
             return [...prevStorage, ...response.data.results]});
-        }).catch(console.log('err getting reviews'));
+        }).catch(err=> console.log('err getting revierrews'));
   }, [page, product_id, sortStyle, count]);
 
   function handleClick() {
@@ -76,13 +76,12 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
             .slice(0, reviews)
             .map((review, i) => {
               return (
-                <div key={i}>
-                  <ReviewListItem
-                    filter={filter}
-                    review={review}
-                    isFiltered={isFiltered}
-                  />
-                </div>
+                <ReviewListItem
+                  key={i}
+                  filter={filter}
+                  review={review}
+                  isFiltered={isFiltered}
+                />
               );
             })
         }

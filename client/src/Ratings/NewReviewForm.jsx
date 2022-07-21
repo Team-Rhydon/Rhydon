@@ -1,8 +1,6 @@
 import React, {useState, useRef} from "react";
-import Body from "./NewReviewPages/Body.jsx";
 import Characteristics from "./NewReviewPages/Characteristics.jsx";
 import ReviewPhotos from "./NewReviewPages/ReviewPhotos.jsx";
-import Summary from "./NewReviewPages/Summary.jsx";
 import UserInfo from "./NewReviewPages/UserInfo.jsx";
 import Button from './NewReviewPages/Button.jsx';
 const axios = require("axios");
@@ -17,13 +15,7 @@ function NewReviewForm(props) {
   const [photos, setPhotos] = useState(['']);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-
-  let ratingRef = useRef(rating);
-  let recommendedRef = useRef(recommended);
-  let characteristicsRef = useRef(characteristics);
-  let bodyRef = useRef(body);
-  let nameRef = useRef(name);
-  let emailRef = useRef(email);
+ //refactor using usereducer
 
   let sendPostRequest =(event) => {
 
@@ -70,21 +62,13 @@ function NewReviewForm(props) {
           })}
           <span>{rating === 0 ? null : rating + " STAR RATING -"}  {[null, "Poor", "Fair", "Average", "Good", "Great!"][rating]}</span>
         </div>
-        {ratingRef.current === rating
-          ? null
-          :<div className="prev-next">
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-          </div>}
-      </div>),
-
-    2:(<div className="tab">
         <h3> *Would you recommend this product to others?*</h3>
-        <span>I would:
+        <span className="recommend-select">
+          <span>I would:</span>
           {recommended === null
             ?<span className="recommend"> </span>
-            :<span className="recommend">{recommended ? "✓" : "✗"} </span> }
-        </span>
-        <div className="container-rbtn">
+            :<span className="recommend">{recommended ? "✓" : "✗"} </span>
+          }
           <Button
             color={JSON.stringify(recommended)}
             text={"Yes"}
@@ -95,79 +79,32 @@ function NewReviewForm(props) {
             text={"No"}
             setStatus={setRecommended}
           />
-        </div>
-        <div></div>
-        {recommendedRef.current === recommended
-          ?null
-          :<div className="prev-next">
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-          </div>}
-      </div>),
-
-    3:(<div className="tab">
-      <h3>*Please rate the {props.details.name} on the following*: </h3>
+        </span>
+        <h3>*Please rate the {props.details.name} on the following*: </h3>
         <Characteristics page={setPage} chars={props.product.characteristics} setChars={setCharacteristics} />
-        {characteristicsRef.current === characteristics
-        ?null
-        :<div className="prev-next">
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-        </div >}
+        {/* implement a return to page 3 button */}
       </div>),
 
-    4:(<div className="tab">
-      <h3>Please give a one sentence summary of how you feel about the {props.details.name}</h3>
-        <Summary setSum={setSummary} />
-        <div className="prev-next">
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-        </div>
+    2:(<div className="tab">
+      <UserInfo details={props.details} setPhotos={setPhotos} setBody={setBody} setSum={setSummary} page={setPage} setName={setName} setEmail={setEmail} />
+      {/* implement a return to submit form page */}
       </div>),
 
-    5:(<div className="tab">
-      <h3>*Please let us know exactly how you feel about the {props.details.name}.* </h3>
-        <Body  page={setPage} setBody={setBody} />
-        {bodyRef.current === body
-        ?null
-        :<div className="prev-next">
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-        </div>}
-        </div>),
-
-    6:( <div className="tab">
-      <h3>Enhance your review with your photos!</h3>
-        <ReviewPhotos setPhotos={setPhotos} />
-        <div className="prev-next">
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-        </div>
-      </div>),
-
-    7:(<div className="tab">
-      <h3>*Enter your info*</h3>
-          <UserInfo page= {setPage} setName={setName} setEmail={setEmail} />
-          {nameRef.current === name && emailRef.current === email
-            ?null
-            :<div className="prev-next">
-            {page > 1 ?<button type="button" id="prevBtn" onClick={()=>setPage(prevPage=> prevPage-1)}>Previous</button>: null}
-            <button type="button" id="nextBtn" onClick={()=>setPage(prevPage=> prevPage+1)}>Next</button>
-        </div>}
-      </div> ),
-
-    8:<div className="tab">
+    3:<div className="tab">
         <h3>Please take a moment to verify your review!</h3>
         <div className="Submit-Form">
-          <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}>
+          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}> */}
+          <div className="Submit-Form-page row-a" >
             <span className="form-col-1">Rating: </span>
             <span className="form-col-2">{rating} Stars</span>
           </div>
-          <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}>
+          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(1)}> */}
+          <div className="Submit-Form-page row-b">
             <span className="form-col-1">I would recommend this product: </span>
             <span className="form-col-2">{recommended ? "True" : "False"}</span>
           </div>
-          <div className="Submit-Form-page row-a" onClick={()=>setPage(3)}>
+          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}> */}
+          <div className="Submit-Form-page row-a" >
             <span className="form-col-1">Characteristics: </span>
             {!characteristics
               ? null
@@ -182,23 +119,28 @@ function NewReviewForm(props) {
               </span>
             }
           </div>
-          <div className="Submit-Form-page row-b" onClick={()=>setPage(4)}>
+          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}> */}
+          <div className="Submit-Form-page row-b" >
             <span className="form-col-1">Summary: </span>
             <span className="form-col-2">{summary.slice(0, 20)}</span>
           </div>
-          <div className="Submit-Form-page row-a" onClick={()=>setPage(5)}>
+          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(2)}> */}
+          <div className="Submit-Form-page row-a" >
             <span className="form-col-1">Review: </span>
             <span className="form-col-2">{body.slice(0, 20)}</span>
           </div>
-          <div className="Submit-Form-page row-b" onClick={()=>setPage(6)}>
+          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}> */}
+          <div className="Submit-Form-page row-b" >
             <span className="form-col-1">photos: </span>
             <span className="form-col-2"> {photos.length}</span>
           </div>
-          <div className="Submit-Form-page row-a" onClick={()=>setPage(7)}>
+          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(2)}> */}
+          <div className="Submit-Form-page row-a" >
               <span className="form-col-1">Nickname: </span>
               <span className="form-col-2">{name.slice(0,20)}</span>
           </div>
-          <div className="Submit-Form-page row-b" onClick={()=>setPage(7)}>
+          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}> */}
+          <div className="Submit-Form-page row-b" >
             <span className="form-col-1">Email: </span>
             <span className="form-col-2">{email.slice(0.20)}</span>
           </div>
