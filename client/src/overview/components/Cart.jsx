@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
-import {VscClose} from 'react-icons/vsc';
 import {TbShoppingCartX} from 'react-icons/tb';
 
 const Cart = ({showCart, cartData, setCart, updateCart}) => {
@@ -51,17 +50,17 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
                     <TbShoppingCartX className='c-del-item' onClick={() => rmItem(i)}/>
                   </div>
                 </div>
-                ))
-                : <h3> EMPTY </h3>}
+                )) :
+                <h3> EMPTY </h3>}
             </div>
             <div className='cart-side'>
               <div className='side-props'>
                 <div className='quant-container'>
                   <p>Quantity</p>
                   <p>
-                    {checkout.length > 1
-                      ? `${checkout.length} items`
-                      : '1 item'
+                    {checkout.length > 1 ?
+                    `${checkout.length} items` :
+                    '1 item'
                     }
                   </p>
                 </div>
