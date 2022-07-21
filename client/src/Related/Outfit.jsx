@@ -131,7 +131,8 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
   return (
     <div className="related">
       <div className="title-div">
-      <h2 className="title">YOUR OUTFIT</h2>
+      <h5 className="title">Your Outfits</h5>
+      <p className="title-lines"></p>
       </div>
       <div className="carousel">
         <div className='outfit-prev-container btn hidden'>
@@ -150,6 +151,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
           <img src={nextArrow} onClick={(e) => moveOutfitRight(e)} className="outfit-next"/>
         </div>
       </div>
+      <div className='title'></div>
     </div>
   );
 }

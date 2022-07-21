@@ -149,7 +149,7 @@ th {
   display: flex;
   position: absolute;
   width: 25%;
-  transition: all .5s linear;
+  transition: all .3s linear;
 }
 
 .related .carousel .slide.related-pleft, .slide.outfit-pleft {
