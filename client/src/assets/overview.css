@@ -399,6 +399,7 @@
 }
 
 .quantity-selector:hover {
+  cursor: pointer;
   background-color: black;
   color: white;
   -webkit-transition: all 600ms ease;
