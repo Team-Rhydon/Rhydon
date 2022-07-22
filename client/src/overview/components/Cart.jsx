@@ -48,6 +48,7 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
                     <img
                       className="cart-image"
                       src={product.photo}
+                      alt='chosen product purchase picture'
                     />
                     <div className='cart-props'>
                       <p className='cart-name'>{product.name}</p>

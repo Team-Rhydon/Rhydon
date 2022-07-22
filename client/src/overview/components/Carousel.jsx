@@ -66,12 +66,12 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                 className='m-carousel-image'
                 onClick={() => setImageModal(true)}
                 src={url ? url : fillIn} key={i}
-                alt=''
+                alt='Main gallery display slideshow'
               />
               <img
                 className="m-logo"
                 src={logo}
-                alt=''
+                alt='This is the website brand logo'
               />
               <IoIosArrowBack
                 className="s-leftarrow"

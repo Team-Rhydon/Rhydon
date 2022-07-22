@@ -29,6 +29,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery and selected picture'
             />
           );
         }
@@ -39,6 +40,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery'
             />
           );
         }
@@ -49,6 +51,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery'
             />
           );
         }
@@ -59,6 +62,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery'
             />
           );
         }

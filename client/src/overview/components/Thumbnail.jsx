@@ -16,6 +16,7 @@ const Thumbnail = ({productStyles, style, setSelectedStyle}) => {
             styleObj.photos[0].thumbnail_url :
             fillIn
           }
+          alt='styling picture for the current product'
           key={styleObj.style_id}
           onClick={setSelectedStyle.bind(null, styleObj)}/>
       ))}
