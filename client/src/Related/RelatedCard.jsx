@@ -11,7 +11,7 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
   return (
     <div className={`slide ${position}`}>
       <div className='product-card'>
-        <img className='thumb' onClick={(e) => {
+        <img width="300" height="450" className='thumb' onClick={(e) => {
           setPreview(img);
         }}src={thumbnail}/>
         <div className="star" onClick={(e) => {

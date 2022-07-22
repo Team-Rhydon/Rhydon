@@ -7,7 +7,7 @@ function OutfitAddCard({product, position, id, addToOutfit, removeOutfit}) {
     <div className={`slide outfit-p1 add-card`}>
       <div onClick={(e) => addToOutfit(e, product)} className='outfit-card'>
           <div>
-          <img src={addBtn} className="add-btn"/>
+          <img width='256' height='256' src={addBtn} className="add-btn"/>
           </div>
             <div className='add-btn-desc'>CLICK TO ADD PRODUCT</div>
             <div className='add-btn-plus center-vert-horz'>+</div>

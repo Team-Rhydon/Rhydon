@@ -6,18 +6,6 @@
   margin: auto;
 }
 
-tr, td, th, p, b, div, h1, h2, table {
-  font-family: Helvetica,Arial,system-ui,sans-serif;
-  font-weight: 400;
-}
-
-th {
-  padding: 0;
-}
-
-.app {
-  position: relative;
-}
 .related, .outfits {
   width: 1300px;
   position: relative;
@@ -48,6 +36,7 @@ th {
   display: block;
   position: relative;
   width: 1241.89px;
+  height: 400px;
   margin: 0 auto;
   padding-left: 25px;
 }
@@ -85,9 +74,6 @@ th {
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
 }
 
-/* .related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
-  filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
-} */
 
 .carousel-next-container.hidden,.carousel-prev-container.hidden,.outfit-next-container.hidden,.outfit-prev-container.hidden {
   display: none;
@@ -126,15 +112,9 @@ th {
   background:#6a6a6a;
 }
 
-
-/* .remove-outfit:hover {
-} */
-
 .related .carousel .carousel-prev-container:hover, .outfit-prev-container:hover {
   background:#6a6a6a;
 }
-
-
 
 .related .carousel .slide .product-card {
   position: relative;
@@ -182,22 +162,10 @@ th {
 }
 
 .related .carousel .thumb {
-/* stretched */
-/* position: relative;
-width: 200px;
-height: 200px;
-cursor: pointer;
-min-width: 100px;
-background: center; */
-
 position: relative;
 margin: 0 auto;
-/* max-width: 25%; */
 width: 260px;
-/* max-width: 275px;
-max-height: 275px; */
 height: 260px;
-/* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
 border-radius: .25em;
@@ -289,7 +257,6 @@ border-radius: .25em;
     height: 30%;
     border: 2px solid #767676;
     text-align: center;
-    /* margin: auto; */
     z-index: 10;
     margin: 0;
   position: absolute;
@@ -320,7 +287,6 @@ object-fit: cover;
     height: 17.5vw;
     width: 17.5vw;
 }
-/* ?? duplicate? */
   .preview {
     position: fixed;
     top: 0;
@@ -460,448 +426,10 @@ background: whitesmoke;
     color: rgb(255,200,0);
   }
 
-  p {
-    color: rgb(0, 0, 0);
-  }
-
-  h1 {
-    font-weight: 400;
-    color: rgb(0, 0, 0);
-  }
-
-  .meter {
-    height: 10px;
-    position: relative;
-    background: rgb(136, 135, 135);
-    border-radius: 25px;
-    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
-  }
-
-  .meter > span {
-    display: block;
-    height: 100%;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    background-color: rgb(69, 244, 0);
-    box-shadow:
-      inset 0 2px 9px  rgba(255,255,255,0.3),
-      inset 0 -2px 6px rgba(0,0,0,0.4);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .RatingWidget {
-    width: 100%;
-    border-top: 1px solid black;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-  }
-
-  .Ratings-Breakdown {
-    display: flex;
-    flex-direction: row;
-    width: 75%;
-    align-self: center;
-  }
-
-  .Ratings-Reviews-Summary {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-
-  .Star-Ratings {
-    display: flex;
-    flex-direction: row;
-    width: 66%;
-  }
-
-  .Star-Bars {
-    align-self: center;
-    width: 50%;
-  }
-
-  .ReviewHeader {
-    grid-row-start: 1;
-    width: 100%;
-    border-bottom: 2px solid black;
-    display: grid;
-    grid-template-columns: .6fr 5.4fr  1fr 1fr;
-  }
-
-  .ReviewSummary {
-    /* align-self: center; */
-    grid-column-start: 2;
-    font-size: larger;
-    font-weight: 600;
-  }
-
-  .ReviewRating {
-    grid-column-start: 1;
-  }
-
-  .nameAndDate {
-    grid-column-start: -1;
-  }
-
-  .ReviewBody {
-    width: 100%;
-    grid-row-start: 2;
-    padding-left: 1em;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    display: grid;
-    grid-template-rows: 1.5fr 1.5fr 1fr .5fr .5fr;
-  }
-
-  .ReviewText {
-    grid-row-start: 1;
-    word-break: break-all;
-  }
-
-  .ReviewPhotos {
-    grid-row-start: 2;
-  }
-  .ReviewRecommend {
-    grid-row-start: 4;
-  }
-
-  .Review-Puts {
-    grid-row-start: 5;
-  }
-
-  .ReviewContainer-scrollable {
-    width: 100%;
-    overflow-x: hidden;
-    max-height: 75vh;
-    padding-right: 1px;
-    margin-bottom: 2em;
-    box-shadow: inset 0 -1em 2em -2em grey;
-  }
-
-  .indicator {
-    height: 15px;
-    position: relative;
-    background: blue;
-    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
-  }
-
-  .indicator > span {
-    position: relative;
-    display: inline-flex;
-    height: 100%;
-    /* width: 2px; */
-    background-color: black;
-  }
-
-  .ReviewsList-Header {
-    padding-top: .5em;
-    display: flex;
-    justify-content: center;
-  }
-
-  #review-btn{
-    height: 3em;
-    width: 7em;
-    background-color: white;
-    border: transparent;
-    box-shadow: 0 0 .25em .25em grey;
-    margin-left: 7%;
-    margin-bottom: 1%;
-  }
-  #review-btn:hover{
-    background-color: #6a6a6a;
-  }
-
-  #open-modal-btn {
-    height: 3em;
-    width: 7em;
-    background-color: white;
-    border: transparent;
-    box-shadow: 0 0 .25em .25em grey;
-    margin-right: 7%;
-    margin-bottom: 1%;
-  }
-
-  #open-modal-btn:hover{
-    background-color: #6a6a6a;
-  }
-  .ReviewListFooter {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  #reviewForm {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 2%;
-    margin: 1em;
-    min-height: 25vh;
-    min-width: 40vw;
-    /* border: 1px solid grey; */
-  }
-
-  .reviewsubmitchars {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .container-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .container-rbtn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  /* .Recommended-btn {
-    height: 1.5em;
-    width: 5vw;
-    background-color: transparent;
-  } */
-
-  .Button {
-    height: 1.5em;
-    width: 5vw;
-    background-color: rgb(255, 255, 255);
-  }
-
-  .Button.null {
-    height: 1.5em;
-    width: 5vw;
-    background-color: white;
-    border: 1px solid grey;
-  }
-  .Button.true {
-    height: 1.5em;
-    width: 5vw;
-    background-color: green;
-    border: 1px solid grey;
-  }
-  .Button.false {
-    height: 1.5em;
-    width: 5vw;
-    background-color: red;
-    border: 1px solid grey;
-  }
-  #prevBtn {
-    height: 3vh;
-    width: 8vw;
-    background-color: white;
-    border-color: #aaaaaa;
-    grid-column-start: 1;
-  }
-  #prevBtn:hover{
-    border-color: black;
-  }
-  #nextBtn {
-    height: 3vh;
-    width: 8vw;
-    background-color: white;
-    border-color: #aaaaaa;
-    grid-column-start: 3;
-  }
-
-  #nextBtn:hover{
-    border-color: black;
-  }
-
-  .prev-next {
-    width: 100%;
-    display: grid;
-    grid-template-columns: [first] 8vw [line2] auto [line3] 8vw [end];
-  }
-
-  .submit-btn {
-    height: 3vh;
-    min-width: 8vw;
-    max-width: max-content;
-    width: fit-content;
-    color: black;
-    background-color: white;
-    border-color: #aaaaaa;
-  }
-  .submit-btn:hover:not([disabled]){
-    border-color: black;
-  }
-
-  .submit-btn:disabled {
-    text-decoration: line-through;
-    border-color: white;
-  }
-
-
-  .tab {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgb(128, 128, 128, .5);
-    border-radius: .5em;
-  }
-
-  .tab h3 {
-    padding-left: 1em;
-    padding-right: 1em;
-    text-decoration: underline;
-  }
-  .recommend {
-    padding-left: .35em;
-    padding-right: .35em;
-    background-color: white;
-    align-self: center;
-    border: 1px solid black;
-  }
-
-  .star input {
-    padding: 5px;
-    width: 100%;
-    border: 1px solid #aaaaaa;
-  }
-  .info-form input {
-    width: -webkit-fill-available;
-  }
-
-  input.invalid {
-    background-color: #ffdddd;
-  }
-
-  #star-button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    text-shadow: 0 0 1px black;
-  }
-
-  .StarNumber:hover {
-    background-color: green;
-    cursor: pointer;
-  }
-
-
-  .on {
-    color: rgb(255, 247, 0);
-    border: 1px solid grey;
-
-  }
-  .off {
-    color: rgb(100, 100, 100);
-    border: 1px solid grey;
-  }
-
-  .New-Review-Summary {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .New-Review-Summary textarea{
-    width: 99%;
-    height: 3em;
-  }
-
-  .New-Review-Body {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .New-Review-Body textarea {
-    width: 99%;
-    height: 33vh;
-  }
-
-  .ReviewTile {
-    height: 45%;
-    width: 95%;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-    /* background-color: rgb(180, 180, 180); */
-    display: grid;
-    grid-template-rows: 1fr 9fr;
-    margin: auto;
-    margin-bottom: 1em;
-    border: 1px solid rgb(0, 0, 0, .5);
-    padding-top: .25em;
-    padding-left: .5em;
-    padding-right: .5em;
-    border-radius: 5px;
-  }
-
-  .ReviewList {
-    width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-
-  .trait-description {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-  }
-
-  .Submit-Form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-  }
-
-  .Submit-Form-page {
-    display: inline-grid;
-    justify-content: space-between;
-  }
-
-  .row-a {
-    background-color: rgb(191, 191, 191);
-  }
-  .Submit-Form-page:hover {
-    background-color: rgb(0, 0, 255, .5);
-    cursor: pointer;
-  }
-
-  .chars-form {
-    align-self: flex-start;
-    margin-left: 10%
-  }
-  .form-col-1 {
-    grid-column-start: 1;
-    /* align-self: flex-end; */
-  }
-  .form-col-2 {
-    grid-column-start: 2;
-    /* align-self: flex-start; */
-  }
-
 table {
   background-color: white;
   overflow: scroll;
   width: 100%;
-  /* border: 1px solid;
-  border-spacing: 0;
-  border-collapse: collapse;
-  background-color: white;
-  overflow: scroll;
-  width: 100%;
-  color: #767676; */
-
 }
 
 td {
@@ -981,11 +509,6 @@ margin-right: 20px;
   width: 100%;
 }
 
-/* .table-current-product-column, .table-compare-product-column{
-  background-color: #ffe;
-  text-align: center;
-} */
-
 .table-current-product-column, .table-compare-product-column, .table-characteristic {
   color: #767676;
 }
@@ -1010,11 +533,6 @@ margin-right: 20px;
   color: rgba(216, 77, 77, 0.809);
 }
 
-/* tr:nth-child(1) {
-  border-bottom: 1px solid #767676;
-} */
-
-
 tr:nth-child(even) {
   background-color: #f3f3f3;
 }
@@ -1027,18 +545,6 @@ tr:nth-child(odd) {
   background-color: white;
 }
 
-
-/* tr:nth-child(odd) .table-compare-product-column {
-  background-color: rgba(204, 255, 204, 0.3);
-} */
-
-/* tr:nth-child(even) .table-characteristic {
-  background-color: rgba(173, 172, 172, 0.3);
-}
-.
-tr:nth-child(odd) .table-characteristic {
-  background-color: #f6f6f6;
-} */
 
 .table-characteristic {
   border-left: solid 1px #767676;
@@ -1061,15 +567,6 @@ tr:nth-child(odd) .table-characteristic {
 }
 
 .card-name {
-  /* font-size: 1.25vw;
-  align-self: center;
-  margin: 0; */
-
-  /* margin: 0;
-  font-size: 20px;
-  padding-top: .375px;
-  margin: 0;
-  text-align: left; */
   font-size: 18px;
   display: inline-block;
   height: auto;
@@ -1097,69 +594,6 @@ tr:nth-child(odd) .table-characteristic {
   font-size: 2rem;
 }
 
-.circle-background,
-.circle-progress {
-  fill: none;
-}
-
-.circle-background {
-  stroke: #ddd;
-}
-
-.circle-progress {
-  stroke: rgb(0, 255, 26);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.circle-text {
-  font-size: 1em;
-  font-weight: bold;
-  fill: rgb(0, 0, 0);
-}
-
-.Product-Breakdown {
-  width: 33%;
-  padding-top: .5em;
-}
-.product-score {
-  width: 100%;
-  display: inline-grid;
-  grid-template-columns: 33% 34% 33%;
-  grid-template-rows: 18% 64% 18%;
-  justify-items: center;
-}
-
-.PD-low {
-  grid-column: 3;
-  grid-row: 2;
-  align-self: flex-end;
-}
-.PD-high {
-  grid-row: 2;
-  grid-column: 1;
-  align-self: flex-end;
-}
-
-  .circle {
-  border: 1px solid grey;
-  border-radius: 3em;
-  grid-column-start: 2;
-  grid-row: 2;
-}
-
-.put-btn {
-  border-color: transparent;
-  background-color: white;
-  color: black;
-  width: fit-content;
-}
-
-.put-btn:hover {
-  color: blue;
-  box-shadow: 0, 0, .5em, .5em #6a6a6a;
-}
-
 .card-name-div {
   display: flex;
 }
@@ -1176,7 +610,6 @@ width: 100%;
 height: 50%;
 padding-left: 40px;
 border-bottom: 2px solid lightgrey;
-/* justify-content: space-between; */
 margin-left: 2vw;
 margin-right: 2vw;
 margin-top: 0;

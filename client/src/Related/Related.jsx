@@ -132,7 +132,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
 
 
   return (
-    <div className="related">
+    <div className="related" width="300" height="400">
       <div className="title-div">
         <h5 className="title">Related Products</h5>
         <p className="title-lines"></p>
@@ -141,7 +141,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
         <div onClick={(e) => moveRelatedLeft(e)} className='carousel-prev-container hidden'>
           <img src={prevArrow} className="carousel-prev center-vert-horz"/>
         </div>
-        <div className="carousel-inner">
+        <div className="carousel-inner"  width="300" height="400">
           {Object.keys(cards).map((id, index) => <RelatedCard
             key={id} id={id} showModal={showModal} card={cards[id]}
             updateCurrentProduct={updateCurrentProduct}

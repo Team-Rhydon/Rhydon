@@ -129,7 +129,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
     }
   }
   return (
-    <div className="related">
+    <div className="related" width="300" height="400">
       <div className="title-div">
         <h5 className="title">Your Outfits</h5>
         <p className="title-lines"></p>
@@ -138,7 +138,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
         <div className='outfit-prev-container btn hidden'>
           <img src={prevArrow} onClick={(e) => moveOutfitLeft(e)} className="outfit-prev center-vert-horz"/>
         </div>
-        <div className="carousel-inner">
+        <div className="carousel-inner"  width="300" height="400">
           {shouldInsertAddCard() ? <OutfitAddCard key='add-btn' addToOutfit={addToOutfit} product={product}/> : null}
           {Object.keys(outfits).map((id, index) => <OutfitCard
             key={id}

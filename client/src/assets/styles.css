@@ -148,13 +148,16 @@ th {
   text-align: left;
 }
 
+.related .carousel .slide .product-card p{
+  text-align: left;
+}
+
 .related .carousel .slide {
   display: flex;
   position: absolute;
   /* width: 25%; */
   transition: all .3s linear;
 }
-
 .related .carousel .slide.related-pleft, .slide.outfit-pleft {
   left: -23vw;
 }
@@ -1222,7 +1225,7 @@ tr:nth-child(odd) .table-characteristic {
 .vertical-line {
   align-self: center;
   width: 1.9vh;
-  height: 1.7vw;
+  height: 1.6vw;
 }
 
 .title-lines {
