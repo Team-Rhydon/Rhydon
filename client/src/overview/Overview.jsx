@@ -41,6 +41,7 @@ const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef, cartData
 
   return (
     <div id="overview" className="overview-widget">
+      {console.log('overview')}
       <Styles
         styles={styles}
         product={product}

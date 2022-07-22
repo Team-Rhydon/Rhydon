@@ -23,7 +23,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
       <IoIosArrowUp
         onClick={prevSlide}
         className="ms-arrowup"
-        aria-label='shift mini slides upwards'
+        aria-label='shift mini slide picture upwards'
       />
       {slide.map((obj, i) => {
         if (i === currentImage.count) {
