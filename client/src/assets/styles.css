@@ -349,6 +349,7 @@ object-fit: cover;
     transform: translate(-50%, -50%);
     background-color: white;
     border: 1px solid #e7e7e7;
+    border-radius: 5px;
   }
 
   .preview.hidden {
