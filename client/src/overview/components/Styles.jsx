@@ -16,7 +16,19 @@ const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef, prod
     setProductStyles(results);
   }, []);
 
-  const commonProps = {productStyles, selectedStyle, setSelectedStyle, product, rating, count, ratingsScroll, ratingsRef, productName, cartData, updateCart};
+  const commonProps = {
+    productStyles,
+    selectedStyle,
+    setSelectedStyle,
+    product,
+    rating,
+    count,
+    ratingsScroll,
+    ratingsRef,
+    productName,
+    cartData,
+    updateCart
+  };
 
   return (
     <div className="overview-styles">

@@ -24,10 +24,16 @@ const ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
           <div
             key={i}
             onClick={() => changeImage(i)}
-          >{i === currentImage.count ? <FaCircleNotch className="i-chosen"/> : <VscCircleFilled className="i-filler"/>}</div>
+          >
+            {i === currentImage.count ?
+              <FaCircleNotch className="i-chosen"/> :
+              <VscCircleFilled className="i-filler"/>
+            }
+          </div>
         )
       })}
     </section>
   );
 };
+
 export default ExpandedIcons;

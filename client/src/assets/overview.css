@@ -426,6 +426,11 @@
   border: 1px solid lightgray !important;
   border-radius: 3px;
   background-color: white !important;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 #facebook {
@@ -885,6 +890,11 @@
   width: 80%;
   height: 50px;
   margin: 5px 0px 10px 16px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .view-bag {
@@ -964,6 +974,11 @@
   height: 22px;
   padding: 10px 1px 10px 1px;
   margin-top: -6px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .c-del-item:hover, .keep-shopping:hover {
