@@ -45,9 +45,9 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
     axios.get('/reviews', params)
         .then((response) => {
           setStorage(prevStorage=> {
-            return [...prevStorage, ...response.data.results]});
+            return [...response.data.results]});
         }).catch(err=> console.log('err getting revierrews'));
-  }, [page, product_id, sortStyle, count]);
+  }, [product_id, sortStyle, count]);
 
   function handleClick() {
     setReviews((prevReviews)=>{
@@ -87,10 +87,12 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
         }
       </div>
       <div className="ReviewListFooter" style={{display: 'flex'}}>
-        {reviews >= storage.length
-          ?null
-          :<button id="review-btn" onClick={handleClick}>More Reviews</button>
-        }
+        <button
+          className={reviews >= storage.length ? "review-btn-invis" : "review-btn"}
+          onClick={handleClick}
+          >
+            More Reviews
+        </button>
         <button id="open-modal-btn" onClick={()=>setShow(true)} > Review this Product</button>
         <Modal
           title={'Review This Product: Tell us about the ' + details.name}

@@ -37,7 +37,19 @@ function NewReviewForm(props) {
       params: params,
       data: data
     }
-    console.log(options);
+    //naive solution to check over form data, working on validation API solution
+    const validate = (data) => {
+      const errArray = [];
+      if (body.length < 50) {
+        errArray.push('Review is too short!')
+      }
+      if (!email.includes('.')){
+        errArray('Provided email format not recognized')
+      }
+      return errArray;
+    }
+
+
     axios(options)
       .then(()=>  alert('successfully posted! please close form'))
       .catch(err => {return alert('error! please review form entries');console.log('err posting data')});
@@ -60,13 +72,13 @@ function NewReviewForm(props) {
               </button>
             );
           })}
-          <span>{rating === 0 ? null : rating + " STAR RATING -"}  {[null, "Poor", "Fair", "Average", "Good", "Great!"][rating]}</span>
+          <span className={rating === 0 ? "hide" : "" }> {rating} STAR RATING- {[null, "Poor", "Fair", "Average", "Good", "Great!"][rating]}</span>
         </div>
         <h3> *Would you recommend this product to others?*</h3>
         <span className="recommend-select">
           <span>I would:</span>
           {recommended === null
-            ?<span className="recommend"> </span>
+            ?<span className="recommend"> __</span>
             :<span className="recommend">{recommended ? "✓" : "✗"} </span>
           }
           <Button
@@ -83,28 +95,31 @@ function NewReviewForm(props) {
         <h3>*Please rate the {props.details.name} on the following*: </h3>
         <Characteristics page={setPage} chars={props.product.characteristics} setChars={setCharacteristics} />
         {/* implement a return to page 3 button */}
+        {!characteristics ? null :<button onClick={e=>setPage(3)}>Back to Summary</button>}
       </div>),
 
     2:(<div className="tab">
       <UserInfo details={props.details} setPhotos={setPhotos} setBody={setBody} setSum={setSummary} page={setPage} setName={setName} setEmail={setEmail} />
       {/* implement a return to submit form page */}
+      {name=== '' ?null :<button onClick={e=>setPage(3)}>Back to Summary</button>}
+
       </div>),
 
     3:<div className="tab">
         <h3>Please take a moment to verify your review!</h3>
         <div className="Submit-Form">
-          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}> */}
-          <div className="Submit-Form-page row-a" >
+          <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}>
+          {/* <div className="Submit-Form-page row-a" > */}
             <span className="form-col-1">Rating: </span>
             <span className="form-col-2">{rating} Stars</span>
           </div>
-          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(1)}> */}
-          <div className="Submit-Form-page row-b">
+          <div className="Submit-Form-page row-b" onClick={()=>setPage(1)}>
+          {/* <div className="Submit-Form-page row-b"> */}
             <span className="form-col-1">I would recommend this product: </span>
             <span className="form-col-2">{recommended ? "True" : "False"}</span>
           </div>
-          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}> */}
-          <div className="Submit-Form-page row-a" >
+          <div className="Submit-Form-page row-a" onClick={()=>setPage(1)}>
+          {/* <div className="Submit-Form-page row-a" > */}
             <span className="form-col-1">Characteristics: </span>
             {!characteristics
               ? null
@@ -119,28 +134,28 @@ function NewReviewForm(props) {
               </span>
             }
           </div>
-          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}> */}
-          <div className="Submit-Form-page row-b" >
+          <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}>
+          {/* <div className="Submit-Form-page row-b" > */}
             <span className="form-col-1">Summary: </span>
             <span className="form-col-2">{summary.slice(0, 20)}</span>
           </div>
-          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(2)}> */}
-          <div className="Submit-Form-page row-a" >
+          <div className="Submit-Form-page row-a" onClick={()=>setPage(2)}>
+          {/* <div className="Submit-Form-page row-a" > */}
             <span className="form-col-1">Review: </span>
             <span className="form-col-2">{body.slice(0, 20)}</span>
           </div>
-          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}> */}
-          <div className="Submit-Form-page row-b" >
+          <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}>
+          {/* <div className="Submit-Form-page row-b" > */}
             <span className="form-col-1">photos: </span>
-            <span className="form-col-2"> {photos.length}</span>
+            <span className="form-col-2"> {photos[0] === '' ? '0' :photos.length}</span>
           </div>
-          {/* <div className="Submit-Form-page row-a" onClick={()=>setPage(2)}> */}
-          <div className="Submit-Form-page row-a" >
+          <div className="Submit-Form-page row-a" onClick={()=>setPage(2)}>
+          {/* <div className="Submit-Form-page row-a" > */}
               <span className="form-col-1">Nickname: </span>
               <span className="form-col-2">{name.slice(0,20)}</span>
           </div>
-          {/* <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}> */}
-          <div className="Submit-Form-page row-b" >
+          <div className="Submit-Form-page row-b" onClick={()=>setPage(2)}>
+          {/* <div className="Submit-Form-page row-b" > */}
             <span className="form-col-1">Email: </span>
             <span className="form-col-2">{email.slice(0.20)}</span>
           </div>

@@ -4,9 +4,10 @@ const Characteristics = (props) => {
   const [characteristics, setCharacteristics] = useState(null);
   const disabled = useRef(true);
 
-  function handleSubmit(event) {
+  let handleSubmit = (event) => {
     event.preventDefault();
-    props.setChars(characteristics);
+    console.log('hello')
+    props.setChars(()=> characteristics);
     props.page(prevPage => prevPage + 1);
   }
 
@@ -19,11 +20,22 @@ const Characteristics = (props) => {
     Width: ['Too narrow', 'Slightly narrow', 'Perfect', 'Slightly Wide',  'Too wide']
   }
   return (
-    <form className="chars-form" onSubmit={handleSubmit}>
+    <form className="chars-form" onSubmit={e=>handleSubmit(e)}>
       {Object.entries(props.chars).map(([char, {id}])=>{
         return (
         <div key={id} onChange={e=> setCharacteristics({...characteristics, [id]:Number(e.target.value)})} className={char}>
-           <h4>{char}</h4>
+            <span className="chars-header">
+              <span style={{fontWeight: "bold"}}>{char}</span>
+              <span className="chars-desc">
+                  {!characteristics || characteristics[id] === undefined
+                  ?"...None selected"
+                  :<span>
+                    {`...${descriptions[char][(characteristics[id]-1)]}`}
+                    </span>
+                  }
+              </span>
+            </span>
+            <br></br>
             <label> 1
               <input type="radio" value={1} name={char} />
             </label>
@@ -39,13 +51,7 @@ const Characteristics = (props) => {
             <label>5
               <input type="radio" value={5} name={char} />
             </label>
-            <span>
-              {!characteristics || characteristics[id] === undefined
-              ?"...None selected"
-              :<span>
-                {`...${descriptions[char][(characteristics[id]-1)]}`}
-                </span>}
-            </span>
+
         </div>)
       })}
       <br></br>
@@ -55,7 +61,7 @@ const Characteristics = (props) => {
           : disabled.current = true
       }
       <div className="container-btn">
-        <input disabled={disabled.current} className="submit-btn" type="submit" value="Submit"/>
+        <input  className="submit-btn" type="submit" value="Submit"/>
       </div>
     </form>
   )
