@@ -27,20 +27,20 @@ const Styles = ({styles, product, rating, count, ratingsScroll, ratingsRef, prod
     ratingsRef,
     productName,
     cartData,
-    updateCart
+    updateCart,
   };
 
   return (
     <div className="overview-styles">
       <ImageGallery {...commonProps}/>
       <section className="o-sidebar">
-          <StyleSelector {...commonProps}/>
-          <AddToCart {...commonProps}
+        <StyleSelector {...commonProps}/>
+        <AddToCart {...commonProps}
           // productStyles={productStyles}
           // selectedStyle={selectedStyle}
           // setSelectedStyle={setSelectedStyle}
-          />
-          <Share />
+        />
+        <Share />
       </section>
     </div>
   );

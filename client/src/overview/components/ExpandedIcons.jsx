@@ -30,7 +30,7 @@ const ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
               <VscCircleFilled className="i-filler"/>
             }
           </div>
-        )
+        );
       })}
     </section>
   );

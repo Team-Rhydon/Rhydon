@@ -2,6 +2,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
+import fillIn from '../../assets/icons/nofound.png';
 import QuantitySelector from './QuantitySelector.jsx';
 
 const SizeSelector = ({selectedStyle, setPurchase}) => {
@@ -21,7 +22,7 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
       complete: false,
       name: name,
       price: sale_price || original_price,
-      photo: photos[0].url,
+      photo: photos[0].url || fillIn,
       quantity: 1,
     });
   }, [selectedStyle]);
@@ -40,10 +41,10 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
               className="sizebuttons"
               key={i}
               disabled
-              >
+            >
               {buttonSize || 'Out Of Stock'}
             </button>
-          )
+          );
         }
         return (
           <button
@@ -54,16 +55,17 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
             onClick={(e) => {
               onSkuClick(e, skuNumber);
             }}
-            >
+          >
             {buttonSize}
           </button>
-        )
+        );
       })}
       {sku ?
         <QuantitySelector
           selectedQuantity={selectedQuantity}
-          setSelectedQuantity={setSelectedQuantity} {...sku}
+          setSelectedQuantity={setSelectedQuantity}
           setPurchase={setPurchase}
+          {...sku}
         /> :
         null
       }
