@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useEffect, useState} from 'react';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
+import  fillIn from '../../assets/icons/nofound.png'
 import {FiMinimize} from 'react-icons/fi';
 import {createPortal} from 'react-dom';
 import ExpandedIcons from './ExpandedIcons.jsx';
@@ -28,7 +29,7 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
             onClick={() => setImageModal(false)}/>
           <img
             className="i-modal-image"
-            src={currentImage.url}
+            src={currentImage.url ? currentImage.url : fillIn}
             alt=''
           />
           <ExpandedIcons
