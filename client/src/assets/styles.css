@@ -1120,6 +1120,7 @@ tr:nth-child(odd) .table-characteristic {
   letter-spacing: .025vw;
   align-self: self-end;
   padding-top: .25rem;
+  padding-bottom: .1rem;
 }
 
 .add-btn-desc-container {
@@ -1228,6 +1229,14 @@ tr:nth-child(odd) .table-characteristic {
   height: 1.6vw;
 }
 
+.vertical-line-2 {
+  font-size: 1.5vw;
+  font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: .25vw;
+  margin-right: .25vw;
+}
 .title-lines {
 width: 100%;
 height: 50%;

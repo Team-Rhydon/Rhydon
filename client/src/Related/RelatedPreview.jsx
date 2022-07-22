@@ -7,7 +7,7 @@ function RelatedPreview({url, setPreview}) {
         setPreview({});
       }}
       >
-        <img src={url} className="preview-content" onClick={(e) => {
+        <img alt='preview content' src={url} className="preview-content" onClick={(e) => {
           setPreview({});
         }}/>
       </div>

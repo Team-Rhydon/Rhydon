@@ -139,7 +139,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
       </div>
       <div className="carousel">
         <div onClick={(e) => moveRelatedLeft(e)} className='carousel-prev-container hidden'>
-          <img src={prevArrow} className="carousel-prev center-vert-horz"/>
+          <img width='94' height='150' alt='previous arrow' src={prevArrow} className="carousel-prev center-vert-horz"/>
         </div>
         <div className="carousel-inner"  width="300" height="400">
           {Object.keys(cards).map((id, index) => <RelatedCard
@@ -149,7 +149,7 @@ function Related({product, updateCurrentProduct, hidePreview}) {
             position={carouselPos.current[id]} />)}
         </div>
         <div onClick={(e) => moveRelatedRight(e)} className='carousel-next-container hidden'>
-          <img src={nextArrow} className="carousel-next center-vert-horz"/>
+          <img width='94' height='150' alt='next arrow' src={nextArrow} className="carousel-next center-vert-horz"/>
         </div>
       </div>
       {Object.keys(imagePreview).length !== 0 ? <RelatedPreview url={imagePreview} setPreview={setPreview}/> : null}
