@@ -8,7 +8,11 @@ const Description = ({slogan, description, features}) => {
     <h2 className='d-slogan'>{slogan.toUpperCase()}</h2>
 
     <div className="d-description">{description}</div>
-    <img className='d-line' src={line}/>
+    <img
+      className='d-line'
+      src={line}
+      alt='title and category divider line'
+    />
     <div className="d-features">
       {features ?
         features.map(({feature, value}, i) => {

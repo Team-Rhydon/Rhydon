@@ -66,14 +66,12 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                 className='m-carousel-image'
                 onClick={() => setImageModal(true)}
                 src={url ? url : fillIn} key={i}
-                alt=''
+                alt='Main gallery display slideshow'
               />
               <img
                 className="m-logo"
                 src={logo}
-                alt=''
-                width="30"
-                height="30"
+                alt='This is the website brand logo'
               />
               <IoIosArrowBack
                 className="s-leftarrow"
@@ -92,7 +90,11 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                   <div className="o-name-container">
                     <h2 className="pi-name">{name}</h2>
                   </div>
-                  <img className="title-line" src={line}/>
+                  <img
+                    className="title-line"
+                    src={line}
+                    alt='Title and category icon seperator'
+                  />
                   <h5 className="pi-category">{category}</h5>
                 </div>
                 <div className="pi-reviewstars">

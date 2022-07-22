@@ -38,6 +38,7 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
         if (key == 'null' || !key || !quantity) {
           return (
             <button
+              aria-label={`out of stock ${buttonSize}`}
               className="sizebuttons"
               key={i}
               disabled
@@ -48,6 +49,7 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
         }
         return (
           <button
+            aria-label={`choose size ${buttonSize}`}
             className={sku && sku.size === buttonSize ?
               'sizebuttons sizebuttons-picked' :
               'sizebuttons'}
