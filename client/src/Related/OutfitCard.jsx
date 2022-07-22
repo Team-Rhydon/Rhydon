@@ -49,21 +49,28 @@ function OutfitCard({outfit, position, id, removeOutfit}) {
         </div>
         <div className="description-outfits">
         <div className='card-name-div'>
-          <p className='card-name'>{name}</p>
-          <p className='vertical-line-2'>|</p>
-          {/* <img width='840' height='859' alt='vertical line' src={line} className='vertical-line'/> */}
-          <p className='card-category'>{category}</p>
+            <p className='card-name'>{name}</p>
+            <p className='vertical-line-2'>|</p>
+            {/* <img width='840' height='859' src={line} className='vertical-line' alt='vertical line'/> */}
+            {salePrice === null ?
+          <p className='card-price'>${Math.round(originalPrice)}</p> :
+          <>
+            <del>${Math.round(originalPrice)} </del>
+            <ins>${Math.round(salePrice)}</ins>
+          </>
+            }
           </div>
           {/* <p className='card-name'>{name}</p>
           <p className='card-category'>{category}</p> */}
-          {salePrice === null ?
+          {rating ? <StarRating rating={rating} /> : null}
+          {/* {salePrice === null ?
           <p className='card-price'>${Math.round(originalPrice)}</p> :
           <>
             <del>${Math.round(originalPrice)}</del>
             <ins>${Math.round(salePrice)}</ins>
           </>
-          }
-          {rating ? <StarRating rating={rating} /> : null}
+          } */}
+          <p className='card-category'>{category}</p>
         </div>
       </div>
     </div>
