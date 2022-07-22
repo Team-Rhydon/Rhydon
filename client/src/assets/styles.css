@@ -180,22 +180,10 @@ th {
 }
 
 .related .carousel .thumb {
-/* stretched */
-/* position: relative;
-width: 200px;
-height: 200px;
-cursor: pointer;
-min-width: 100px;
-background: center; */
-
 position: relative;
 margin: 0 auto;
-/* max-width: 25%; */
 width: 20vw;
-/* max-width: 275px;
-max-height: 275px; */
 height: 20vw;
-/* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
 border-radius: .25em;
@@ -996,6 +984,8 @@ max-height: 100%;
 .logo {
   object-fit: cover;
   cursor: pointer;
+  width: 70px;
+  height: 70px;
 }
 
 .nav-bar .nav-container .right-nav {
@@ -1126,6 +1116,7 @@ tr:nth-child(odd) .table-characteristic {
   line-height: 1.2;
   letter-spacing: .025vw;
   align-self: self-end;
+  padding-top: .25rem;
 }
 
 .add-btn-desc-container {
@@ -1230,8 +1221,8 @@ tr:nth-child(odd) .table-characteristic {
 
 .vertical-line {
   align-self: center;
-  object-fit: cover;
   width: 1.9vh;
+  height: 1.7vw;
 }
 
 .title-lines {

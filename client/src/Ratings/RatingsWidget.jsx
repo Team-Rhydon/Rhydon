@@ -2,23 +2,28 @@ import React, {useState, useEffect} from 'react';
 import ReviewList from './ReviewList.jsx';
 import RatingBreakdown from './RatingBreakdown.jsx';
 import ProductBreakdown from './ProductBreakdown.jsx';
-const axios = require('axios');
 const _ = require('lodash');
 
 /** */
-const RatingsWidget = (props)  => {
+const RatingsWidget = (props) => {
   const [filter, setFilter] = useState(
       {1: false, 2: false, 3: false, 4: false, 5: false});
   const [isFiltered, toggleFilter] = useState(false);
 
   useEffect(()=> {
-    if (_.every(Object.values(filter), function(bool){return bool === true})) {
+    if (_.every(Object.values(filter), function(bool) {
+      return bool === true;
+    })) {
       setFilter({1: false, 2: false, 3: false, 4: false, 5: false});
     }
-    if (_.every(Object.values(filter), function(bool){return bool === false})) {
+    if (_.every(Object.values(filter), function(bool) {
+      return bool === false;
+    })) {
       toggleFilter(false);
     }
-    if (_.some(Object.values(filter), function(bool){return bool=== true})) {
+    if (_.some(Object.values(filter), function(bool) {
+      return bool=== true;
+    })) {
       toggleFilter(true);
     }
   }, [filter]);
@@ -49,7 +54,7 @@ const RatingsWidget = (props)  => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default RatingsWidget;

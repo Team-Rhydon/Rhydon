@@ -13,7 +13,7 @@ import _ from 'lodash';
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
-  const [cartData, updateCart] =useState([])
+  const [cartData, updateCart] =useState([]);
   const [carouselPos, setCarouselPos] = useState({});
   const [searchValue, doSearch] = useState('');
   const ratingsRef = useRef();
@@ -142,17 +142,17 @@ function App() {
     <div data-testid="" className="app">
       <Nav updateCurrentProduct={updateCurrentProduct} setProduct={setProduct}/>
       <div className='widgets'>
-      <Overview
-        className="overview-widget"
-        ratingsRef={ratingsRef}
-        ratingsScroll={ratingsScroll}
-        cartData={cartData}
-        updateCart={updateCart}
-        {...product}
-      />
-      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
-      <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
+        <Overview
+          className="overview-widget"
+          ratingsRef={ratingsRef}
+          ratingsScroll={ratingsScroll}
+          cartData={cartData}
+          updateCart={updateCart}
+          {...product}
+        />
+        <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
+        <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
+        <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
       </div>
     </div>
   );

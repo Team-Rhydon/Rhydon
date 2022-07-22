@@ -6,8 +6,8 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
   if (!showCart || !cartData) return null;
 
   const [checkout, setCheckout] = useState(cartData);
-  const [totalPrice, setPrice] = useState()
-  const [itemCount, setItemCount] = useState()
+  const [totalPrice, setPrice] = useState();
+  const [itemCount, setItemCount] = useState();
 
 
   const rmItem = (key) => {
@@ -15,20 +15,20 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
     updateCart(filtered);
   };
 
-  let countTotal = () => {
+  const countTotal = () => {
     let priceCount = 0;
     let itemCount = 0;
     for (let i = 0; i < cartData.length; i++) {
       priceCount += parseInt(cartData[i].price) * cartData[i].quantity;
-      itemCount += parseInt(cartData[i].quantity)
+      itemCount += parseInt(cartData[i].quantity);
     }
     setPrice(priceCount);
     setItemCount(itemCount);
-  }
+  };
 
   useEffect(() => {
-    setCheckout(cartData)
-    cartData.length > 0 ? countTotal() : setCart(false)
+    setCheckout(cartData);
+    cartData.length > 0 ? countTotal() : setCart(false);
   }, [cartData, checkout]);
 
   return (
@@ -41,25 +41,25 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
           </div>
           <div className='cart-container'>
             <div className='product-container'>
-              {checkout
-                ? checkout.map((product, i) => (
-                <div className='cart-product'key={i}>
-                  <img
-                    className="cart-image"
-                    src={product.photo}
-                  />
-                  <div className='cart-props'>
-                    <p className='cart-name'>{product.name}</p>
-                    <p className='cart-style'>{product.style} </p>
-                    <p className='cart-price'>${product.price}</p>
-                    <p className='cart-size'>Size : {product.size} </p>
-                    <p className='cart-quantity'>Quantity : {product.quantity} </p>
-                    <TbShoppingCartX
-                      className='c-del-item'
-                      onClick={() => rmItem(i)}
+              {checkout ?
+                checkout.map((product, i) => (
+                  <div className='cart-product'key={i}>
+                    <img
+                      className="cart-image"
+                      src={product.photo}
                     />
+                    <div className='cart-props'>
+                      <p className='cart-name'>{product.name}</p>
+                      <p className='cart-style'>{product.style} </p>
+                      <p className='cart-price'>${product.price}</p>
+                      <p className='cart-size'>Size : {product.size} </p>
+                      <p className='cart-quantity'>Quantity : {product.quantity} </p>
+                      <TbShoppingCartX
+                        className='c-del-item'
+                        onClick={() => rmItem(i)}
+                      />
+                    </div>
                   </div>
-                </div>
                 )) :
                 <h3> EMPTY </h3>}
             </div>

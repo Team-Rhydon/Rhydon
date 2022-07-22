@@ -10,16 +10,16 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
     if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1) {
       moveOutfitLeft(true);
     }
-    if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p1').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
-      let element = document.getElementsByClassName('outfit-pleft')[0];
+    if (document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p1').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+      const element = document.getElementsByClassName('outfit-pleft')[0];
       updatePosition(element, 'outfit-pleft', 'outfit-p1');
-    } else if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p2').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+    } else if (document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p2').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
       let element = document.getElementsByClassName('outfit-p1')[0];
       updatePosition(element, 'outfit-p1', 'outfit-p2');
       element = document.getElementsByClassName('outfit-pleft')[0];
       updatePosition(element, 'outfit-pleft', 'outfit-p1');
     }
-    if(document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p3').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
+    if (document.getElementsByClassName('outfit-card').length > 3 && document.getElementsByClassName('outfit-p3').length === 0 && document.getElementsByClassName('outfit-pleft').length > 0) {
       let element = document.getElementsByClassName('outfit-p2')[0];
       updatePosition(element, 'outfit-p2', 'outfit-p3');
       element = document.getElementsByClassName('outfit-p1')[0];
@@ -131,8 +131,8 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
   return (
     <div className="related">
       <div className="title-div">
-      <h5 className="title">Your Outfits</h5>
-      <p className="title-lines"></p>
+        <h5 className="title">Your Outfits</h5>
+        <p className="title-lines"></p>
       </div>
       <div className="carousel">
         <div className='outfit-prev-container btn hidden'>

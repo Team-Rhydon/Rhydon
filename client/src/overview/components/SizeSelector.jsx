@@ -40,10 +40,10 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
               className="sizebuttons"
               key={i}
               disabled
-              >
+            >
               {buttonSize || 'Out Of Stock'}
             </button>
-          )
+          );
         }
         return (
           <button
@@ -54,10 +54,10 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
             onClick={(e) => {
               onSkuClick(e, skuNumber);
             }}
-            >
+          >
             {buttonSize}
           </button>
-        )
+        );
       })}
       {sku ?
         <QuantitySelector

@@ -1084,6 +1084,7 @@ tr:nth-child(odd) .table-characteristic {
   line-height: 1.2;
   letter-spacing: .0375px;
   align-self: self-end;
+  padding-top: .25rem;
 }
 
 .add-btn-desc-container {
@@ -1167,6 +1168,7 @@ tr:nth-child(odd) .table-characteristic {
   align-self: center;
   object-fit: cover;
   width: 1.9vh;
+  height: 20px;
 }
 
 .title-lines {

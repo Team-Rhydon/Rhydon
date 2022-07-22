@@ -4,7 +4,7 @@
 import React, {useState} from 'react';
 import SizeSelector from './SizeSelector.jsx';
 import Cart from './Cart.jsx';
-import {FaReact} from 'react-icons/fa'
+import {FaReact} from 'react-icons/fa';
 // import {GiOctopus} from 'react-icons/gi'
 import octo from '../../assets/icons/octo.png';
 
@@ -55,20 +55,20 @@ const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCar
         <button
           className={like ? 'lovey-button' : 'lovey-button to-love-button'}
           onClick={() => setLike(!like)}
-          >
-            {like
-            ? <img className="octo-button" src={octo}/>
-            : <FaReact className="react-button" />}
+        >
+          {like ?
+            <img className="octo-button" src={octo}/> :
+            <FaReact className="react-button" />}
         </button>
       </div>
-      {showCart
-        ? <Cart
-            showCart={showCart}
-            setCart={setCart}
-            cartData={cartData}
-            updateCart={updateCart}
-          />
-        : null
+      {showCart ?
+        <Cart
+          showCart={showCart}
+          setCart={setCart}
+          cartData={cartData}
+          updateCart={updateCart}
+        /> :
+        null
       }
     </div>
   );
