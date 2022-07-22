@@ -58,7 +58,7 @@ th {
   margin-left: 0;
   margin-right: 0;
   padding-top: 1.5vh;
-  /* padding-right: 1.5vw; */
+  padding-right: 1.5vw;
 }
 
 .related .carousel .carousel-next, .carousel-prev, .outfit-next, .outfit-prev {
@@ -350,6 +350,7 @@ object-fit: cover;
     transform: translate(-50%, -50%);
     background-color: white;
     border: 1px solid #e7e7e7;
+    border-radius: 5px;
   }
 
   .preview.hidden {
