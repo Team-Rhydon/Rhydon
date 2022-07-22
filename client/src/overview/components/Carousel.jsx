@@ -69,7 +69,9 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
               />
               <img
                 className="m-logo"
-                src={logo} />
+                src={logo}
+                alt=''
+              />
               <IoIosArrowBack
                 className="s-leftarrow"
                 onClick={prevSlide}
@@ -93,12 +95,20 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                 <div className="pi-reviewstars">
                   <div
                     className="pi-stars">
-                    {rating ? <StarRating rating={rating} count={count}/> : null}
+                    {rating ?
+                      <StarRating
+                        rating={rating}
+                        count={count}
+                      /> :
+                      null
+                    }
                   </div>
                   <div
                     className="pi-reviews"
                     onClick={() => ratingsScroll(ratingsRef)}
-                  >Read All {count} Reviews</div>
+                  >
+                    Read All {count} Reviews
+                  </div>
                 </div>
               </div>
             </div>

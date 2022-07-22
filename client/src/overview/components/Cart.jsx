@@ -47,14 +47,20 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
               {checkout
                 ? checkout.map((product, i) => (
                 <div className='cart-product'key={i}>
-                  <img className="cart-image" src={product.photo} witdh="25" height="25"/>
+                  <img
+                    className="cart-image"
+                    src={product.photo}
+                  />
                   <div className='cart-props'>
                     <p className='cart-name'>{product.name}</p>
                     <p className='cart-style'>{product.style} </p>
                     <p className='cart-price'>${product.price}</p>
                     <p className='cart-size'>Size : {product.size} </p>
                     <p className='cart-quantity'>Quantity : {product.quantity} </p>
-                    <TbShoppingCartX className='c-del-item' onClick={() => rmItem(i)}/>
+                    <TbShoppingCartX
+                      className='c-del-item'
+                      onClick={() => rmItem(i)}
+                    />
                   </div>
                 </div>
                 )) :
