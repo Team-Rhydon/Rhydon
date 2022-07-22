@@ -20,7 +20,11 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
 
   return (
     <section className="miniSlider">
-      <IoIosArrowUp onClick={prevSlide} className="ms-arrowup"/>
+      <IoIosArrowUp
+        onClick={prevSlide}
+        className="ms-arrowup"
+        aria-label='shift mini slide picture upwards'
+      />
       {slide.map((obj, i) => {
         if (i === currentImage.count) {
           return (
@@ -29,6 +33,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery and selected picture'
             />
           );
         }
@@ -39,6 +44,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery'
             />
           );
         }
@@ -49,6 +55,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery'
             />
           );
         }
@@ -59,11 +66,16 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               key={obj.url}
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
+              alt='mini slide picture from style gallery'
             />
           );
         }
       })}
-      <IoIosArrowDown onClick={nextSlide} className="ms-arrowdown"/>
+      <IoIosArrowDown
+        onClick={nextSlide}
+        className="ms-arrowdown"
+        aria-label='shift mini slides down'
+      />
     </section>
   );
 };

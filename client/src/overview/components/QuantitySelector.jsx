@@ -31,6 +31,7 @@ const QuantitySelector = ({size, quantity, setPurchase, selectedQuantity, setSel
   return (
     <div>
       <select
+        aria-label='choose quantity of product'
         className="quantity-selector"
         value={selectedQuantity}
         onChange={(e) => changeAmount(e)}

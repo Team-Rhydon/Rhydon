@@ -39,20 +39,23 @@ const Overview = ({reviews, styles, details, ratingsScroll, ratingsRef, cartData
 
   if (!product) return null;
 
-  return (<div id="overview" className="overview-widget">
-    <Styles
-      styles={styles}
-      product={product}
-      rating={rating}
-      count={count}
-      ratingsScroll={ratingsScroll}
-      ratingsRef={ratingsRef}
-      productName={name}
-      cartData={cartData}
-      updateCart={updateCart}
-    />
-    <ProductInfo product={product}/>
-  </div>);
+  return (
+    <div id="overview" className="overview-widget">
+      {console.log('overview')}
+      <Styles
+        styles={styles}
+        product={product}
+        rating={rating}
+        count={count}
+        ratingsScroll={ratingsScroll}
+        ratingsRef={ratingsRef}
+        productName={name}
+        cartData={cartData}
+        updateCart={updateCart}
+      />
+      <ProductInfo product={product}/>
+    </div>
+  );
 };
 
 export default Overview;

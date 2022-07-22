@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CompressionPlugin = require("compression-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin');
 const dotenv = require('dotenv').config({
   path: path.join(__dirname, '.env'),
 });

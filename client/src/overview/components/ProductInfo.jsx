@@ -27,10 +27,12 @@ const ProductInfo = ({product}) => {
         </h5>
         {toggleDescription ?
           <AiOutlineMinus
+            aria-label='toggle hide description'
             onClick={displayDescription}
             className="pi-minus"
           /> :
           <AiOutlinePlus
+            aria-label='toggle show description'
             onClick={displayDescription}
             className="pi-plus"/>
         }

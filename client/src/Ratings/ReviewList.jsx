@@ -45,7 +45,7 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
     axios.get('/reviews', params)
         .then((response) => {
           setStorage((prevStorage)=> {
-            return [...prevStorage, ...response.data.results];
+            return [...response.data.results];
           });
         }).catch((err)=> console.log('err getting revierrews'));
   }, [page, product_id, sortStyle, count]);

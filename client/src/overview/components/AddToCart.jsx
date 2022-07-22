@@ -47,6 +47,7 @@ const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCar
       />
       <div className="add-love-buttons">
         <button
+          aria-label='Add To Cart button'
           className="s-add-button"
           onClick={() => fillCart()}
           disabled={!purchase.complete}
@@ -54,8 +55,10 @@ const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCar
           Add To Cart
         </button>
         <button
+          aria-label='Like or unlike button'
           className={like ? 'lovey-button' : 'lovey-button to-love-button'}
           onClick={() => setLike(!like)}
+
         >
           {like ?
             <img className="octo-button" src={octo}/> :
