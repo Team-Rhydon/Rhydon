@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 import React, {useEffect, useState} from 'react';
 import {IoIosArrowUp, IoIosArrowDown} from 'react-icons/io';
-import  fillIn from '../../assets/icons/nofound.png'
+import fillIn from '../../assets/icons/nofound.png';
 
 const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlide}) => {
   const [slide, setSlide] = useState(gallery);
@@ -30,7 +30,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
             />
-          )
+          );
         }
         if (i > currentImage.count - 4 && i < currentImage.count + 4) {
           return (
@@ -40,7 +40,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
             />
-          )
+          );
         }
         if (i < 7 && currentImage.count < 4) {
           return (
@@ -50,7 +50,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
             />
-          )
+          );
         }
         if (i >= slide.length - 7 && currentImage.count > slide.length - 5) {
           return (
@@ -60,7 +60,7 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
               onClick={() => changeImage(i)}
               src={obj.url ? obj.url : fillIn}
             />
-          )
+          );
         }
       })}
       <IoIosArrowDown onClick={nextSlide} className="ms-arrowdown"/>

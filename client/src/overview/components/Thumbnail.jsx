@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 import React from 'react';
-import  fillIn from '../../assets/icons/nofound.png'
+import fillIn from '../../assets/icons/nofound.png';
 
 const Thumbnail = ({productStyles, style, setSelectedStyle}) => {
   return (

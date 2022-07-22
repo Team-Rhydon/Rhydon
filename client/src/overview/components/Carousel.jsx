@@ -5,7 +5,7 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import {FiMaximize} from 'react-icons/fi';
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import line from '../../assets/icons/thick-vertical-line.png';
-import  fillIn from '../../assets/icons/nofound.png'
+import fillIn from '../../assets/icons/nofound.png';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 import StarRating from '../../Related/StarRating.jsx';
@@ -38,10 +38,10 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
     });
   };
 
-  let scrollToElement = (className) => {
-    const anchor = document.querySelector(`.${className}`);
-    anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
-  }
+  // const scrollToElement = (className) => {
+  //   const anchor = document.querySelector(`.${className}`);
+  //   anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
+  // };
 
   useEffect(() => {
     setCurrentImage((prevState) => ({

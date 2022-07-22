@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useEffect, useState} from 'react';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
-import  fillIn from '../../assets/icons/nofound.png'
+import fillIn from '../../assets/icons/nofound.png';
 import {FiMinimize} from 'react-icons/fi';
 import {createPortal} from 'react-dom';
 import ExpandedIcons from './ExpandedIcons.jsx';
