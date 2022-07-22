@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import ReviewPhotos from './ReviewPhotos.jsx';
 
-const UserInfo = props => {
+const UserInfo = (props) => {
   const [nickname, setNickName] = useState('');
   const [email, setEmail] = useState('');
   const [summary, setSummary] = useState('');
@@ -15,7 +15,7 @@ const UserInfo = props => {
     // props.setPhotos(photos);
     props.setName(nickname);
     props.setEmail(email);
-    props.page(prevPage => prevPage + 1);
+    props.page((prevPage) => prevPage + 1);
   }
 
   return (
@@ -27,8 +27,8 @@ const UserInfo = props => {
           value={summary}
           maxLength={60}
           onChange={(e)=>setSummary(e.target.value)}
-          />
-        </div>
+        />
+      </div>
       <br></br>
       <h3>*Please let us know exactly how you feel about the {props.details.name}.* </h3>
       <div className="New-Review-Body">
@@ -54,14 +54,14 @@ const UserInfo = props => {
         onChange={(e)=> setNickName(e.target.value)}
         maxLength={60}
         required
-        />
+      />
       <p>For privacy reasons, do not use your full name or email address</p>
       <label>Email:</label>
       <input
         type="text"
         placeholder="Example: jackson11@email.com"
         value={email}
-        onChange={e=> setEmail(e.target.value)}
+        onChange={(e)=> setEmail(e.target.value)}
         maxLength={60}
         required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
       />
@@ -70,7 +70,7 @@ const UserInfo = props => {
         <input className="submit-btn" type="submit" value="Submit" />
       </div>
     </form>
-  )
-}
+  );
+};
 
 export default UserInfo;

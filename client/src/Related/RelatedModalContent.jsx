@@ -12,32 +12,31 @@ function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
   return (
     <table className="modal-content">
       <tbody>
-      <tr className='btn-container remove-outfit'>
-        <td>
-        <img src={closeBtn} className="close-btn center-vert-horz"/>
-        </td>
+        <tr className='btn-container remove-outfit'>
+          <td>
+            <img src={closeBtn} className="close-btn center-vert-horz"/>
+          </td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-            <td><img className='thumb' src={thumbnails['current']}/></td>
-            <td>
-              <div>
-                <p className='table-logo'>Comparing</p>
-                <img className='center-horz-vert table-logo' src={logo}/>
-              </div>
-
-              </td>
-            <td><img className='thumb' src={thumbnails['compare']}/></td>
+          <td><img className='thumb' src={thumbnails['current']}/></td>
+          <td>
+            <div>
+              <p className='table-logo'>Comparing</p>
+              <img className='center-horz-vert table-logo' src={logo}/>
+            </div>
+          </td>
+          <td><img className='thumb' src={thumbnails['compare']}/></td>
         </tr>
         <tr>
-        <td className='table-header'>
-              {curName}
-            </td>
-            <td className='table-header table-characteristic'>Characteristics</td>
-            <td className='table-header'>
-              {compName}
-            </td>
+          <td className='table-header'>
+            {curName}
+          </td>
+          <td className='table-header table-characteristic'>Characteristics</td>
+          <td className='table-header'>
+            {compName}
+          </td>
         </tr>
         {
           Object.keys(characteristics).map((key, index) => {
@@ -52,6 +51,5 @@ function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
     </table>
   );
 }
-
 
 export default RelatedModalContent;

@@ -148,13 +148,16 @@ th {
   text-align: left;
 }
 
+.related .carousel .slide .product-card p{
+  text-align: left;
+}
+
 .related .carousel .slide {
   display: flex;
   position: absolute;
   /* width: 25%; */
   transition: all .3s linear;
 }
-
 .related .carousel .slide.related-pleft, .slide.outfit-pleft {
   left: -23vw;
 }
@@ -180,22 +183,10 @@ th {
 }
 
 .related .carousel .thumb {
-/* stretched */
-/* position: relative;
-width: 200px;
-height: 200px;
-cursor: pointer;
-min-width: 100px;
-background: center; */
-
 position: relative;
 margin: 0 auto;
-/* max-width: 25%; */
 width: 20vw;
-/* max-width: 275px;
-max-height: 275px; */
 height: 20vw;
-/* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
 border-radius: .25em;
@@ -388,9 +379,9 @@ object-fit: cover;
   }
 
   .add-btn {
-    margin-top: 4vw;
-    height: 15vw;
-    width: 15vw;
+    margin-top: 3vw;
+    height: 20vw;
+    width: 20vw;
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
     background: transparent;
   }
@@ -996,6 +987,8 @@ max-height: 100%;
 .logo {
   object-fit: cover;
   cursor: pointer;
+  width: 70px;
+  height: 70px;
 }
 
 .nav-bar .nav-container .right-nav {
@@ -1126,6 +1119,7 @@ tr:nth-child(odd) .table-characteristic {
   line-height: 1.2;
   letter-spacing: .025vw;
   align-self: self-end;
+  padding-top: .25rem;
 }
 
 .add-btn-desc-container {
@@ -1230,8 +1224,8 @@ tr:nth-child(odd) .table-characteristic {
 
 .vertical-line {
   align-self: center;
-  object-fit: cover;
   width: 1.9vh;
+  height: 1.6vw;
 }
 
 .title-lines {
@@ -1264,4 +1258,67 @@ padding-bottom: 29.5px;
   text-align: center;
   font-size: 4vw;
   font-weight: bold;
+}
+
+.search-btn.hidden {
+  display: none;
+}
+
+.search.hidden {
+  display: none;
+}
+
+.search-btn-container {
+  position: relative;
+  height: 3vh;
+  width: 3vh;
+  background: black;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.search-close-btn-container {
+  position: relative;
+  height: 3vh;
+  width: 3vh;
+  z-index: 5;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 2px solid transparent;
+}
+
+.header-search {
+  height: 3vh;
+  margin: 0;
+  padding: 0;
+}
+
+.search {
+  display: flex;
+  margin-top: 20px;
+}
+
+.search-bar {
+  display: flex;
+}
+
+.search-close-btn {
+  position: relative;
+  font-size: 2vh;
+}
+
+.search-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(35deg) brightness(102%) contrast(103%);
+  width: 2vh;
+  height: 2vh;
+}
+
+.search-icon-init {
+  height: 24px;
+  width: 24px;
+}
+
+.search-icon-init-text {
+  font-size: 12px;
 }
