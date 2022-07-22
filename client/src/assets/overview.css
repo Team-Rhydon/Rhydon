@@ -805,8 +805,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0 , .7);
-  z-index: 900;
-  overflow: -moz-hidden-unscrollable;
+  z-index: 1000;
 }
 
 .c-modal-style {
@@ -818,8 +817,7 @@
   padding: 0px 16px 16px 16px;
   width: 712px;
   border-radius: 5px;
-  z-index: 1000;
-  overflow:-moz-hidden-unscrollable;
+  z-index: 1001;
 }
 
 .c-title-container {
