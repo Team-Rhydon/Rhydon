@@ -136,7 +136,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
       </div>
       <div className="carousel">
         <div className='outfit-prev-container btn hidden'>
-          <img src={prevArrow} onClick={(e) => moveOutfitLeft(e)} className="outfit-prev"/>
+          <img src={prevArrow} onClick={(e) => moveOutfitLeft(e)} className="outfit-prev center-vert-horz"/>
         </div>
         <div className="carousel-inner">
           {shouldInsertAddCard() ? <OutfitAddCard key='add-btn' addToOutfit={addToOutfit} product={product}/> : null}
@@ -148,7 +148,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
             position={outfits[id]['position']} />)}
         </div>
         <div className='outfit-next-container btn hidden'>
-          <img src={nextArrow} onClick={(e) => moveOutfitRight(e)} className="outfit-next"/>
+          <img src={nextArrow} onClick={(e) => moveOutfitRight(e)} className="outfit-next center-vert-horz"/>
         </div>
       </div>
       <div className='title'></div>

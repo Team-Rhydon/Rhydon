@@ -60,7 +60,7 @@ th {
   margin-left: 0;
   margin-right: 0;
   padding-top: 1.5vh;
-  /* padding-right: 1.5vw; */
+  padding-right: 15px;
 }
 
 .related .carousel .carousel-next, .carousel-prev, .outfit-next, .outfit-prev {
@@ -384,8 +384,8 @@ object-fit: cover;
 
   .add-btn {
     margin-top: 30px;
-    height: 200px;
-    width: 200px;
+    height: 260px;
+    width: 260px;
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
     background: transparent;
   }

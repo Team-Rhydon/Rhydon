@@ -11,7 +11,7 @@ function Nav({updateCurrentProduct}) {
           <img onClick={(e) => updateCurrentProduct(e,'40351' )} className='logo' src ={logo}/>
         </div>
         <div className='right-nav'>
-        <Search/>
+        <Search updateCurrentProduct={updateCurrentProduct}/>
           <div onClick={(e) => {
             document.getElementsByClassName('search-btn')[0].classList.add('hidden');
             document.getElementsByClassName('search')[0].classList.remove('hidden');

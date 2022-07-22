@@ -13,7 +13,9 @@ import _ from 'lodash';
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
+  const [cartData, updateCart] =useState([])
   const [carouselPos, setCarouselPos] = useState({});
+  const [searchValue, doSearch] = useState('');
   const ratingsRef = useRef();
 
   useEffect(() => {
@@ -24,6 +26,7 @@ function App() {
     // updateCurrentProduct(null, '40376'); // oout of stock size
     // updateCurrentProduct(null, '40353'); // stones
   }, []);
+
 
   function updateCurrentProduct(e, id) {
     setProduct();
@@ -134,13 +137,19 @@ function App() {
       });
     }
   };
-
   if (!product) return null;
   return (
     <div data-testid="" className="app">
-      <Nav updateCurrentProduct={updateCurrentProduct}/>
+      <Nav updateCurrentProduct={updateCurrentProduct} setProduct={setProduct}/>
       <div className='widgets'>
-      <Overview className="overview-widget" {...product} ratingsRef={ratingsRef} ratingsScroll={ratingsScroll} />
+      <Overview
+        className="overview-widget"
+        ratingsRef={ratingsRef}
+        ratingsScroll={ratingsScroll}
+        cartData={cartData}
+        updateCart={updateCart}
+        {...product}
+      />
       <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
       <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
       <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>

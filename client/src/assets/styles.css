@@ -58,7 +58,7 @@ th {
   margin-left: 0;
   margin-right: 0;
   padding-top: 1.5vh;
-  /* padding-right: 1.5vw; */
+  padding-right: 1.5vw;
 }
 
 .related .carousel .carousel-next, .carousel-prev, .outfit-next, .outfit-prev {
@@ -228,6 +228,7 @@ border-radius: .25em;
   right: 1vw;
   cursor: pointer;
   color: white;
+  size: 1.5rem;
 }
 
 .related .star:before {
@@ -387,9 +388,9 @@ object-fit: cover;
   }
 
   .add-btn {
-    margin-top: 4vw;
-    height: 15vw;
-    width: 15vw;
+    margin-top: 3vw;
+    height: 20vw;
+    width: 20vw;
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
     background: transparent;
   }
@@ -479,7 +480,7 @@ cursor: pointer;
   .meter {
     height: 10px;
     position: relative;
-    background: rgb(136, 135, 135);
+    background: rgb(209, 209, 209);
     border-radius: 25px;
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
   }
@@ -491,9 +492,9 @@ cursor: pointer;
     border-bottom-right-radius: 2px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-color: rgb(69, 244, 0);
+    background-color: rgb(51, 179, 0);
     box-shadow:
-      inset 0 2px 9px  rgba(255,255,255,0.3),
+      inset 0 2px 9px  rgba(255, 255, 255, 0.508),
       inset 0 -2px 6px rgba(0,0,0,0.4);
     position: relative;
     overflow: hidden;
@@ -501,33 +502,44 @@ cursor: pointer;
 
   .RatingWidget {
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
     display: flex;
-    margin: auto;
-    flex-direction: column;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    flex-direction: row;
   }
 
   .Ratings-Breakdown {
     display: flex;
-    flex-direction: row;
-    width: 75%;
+    flex-direction: column;
+    min-width: 30vw;
     align-self: center;
+    padding-right: 1em;
+    max-width: 40%;
+    border-right: 1px solid lightgrey;
   }
 
   .Ratings-Reviews-Summary {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-left: 1em;
     margin-right: 1em;
   }
 
+  .Ratings-Reviews-Summary p {
+    text-align: center;
+  }
+
   .Star-Ratings {
     display: flex;
-    flex-direction: row;
-    width: 66%;
+    /* flex-direction: row */
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid grey;;
   }
 
   .Star-Bars {
@@ -538,9 +550,9 @@ cursor: pointer;
   .ReviewHeader {
     grid-row-start: 1;
     width: 100%;
-    border-bottom: 2px solid black;
-    display: grid;
-    grid-template-columns: .6fr 5.4fr  1fr 1fr;
+    border-bottom: 2px solid lightgrey;
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
   }
 
   .ReviewSummary {
@@ -548,6 +560,7 @@ cursor: pointer;
     grid-column-start: 2;
     font-size: larger;
     font-weight: 600;
+    padding-left: 1em;
   }
 
   .ReviewRating {
@@ -558,14 +571,18 @@ cursor: pointer;
     grid-column-start: -1;
   }
 
+  .reviewBody {
+    margin-left: 1em;
+    min-width: 66%;
+  }
   .ReviewBody {
-    width: 100%;
+    width: 95%;
     grid-row-start: 2;
-    padding-left: 1em;
+    /* padding-left: 1em; */
     padding-top: .5em;
     padding-bottom: .5em;
-    display: grid;
-    grid-template-rows: 1.5fr 1.5fr 1fr .5fr .5fr;
+    display: inline-grid;
+    /* grid-template-rows: 1.5fr .5fr .4fr .6fr; */
   }
 
   .ReviewText {
@@ -577,16 +594,17 @@ cursor: pointer;
     grid-row-start: 2;
   }
   .ReviewRecommend {
-    grid-row-start: 4;
+    grid-row-start: 3;
   }
 
   .Review-Puts {
-    grid-row-start: 5;
+    grid-row-start: 4;
   }
 
   .ReviewContainer-scrollable {
     width: 100%;
     overflow-x: hidden;
+    min-height: 75vh;
     max-height: 75vh;
     padding-right: 1px;
     margin-bottom: 2em;
@@ -612,33 +630,45 @@ cursor: pointer;
     padding-top: .5em;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid lightgrey;
   }
 
   #review-btn{
     height: 3em;
     width: 7em;
     background-color: white;
-    border: transparent;
-    box-shadow: 0 0 .25em .25em grey;
-    margin-left: 7%;
+    border: 1px solid grey;
+    border-radius: .5em;
+    /* box-shadow: 0 0 .25em .25em grey; */
+    /* margin-left: 7%; */
     margin-bottom: 1%;
   }
   #review-btn:hover{
     background-color: #6a6a6a;
+    color: white;
   }
 
   #open-modal-btn {
     height: 3em;
     width: 7em;
     background-color: white;
-    border: transparent;
-    box-shadow: 0 0 .25em .25em grey;
-    margin-right: 7%;
+    border: 1px solid grey;
+    border-radius: .5em;
+    /* box-shadow: 0 0 .25em .25em grey; */
+    /* margin-right: 7%; */
     margin-bottom: 1%;
+  }
+  .read-more-btn{
+    border-color: transparent;
+    color: black;
+    background-color: white;
+    height: .5em;
+    margin-top: 0px;
   }
 
   #open-modal-btn:hover{
     background-color: #6a6a6a;
+    color: white;
   }
   .ReviewListFooter {
     display: flex;
@@ -733,6 +763,7 @@ cursor: pointer;
   .submit-btn {
     height: 3vh;
     min-width: 8vw;
+    border-radius: .5em;
     max-width: max-content;
     width: fit-content;
     color: black;
@@ -792,11 +823,18 @@ cursor: pointer;
     text-shadow: 0 0 1px black;
   }
 
-  .StarNumber:hover {
-    background-color: green;
+  .StarNumber p:hover {
+    text-decoration: underline;
     cursor: pointer;
   }
 
+  .StarNumber:hover .meter > span {
+    cursor: pointer;
+    background-color: rgb(255, 255, 2);
+    box-shadow:
+      inset 0 2px 9px  rgba(255, 255, 255, 0.508),
+      inset 0 -2px 6px rgba(0,0,0,0.4);
+  }
 
   .on {
     color: rgb(255, 247, 0);
@@ -822,7 +860,7 @@ cursor: pointer;
 
   .New-Review-Body {
     width: 100%;
-    height: auto;
+    height: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -834,17 +872,18 @@ cursor: pointer;
   }
 
   .ReviewTile {
-    height: 45%;
+    /* height: 45%; */
     width: 95%;
+    max-height: 33%;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
     /* background-color: rgb(180, 180, 180); */
-    display: grid;
-    grid-template-rows: 1fr 9fr;
-    margin: auto;
+    /* display: grid; */
+    /* grid-template-rows: 1fr 7fr; */
+    /* margin: auto; */
     margin-bottom: 1em;
-    border: 1px solid rgb(0, 0, 0, .5);
+    border: 1px solid rgba(131, 131, 131, 0.5);
     padding-top: .25em;
     padding-left: .5em;
     padding-right: .5em;
@@ -853,8 +892,8 @@ cursor: pointer;
 
   .ReviewList {
     width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    /* border-top: 1px solid black; */
+    /* border-bottom: 1px solid black; */
   }
 
   .trait-description {
@@ -1109,7 +1148,7 @@ tr:nth-child(odd) .table-characteristic {
 }
 
 .circle-progress {
-  stroke: rgb(0, 255, 26);
+  stroke: rgb(51, 179, 0);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1121,7 +1160,7 @@ tr:nth-child(odd) .table-characteristic {
 }
 
 .Product-Breakdown {
-  width: 33%;
+  width: 100%;
   padding-top: .5em;
 }
 .product-score {
@@ -1135,19 +1174,23 @@ tr:nth-child(odd) .table-characteristic {
 .PD-low {
   grid-column: 3;
   grid-row: 2;
-  align-self: flex-end;
+  align-self: center;
+  justify-self: start;
 }
 .PD-high {
   grid-row: 2;
   grid-column: 1;
-  align-self: flex-end;
+  align-self: center;
+  justify-self: end;
 }
 
   .circle {
   border: 1px solid grey;
-  border-radius: 3em;
+  border-radius: 50%  ;
   grid-column-start: 2;
   grid-row: 2;
+  max-height: 100%;
+  max-width: fit-content;
 }
 
 .put-btn {
@@ -1160,6 +1203,25 @@ tr:nth-child(odd) .table-characteristic {
 .put-btn:hover {
   color: blue;
   box-shadow: 0, 0, .5em, .5em #6a6a6a;
+  cursor: pointer;
+}
+
+.sortDrop {
+  padding: 1em;
+}
+
+.spacer {
+  min-height: 5vh;
+}
+
+.recommend-select {
+  display: flex;
+
+}
+
+.ReviewPhotos img {
+  object-fit: cover;
+  padding: .2em;
 }
 
 .card-name-div {
@@ -1229,6 +1291,7 @@ padding-bottom: 29.5px;
   background: transparent;
   cursor: pointer;
   border-radius: 2px;
+  border: 2px solid transparent;
 }
 
 .header-search {
@@ -1240,7 +1303,6 @@ padding-bottom: 29.5px;
 .search {
   display: flex;
   margin-top: 20px;
-  margin-right: 20px;
 }
 
 .search-bar {

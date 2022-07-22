@@ -67,6 +67,11 @@
   border-bottom-right-radius: 2px;
   background-color: rgb(255, 255, 255);
   opacity: .8;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .m-carousel .s-rightarrow {
@@ -79,6 +84,11 @@
   border-bottom-left-radius: 2px;
   background-color: rgb(255, 255, 255);
   opacity: .8;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .m-carousel .s-expand {
@@ -88,6 +98,11 @@
   top: 15px;
   right: 15px;
   opacity: .75;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .m-carousel .m-logo {
@@ -109,12 +124,22 @@
   color: white;
   background-color: rgb(146, 146, 146);
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .s-expand:hover {
   cursor: pointer;
   color: white;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .slide {
@@ -153,17 +178,32 @@
   position: relative;
   font-size: 30px;
   opacity: .4;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .ms-arrowdown {
   position: relative;
   font-size: 30px;
   opacity: .4;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .ms-arrowup:hover, .ms-arrowdown:hover{
   cursor: pointer;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .styleselector {
@@ -219,7 +259,12 @@
   height: 47px;
   border-style: double;
   border-width: 7px;
-  border-color: rgba(186, 186, 186, 0.747);
+  border-color: rgba(0, 0, 0, 0.747);
+  -webkit-transition: all 50ms ease;
+  -moz-transition: all 50ms ease;
+  -ms-transition: all 50ms ease;
+  -o-transition: all 50ms ease;
+  transition: all 50ms ease;
 }
 
 .selected-thumbnail {
@@ -252,6 +297,7 @@
 .s-add-button:disabled {
   color: white;
   background-color: rgba(216, 77, 77, 0.809);
+  border-width: 1px;
   border-radius: 2px;
   width: 212px;
   height: 50px;
@@ -260,6 +306,7 @@
 .s-add-button:enabled {
   color: white;
   background-color: red;
+  border-width: 1px;
   border-radius:3px;
   width: 212px;
   height: 50px;
@@ -292,7 +339,13 @@
   border-width: .01px;
   border-radius: 3px;
   border-color: lightgray;
+  border-style: solid;
   background-color: white;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .sizebuttons:hover, .sizebuttons-picked {
@@ -305,11 +358,26 @@
   border-radius: 3px;
   border-color: lightgray;
   background-color: rgb(0, 0, 0);
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 
-.sizebuttons:hover, .s-add-button:enabled, .twitter:hover, .facebook:hover, .pinterest:hover {
-  cursor: pointer;
+.sizebuttons:hover, .s-add-button:enabled, .view-bag, .keep-shopping{
+  cursor: pointer ;
+}
+
+#twitter:hover, #facebook:hover, #pinterest:hover {
+  cursor: pointer !important;
+  background-color: black !important;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .sizebuttons-picked:hover {
@@ -318,10 +386,27 @@
 
 .quantity-selector {
   text-align: center;
-  width: 321px;
+  width: 318px;
   height: 35px;
   margin: 10px 0px 0px 2px;
-  border-radius: 2px;
+  border-color: lightgray;
+  border-radius: 3px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.quantity-selector:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .share-icons {
@@ -331,25 +416,31 @@
   padding: 5px;
 }
 
-.facebook, .twitter, .pinterest {
-  width: 104.1px;
+#facebook, #twitter, #pinterest {
+  display: flex;
+  justify-content: center;
+  width: 104.1px ;
   height: 35px;
-  padding-right: 6px;
+  padding: 6px !important;
   margin: 2px;
-  border-width: .01px;
+  border: 1px solid lightgray !important;
   border-radius: 3px;
-  border-color: lightgray;
-  background-color: white;
+  background-color: white !important;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
-.facebook {
-  color: rgb(55, 111, 255);
+#facebook {
+  color: rgb(55, 111, 255) !important;
 }
-.twitter {
-  color: rgb(183, 203, 255);
+#twitter {
+  color: rgb(183, 203, 255) !important;
 }
-.pinterest {
-  color: rgb(255, 48, 48);
+#pinterest {
+  color: rgb(255, 48, 48) !important;
 }
 
 .o-details {
@@ -422,12 +513,22 @@
 .o-description-icon-container {
   display: inline-flex;
   width: 100%;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .o-description-icon-container-open {
   display: flex;
   width: 100%;
   border-left: 5px solid black;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .pi-description {
@@ -468,6 +569,11 @@
 .pi-minus:hover, .pi-plus:hover {
   cursor: pointer;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-overlay {
@@ -520,6 +626,11 @@
   background-color: rgb(255, 255, 255);
   opacity: .8;
   z-index: 2000;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-image-container .i-right-arrow {
@@ -532,6 +643,11 @@
   border-bottom-left-radius: 2px;
   background-color: rgb(255, 255, 255);
   opacity: .8;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 .i-image-container .i-minimize {
   color: white;
@@ -541,6 +657,11 @@
   right: 30px;
   z-index: 2000;
   opacity: .75;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-image-container .i-expanded-icons {
@@ -548,6 +669,11 @@
   justify-content: center;
   bottom: 20px;
   z-index: 2000;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-left-arrow:hover, .i-right-arrow:hover {
@@ -555,12 +681,22 @@
   color: white;
   background-color: rgb(146, 146, 146);
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-minimize:hover:hover {
   cursor: pointer;
   color: white;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .o-description-container {
@@ -569,6 +705,11 @@
   justify-content: center;
   padding-bottom: 59px;
   border-right: 5px solid black;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-expanded-icons {
@@ -614,6 +755,11 @@
 .i-filler:hover {
   cursor: pointer;
   opacity: 1;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }
 
 .i-chosen{
@@ -635,9 +781,13 @@
   background-color: rgb(40, 44, 52);
   border-radius: 3px;
   border-width: .2px;
-  width: 99px;
+  width: 103px;
   height: 50px;
   margin: 5px 0px 5px 4px;
+}
+
+.lovey-button:hover {
+  cursor: pointer;
 }
 
 .react-button {
@@ -655,7 +805,8 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0 , .7);
-  z-index: 1000;
+  z-index: 900;
+  overflow: -moz-hidden-unscrollable;
 }
 
 .c-modal-style {
@@ -664,8 +815,179 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFF;
-  padding: 5px;
-  width: 700px;
+  padding: 0px 16px 16px 16px;
+  width: 712px;
   border-radius: 5px;
   z-index: 1000;
+  overflow:-moz-hidden-unscrollable;
+}
+
+.c-title-container {
+  display: flex;
+}
+
+.cart-title {
+  display: flex;
+  justify-content: start;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 600;
+  padding: 10px 0px 10px;
+}
+
+.cart-line {
+  border-bottom: 2px solid lightgray;
+    width: 47%;
+    margin-left: 41px;
+    margin-bottom: 3%;
+}
+
+.cart-image {
+  object-fit: cover;
+  align-content: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 3px;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+}
+
+.cart-product {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.cart-side {
+  align-content: center;
+  border-left: 2px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35%;
+}
+
+.cart-exits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.keep-shopping {
+  align-self: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-width: 1px;
+  border-color: lightgrey;
+  border-radius:3px;
+  width: 80%;
+  height: 50px;
+  margin: 5px 0px 10px 16px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.view-bag {
+  align-self: center;
+  color: white;
+  background-color: red;
+  border-width: 1px;
+  border-radius:3px;
+  width: 80%;
+  height: 50px;
+  margin: 5px 0px 10px 16px;
+}
+
+.cart-props {
+  max-width: 151px;
+  margin-left: 22.25px
+;
+}
+
+.cart-name {
+  font-size: 25px;
+  margin: 7px 0px 7px 0px;
+}
+
+.side-props {
+  border-bottom: 2px solid lightgrey;
+  width: 80%;
+  margin-left: 32px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  width: 79%;
+  margin-left: 32px;
+}
+
+.quant-container {
+  display: flex;
+  justify-content: space-between;
+  width: 79%;
+  margin-left: 32px;
+}
+
+.c-total-price, .c-total-description {
+  display: flex;
+  align-self: flex-start;
+}
+
+.product-container {
+  width: 65%;
+  overflow: auto;
+}
+
+.cart-style {
+  display: flex;
+  font-size: 14px;
+  color: #757474;
+  line-height: 2px;
+  font-style: italic;
+}
+
+.cart-price {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.c-del-item {
+  display: flex;
+  align-self: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid;
+  border-color: lightgrey;
+  border-radius: 4px;
+  width: 100%;
+  height: 22px;
+  padding: 10px 1px 10px 1px;
+  margin-top: -6px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.c-del-item:hover, .keep-shopping:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
 }

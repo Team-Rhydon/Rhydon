@@ -14,7 +14,7 @@ function OutfitAddCard({product, position, id, addToOutfit, removeOutfit}) {
           {/* <div className='add-btn-desc-container'> */}
           {/* <IoIosArrowBack
               /> */}
-            <div className='add-btn-desc'>Click here to add current product to outfit</div>
+            <div className='add-btn-desc'>CLICK TO ADD PRODUCT</div>
             <div className='add-btn-plus center-vert-horz'>+</div>
           {/* </div> */}
         {/* </div> */}

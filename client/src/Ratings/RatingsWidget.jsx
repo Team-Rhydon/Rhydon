@@ -33,7 +33,10 @@ const RatingsWidget = (props)  => {
           product={props.meta}
           ratingsRef={props.ratingsRef}
         />
-        <ProductBreakdown traits={props.meta.characteristics} product={props.meta} />
+        <ProductBreakdown
+          traits={props.meta.characteristics}
+          product={props.meta}
+        />
       </div>
       <br></br>
       <div className="reviewBody">

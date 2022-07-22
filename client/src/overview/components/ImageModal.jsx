@@ -5,7 +5,6 @@ import React, {useEffect, useState} from 'react';
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import {FiMinimize} from 'react-icons/fi';
 import {createPortal} from 'react-dom';
-import styled from 'styled-components';
 import ExpandedIcons from './ExpandedIcons.jsx';
 
 const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, setImageModal, prevSlide, nextSlide}) => {
@@ -30,6 +29,7 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
           <img
             className="i-modal-image"
             src={currentImage.url}
+            alt=''
           />
           <ExpandedIcons
             className="i-expanded-icons"

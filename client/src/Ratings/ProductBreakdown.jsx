@@ -17,10 +17,7 @@ function ProductBreakdown(props) {
   return (
 
     <div className="Product-Breakdown">
-      {/* <p>{100 * (Number(recommended.true)/(Number(recommended.true) + Number(recommended.false))).toFixed(2)}% of buyers recommend this product </p> */}
-
       {Object.entries(props.traits).map(([trait, {value}], index)=>{
-        // console.log(trait);
         return (
           <div key ={index}>
             {!trait
@@ -45,11 +42,3 @@ function ProductBreakdown(props) {
 }
 
 export default ProductBreakdown;
-
-{/* <span> {trait}: {Number(value).toFixed(2)}</span> */}
-{/* <div className="indicator">
-  <span className="indicator-bar" style={{backgroundColor: "blue", width: `${100 * (value/5).toFixed(3)}%`}}></span>
-  <span className="marker" style={{backgroundColor: "red", width: "2%"}}></span>
-</div> */}
-  {/* <span className="trait-description">
-  </span> */}
