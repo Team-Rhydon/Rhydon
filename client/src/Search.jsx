@@ -42,6 +42,7 @@ function Search({updateCurrentProduct}) {
           makeSearch(e);
         }}>
           <img
+            alt='popped out search icon'
             className='search-icon center-vert-horz' src={search}/>
         </div>
       </div>

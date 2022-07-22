@@ -13,7 +13,7 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
 
   return (
     <>
-      <div className="i-overlay" onClick={() => setImageModal(false)}/>
+      <div className="i-overlay" onClick={(e) => setImageModal(false)}/>
       <div className="i-modal-style">
         <div className="i-image-container">
           <IoIosArrowBack
