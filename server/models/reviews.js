@@ -1,30 +1,30 @@
-const axios = require("axios");
-require("dotenv").config();
+const axios = require('axios');
+require('dotenv').config();
 
-//models --> essentially building helper functions to transform request and response data to/from API
+// models --> essentially building helper functions to transform request and response data to/from API
 
 module.exports = {
   getReviews: (query) => {
-      return axios.get('/reviews', {params: {
-        product_id: query.product_id,
-        page: query.page || 1,
-        count: query.count || 5,
-        sort: query.sort || 'relevant'
-      }})
+    return axios.get('/reviews', {params: {
+      product_id: query.product_id,
+      page: query.page || 1,
+      count: query.count || 5,
+      sort: query.sort || 'relevant',
+    }});
   },
 
   postReview: (body) => {
-    let options = {
+    const options = {
       url: '/reviews',
       method: 'post',
-      data: body
-    }
-    return axios(options)
+      data: body,
+    };
+    return axios(options);
   },
 
   getReviewMeta: (query) => {
-    let params = {params: {product_id: query.product_id}};
-    return axios.get('/reviews/meta', params)
+    const params = {params: {product_id: query.product_id}};
+    return axios.get('/reviews/meta', params);
   },
 
   putHelpful: (review_id) => {
@@ -33,5 +33,5 @@ module.exports = {
 
   putReport: (review_id) => {
     return axios.put(`reviews/${review_id}/report`);
-  }
+  },
 };

@@ -4,17 +4,14 @@ import RelatedModalContent from './RelatedModalContent.jsx';
 function RelatedModal({modalContent}) {
   const curName = modalContent.current.details.name;
   const compName = modalContent.compare.name;
-
   if (!modalContent) {
     return;
   }
-
   function hideModal(e) {
     e.preventDefault();
     const modal = document.getElementsByClassName('modal')[0];
     modal.classList.add('hidden');
   }
-
   function formatCharacteristics(modalContent) {
     const characteristics = {};
     const curFeatures = modalContent.current.details.features;
