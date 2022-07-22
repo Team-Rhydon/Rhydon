@@ -19,40 +19,44 @@ function RatingBreakdown({setFilter, filter, isFiltered, product, ratingsRef }) 
   return (
     <div ref={ratingsRef} className="Star-Ratings">
       {/* each column should display a ratio of #reviewsofthisstarcategory/#totalreviews */}
+      <div className="Ratings-Reviews-Summary">
+        <h2>Rating and Reviews </h2>
+        <span>
+          <h2 style={{textAlign: "center"}}>{rating.toFixed(2)}
+          <br></br>
+            {rating
+              ?<StarRating className="scaled-stars" rating={rating.toFixed(4)}/>
+              :"loading"
+            }
+          </h2>
+        </span>
+        <p>{100 * (Number(recommended.true)/(Number(recommended.true) + Number(recommended.false))).toFixed(2)}% of buyers recommend this product </p>
+      </div>
       <div className="Star-Bars">
         {Object.keys(ratingBars).sort((a, b)=> {a-b; return -1}).map((star, i) => {
           return (
-            <div className="StarNumber" key={i} onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
+            <div className="StarNumber"
+              key={i}
+              onClick={e => setFilter(prevFilter => {prevFilter[star] = !prevFilter[star]; return {...prevFilter}})}>
+
               <p> {star} Stars: {parseInt(100 * ratingBars[star])}%</p>
               <div className="meter">
                 <span style={{width: `${100 * ratingBars[star]}%`}}></span>
               </div>
             </div>)
         })}
-        <div>
+        <div className="spacer">
           {isFiltered
-          ?<span>Displaying
-            {Object.keys(filter).map((key, i) => {return filter[key] ? <span key={i}> {key} </span>: null})}
-            star reviews
-            <br></br>
-            <button onClick={e=> setFilter({1: false, 2: false, 3: false, 4: false, 5: false})}>Remove Filters</button>
-          </span>
-          : null}
+            ?<span>Displaying
+              {Object.keys(filter).map((key, i) => {return filter[key] ? <span key={i}> {key} </span>: null})}
+              star reviews
+              <button onClick={e=> setFilter({1: false, 2: false, 3: false, 4: false, 5: false})}>Remove Filters</button>
+            </span>
+            :<div><br></br><br></br></div>
+          }
         </div>
       </div>
       <br></br>
-      <div className="Ratings-Reviews-Summary conic-gradient">
-        <h2>Rating and Reviews </h2>
-        <span>
-          <h2>{rating.toFixed(2)}
-          {rating
-            ? <StarRating rating={rating.toFixed(4)}/>
-            : "loading"
-          }
-          </h2>
-        </span>
-        <p>{100 * (Number(recommended.true)/(Number(recommended.true) + Number(recommended.false))).toFixed(2)}% of buyers recommend this product </p>
-      </div>
       {/* clicking each star level should also sort the review list by star amount clicked */}
     </div>
   )

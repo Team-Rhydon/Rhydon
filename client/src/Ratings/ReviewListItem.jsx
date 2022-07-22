@@ -53,7 +53,7 @@ function ReviewListItem({review, filter, isFiltered}) {
       <div className="ReviewBody">
         {review.body.length > shortBody
           ?<span className="ReviewText">{review.body.slice(0, 249) + '...'}
-              <button onClick={e=> setShortBody(1000)}>Read More</button>
+              <button className="read-more-btn" onClick={e=> setShortBody(1000)}>Read More</button>
             </span>
           :<span className="ReviewText">{review.body}</span>
         }
@@ -75,11 +75,13 @@ function ReviewListItem({review, filter, isFiltered}) {
               />
         </span>
         {!review.response
-        ? null
-        : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>}
+          ? null
+          : <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>
+        }
         {!review.recommend
-        ? null
-        :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>}
+          ? null
+          :<span className="ReviewRecommend"><p>✓ I recommend this product</p></span>
+        }
         <div className="Review-Puts">
           <span >Was this helpful?
             <button className="put-btn" onClick={e => sendPut(e, "helpful")}>({(isHelpful? 1 : 0) + review.helpfulness}) </button>

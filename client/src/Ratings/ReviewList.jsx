@@ -44,9 +44,9 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
     prevSortStyleRef.current = sortStyle;
     axios.get('/reviews', params)
         .then((response) => {
-          return setStorage(prevStorage=> {
+          setStorage(prevStorage=> {
             return [...prevStorage, ...response.data.results]});
-        }).catch(console.log('err getting reviews'));
+        }).catch(err=> console.log('err getting revierrews'));
   }, [page, product_id, sortStyle, count]);
 
   function handleClick() {
@@ -70,26 +70,26 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
       </div>
       <div className="ReviewContainer-scrollable">
         {!storage.length
-        ?null
-        :storage
-        .filter(review=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
-        .slice(0, reviews)
-        .map((review, i) => {
-          return (
-            <div key={i}>
-              <ReviewListItem
-                filter={filter}
-                review={review}
-                isFiltered={isFiltered}
-              />
-            </div>
-          );
-        })}
+          ?null
+          :storage
+            .filter(review=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
+            .slice(0, reviews)
+            .map((review, i) => {
+              return (
+                <ReviewListItem
+                  key={i}
+                  filter={filter}
+                  review={review}
+                  isFiltered={isFiltered}
+                />
+              );
+            })
+        }
       </div>
       <div className="ReviewListFooter" style={{display: 'flex'}}>
-        {reviews >= storage.length ?
-          null:
-            <button id="review-btn" onClick={handleClick}>More Reviews</button>
+        {reviews >= storage.length
+          ?null
+          :<button id="review-btn" onClick={handleClick}>More Reviews</button>
         }
         <button id="open-modal-btn" onClick={()=>setShow(true)} > Review this Product</button>
         <Modal

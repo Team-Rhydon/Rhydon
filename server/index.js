@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Creates base url for API
-axios.defaults.baseURL = process.env.BASE_URL;
+axios.defaults.baseURL = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
 
 // Adds API key to all requests
 axios.defaults.headers.common.Authorization = process.env.API_KEY;

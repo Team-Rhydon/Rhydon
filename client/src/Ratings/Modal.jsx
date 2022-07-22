@@ -10,12 +10,13 @@ const Modal = (props) => {
       <div className="ratings-modal-content" onClick={event=> event.stopPropagation()}>
         <div className="ratings-modal-header">
           {props.title}
+          <button onClick={props.onClose} className="modal-button">X</button>
         </div>
         <div className="ratings-modal-body">
           {props.children}
         </div>
         <div className="ratings-modal-footer container-btn">
-          <button onClick={props.onClose} className="modal-button">Close</button>
+
         </div>
       </div>
     </div>

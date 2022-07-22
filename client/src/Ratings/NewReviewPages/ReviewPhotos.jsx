@@ -44,12 +44,15 @@ const ReviewPhotos = props => {
       <input type="file" id="photoUpload" multiple accept="image/*" onChange={handlePhotoChange} />
       <br></br>
       {photoStorage.map((photoSrc, index) => <div key={index}>
-        {photoSrc}
         <span>Image # {index + 1}</span>
-          <img style={{height: "5vh", width: "5vw"}}  src={photoSrc} />
+          <img style={{height: "5em", width: "5em"}}  src={photoSrc} />
           <br></br>
       </div>)}
       <button className="submit-btn" type="submit" onClick={handleSubmit}>Submit Photos</button>
+      {photos.length
+        ? <span>{"<------make sure to hit Submit or your photos will not be added!"}</span>
+        : null
+      }
     </div>
   )
 }
