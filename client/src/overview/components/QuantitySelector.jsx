@@ -7,7 +7,6 @@ const QuantitySelector = ({size, quantity, setPurchase, selectedQuantity, setSel
 
   const changeAmount = (e) => {
     setSelectedQuantity(e.target.value);
-    console.log(e.target.value);
     setPurchase((prevState) => ({
       ...prevState,
       size: size,

@@ -7,6 +7,7 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
 
   const [checkout, setCheckout] = useState(cartData);
   const [totalPrice, setPrice] = useState()
+  const [itemCount, setItemCount] = useState()
 
 
   const rmItem = (key) => {
@@ -15,11 +16,17 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
   };
 
   let countTotal = () => {
-    let total = parseInt(cartData[0].price);
-    for (let i = 1; i < cartData.length; i++) {
-      total += parseInt(cartData[i].price);
+    let priceCount = 0;
+    let itemCount = 0;
+    for (let i = 0; i < cartData.length; i++) {
+      console.log(cartData)
+      console.log(priceCount)
+      priceCount += parseInt(cartData[i].price) * cartData[i].quantity;
+      itemCount += parseInt(cartData[i].quantity)
     }
-    setPrice(total);
+    console.log(priceCount, itemCount)
+    setPrice(priceCount);
+    setItemCount(itemCount);
   }
 
   useEffect(() => {
@@ -58,8 +65,8 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
                 <div className='quant-container'>
                   <p>Quantity</p>
                   <p>
-                    {checkout.length > 1 ?
-                    `${checkout.length} items` :
+                    {itemCount > 1 ?
+                    `${itemCount} items` :
                     '1 item'
                     }
                   </p>
@@ -79,7 +86,6 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
                   onClick={() => setCart(false)}>Continue Shopping</button>
               </div>
             </div>
-
           </div>
         </div>
       </div>

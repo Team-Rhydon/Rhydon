@@ -15,7 +15,7 @@ const Share = (props) => {
         id="twitter"><FaTwitter style={{alignSelf: "center"}}/>
       </TwitterShareButton>
       <PinterestShareButton
-        url='http://pinterest.com/pin/create/button'
+        url='http://pinterest.com/pin/create/link/'
         id="pinterest"><FaPinterestP style={{alignSelf: "center"}}/>
       </PinterestShareButton>
     </div>
