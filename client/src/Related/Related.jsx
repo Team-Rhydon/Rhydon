@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useLayoutEffect} from 'react';
 import axios from 'axios';
 import RelatedCard from './RelatedCard.jsx';
 import RelatedModal from './RelatedModal.jsx';
@@ -7,12 +7,13 @@ import nextArrow from '../assets/icons/chevron-right-solid.svg';
 import prevArrow from '../assets/icons/chevron-left-solid.svg';
 
 function Related({product, updateCurrentProduct, hidePreview}) {
+  if(!product) {return '';}
   const [cards, setCards] = useState({});
   const [modalContent, setModalContent] = useState({});
   const carouselPos = useRef({});
   const [imagePreview, setPreview] = useState({});
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const params = {
       params: {
         id: product.details.id,
@@ -41,14 +42,14 @@ function Related({product, updateCurrentProduct, hidePreview}) {
     });
   }, [product]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (Object.keys(imagePreview).length !== 0) {
       const modal = document.getElementsByClassName('preview')[0];
       modal.classList.remove('hidden');
     }
   }, [imagePreview]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (Object.keys(modalContent).length !== 0) {
       const modal = document.getElementsByClassName('modal')[0];
       modal.classList.remove('hidden');
@@ -130,9 +131,8 @@ function Related({product, updateCurrentProduct, hidePreview}) {
     element.classList.add(newPosition);
   }
 
-
   return (
-    <div className="related" width="300" height="400">
+    <div className="related" width="1175" height="480">
       <div className="title-div">
         <h5 className="title">Related Products</h5>
         <p className="title-lines"></p>

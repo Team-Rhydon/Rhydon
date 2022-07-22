@@ -83,9 +83,9 @@ th {
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
 }
 
-/* .related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
+.related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
-} */
+}
 
 .carousel-next-container.hidden,.carousel-prev-container.hidden,.outfit-next-container.hidden,.outfit-prev-container.hidden {
   display: none;

@@ -3,6 +3,7 @@ import addBtn from '../assets/icons/tshirt-4244.svg';
 
 
 function OutfitAddCard({product, position, id, addToOutfit, removeOutfit}) {
+  if(!product) {return null;}
   return (
     <div className={`slide outfit-p1 add-card`}>
       <div onClick={(e) => addToOutfit(e, product)} className='outfit-card'>

@@ -72,6 +72,8 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                 className="m-logo"
                 src={logo}
                 alt=''
+                width="30"
+                height="30"
               />
               <IoIosArrowBack
                 className="s-leftarrow"

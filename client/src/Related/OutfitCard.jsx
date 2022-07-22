@@ -37,7 +37,7 @@ function OutfitCard({outfit, position, id, removeOutfit}) {
   if (!thumbnail) {
     thumbnail = image_placeholder;
   }
-
+  console.log('OutfitCard');
   return (
     <div className={`slide ${position}`}>
       <div className='product-card outfit-card'>

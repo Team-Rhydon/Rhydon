@@ -3,6 +3,7 @@ import StarRating from './StarRating.jsx';
 import image_placeholder from '../assets/icons/No-Image-Placeholder.svg';
 // import line from '../assets/icons/thick-vertical-line.png';
 function RelatedCard({card, position, id, showModal, setPreview, updateCurrentProduct, setProduct}) {
+  if(!card) {return null;}
   let {category, name, originalPrice, rating, salePrice, img, thumbnail} = card;
   if (!thumbnail || !img) {
     thumbnail = image_placeholder;
@@ -20,7 +21,7 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
         />
         <div onClick={(e) => {
           updateCurrentProduct(e, id);
-        }}className="description">
+        }}className="description" width='300' height='80'>
           <div className='card-name-div'>
             <p className='card-name'>{name}</p>
             <p className='vertical-line-2'>|</p>
