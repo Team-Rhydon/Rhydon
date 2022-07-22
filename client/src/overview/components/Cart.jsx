@@ -7,6 +7,7 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
 
   const [checkout, setCheckout] = useState(cartData);
   const [totalPrice, setPrice] = useState()
+  const [itemCount, setItemCount] = useState()
 
 
   const rmItem = (key) => {
@@ -15,11 +16,14 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
   };
 
   let countTotal = () => {
-    let total = parseInt(cartData[0].price);
-    for (let i = 1; i < cartData.length; i++) {
-      total += parseInt(cartData[i].price);
+    let priceCount = 0;
+    let itemCount = 0;
+    for (let i = 0; i < cartData.length; i++) {
+      priceCount += parseInt(cartData[i].price) * cartData[i].quantity;
+      itemCount += parseInt(cartData[i].quantity)
     }
-    setPrice(total);
+    setPrice(priceCount);
+    setItemCount(itemCount);
   }
 
   useEffect(() => {
@@ -40,14 +44,20 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
               {checkout
                 ? checkout.map((product, i) => (
                 <div className='cart-product'key={i}>
-                  <img className="cart-image" src={product.photo} witdh="25" height="25"/>
+                  <img
+                    className="cart-image"
+                    src={product.photo}
+                  />
                   <div className='cart-props'>
                     <p className='cart-name'>{product.name}</p>
                     <p className='cart-style'>{product.style} </p>
                     <p className='cart-price'>${product.price}</p>
                     <p className='cart-size'>Size : {product.size} </p>
                     <p className='cart-quantity'>Quantity : {product.quantity} </p>
-                    <TbShoppingCartX className='c-del-item' onClick={() => rmItem(i)}/>
+                    <TbShoppingCartX
+                      className='c-del-item'
+                      onClick={() => rmItem(i)}
+                    />
                   </div>
                 </div>
                 )) :
@@ -58,8 +68,8 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
                 <div className='quant-container'>
                   <p>Quantity</p>
                   <p>
-                    {checkout.length > 1 ?
-                    `${checkout.length} items` :
+                    {itemCount > 1 ?
+                    `${itemCount} items` :
                     '1 item'
                     }
                   </p>
@@ -79,7 +89,6 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
                   onClick={() => setCart(false)}>Continue Shopping</button>
               </div>
             </div>
-
           </div>
         </div>
       </div>

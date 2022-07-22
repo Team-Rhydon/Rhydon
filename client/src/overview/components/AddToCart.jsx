@@ -46,9 +46,9 @@ const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCar
       />
       <div className="add-love-buttons">
         <button
-        className="s-add-button"
-        onClick={() => fillCart()}
-        disabled={!purchase.complete}
+          className="s-add-button"
+          onClick={() => fillCart()}
+          disabled={!purchase.complete}
         >
           Add To Cart
         </button>
