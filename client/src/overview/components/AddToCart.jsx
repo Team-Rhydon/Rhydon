@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 import React, {useState} from 'react';
 import SizeSelector from './SizeSelector.jsx';
+import  fillIn from '../../assets/icons/nofound.png'
 import Cart from './Cart.jsx';
 import {FaReact} from 'react-icons/fa'
 // import {GiOctopus} from 'react-icons/gi'
@@ -30,7 +31,7 @@ const AddToCart = ({selectedStyle, productName, setcartData, cartData, updateCar
       return [{
         name: productName,
         style: purchase.name,
-        photo: purchase.photo,
+        photo: purchase.photo || fillIn,
         price: purchase.price,
         quantity: purchase.quantity,
         size: purchase.size,
