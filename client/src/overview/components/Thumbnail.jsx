@@ -8,6 +8,7 @@ const Thumbnail = ({productStyles, style, setSelectedStyle}) => {
     <div className="s-thumbnail">
       {productStyles.map((styleObj, i) => (
         <img
+          aria-label={`choose ${style.name}`}
           className={styleObj.style_id === style.style_id ?
             'selected-thumbnail s-thumbnail-image' :
             's-thumbnail-image s-unselected'
@@ -16,7 +17,7 @@ const Thumbnail = ({productStyles, style, setSelectedStyle}) => {
             styleObj.photos[0].thumbnail_url :
             fillIn
           }
-          alt='styling picture for the current product'
+          alt={`current style is ${style.name}`}
           key={styleObj.style_id}
           onClick={setSelectedStyle.bind(null, styleObj)}/>
       ))}

@@ -20,7 +20,11 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
 
   return (
     <section className="miniSlider">
-      <IoIosArrowUp onClick={prevSlide} className="ms-arrowup"/>
+      <IoIosArrowUp
+        onClick={prevSlide}
+        className="ms-arrowup"
+        aria-label='shift mini slides upwards'
+      />
       {slide.map((obj, i) => {
         if (i === currentImage.count) {
           return (
@@ -67,7 +71,11 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
           );
         }
       })}
-      <IoIosArrowDown onClick={nextSlide} className="ms-arrowdown"/>
+      <IoIosArrowDown
+        onClick={nextSlide}
+        className="ms-arrowdown"
+        aria-label='shift mini slides down'
+      />
     </section>
   );
 };

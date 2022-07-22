@@ -90,7 +90,11 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                   <div className="o-name-container">
                     <h2 className="pi-name">{name}</h2>
                   </div>
-                  <img className="title-line" src={line}/>
+                  <img
+                    className="title-line"
+                    src={line}
+                    alt='Title and category icon seperator'
+                  />
                   <h5 className="pi-category">{category}</h5>
                 </div>
                 <div className="pi-reviewstars">

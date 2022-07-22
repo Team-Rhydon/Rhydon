@@ -83,11 +83,13 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
             </div>
             <div className='cart-exits'>
               <button
+                aria-label='go to checkout'
                 className='view-bag'
                 onClick={() => setCart(false)}>View Bag & Checkout
               </button>
               <button
                 className='keep-shopping'
+                aria-label='continue shopping button'
                 onClick={() => setCart(false)}>Continue Shopping</button>
             </div>
           </div>

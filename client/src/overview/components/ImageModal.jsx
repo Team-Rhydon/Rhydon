@@ -17,14 +17,17 @@ const ImageModal = ({gallery, currentImage, setCurrentImage, showImageModal, set
       <div className="i-modal-style">
         <div className="i-image-container">
           <IoIosArrowBack
+            aria-label='go to previous photo'
             className="i-left-arrow"
             onClick={prevSlide}
           />
           <IoIosArrowForward
+            aria-label='go to next photo'
             className="i-right-arrow"
             onClick={nextSlide}
           />
           <FiMinimize
+            aria-label='minimize fullscreen'
             className="i-minimize"
             onClick={() => setImageModal(false)}/>
           <img
