@@ -19,12 +19,9 @@ const Cart = ({showCart, cartData, setCart, updateCart}) => {
     let priceCount = 0;
     let itemCount = 0;
     for (let i = 0; i < cartData.length; i++) {
-      console.log(cartData)
-      console.log(priceCount)
       priceCount += parseInt(cartData[i].price) * cartData[i].quantity;
       itemCount += parseInt(cartData[i].quantity)
     }
-    console.log(priceCount, itemCount)
     setPrice(priceCount);
     setItemCount(itemCount);
   }
