@@ -36,7 +36,6 @@ function NewReviewForm(props) {
       params: params,
       data: data,
     };
-    console.log(options);
     axios(options)
         .then(()=> alert('successfully posted! please close form'))
         .catch((err) => {

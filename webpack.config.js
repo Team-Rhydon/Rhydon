@@ -40,6 +40,7 @@ module.exports = {
   // },
   plugins: [new HtmlWebpackPlugin({
     title: 'Rhydon Store',
+    lang: 'en',
   }),
   // new webpack.DefinePlugin({
   //   'process.env': dotenv.parsed,
