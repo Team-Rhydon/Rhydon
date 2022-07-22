@@ -62,8 +62,9 @@ const SizeSelector = ({selectedStyle, setPurchase}) => {
       {sku ?
         <QuantitySelector
           selectedQuantity={selectedQuantity}
-          setSelectedQuantity={setSelectedQuantity} {...sku}
+          setSelectedQuantity={setSelectedQuantity}
           setPurchase={setPurchase}
+          {...sku}
         /> :
         null
       }

@@ -5,6 +5,7 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import {FiMaximize} from 'react-icons/fi';
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import line from '../../assets/icons/thick-vertical-line.png';
+import  fillIn from '../../assets/icons/nofound.png'
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 import StarRating from '../../Related/StarRating.jsx';
@@ -64,7 +65,7 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
               <img
                 className='m-carousel-image'
                 onClick={() => setImageModal(true)}
-                src={url} key={i}
+                src={url ? url : fillIn} key={i}
                 alt=''
               />
               <img
