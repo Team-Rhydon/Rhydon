@@ -54,7 +54,7 @@ $ npm run server-dev
 ### Product Overview
 
 ### Related Products & Outfits
-<img src="https://imgur.com/w8ZB2fu" width="60%" />
+<img src="https://imgur.com/a/ciADpIn" width="60%" />
 
 ### Search Feature
 <img src="https://media.giphy.com/media/X5YWRdPcuvyJi9BVq6/giphy.gif" width="60%" />
