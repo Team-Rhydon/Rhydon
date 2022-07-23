@@ -57,7 +57,7 @@ $ npm run server-dev
 <img src="https://media.giphy.com/media/s6j6T86Dk4Aw80S6HI/giphy.gif" width="60%" />
 
 ### Search Feature
-
+<img src="https://media.giphy.com/media/X5YWRdPcuvyJi9BVq6/giphy.gif" width="60%" />
 ### Ratings & Reviews
 ![6np247](https://user-images.githubusercontent.com/66807011/180620159-d95db7c5-59d9-4210-a57b-f53ee067e1b1.gif)
 
