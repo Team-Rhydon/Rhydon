@@ -31,5 +31,8 @@
 ## Ratings & Reviews
 
 # Contributors
+- [Jerome Rodriguez](https://github.com/JeromeMTR)
+- [Mark Miw](https://github.com/markmiw)
+- [Daniel Chu](https://github.com/crypto-bender)
 
 ## License
