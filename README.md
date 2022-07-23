@@ -54,7 +54,7 @@ $ npm run server-dev
 ### Product Overview
 
 ### Related Products & Outfits
-tester
+<img src="https://media.giphy.com/media/s6j6T86Dk4Aw80S6HI/giphy.gif" width="60%" />
 
 ### Search Feature
 
