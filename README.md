@@ -45,7 +45,7 @@
 
 Ratings & Reviews
 
-<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="auto" scale="2x />
+<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="auto" scale="2x" />
 ## Product Overview
 
 ## Related Products & Outfits
