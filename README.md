@@ -38,7 +38,12 @@
 ## Description
 
 ## Installation & Setup
-
+```$ git clone https://github.com/Team-Rhydon/Rhydon.git
+$ cd Rhydon
+$ npm install
+$ npm run build
+$ npm run server-dev
+```
 * * *
 
 # Components
@@ -52,7 +57,7 @@ tester
 
 ### Ratings & Reviews
 <img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="50%" />
-* * *
+
 
 # Contributors
 
@@ -71,7 +76,6 @@ Related Products & Outfits | Search Feature
 
 ### Daniel Chu
 Ratings & Reviews
-
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chuda/)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/crypto-bender)
