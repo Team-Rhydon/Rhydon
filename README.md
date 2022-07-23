@@ -38,6 +38,8 @@
 
 ## Installation & Setup
 
+* * *
+
 # Components
 
 ## Product Overview
@@ -47,6 +49,8 @@
 ## Search Feature
 
 ## Ratings & Reviews
+
+* * *
 
 # Contributors
 
