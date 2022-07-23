@@ -30,7 +30,7 @@
 - [License](#license)
 
 ## Project Overview
-<img src="https://imgur.com/a/TrH9mNA" width="60%" />
+![](https://imgur.com/eqVExrd.jpg)
 
 
 ## Description
@@ -51,8 +51,7 @@ $ npm run server-dev
 - [Search Feature](#search-feature)
 - [Ratings & Reviews](#ratings--reviews)
 
-### Project Overview
-![](https://imgur.com/eqVExrd.jpg)
+### Product Overview & Details
 
 
 ### Related Products & Outfits
