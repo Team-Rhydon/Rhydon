@@ -135,7 +135,6 @@ function App() {
     }
   };
   if (!product) return null;
-
   return (
     <div data-testid="" className="app">
       <Nav updateCurrentProduct={updateCurrentProduct} setProduct={setProduct}/>
