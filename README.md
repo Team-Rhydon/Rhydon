@@ -1,4 +1,4 @@
-![alt text](https://github.com/Team-Rhydon/Rhydon/blob/main/client/src/assets/logos/rhydon-logos_30.jpeg?raw=true) # Rhydon e-Commerce Website 
+# Rhydon e-Commerce Website 
 
 ## Tech Stack
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
