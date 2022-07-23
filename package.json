@@ -78,10 +78,6 @@
     "axios": "^0.27.2",
     "bluebird": "^3.7.2",
     "clean-webpack-plugin": "^4.0.0",
-<<<<<<< HEAD
-    "cloudinary-core": "^2.13.0",
-=======
->>>>>>> main
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",

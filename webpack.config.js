@@ -42,10 +42,6 @@ module.exports = {
     title: 'Rhydon Store',
     lang: 'en',
   }),
-<<<<<<< HEAD
-  new webpack.DefinePlugin({
-    'process.env': process.env.NODE_ENV
-=======
   // new webpack.DefinePlugin({
   //   'process.env': dotenv.parsed,
   // }),
@@ -53,7 +49,6 @@ module.exports = {
     // 'process.env': dotenv.parsed,
     'algorithm': 'gzip',
     'test': /.js$|.css$/,
->>>>>>> main
   }),
   ],
 
