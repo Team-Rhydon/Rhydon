@@ -35,6 +35,8 @@
 
 ## Project Overview
 
+![gif](https://media.giphy.com/media/gokZjEMTVKtgK33tgX/giphy.gif)
+
 ## Description
 
 ## Installation & Setup
