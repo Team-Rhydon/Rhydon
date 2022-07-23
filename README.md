@@ -34,7 +34,7 @@
 - [License](#license)
 
 ## Project Overview
-<img src="https://media.giphy.com/media/WNw4jnswLyLzQVgZ4g/giphy.gif" width="60%" />
+<img src="https://media.giphy.com/media/WNw4jnswLyLzQVgZ4g/giphy.gif" width="100%" />
 
 
 ## Description
