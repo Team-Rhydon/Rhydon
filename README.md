@@ -26,10 +26,6 @@
 - [Description](#description)
 - [Installation & Setup](#installation--setup)
 - [Components](#components)
-- [Product Overview](#product-overview)
-- [Related Products & Outfits / Search Feature](#related-products--outfits)
-- [Search Feature](#search-feature)
-- [Ratings & Reviews](#ratings--reviews)
 - [Contributors](#contributors)
 - [License](#license)
 
@@ -50,6 +46,10 @@ $ npm run server-dev
 * * *
 
 # Components
+- [Product Overview](#product-overview)
+- [Related Products & Outfits / Search Feature](#related-products--outfits)
+- [Search Feature](#search-feature)
+- [Ratings & Reviews](#ratings--reviews)
 
 ### Product Overview
 
@@ -58,6 +58,7 @@ $ npm run server-dev
 
 ### Search Feature
 <img src="https://media.giphy.com/media/X5YWRdPcuvyJi9BVq6/giphy.gif" width="60%" />
+
 ### Ratings & Reviews
 ![6np247](https://user-images.githubusercontent.com/66807011/180620159-d95db7c5-59d9-4210-a57b-f53ee067e1b1.gif)
 
