@@ -1,6 +1,5 @@
-# Rhydon e-Commerce Website <p align="center">
-  <img src="https://github.com/Team-Rhydon/Rhydon/blob/main/client/src/assets/logos/rhydon-logos_30.jpeg?raw=true" alt="Rhydon Logo"/>
-</p>
+# Rhydon e-Commerce Website <img align="right" src="https://github.com/Team-Rhydon/Rhydon/blob/main/client/src/assets/logos/rhydon-logos_30.jpeg?raw=true" alt="Rhydon Logo"/>
+
 
 ## Tech Stack
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
