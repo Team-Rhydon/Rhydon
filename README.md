@@ -1,4 +1,4 @@
-# Rhydon e-Commerce Website <p align="right">
+# Rhydon e-Commerce Website <p align="center">
   <img src="https://github.com/Team-Rhydon/Rhydon/blob/main/client/src/assets/logos/rhydon-logos_30.jpeg?raw=true" alt="Rhydon Logo"/>
 </p>
 
