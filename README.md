@@ -30,7 +30,7 @@
 - [License](#license)
 
 ## Project Overview
-![](https://imgur.com/eqVExrd.jpg)
+![](https://imgur.com/eqVExrd.gif)
 
 
 ## Description
