@@ -6,7 +6,16 @@ import '../../../src/assets/styles.css';
 const Button = (props) => {
   return (
     <div >
+<<<<<<< HEAD
+        <button
+        onClick={()=> props.setStatus(props.text === "Yes" ? true : false)}
+        className={`Button`}
+        >
+          {props.text}
+        </button>
+=======
       <button onClick={()=> props.setStatus(props.text === 'Yes' ? true : false)} className={`Button ${props.color}`}>{props.text}</button>
+>>>>>>> main
     </div>
   );
 };

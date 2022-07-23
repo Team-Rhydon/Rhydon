@@ -26,7 +26,7 @@ const ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
             onClick={() => changeImage(i)}
           >
             {i === currentImage.count ?
-              <FaCircleNotch className="i-chosen"/> :
+              <VscCircleFilled className="i-chosen"/> :
               <VscCircleFilled className="i-filler"/>
             }
           </div>

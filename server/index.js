@@ -17,7 +17,7 @@ app.use(
     expressStaticGzip(path.join(__dirname, '../client/dist'), {
     }),
 );
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Creates base url for API
 axios.defaults.baseURL = 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp';
