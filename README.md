@@ -35,7 +35,7 @@
 
 ## Project Overview
 
-![gif](https://media.giphy.com/media/WNw4jnswLyLzQVgZ4g/giphy.gif)
+![gif](https://media.giphy.com/media/gokZjEMTVKtgK33tgX/giphy.gif)
 
 ## Description
 
@@ -59,8 +59,7 @@ tester
 ### Search Feature
 
 ### Ratings & Reviews
-<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="50%" />
-
+![6np247](https://user-images.githubusercontent.com/66807011/180620159-d95db7c5-59d9-4210-a57b-f53ee067e1b1.gif)
 
 # Contributors
 
