@@ -8,14 +8,11 @@ import Outfit from './Related/Outfit.jsx';
 import RatingsWidget from './Ratings/RatingsWidget.jsx';
 import Nav from './Nav.jsx';
 import axios from 'axios';
-import _ from 'lodash';
 
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
   const [cartData, updateCart] =useState([]);
-  const [carouselPos, setCarouselPos] = useState({});
-  const [searchValue, doSearch] = useState('');
   const ratingsRef = useRef();
 
   useEffect(() => {
@@ -151,7 +148,7 @@ function App() {
           {...product}
         />
         <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
-        <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
+        <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit}/>
         <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
       </div>
     </div>

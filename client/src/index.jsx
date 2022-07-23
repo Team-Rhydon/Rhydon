@@ -5,6 +5,8 @@ import "./assets/styles.css";
 import "./assets/modal.css";
 import "./assets/overview.css";
 import "./assets/related_1450plus.css";
+import "./assets/related_320_480.css";
+document.documentElement.setAttribute("lang", 'en');
 const container = document.createElement("div");
 container.setAttribute("id", "root");
 document.body.appendChild(container);

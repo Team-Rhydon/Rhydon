@@ -14,20 +14,20 @@ function RelatedModalContent({curName, compName, characteristics, thumbnails}) {
       <tbody>
         <tr className='btn-container remove-outfit'>
           <td>
-            <img src={closeBtn} className="close-btn center-vert-horz"/>
+            <img alt='close modal button' src={closeBtn} className="close-btn center-vert-horz"/>
           </td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td><img className='thumb' src={thumbnails['current']}/></td>
+          <td><img alt='current product' className='thumb' src={thumbnails['current']}/></td>
           <td>
             <div>
               <p className='table-logo'>Comparing</p>
-              <img className='center-horz-vert table-logo' src={logo}/>
+              <img alt='company logo' className='center-horz-vert table-logo' src={logo}/>
             </div>
           </td>
-          <td><img className='thumb' src={thumbnails['compare']}/></td>
+          <td><img alt='compare product' className='thumb' src={thumbnails['compare']}/></td>
         </tr>
         <tr>
           <td className='table-header'>

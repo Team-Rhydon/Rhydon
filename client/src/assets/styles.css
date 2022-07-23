@@ -83,9 +83,9 @@ th {
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
 }
 
-/* .related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
+.related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
-} */
+}
 
 .carousel-next-container.hidden,.carousel-prev-container.hidden,.outfit-next-container.hidden,.outfit-prev-container.hidden {
   display: none;
@@ -379,7 +379,8 @@ object-fit: cover;
   }
 
   .add-btn {
-    margin-top: 3vw;
+
+    margin-top: 2vw;
     height: 20vw;
     width: 20vw;
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
@@ -390,7 +391,8 @@ object-fit: cover;
   .add-card {
     border: dashed 1px #767676;
     border-radius: .25em;
-    height: calc(26.8vw + 16px);
+    width: calc(20vw + 16px);
+    /* height: calc(26.8vw + 16px); */
     position: relative;
 margin: 0 auto;
 object-fit: cover;
@@ -1115,11 +1117,10 @@ tr:nth-child(odd) .table-characteristic {
 .card-price {
   margin: 0;
   color: #000;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   line-height: 1.2;
   letter-spacing: .025vw;
   align-self: self-end;
-  padding-top: .25rem;
 }
 
 .add-btn-desc-container {
@@ -1228,6 +1229,14 @@ tr:nth-child(odd) .table-characteristic {
   height: 1.6vw;
 }
 
+.vertical-line-2 {
+  font-size: 1.5vw;
+  font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: .25vw;
+  margin-right: .25vw;
+}
 .title-lines {
 width: 100%;
 height: 50%;
@@ -1245,7 +1254,7 @@ padding-bottom: 29.5px;
   height: calc(26.8vw + 8px);
   position: relative;
   border: 1px solid #e7e7e7;
-  width: calc(20vw + 10px);
+  width: 20vw;
   padding: 4px;
   display: inline;
   border-radius: .25em;
@@ -1258,6 +1267,7 @@ padding-bottom: 29.5px;
   text-align: center;
   font-size: 4vw;
   font-weight: bold;
+  margin-top: 2vw;
 }
 
 .search-btn.hidden {
@@ -1321,4 +1331,8 @@ padding-bottom: 29.5px;
 
 .search-icon-init-text {
   font-size: 12px;
+}
+
+.add-button-container {
+  position: relative;
 }

@@ -7,7 +7,7 @@ function Nav({updateCurrentProduct}) {
     <div className='nav-bar'>
       <div className='nav-container'>
         <div className='left-nav'>
-          <img onClick={(e) => updateCurrentProduct(e,'40351' )} className='logo' src ={logo}/>
+          <img alt='main logo to default product' onClick={(e) => updateCurrentProduct(e,'40351' )} className='logo' src ={logo}/>
         </div>
         <div className='right-nav'>
         <Search updateCurrentProduct={updateCurrentProduct}/>
@@ -15,7 +15,7 @@ function Nav({updateCurrentProduct}) {
             document.getElementsByClassName('search-btn')[0].classList.add('hidden');
             document.getElementsByClassName('search')[0].classList.remove('hidden');
           }} className='search-btn'>
-            <img className='search-icon-init' src={search}/>
+            <img alt='search icon' className='search-icon-init' src={search}/>
             <span className='search-icon-init'>Search</span>
           </div>
         </div>

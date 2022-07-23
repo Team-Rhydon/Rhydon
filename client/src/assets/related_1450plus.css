@@ -581,7 +581,7 @@ tr:nth-child(odd) {
   line-height: 1.2;
   letter-spacing: .0375px;
   align-self: self-end;
-  padding-top: .25rem;
+  padding-top: .35rem;
 }
 
 .add-btn-desc-container {
@@ -603,6 +603,15 @@ tr:nth-child(odd) {
   object-fit: cover;
   width: 1.9vh;
   height: 20px;
+}
+
+.vertical-line-2 {
+  font-size: 22px;
+  font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .title-lines {

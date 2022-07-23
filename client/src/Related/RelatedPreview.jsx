@@ -1,13 +1,14 @@
 import React from 'react';
 
 function RelatedPreview({url, setPreview}) {
+  if(!url) {return null;}
   return (
     <div className="preview hidden" >
       <div className="preview-background" onClick={(e) => {
         setPreview({});
       }}
       >
-        <img src={url} className="preview-content" onClick={(e) => {
+        <img alt='preview content' src={url} className="preview-content" onClick={(e) => {
           setPreview({});
         }}/>
       </div>
