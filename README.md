@@ -1,4 +1,4 @@
-# Rhydon e-Commerce Website <img align="right" src="https://github.com/Team-Rhydon/Rhydon/blob/main/client/src/assets/logos/rhydon-logos_30.jpeg?raw="true" alt="Rhydon Logo"/>
+# Rhydon e-Commerce Website <img align="right" src="https://github.com/Team-Rhydon/Rhydon/blob/main/client/src/assets/logos/rhydon-logos_30.jpeg?raw=true" alt="Rhydon Logo"/>
 
 
 ## Tech Stack
@@ -45,7 +45,7 @@
 
 Ratings & Reviews
 
-<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="150px" scale="5x" />
+<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="100%" />
 ## Product Overview
 
 ## Related Products & Outfits
