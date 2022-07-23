@@ -51,7 +51,9 @@ $ npm run server-dev
 - [Search Feature](#search-feature)
 - [Ratings & Reviews](#ratings--reviews)
 
-### Product Overview
+### Project Overview
+![](https://imgur.com/eqVExrd.jpg)
+
 
 ### Related Products & Outfits
 
