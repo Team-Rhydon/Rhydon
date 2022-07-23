@@ -27,8 +27,8 @@
 - [Components](#components)
 - [Product Overview](#product-overview)
 - [Related Products & Outfits / Search Feature](#related-products--outfits)
-- [Ratings & Reviews](#ratings--reviews)
 - [Search Feature](#search-feature)
+- [Ratings & Reviews](#ratings--reviews)
 - [Contributors](#contributors)
 - [License](#license)
 
