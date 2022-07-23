@@ -38,17 +38,14 @@
 ## Description
 
 ## Installation & Setup
-1. Download the entire repository
-2. Open the terminal and navigate to the root directory of the file
-3. Once in the root directory, type "npm install" and hit enter
-4. 
 
 * * *
 
 # Components
 
 Ratings & Reviews
-<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="300px" />
+
+<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="auto" scale="2x />
 ## Product Overview
 
 ## Related Products & Outfits
