@@ -38,6 +38,10 @@
 ## Description
 
 ## Installation & Setup
+1. Download the entire repository
+2. Open the terminal and navigate to the root directory of the file
+3. Once in the root directory, type "npm install" and hit enter
+4. 
 
 * * *
 
