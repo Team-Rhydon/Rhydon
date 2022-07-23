@@ -34,8 +34,8 @@
 - [License](#license)
 
 ## Project Overview
-
-![gif](https://media.giphy.com/media/WNw4jnswLyLzQVgZ4g/giphy.gif)
+<img src="https://media.giphy.com/media/WNw4jnswLyLzQVgZ4g/giphy.gif" width="70%" />
+![gif]()
 
 ## Description
 
