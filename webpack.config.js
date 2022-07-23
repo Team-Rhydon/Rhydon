@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CompressionPlugin = require('compression-webpack-plugin');
 const dotenv = require('dotenv').config({
   path: path.join(__dirname, '.env'),
 });
@@ -39,9 +40,20 @@ module.exports = {
   // },
   plugins: [new HtmlWebpackPlugin({
     title: 'Rhydon Store',
+    lang: 'en',
   }),
+<<<<<<< HEAD
   new webpack.DefinePlugin({
     'process.env': process.env.NODE_ENV
+=======
+  // new webpack.DefinePlugin({
+  //   'process.env': dotenv.parsed,
+  // }),
+  new CompressionPlugin({
+    // 'process.env': dotenv.parsed,
+    'algorithm': 'gzip',
+    'test': /.js$|.css$/,
+>>>>>>> main
   }),
   ],
 

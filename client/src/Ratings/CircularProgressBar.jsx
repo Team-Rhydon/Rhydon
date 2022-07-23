@@ -14,9 +14,9 @@ class CircularProgressBar extends React.Component {
 
     return (
       <svg className="circle"
-          width="5vw"
-          height="5vw"
-          viewBox={viewBox}>
+        width="5vw"
+        height="5vw"
+        viewBox={viewBox}>
         <circle
           className="circle-background"
           cx={this.props.sqSize / 2}
@@ -33,7 +33,7 @@ class CircularProgressBar extends React.Component {
           transform={`rotate(-90 ${this.props.sqSize / 2} ${this.props.sqSize / 2})`}
           style={{
             strokeDasharray: dashArray,
-            strokeDashoffset: dashOffset
+            strokeDashoffset: dashOffset,
           }} />
         <text
           className="circle-text"

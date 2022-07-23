@@ -1,20 +1,18 @@
 /* eslint-disable max-len */
 /* eslint-disable guard-for-in */
 /* eslint-disable require-jsdoc */
-import React, {useEffect, useState, useRef} from 'react';
-import Related from './Related/Related.jsx';
-import Overview from './overview/Overview.jsx';
-import Outfit from './Related/Outfit.jsx';
-import RatingsWidget from './Ratings/RatingsWidget.jsx';
+import React, {useEffect, useState, useRef, Suspense} from 'react';
 import Nav from './Nav.jsx';
+import Overview from './overview/Overview.jsx';
+const Related = React.lazy(()=>import('./Related/Related.jsx'));
+const Outfit = React.lazy(()=>import('./Related/Outfit.jsx'));
+const RatingsWidget = React.lazy(()=>import('./Ratings/RatingsWidget.jsx'));
 import axios from 'axios';
-import _ from 'lodash';
 
 function App() {
   const [product, setProduct] = useState();
   const [outfits, setOutfit] = useState({});
-  const [cartData, updateCart] =useState([])
-  const [carouselPos, setCarouselPos] = useState({});
+  const [cartData, updateCart] =useState([]);
   const ratingsRef = useRef();
 
   useEffect(() => {
@@ -25,6 +23,7 @@ function App() {
     // updateCurrentProduct(null, '40376'); // oout of stock size
     // updateCurrentProduct(null, '40353'); // stones
   }, []);
+
 
   function updateCurrentProduct(e, id) {
     setProduct();
@@ -135,23 +134,25 @@ function App() {
       });
     }
   };
-
   if (!product) return null;
+
   return (
     <div data-testid="" className="app">
-      <Nav updateCurrentProduct={updateCurrentProduct}/>
+      <Nav updateCurrentProduct={updateCurrentProduct} setProduct={setProduct}/>
       <div className='widgets'>
-      <Overview
-        className="overview-widget"
-        ratingsRef={ratingsRef}
-        ratingsScroll={ratingsScroll}
-        cartData={cartData}
-        updateCart={updateCart}
-        {...product}
-      />
-      <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
-      <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit} carouselPos={carouselPos}/>
-      <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
+        <Overview
+          className="overview-widget"
+          ratingsRef={ratingsRef}
+          ratingsScroll={ratingsScroll}
+          cartData={cartData}
+          updateCart={updateCart}
+          {...product}
+        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Related key='related' product={product} updateCurrentProduct={updateCurrentProduct} hidePreview={hidePreview}/>
+          <Outfit key='outfit' product={product} outfits={outfits} removeOutfit={removeOutfit} addToOutfit={addToOutfit}/>
+          <RatingsWidget details={product.details} meta={product.reviews} ratingsRef={ratingsRef}/>
+        </Suspense>
       </div>
     </div>
   );

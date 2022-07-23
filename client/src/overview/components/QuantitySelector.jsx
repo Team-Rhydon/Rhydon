@@ -7,7 +7,6 @@ const QuantitySelector = ({size, quantity, setPurchase, selectedQuantity, setSel
 
   const changeAmount = (e) => {
     setSelectedQuantity(e.target.value);
-    console.log(e.target.value);
     setPurchase((prevState) => ({
       ...prevState,
       size: size,
@@ -31,17 +30,18 @@ const QuantitySelector = ({size, quantity, setPurchase, selectedQuantity, setSel
 
   return (
     <div>
-    <select
-      className="quantity-selector"
-      value={selectedQuantity}
-      onChange={(e) => changeAmount(e)}
+      <select
+        aria-label='choose quantity of product'
+        className="quantity-selector"
+        value={selectedQuantity}
+        onChange={(e) => changeAmount(e)}
       >
-      {stock.map((val, i) => {
-        if (i === 0) return (<option key={i} defaultValue={i + 1}>{i + 1}</option>);
-        return (<option key={i} value={i+1}>{i + 1}</option>);
-      })}
-    </select>
-  </div> );
+        {stock.map((val, i) => {
+          if (i === 0) return (<option key={i} defaultValue={i + 1}>{i + 1}</option>);
+          return (<option key={i} value={i+1}>{i + 1}</option>);
+        })}
+      </select>
+    </div> );
 };
 
 export default QuantitySelector;

@@ -3,21 +3,15 @@ import addBtn from '../assets/icons/tshirt-4244.svg';
 
 
 function OutfitAddCard({product, position, id, addToOutfit, removeOutfit}) {
+  if(!product) {return null;}
   return (
     <div className={`slide outfit-p1 add-card`}>
       <div onClick={(e) => addToOutfit(e, product)} className='outfit-card'>
-        {/* <div className='card-outline' onClick={(e) => addToOutfit(e, product)}> */}
           <div>
-          <img src={addBtn} className="add-btn"/>
-          {/* <p className='plus-logo'>+</p> */}
+          <img alt='add button' width='256' height='256' src={addBtn} className="add-btn"/>
           </div>
-          {/* <div className='add-btn-desc-container'> */}
-          {/* <IoIosArrowBack
-              /> */}
-            <div className='add-btn-desc'>Click here to add current product to outfit</div>
+            <div className='add-btn-desc'>CLICK TO ADD PRODUCT</div>
             <div className='add-btn-plus center-vert-horz'>+</div>
-          {/* </div> */}
-        {/* </div> */}
       </div>
     </div>
   );

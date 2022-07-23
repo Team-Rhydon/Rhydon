@@ -12,14 +12,14 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
   const [sortStyle, setSortStyle] = useState('relevant');
   const [show, setShow] = useState(false);
   const [reviews, setReviews] = useState(2); // Review List should only display 2 Review tiles at a time
-  const [storage, setStorage] = useState([])
+  const [storage, setStorage] = useState([]);
   const [total, setTotal] = useState(0);
   const prevSortStyleRef = useRef(sortStyle);
   const params = {params: {
     product_id: product_id,
     page: page,
     count: count,
-    sort: sortStyle
+    sort: sortStyle,
   }};
 
   useEffect(()=> {
@@ -35,19 +35,27 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
   useEffect(()=>{
     if (prevSortStyleRef.current !== sortStyle) {
       axios.get('/reviews', params)
-        .then((response) => {
-          setPage(()=> 1);
-          setReviews(()=> 2);
-          return setStorage((prevStorage)=> response.data.results);
-        }).catch(err => console.log('error resetting reviews by style'));
+          .then((response) => {
+            setPage(()=> 1);
+            setReviews(()=> 2);
+            return setStorage((prevStorage)=> response.data.results);
+          }).catch((err) => console.log('error resetting reviews by style'));
     }
     prevSortStyleRef.current = sortStyle;
     axios.get('/reviews', params)
         .then((response) => {
+<<<<<<< HEAD
           setStorage(prevStorage=> {
             return [...response.data.results]});
         }).catch(err=> console.log('err getting revierrews'));
   }, [product_id, sortStyle, count]);
+=======
+          setStorage((prevStorage)=> {
+            return [...response.data.results];
+          });
+        }).catch((err)=> console.log('err getting revierrews'));
+  }, [page, product_id, sortStyle, count]);
+>>>>>>> main
 
   function handleClick() {
     setReviews((prevReviews)=>{
@@ -69,30 +77,37 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
         />
       </div>
       <div className="ReviewContainer-scrollable">
-        {!storage.length
-          ?null
-          :storage
-            .filter(review=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
-            .slice(0, reviews)
-            .map((review, i) => {
-              return (
-                <ReviewListItem
-                  key={i}
-                  filter={filter}
-                  review={review}
-                  isFiltered={isFiltered}
-                />
-              );
-            })
+        {!storage.length?
+          null:
+          storage
+              .filter((review)=> !isFiltered && !filter[review.rating] || isFiltered && filter[review.rating])
+              .slice(0, reviews)
+              .map((review, i) => {
+                return (
+                  <ReviewListItem
+                    key={i}
+                    filter={filter}
+                    review={review}
+                    isFiltered={isFiltered}
+                  />
+                );
+              })
         }
       </div>
       <div className="ReviewListFooter" style={{display: 'flex'}}>
+<<<<<<< HEAD
         <button
           className={reviews >= storage.length ? "review-btn-invis" : "review-btn"}
           onClick={handleClick}
           >
             More Reviews
         </button>
+=======
+        {reviews >= storage.length?
+          null:
+          <button id="review-btn" onClick={handleClick}>More Reviews</button>
+        }
+>>>>>>> main
         <button id="open-modal-btn" onClick={()=>setShow(true)} > Review this Product</button>
         <Modal
           title={'Review This Product: Tell us about the ' + details.name}

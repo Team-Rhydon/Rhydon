@@ -5,6 +5,7 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import {FiMaximize} from 'react-icons/fi';
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import line from '../../assets/icons/thick-vertical-line.png';
+import fillIn from '../../assets/icons/nofound.png';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 import StarRating from '../../Related/StarRating.jsx';
@@ -37,10 +38,10 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
     });
   };
 
-  let scrollToElement = (className) => {
-    const anchor = document.querySelector(`.${className}`);
-    anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
-  }
+  // const scrollToElement = (className) => {
+  //   const anchor = document.querySelector(`.${className}`);
+  //   anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
+  // };
 
   useEffect(() => {
     setCurrentImage((prevState) => ({
@@ -64,12 +65,14 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
               <img
                 className='m-carousel-image'
                 onClick={() => setImageModal(true)}
-                src={url} key={i}
-                alt=''
+                src={url ? url : fillIn} key={i}
+                alt='Main gallery display slideshow'
               />
               <img
                 className="m-logo"
-                src={logo} />
+                src={logo}
+                alt='This is the website brand logo'
+              />
               <IoIosArrowBack
                 className="s-leftarrow"
                 onClick={prevSlide}
@@ -87,18 +90,30 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
                   <div className="o-name-container">
                     <h2 className="pi-name">{name}</h2>
                   </div>
-                  <img className="title-line" src={line}/>
+                  <img
+                    className="title-line"
+                    src={line}
+                    alt='Title and category icon seperator'
+                  />
                   <h5 className="pi-category">{category}</h5>
                 </div>
                 <div className="pi-reviewstars">
                   <div
                     className="pi-stars">
-                    {rating ? <StarRating rating={rating} count={count}/> : null}
+                    {rating ?
+                      <StarRating
+                        rating={rating}
+                        count={count}
+                      /> :
+                      null
+                    }
                   </div>
                   <div
                     className="pi-reviews"
                     onClick={() => ratingsScroll(ratingsRef)}
-                  >Read All {count} Reviews</div>
+                  >
+                    Read All {count} Reviews
+                  </div>
                 </div>
               </div>
             </div>
