@@ -38,7 +38,8 @@
 ## Description
 
 ## Installation & Setup
-```$ git clone https://github.com/Team-Rhydon/Rhydon.git
+```
+$ git clone https://github.com/Team-Rhydon/Rhydon.git
 $ cd Rhydon
 $ npm install
 $ npm run build
