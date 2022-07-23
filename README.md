@@ -35,7 +35,7 @@
 
 ## Project Overview
 
-![gif](https://media.giphy.com/media/gokZjEMTVKtgK33tgX/giphy.gif)
+![gif](https://media.giphy.com/media/WNw4jnswLyLzQVgZ4g/giphy.gif)
 
 ## Description
 
