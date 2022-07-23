@@ -51,7 +51,7 @@ tester
 ### Search Feature
 
 ### Ratings & Reviews
-<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="100%" />
+<img src="https://user-images.githubusercontent.com/66807011/180616853-7adfea55-9aeb-4348-a160-eed188a65004.gif" width="50%" />
 * * *
 
 # Contributors
