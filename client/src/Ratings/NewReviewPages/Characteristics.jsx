@@ -6,14 +6,9 @@ const Characteristics = (props) => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-<<<<<<< HEAD
     console.log('hello')
     props.setChars(()=> characteristics);
     props.page(prevPage => prevPage + 1);
-=======
-    props.setChars(characteristics);
-    props.page((prevPage) => prevPage + 1);
->>>>>>> main
   }
 
   const descriptions = {
@@ -28,7 +23,6 @@ const Characteristics = (props) => {
     <form className="chars-form" onSubmit={e=>handleSubmit(e)}>
       {Object.entries(props.chars).map(([char, {id}])=>{
         return (
-<<<<<<< HEAD
         <div key={id} onChange={e=> setCharacteristics({...characteristics, [id]:Number(e.target.value)})} className={char}>
             <span className="chars-header">
               <span style={{fontWeight: "bold"}}>{char}</span>
@@ -42,10 +36,6 @@ const Characteristics = (props) => {
               </span>
             </span>
             <br></br>
-=======
-          <div key={id} onChange={(e)=> setCharacteristics({...characteristics, [id]: Number(e.target.value)})} className={char}>
-            <h4>{char}</h4>
->>>>>>> main
             <label> 1
               <input type="radio" value={1} name={char} />
             </label>
@@ -61,19 +51,8 @@ const Characteristics = (props) => {
             <label>5
               <input type="radio" value={5} name={char} />
             </label>
-<<<<<<< HEAD
 
         </div>)
-=======
-            <span>
-              {!characteristics || characteristics[id] === undefined?
-              '...None selected':
-              <span>
-                {`...${descriptions[char][(characteristics[id]-1)]}`}
-              </span>}
-            </span>
-          </div>);
->>>>>>> main
       })}
       <br></br>
       {characteristics &&

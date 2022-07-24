@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
-import {TbShoppingCartX} from 'react-icons/tb';
+// import {TbShoppingCartX} from 'react-icons/tb';
+const getTbShoppingCartX = () => import('react-icons/tb');
 
 const Cart = ({showCart, cartData, setCart, updateCart}) => {
   if (!showCart || !cartData) return null;

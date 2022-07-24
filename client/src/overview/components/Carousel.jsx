@@ -5,10 +5,11 @@ import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import {FiMaximize} from 'react-icons/fi';
 import logo from '../../assets/logos/rhydon-logos 2.jpeg';
 import line from '../../assets/icons/thick-vertical-line.png';
-import fillIn from '../../assets/icons/nofound.png';
+// import fillIn from '../../assets/icons/nofound.png';
 import ImageModal from './ImageModal.jsx';
 import MiniSlides from './MiniSlides.jsx';
 import StarRating from '../../Related/StarRating.jsx';
+import CloudImg from '../../CloudImg.jsx';
 
 const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, count, ratingsScroll, ratingsRef}) => {
   if (!gallery.length) return null;
@@ -62,12 +63,15 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
         >
           {i === currentImage.count && (
             <div className="m-carousel">
-              <img
-                className='m-carousel-image'
-                onClick={() => setImageModal(true)}
-                src={url ? url : fillIn} key={i}
-                alt='Main gallery display slideshow'
-              />
+              <div onClick={() => setImageModal(true)}>
+                {url ?
+                  <CloudImg
+                    className={'m-carousel-image'}
+                    url={url}
+                  />:
+                  null
+                }
+              </div>
               <img
                 className="m-logo"
                 src={logo}
