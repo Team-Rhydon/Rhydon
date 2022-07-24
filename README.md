@@ -35,11 +35,13 @@
 ## Description
 Interactive front-end e-commerce web application (mobile-friendly) that interacts with an API.
 
-
+The application contains 3 main components 
 
 
 
 ## Installation & Setup
+
+### Step 1
 ```
 $ git clone https://github.com/Team-Rhydon/Rhydon.git
 $ cd Rhydon
@@ -47,6 +49,12 @@ $ npm install
 $ npm run build
 $ npm run server-dev
 ```
+### Step 2
+- Create a .env file based on example.env
+- replace text in API_KEY="your github token goes here"
+### Step 3
+- Type http://localhost:3000/ into your browser
+- [Click this link to interact with application](http://localhost:3000/)
 * * *
 
 # Components
