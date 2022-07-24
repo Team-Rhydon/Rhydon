@@ -1,6 +1,8 @@
 import React from 'react';
 import {FaFacebookF, FaTwitter, FaPinterestP} from 'react-icons/fa';
-import {FacebookShareButton, TwitterShareButton, PinterestShareButton} from 'react-share-rc-18';
+import {
+  FacebookShareButton, TwitterShareButton, PinterestShareButton,
+} from 'react-share-rc-18';
 
 const Share = (props) => {
   return (

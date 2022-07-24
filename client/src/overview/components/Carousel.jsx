@@ -39,9 +39,9 @@ const Carousel = ({gallery, currentImage, setCurrentImage, product, rating, coun
   };
 
   // const scrollToElement = (className) => {
-  //   const anchor = document.querySelector(`.${className}`);
-  //   anchor.scrollIntoView({behavior: 'smooth', block: 'start'});
-  // };
+  //   const anchor = document.querySelector(`.$smooth', block: 'start'});
+  // };{className}`);
+  //   anchor.scrollIntoView({behavior: '
 
   useEffect(() => {
     setCurrentImage((prevState) => ({
