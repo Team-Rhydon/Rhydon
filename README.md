@@ -30,7 +30,11 @@
 - [License](#license)
 
 ## Project Overview
-<img src="https://imgur.com/a/T4PZ5FY.gif" />
+<img src="https://imgur.com/a/T4PZ5FY.gif" width="200px" height='200px'>
+
+![](https://imgur.com/a/WmIyFAg.jpg)
+
+<img src="https://imgur.com/IEuEiL2.jpg" />
 
 ## Description
 - A Front
@@ -52,7 +56,7 @@ $ npm run server-dev
 - [Ratings & Reviews](#ratings--reviews)
 
 ### Product Overview & Details
-
+![](http://imgur.com/lzAKyC0.jpg)
 
 ### Related Products & Outfits
 
