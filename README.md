@@ -56,7 +56,7 @@ $ npm run server-dev
 - [Ratings & Reviews](#ratings--reviews)
 
 ### Product Overview & Details
-![](http://imgur.com/lzAKyC0.jpg)
+<img src='/client/src/assets/photos/productoverview.png' width='725px'/>
 
 ### Related Products & Outfits
 
