@@ -1248,6 +1248,15 @@ margin-bottom: 0;
 padding-bottom: 29.5px;
 }
 
+.vertical-line-2 {
+  font-size: 1.5vw;
+  font-weight: lighter;
+  margin-top: .2vw;
+  margin-bottom: 0;
+  margin-left: .5vw;
+  margin-right: .5vw;
+}
+
 .outfit-card {
   height: calc(26.8vw + 8px);
   position: relative;
