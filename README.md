@@ -58,13 +58,20 @@ $ npm run server-dev
 <img src='/client/src/assets/photos/productoverview.png' width='725px'/>
 
 #### 1. Main Image Slide & Mini Carousel
+- User can infinitely scroll through the main slide or mini carousel
+- Provides a smooth experience for clients rendering accurate images before and after selected photo
 
 #### 2. Style Selector
 - User is presented all styles of the current product. The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style.
 
 #### 3. Add To Cart
+- User is presented all sizes of the current product.
+- 
 
 #### 4. Product Description
+- User can toggle to display or hide the current product description
+- Presents the user with product slogan, description, and features
+![](https://i.imgur.com/KstXQGQ.gif)
 
 
 ### Related Products & Outfits
