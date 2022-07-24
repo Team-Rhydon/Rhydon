@@ -729,8 +729,7 @@ cursor: pointer;
  .Button:hover {
    background-color: grey;
    color: white;
-   cursor: pointer;
- }
+  }
 
   #prevBtn {
     height: 3vh;
