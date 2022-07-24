@@ -53,8 +53,8 @@ $ npm run server-dev
 - Create a .env file based on example.env
 - replace text in API_KEY="your github token goes here"
 ### Step 3
-- Type http://localhost:3000/ into your browser
-- [Click this link to interact with application](http://localhost:3000/)
+- Click here to go to page http://localhost:3000
+
 * * *
 
 # Components
