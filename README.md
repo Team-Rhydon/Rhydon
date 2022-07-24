@@ -30,10 +30,10 @@
 - [License](#license)
 
 ## Project Overview
-<img src="https://imgur.com/VhuGcTr.jpg?raw=true" />
+<img src="https://imgur.com/a/T4PZ5FY.gif" />
 
 ## Description
-- 
+- A Front
 
 ## Installation & Setup
 ```
