@@ -58,7 +58,7 @@ th {
   margin-left: 0;
   margin-right: 0;
   padding-top: 1.5vh;
-  padding-right: 1.5vw;
+  /* padding-right: 1.5vw; */
 }
 
 .related .carousel .carousel-next, .carousel-prev, .outfit-next, .outfit-prev {
@@ -83,9 +83,9 @@ th {
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
 }
 
-.related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
+/* .related .carousel .carousel-next:hover, .carousel-prev:hover, .outfit-next:hover, .outfit-prev:hover, .close-btn:hover{
   filter: invert(100%) sepia(71%) saturate(32%) hue-rotate(218deg) brightness(116%) contrast(91%);
-}
+} */
 
 .carousel-next-container.hidden,.carousel-prev-container.hidden,.outfit-next-container.hidden,.outfit-prev-container.hidden {
   display: none;
@@ -148,16 +148,13 @@ th {
   text-align: left;
 }
 
-.related .carousel .slide .product-card p{
-  text-align: left;
-}
-
 .related .carousel .slide {
   display: flex;
   position: absolute;
   /* width: 25%; */
   transition: all .3s linear;
 }
+
 .related .carousel .slide.related-pleft, .slide.outfit-pleft {
   left: -23vw;
 }
@@ -183,10 +180,22 @@ th {
 }
 
 .related .carousel .thumb {
+/* stretched */
+/* position: relative;
+width: 200px;
+height: 200px;
+cursor: pointer;
+min-width: 100px;
+background: center; */
+
 position: relative;
 margin: 0 auto;
+/* max-width: 25%; */
 width: 20vw;
+/* max-width: 275px;
+max-height: 275px; */
 height: 20vw;
+/* max-height: 25%; */
 object-fit: cover;
 cursor: pointer;
 border-radius: .25em;
@@ -341,7 +350,6 @@ object-fit: cover;
     transform: translate(-50%, -50%);
     background-color: white;
     border: 1px solid #e7e7e7;
-    border-radius: 5px;
   }
 
   .preview.hidden {
@@ -379,7 +387,8 @@ object-fit: cover;
   }
 
   .add-btn {
-    margin-top: 3vw;
+
+    margin-top: 2vw;
     height: 20vw;
     width: 20vw;
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
@@ -390,7 +399,8 @@ object-fit: cover;
   .add-card {
     border: dashed 1px #767676;
     border-radius: .25em;
-    height: calc(26.8vw + 16px);
+    width: calc(20vw + 16px);
+    /* height: calc(26.8vw + 16px); */
     position: relative;
 margin: 0 auto;
 object-fit: cover;
@@ -452,8 +462,12 @@ cursor: pointer;
 
 .star-rating {
     display: inline-block;
+    justify-content: center;
   }
 
+.star-rating .hide {
+  visibility: hidden;
+}
   .stars .filled-stars:after {
     content: "\2605\2605\2605\2605\2605";
     color: rgb(255,200,0);
@@ -624,7 +638,7 @@ cursor: pointer;
     border-bottom: 1px solid lightgrey;
   }
 
-  #review-btn{
+  .review-btn {
     height: 3em;
     width: 7em;
     background-color: white;
@@ -634,9 +648,15 @@ cursor: pointer;
     /* margin-left: 7%; */
     margin-bottom: 1%;
   }
-  #review-btn:hover{
+
+  .review-btn:hover{
     background-color: #6a6a6a;
     color: white;
+    cursor: pointer;
+  }
+
+  .review-btn-invis {
+    visibility: hidden;
   }
 
   #open-modal-btn {
@@ -660,6 +680,7 @@ cursor: pointer;
   #open-modal-btn:hover{
     background-color: #6a6a6a;
     color: white;
+    cursor: pointer;
   }
   .ReviewListFooter {
     display: flex;
@@ -703,26 +724,14 @@ cursor: pointer;
     height: 1.5em;
     width: 5vw;
     background-color: rgb(255, 255, 255);
+    border: 1px solid grey;
   }
 
-  .Button.null {
-    height: 1.5em;
-    width: 5vw;
-    background-color: white;
-    border: 1px solid grey;
+ .Button:hover {
+   background-color: grey;
+   color: white;
   }
-  .Button.true {
-    height: 1.5em;
-    width: 5vw;
-    background-color: green;
-    border: 1px solid grey;
-  }
-  .Button.false {
-    height: 1.5em;
-    width: 5vw;
-    background-color: red;
-    border: 1px solid grey;
-  }
+
   #prevBtn {
     height: 3vh;
     width: 8vw;
@@ -766,7 +775,7 @@ cursor: pointer;
   }
 
   .submit-btn:disabled {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     border-color: white;
   }
 
@@ -987,8 +996,6 @@ max-height: 100%;
 .logo {
   object-fit: cover;
   cursor: pointer;
-  width: 70px;
-  height: 70px;
 }
 
 .nav-bar .nav-container .right-nav {
@@ -1115,12 +1122,10 @@ tr:nth-child(odd) .table-characteristic {
 .card-price {
   margin: 0;
   color: #000;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   line-height: 1.2;
   letter-spacing: .025vw;
   align-self: self-end;
-  padding-top: .25rem;
-  padding-bottom: .1rem;
 }
 
 .add-btn-desc-container {
@@ -1211,6 +1216,7 @@ tr:nth-child(odd) .table-characteristic {
 
 .recommend-select {
   display: flex;
+  align-self: flex-start;
 
 }
 
@@ -1225,18 +1231,10 @@ tr:nth-child(odd) .table-characteristic {
 
 .vertical-line {
   align-self: center;
+  object-fit: cover;
   width: 1.9vh;
-  height: 1.6vw;
 }
 
-.vertical-line-2 {
-  font-size: 1.5vw;
-  font-weight: lighter;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: .25vw;
-  margin-right: .25vw;
-}
 .title-lines {
 width: 100%;
 height: 50%;
@@ -1250,11 +1248,20 @@ margin-bottom: 0;
 padding-bottom: 29.5px;
 }
 
+.vertical-line-2 {
+  font-size: 1.5vw;
+  font-weight: lighter;
+  margin-top: .2vw;
+  margin-bottom: 0;
+  margin-left: .5vw;
+  margin-right: .5vw;
+}
+
 .outfit-card {
   height: calc(26.8vw + 8px);
   position: relative;
   border: 1px solid #e7e7e7;
-  width: calc(20vw + 10px);
+  width: 20vw;
   padding: 4px;
   display: inline;
   border-radius: .25em;
@@ -1267,6 +1274,7 @@ padding-bottom: 29.5px;
   text-align: center;
   font-size: 4vw;
   font-weight: bold;
+  margin-top: 2vw;
 }
 
 .search-btn.hidden {
@@ -1330,4 +1338,8 @@ padding-bottom: 29.5px;
 
 .search-icon-init-text {
   font-size: 12px;
+}
+
+.add-button-container {
+  position: relative;
 }

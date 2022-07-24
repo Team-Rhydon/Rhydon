@@ -10,9 +10,9 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
     img = image_placeholder;
   }
   return (
-    <div className={`slide ${position}`} width="300" height="450">
-      <div className='product-card' width="300" height="450">
-        <img alt='related picture' width="300" height="450" className='thumb' onClick={(e) => {
+    <div className={`slide ${position}`}>
+      <div className='product-card'>
+        <img alt='related picture' className='thumb' onClick={(e) => {
           setPreview(img);
         }}src={thumbnail}/>
         <div className="star" onClick={(e) => {
@@ -21,7 +21,7 @@ function RelatedCard({card, position, id, showModal, setPreview, updateCurrentPr
         />
         <div onClick={(e) => {
           updateCurrentProduct(e, id);
-        }}className="description" width='300' height='80'>
+        }}className="description">
           <div className='card-name-div'>
             <p className='card-name'>{name}</p>
             <p className='vertical-line-2'>|</p>

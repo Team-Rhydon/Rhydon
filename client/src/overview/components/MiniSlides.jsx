@@ -2,7 +2,8 @@
 /* eslint-disable max-len */
 import React, {useEffect, useState} from 'react';
 import {IoIosArrowUp, IoIosArrowDown} from 'react-icons/io';
-import fillIn from '../../assets/icons/nofound.png';
+//import fillIn from '../../assets/icons/nofound.png';
+import CloudImg from '../../../src/CloudImg.jsx';
 
 const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlide}) => {
   const [slide, setSlide] = useState(gallery);
@@ -28,46 +29,57 @@ const MiniSlides = ({gallery, setCurrentImage, currentImage, prevSlide, nextSlid
       {slide.map((obj, i) => {
         if (i === currentImage.count) {
           return (
-            <img
-              className="ms-image ms-image-selected"
-              key={obj.url}
-              onClick={() => changeImage(i)}
-              src={obj.url ? obj.url : fillIn}
-              alt='mini slide picture from style gallery and selected picture'
-            />
+            <div key={obj.url} onClick={() => changeImage(i)} >
+              {obj.url?
+                <CloudImg
+                  className={"ms-image ms-image-selected"}
+                  url={obj.url} />:
+                  null
+              }
+            </div>
           );
         }
         if (i > currentImage.count - 4 && i < currentImage.count + 4) {
           return (
-            <img
-              className="ms-image"
-              key={obj.url}
-              onClick={() => changeImage(i)}
-              src={obj.url ? obj.url : fillIn}
-              alt='mini slide picture from style gallery'
-            />
+            <div key={obj.url} onClick={() => changeImage(i)}
+            >
+              {obj.url?
+                <CloudImg
+                  className={"ms-image"}
+                  url={obj.url} />:
+                null
+              }
+            </div>
           );
         }
         if (i < 7 && currentImage.count < 4) {
           return (
-            <img
-              className="ms-image"
+            <div
               key={obj.url}
               onClick={() => changeImage(i)}
-              src={obj.url ? obj.url : fillIn}
-              alt='mini slide picture from style gallery'
-            />
+            >
+              {obj.url?
+                <CloudImg
+                  className={"ms-image"}
+                  url={obj.url} />:
+                null
+              }
+            </div>
           );
         }
         if (i >= slide.length - 7 && currentImage.count > slide.length - 5) {
           return (
-            <img
-              className="ms-image"
+            <div
               key={obj.url}
               onClick={() => changeImage(i)}
-              src={obj.url ? obj.url : fillIn}
-              alt='mini slide picture from style gallery'
-            />
+            >
+              {obj.url?
+                <CloudImg
+                  className={"ms-image"}
+                  url={obj.url} />:
+                null
+              }
+            </div>
           );
         }
       })}

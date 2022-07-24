@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, {useEffect, useState} from 'react';
-import {FaCircleNotch} from 'react-icons/fa';
 import {VscCircleFilled} from 'react-icons/vsc';
 
 const ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
@@ -26,7 +25,7 @@ const ExpandedIcons = ({gallery, setCurrentImage, currentImage}) => {
             onClick={() => changeImage(i)}
           >
             {i === currentImage.count ?
-              <FaCircleNotch className="i-chosen"/> :
+              <VscCircleFilled className="i-chosen"/> :
               <VscCircleFilled className="i-filler"/>
             }
           </div>

@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 
 function SortDrop(props) {
   const [value, setValue] = useState('relevant');
-  // needs a handlechange and handlesubmit
+  //needs a handlechange and handlesubmit
   const handleChange = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     props.sort(event.target.value);
     setValue(()=> event.target.value);
   };

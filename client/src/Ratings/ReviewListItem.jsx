@@ -74,9 +74,9 @@ function ReviewListItem({review, filter, isFiltered}) {
             onClose={onClose}
           />
         </span>
-        {!review.response ?
-          null :
-          <span className="Review-Response">THIS IS WHERE RESPONSES WOULD GO IF I FOUND ANY</span>
+        {!review.response
+          ? null
+          : <span className="Review-Response">This is where responses would go</span>
         }
         {!review.recommend ?
           null:

@@ -44,11 +44,10 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
     prevSortStyleRef.current = sortStyle;
     axios.get('/reviews', params)
         .then((response) => {
-          setStorage((prevStorage)=> {
-            return [...response.data.results];
-          });
-        }).catch((err)=> console.log('err getting revierrews'));
-  }, [page, product_id, sortStyle, count]);
+          setStorage(prevStorage=> {
+            return [...response.data.results]});
+        }).catch(err=> console.log('err getting revierrews'));
+  }, [product_id, sortStyle, count]);
 
   function handleClick() {
     setReviews((prevReviews)=>{
@@ -88,10 +87,12 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
         }
       </div>
       <div className="ReviewListFooter" style={{display: 'flex'}}>
-        {reviews >= storage.length?
-          null:
-          <button id="review-btn" onClick={handleClick}>More Reviews</button>
-        }
+        <button
+          className={reviews >= storage.length ? "review-btn-invis" : "review-btn"}
+          onClick={handleClick}
+          >
+            More Reviews
+        </button>
         <button id="open-modal-btn" onClick={()=>setShow(true)} > Review this Product</button>
         <Modal
           title={'Review This Product: Tell us about the ' + details.name}

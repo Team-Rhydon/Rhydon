@@ -1,6 +1,8 @@
 import React from 'react';
 import {FaFacebookF, FaTwitter, FaPinterestP} from 'react-icons/fa';
-import {FacebookShareButton, TwitterShareButton, PinterestShareButton} from 'react-share-rc-18';
+import {
+  FacebookShareButton, TwitterShareButton, PinterestShareButton,
+} from 'react-share-rc-18';
 
 const Share = (props) => {
   return (
@@ -12,7 +14,7 @@ const Share = (props) => {
       </FacebookShareButton>
       <TwitterShareButton
         aria-label='share to twitter'
-        url='https://twitter.com/intent/tweet'
+        url='Checkout this website!  http://ec2-13-57-33-75.us-west-1.compute.amazonaws.com:3000/'
         id="twitter"><FaTwitter style={{alignSelf: 'center'}}/>
       </TwitterShareButton>
       <PinterestShareButton

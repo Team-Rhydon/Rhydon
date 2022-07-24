@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect} from 'react';
 import OutfitCard from './OutfitCard.jsx';
 import OutfitAddCard from './OutfitAddCard.jsx';
 import nextArrow from '../assets/icons/chevron-right-solid.svg';
@@ -6,7 +6,7 @@ import prevArrow from '../assets/icons/chevron-left-solid.svg';
 
 function Outfit({product, outfits, addToOutfit, removeOutfit}) {
   if(!outfits) {return null}
-  useLayoutEffect(() => {
+  useEffect(() => {
     outfitBtnCheck();
     if (shouldInsertAddCard() && document.getElementsByClassName('outfit-card').length > 1) {
       moveOutfitLeft(true);
@@ -118,16 +118,16 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
     }
   }
   return (
-    <div className="related" width="1175" height="480">
+    <div className="related">
       <div className="title-div">
         <h5 className="title">Your Outfits</h5>
         <p className="title-lines"></p>
       </div>
       <div className="carousel">
         <div className='outfit-prev-container btn hidden' onClick={(e) => moveOutfitLeft(e)}>
-          <img alt='outfit previous button' width='94' height='150' src={prevArrow} className="outfit-prev center-vert-horz"/>
+          <img alt='outfit previous button' src={prevArrow} className="outfit-prev center-vert-horz"/>
         </div>
-        <div className="carousel-inner"  width="300" height="400">
+        <div className="carousel-inner">
           {shouldInsertAddCard() ? <OutfitAddCard key='add-btn' addToOutfit={addToOutfit} product={product}/> : null}
           {Object.keys(outfits).map((id, index) => <OutfitCard
             key={id}
@@ -137,7 +137,7 @@ function Outfit({product, outfits, addToOutfit, removeOutfit}) {
             position={outfits[id]['position']} />)}
         </div>
         <div className='outfit-next-container btn hidden' onClick={(e) => moveOutfitRight(e)}>
-          <img alt='outfit next button' width='94' height='150' src={nextArrow} className="outfit-next center-vert-horz"/>
+          <img alt='outfit next button' src={nextArrow} className="outfit-next center-vert-horz"/>
         </div>
       </div>
       <div className='title'></div>
