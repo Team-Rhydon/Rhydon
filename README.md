@@ -33,6 +33,11 @@
 <img src="https://imgur.com/IEuEiL2.jpg" />
 
 ## Description
+Interactive front-end e-commerce web application (mobile-friendly) that interacts with an API.
+
+
+
+
 
 ## Installation & Setup
 ```
@@ -60,13 +65,15 @@ $ npm run server-dev
 ![](https://imgur.com/jN3CsN2.gif)
 
 #### 2. Style Selector
-- User is presented all styles of the current product. The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style.
+- User is presented all styles of the current product 
+- The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style.
 
 #### 3. Add To Cart
 - User is presented all sizes of the current product. Selecting a size presents the user to choose a quantity and ability to add to cart
 - Selecting a different size conceals the ability to choose quantity and disables add to cart button
 
-#### 4. Cart
+#### 4. Expanded View & Cart 
+- User has the ability to expand main image and slide through style gallery
 - User is presented with all items added to cart with descripted purchase, sorted from most recent to oldest
 - User can remove product from cart or continue shopping
 
