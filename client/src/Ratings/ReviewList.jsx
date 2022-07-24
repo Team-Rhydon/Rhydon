@@ -44,18 +44,11 @@ function ReviewList({product, product_id, filter, isFiltered, details}) {
     prevSortStyleRef.current = sortStyle;
     axios.get('/reviews', params)
         .then((response) => {
-<<<<<<< HEAD
-          setStorage(prevStorage=> {
-            return [...response.data.results]});
-        }).catch(err=> console.log('err getting revierrews'));
-  }, [product_id, sortStyle, count]);
-=======
           setStorage((prevStorage)=> {
             return [...response.data.results];
           });
         }).catch((err)=> console.log('err getting revierrews'));
   }, [page, product_id, sortStyle, count]);
->>>>>>> main
 
   function handleClick() {
     setReviews((prevReviews)=>{
