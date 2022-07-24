@@ -387,16 +387,10 @@ object-fit: cover;
   }
 
   .add-btn {
-<<<<<<< HEAD
-    margin-top: 4vw;
-    height: 15vw;
-    width: 15vw;
-=======
 
     margin-top: 2vw;
     height: 20vw;
     width: 20vw;
->>>>>>> 5cde1d39f3b938f230ce0e1ad693b896f753b105
     filter: invert(52%) sepia(3%) saturate(15%) hue-rotate(325deg) brightness(88%) contrast(92%);
     background: transparent;
   }
@@ -736,8 +730,7 @@ cursor: pointer;
  .Button:hover {
    background-color: grey;
    color: white;
-   cursor: pointer;
- }
+  }
 
   #prevBtn {
     height: 3vh;
@@ -1272,8 +1265,6 @@ padding-bottom: 29.5px;
   text-align: center;
   font-size: 4vw;
   font-weight: bold;
-<<<<<<< HEAD
-=======
   margin-top: 2vw;
 }
 
@@ -1342,5 +1333,4 @@ padding-bottom: 29.5px;
 
 .add-button-container {
   position: relative;
->>>>>>> 5cde1d39f3b938f230ce0e1ad693b896f753b105
 }
