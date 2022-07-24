@@ -37,7 +37,6 @@
 <img src="https://imgur.com/IEuEiL2.jpg" />
 
 ## Description
-- A Front
 
 ## Installation & Setup
 ```
@@ -57,6 +56,15 @@ $ npm run server-dev
 
 ### Product Overview & Details
 <img src='/client/src/assets/photos/productoverview.png' width='725px'/>
+
+#### 1. Main Image Slide & Mini Carousel
+
+#### 2. Style Selector
+
+#### 3. Add To Cart
+
+#### 4. Product Description
+
 
 ### Related Products & Outfits
 
