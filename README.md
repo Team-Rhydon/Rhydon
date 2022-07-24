@@ -45,7 +45,7 @@ $ npm run server-dev
 * * *
 
 # Components
-- [Product Overview](#product-overview)
+- [Product Overview & Details](#product-overview--details)
 - [Related Products & Outfits](#related-products--outfits)
 - [Search Feature](#search-feature)
 - [Ratings & Reviews](#ratings--reviews)
@@ -57,16 +57,23 @@ $ npm run server-dev
 - User can infinitely scroll through the main slide or mini carousel
 - Provides a smooth experience for clients rendering accurate images before and after selected photo
 
+![](https://imgur.com/jN3CsN2.gif)
+
 #### 2. Style Selector
 - User is presented all styles of the current product. The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style.
 
 #### 3. Add To Cart
-- User is presented all sizes of the current product.
-- 
+- User is presented all sizes of the current product. Selecting a size presents the user to choose a quantity and ability to add to cart
+- Selecting a different size conceals the ability to choose quantity and disables add to cart button
 
-#### 4. Product Description
+#### 4. Cart
+- User is presented with all items added to cart with descripted purchase, sorted from most recent to oldest
+- User can remove product from cart or continue shopping
+
+#### 5. Product Description
 - User can toggle to display or hide the current product description
 - Presents the user with product slogan, description, and features
+
 ![](https://i.imgur.com/KstXQGQ.gif)
 
 
