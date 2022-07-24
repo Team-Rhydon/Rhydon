@@ -46,7 +46,7 @@ $ npm run server-dev
 
 # Components
 - [Product Overview](#product-overview)
-- [Related Products & Outfits / Search Feature](#related-products--outfits)
+- [Related Products & Outfits](#related-products--outfits)
 - [Search Feature](#search-feature)
 - [Ratings & Reviews](#ratings--reviews)
 
