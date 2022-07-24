@@ -60,6 +60,7 @@ $ npm run server-dev
 #### 1. Main Image Slide & Mini Carousel
 
 #### 2. Style Selector
+- User is presented all styles of the current product. The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style.
 
 #### 3. Add To Cart
 
