@@ -30,10 +30,6 @@
 - [License](#license)
 
 ## Project Overview
-<img src="https://imgur.com/a/T4PZ5FY.gif" width="200px" height='200px'>
-
-![](https://imgur.com/a/WmIyFAg.jpg)
-
 <img src="https://imgur.com/IEuEiL2.jpg" />
 
 ## Description
