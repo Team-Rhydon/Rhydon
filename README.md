@@ -51,6 +51,7 @@ $ npm run server-dev
 ```
 ### Step 2
 - Create a .env file based on example.env
+- Copy and Paste everything from example.env to .env
 - replace text in API_KEY="your github token goes here"
 ### Step 3
 - Open http://localhost:3000
@@ -70,26 +71,37 @@ $ npm run server-dev
 - User can infinitely scroll through the main slide or mini carousel
 - Provides a smooth experience for clients rendering accurate images before and after selected photo
 
-![](https://imgur.com/jN3CsN2.gif)
+![slides](https://imgur.com/jN3CsN2.gif)
 
 #### 2. Style Selector
 - User is presented all styles of the current product 
-- The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style.
+- The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style
 
-#### 3. Add To Cart
+![style-selector](https://imgur.com/kQEwehm.gif)
+
+#### 3. Add To Cart & Cart Modal
 - User is presented all sizes of the current product. Selecting a size presents the user to choose a quantity and ability to add to cart
-- Selecting a different size conceals the ability to choose quantity and disables add to cart button
-
-#### 4. Expanded View & Cart 
-- User has the ability to expand main image and slide through style gallery
+- Selecting a different size conceals the ability to choose quantity and disables add to cart button until size is selected
 - User is presented with all items added to cart with descripted purchase, sorted from most recent to oldest
 - User can remove product from cart or continue shopping
 
-#### 5. Product Description
+![cart](https://imgur.com/IZ5m0Fo.gif)
+
+
+
+<!-- <img src='https://imgur.com/IZ5m0Fo.gif' width='700px' align-self="start"/> -->
+<!-- <img src='https://imgur.com/1uPieh6.gif' width='300px'/> -->
+
+
+#### 5. Expanded View & Share 
+- User has the ability to expand main image and slide through style gallery
+- Allows users to share to social platforms
+
+#### 6. Product Description
 - User can toggle to display or hide the current product description
 - Presents the user with product slogan, description, and features
 
-![](https://i.imgur.com/KstXQGQ.gif)
+![description](https://i.imgur.com/KstXQGQ.gif)
 
 
 ### Related Products & Outfits
