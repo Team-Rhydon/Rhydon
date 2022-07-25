@@ -60,6 +60,8 @@ $ npm run server-dev
 ### Product Overview & Details
 <img src='/client/src/assets/photos/productoverview.png' width='725px'/>
 
+<details><summary><b>Highlight Overview Features</b></summary>
+
 #### 1. Main Image Slide & Mini Carousel
 - User can infinitely scroll through the main slide or mini carousel
 - Provides a smooth experience for clients rendering accurate images before and after selected photo
@@ -95,6 +97,7 @@ $ npm run server-dev
 
 ![description](https://i.imgur.com/KstXQGQ.gif)
 
+</details>
 
 ### Related Products & Outfits
 
