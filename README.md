@@ -23,20 +23,14 @@
 
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [Description](#description)
 - [Installation & Setup](#installation--setup)
 - [Components](#components)
 - [Contributors](#contributors)
 
 ## Project Overview
-<img src="https://imgur.com/gfrUgAt.gif" />
+Modern & Interactive front-end e-commerce web application (mobile-friendly) that interacts with an API. Developed and designed from scratch
 
-## Description
-Interactive front-end e-commerce web application (mobile-friendly) that interacts with an API.
-
-The application contains 3 main components 
-
-
+Contains 3 main components Product Overview, Related Items & Outfits, and Ratings & Reviews each built from sub-components.
 
 ## Installation & Setup
 
