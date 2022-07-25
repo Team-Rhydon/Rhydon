@@ -116,7 +116,7 @@ $ npm run server-dev
 
 </details>
 
-<details><summary><b>Product Description</b></summary>
+<details open><summary><b>Product Description</b></summary>
 
 <br/>
 
