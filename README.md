@@ -57,67 +57,88 @@ $ npm run server-dev
 - [Search Feature](#search-feature)
 - [Ratings & Reviews](#ratings--reviews)
 
-### Product Overview & Details
+## Product Overview & Details
+
 <img src='/client/src/assets/photos/productoverview.png' width='725px'/>
 
-<details><summary><b>Highlight Overview Features</b></summary>
+<details><summary><b>Main Image Slide & Mini Carousel</b></summary>
 
-<details><summary><b>1. Main Image Slide & Mini Carousel</b></summary>
+<br/>
 
-  - User can infinitely scroll through the main slide or mini carousel
-  - Provides a smooth experience for clients rendering accurate images before and after selected photo
+>User can infinitely scroll through the main slide or mini carousel
+
+>Provides a smooth experience for clients rendering accurate images before and after selected photo
 
 ![slides](https://imgur.com/jN3CsN2.gif)
 
-  </details>
-  <details><summary><b>2. Style Selector</b></summary>
-    
-  - User is presented all styles of the current product 
-  - The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style
+</details>
+
+<details><summary><b>Style Selector</b></summary>
+
+<br/>
+
+>User is presented all styles of the current product 
+
+>The client has the ability to select different styles, changing the main image display and mini carousel gallery for that specific style
 
 ![style-selector](https://imgur.com/kQEwehm.gif)
-  </details>
-  
-  <details><summary><b>3. Add To Cart & Cart Modal </b></summary>
-    
-  - User is presented all sizes of the current product. Selecting a size presents the user to choose a quantity and ability to add to cart
-  - Selecting a different size conceals the ability to choose quantity and disables add to cart button until size is selected
-  - User is presented with all items added to cart with descripted purchase, sorted from most recent to oldest
-  - User can remove product from cart or continue shopping
+
+</details>
+
+<details><summary><b>Add To Cart & Cart Modal</b></summary>
+
+<br/>
+
+>User is presented all sizes of the current product. Selecting a size presents the user to choose a quantity and ability to add to cart
+
+>Selecting a different size conceals the ability to choose quantity and disables add to cart button until size is selected
+
+>User is presented with all items added to cart with descripted purchase, sorted from most recent to oldest
+
+>User can remove product from cart or continue shopping
 
 ![cart](https://imgur.com/IZ5m0Fo.gif)
 
-  </details>
 <!-- <img src='https://imgur.com/IZ5m0Fo.gif' width='700px' align-self="start"/> -->
 <!-- <img src='https://imgur.com/1uPieh6.gif' width='300px'/> -->
 
-  <details><summary><b>4. Expanded View & Share </b></summary>
-    
-  - User has the ability to expand main image and slide through style gallery
-  - Allows users to share to social platforms
+</details>
+
+<details><summary><b>Expanded View & Share</b></summary>
+
+<br/>
+
+>User has the ability to expand main image and slide through style gallery
+
+>Allows users to share to social platforms
 
 ![](https://imgur.com/IMLBT7m.gif)
 
-  </details>
-  
-  <details><summary><b>5. Product Description </b></summary>
-    
-  - User can toggle to display or hide the current product description
-  - Presents the user with product slogan, description, and features
+</details>
+
+<details><summary><b>Product Description</b></summary>
+
+<br/>
+
+>User can toggle to display or hide the current product description
+
+>Presents the user with product slogan, description, and features
 
 ![description](https://i.imgur.com/KstXQGQ.gif)
 
-  </details>
 </details>
 
-### Related Products & Outfits
+
+## Related Products & Outfits
 
 ![](https://imgur.com/VhuGcTr.jpg)
 
-### Search Feature
+## Search Feature
+
 ![](https://imgur.com/IEuEiL2.jpg)
 
-### Ratings & Reviews
+## Ratings & Reviews
+
 ![](https://imgur.com/Xq4e2WE.jpg)
 
 
