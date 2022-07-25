@@ -87,17 +87,16 @@ $ npm run server-dev
 
 ![cart](https://imgur.com/IZ5m0Fo.gif)
 
-
-
 <!-- <img src='https://imgur.com/IZ5m0Fo.gif' width='700px' align-self="start"/> -->
 <!-- <img src='https://imgur.com/1uPieh6.gif' width='300px'/> -->
 
-
-#### 5. Expanded View & Share 
+#### 4. Expanded View & Share 
 - User has the ability to expand main image and slide through style gallery
 - Allows users to share to social platforms
 
-#### 6. Product Description
+![](https://imgur.com/IMLBT7m.gif)
+
+#### 5. Product Description
 - User can toggle to display or hide the current product description
 - Presents the user with product slogan, description, and features
 
