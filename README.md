@@ -27,10 +27,9 @@
 - [Installation & Setup](#installation--setup)
 - [Components](#components)
 - [Contributors](#contributors)
-- [License](#license)
 
 ## Project Overview
-<img src="https://imgur.com/IEuEiL2.jpg" />
+<img src="https://imgur.com/gfrUgAt.gif" />
 
 ## Description
 Interactive front-end e-commerce web application (mobile-friendly) that interacts with an API.
@@ -137,5 +136,3 @@ Ratings & Reviews
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chuda/)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/crypto-bender)
-
-## License
